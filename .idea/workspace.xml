@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/App.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/service/AbstractService.class" afterPath="$PROJECT_DIR$/server/target/classes/springLibrary/service/AbstractService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/App.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -503,7 +498,7 @@
       <updated>1580944729686</updated>
       <workItem from="1580944730959" duration="595000" />
       <workItem from="1581011550531" duration="5180000" />
-      <workItem from="1581017820271" duration="6276000" />
+      <workItem from="1581017820271" duration="6751000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -512,11 +507,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581020467007</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Second commit. Adding Repositories, Services and Controllers.">
+      <created>1581025854908</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581025854908</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12051000" />
+    <option name="totallyTimeSpent" value="12526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
