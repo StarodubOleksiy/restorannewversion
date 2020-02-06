@@ -50,6 +50,7 @@ public class App implements CommandLineRunner {
     public static void main(String[] args) throws IOException {
 
         SpringApplication.run(App.class, args);
+        System.out.println("EXIT AND CLOSE");
 
 
     }
