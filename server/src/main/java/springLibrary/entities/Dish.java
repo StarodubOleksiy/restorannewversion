@@ -54,15 +54,15 @@ public class Dish extends AbstractIdentifiableEntity {
 
 
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+ /*   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "dish_to_ingradient",
             joinColumns = @JoinColumn(name = "dish_id"),
             inverseJoinColumns = @JoinColumn(name = "ingradient_id")
     )
 
-    private List<Storage> ingradients;
-
+    private List<Ingradient> ingradients;
+*/
     public String getName() {
         return name;
     }
@@ -95,18 +95,15 @@ public class Dish extends AbstractIdentifiableEntity {
         this.weight = weight;
     }
 
-    public void setIngradients(List<Storage> ingradients) {
+  /*  public void setIngradients(List<Ingradient> ingradients) {
         this.ingradients = ingradients;
     }
 
-    public List<Storage> getIngradients() {
+    public List<Ingradient> getIngradients() {
         return ingradients;
     }
 
-
-    @Override
-    public String toString() {
-        return  name;  }
+*/
 
     @Override
     public boolean equals(Object o) {
@@ -130,5 +127,17 @@ public class Dish extends AbstractIdentifiableEntity {
         result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
         result = 31 * result + (weight != +0.0f ? Float.floatToIntBits(weight) : 0);
         return result;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "name='" + name + '\'' +
+                ", dishCategory=" + dishCategory +
+                ", price=" + price +
+                ", weight=" + weight +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

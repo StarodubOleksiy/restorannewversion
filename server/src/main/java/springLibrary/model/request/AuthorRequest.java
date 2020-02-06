@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class AuthorRequest {
 
-    private Long id;
+   /* private Long id;
     private String name;
     private Integer[] booksId;
 
@@ -41,5 +41,5 @@ public class AuthorRequest {
             toString.append("booksId = null");
         toString.append('}');
         return toString.toString();
-    }
+    }*/
 }

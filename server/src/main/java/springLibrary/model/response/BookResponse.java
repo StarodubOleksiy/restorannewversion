@@ -11,7 +11,7 @@ import java.util.Set;
 @Data
 public class BookResponse {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BookResponse.class);
+    /*private static final Logger LOGGER = LoggerFactory.getLogger(BookResponse.class);
     private Long id;
     private String name;
     private String image;
@@ -173,5 +173,5 @@ public class BookResponse {
 
     public String getType() {
         return type;
-    }
+    }*/
 }

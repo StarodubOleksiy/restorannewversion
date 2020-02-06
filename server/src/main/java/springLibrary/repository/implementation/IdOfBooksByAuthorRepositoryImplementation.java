@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class IdOfBooksByAuthorRepositoryImplementation implements IdOfBooksByAuthorRepository {
+public class IdOfBooksByAuthorRepositoryImplementation
+     //   implements IdOfBooksByAuthorRepository
+{
 
-    @Autowired
+   /* @Autowired
     JdbcTemplate jdbcTemplate;
 
 
@@ -26,6 +28,6 @@ public class IdOfBooksByAuthorRepositoryImplementation implements IdOfBooksByAut
                 new Long(rs.getLong("bookid")))
                 .forEach(response -> result.add(response));
         return result;
-    }
+    }*/
 
 }

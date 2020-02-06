@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PublisherRequest {
 
-    private Long id;
+  /*  private Long id;
     private String name;
     private String city;
 
@@ -49,5 +49,5 @@ public class PublisherRequest {
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 '}';
-    }
+    }*/
 }

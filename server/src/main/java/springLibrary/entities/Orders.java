@@ -136,4 +136,13 @@ public class Orders  extends AbstractIdentifiableEntity{
         result = 31 * result + (state != null ? state.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "tableNumber=" + tableNumber +
+                ", orderDate='" + orderDate + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

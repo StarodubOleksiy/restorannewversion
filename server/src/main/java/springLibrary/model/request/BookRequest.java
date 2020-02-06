@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class BookRequest {
-    private Long id;
+   /* private Long id;
     private String name;
     private String image;
     private String isbn;
@@ -81,5 +81,5 @@ public class BookRequest {
                 ", room='" + room + '\'' +
 
                 '}';
-    }
+    }*/
 }

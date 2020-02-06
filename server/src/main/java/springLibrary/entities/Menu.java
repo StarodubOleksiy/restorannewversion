@@ -19,9 +19,9 @@ import java.util.List;
 @Setter
 public class Menu extends AbstractIdentifiableEntity {
 
-    public Menu() {
+   /* public Menu() {
         this.dishes = new ArrayList<Dish>();
-    }
+    }*/
 
     @NotNull
     @Column(name = "name", nullable = false)
@@ -34,7 +34,7 @@ public class Menu extends AbstractIdentifiableEntity {
             inverseJoinColumns = @JoinColumn(name = "dish_id")
     )*/
 
-    private List<Dish> dishes;
+    /*private List<Dish> dishes;
 
     public String getName() {
         return name;
@@ -78,7 +78,7 @@ public class Menu extends AbstractIdentifiableEntity {
                 ", name='" + name + '\'' +
                 ", dishes=" + dishes +
                 '}';
-    }
+    }*/
 
 
 }

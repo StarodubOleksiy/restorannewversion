@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class GenreRequest {
-    private Long id;
+   /* private Long id;
     private String name;
 
     public Genre toGenre() {
@@ -22,6 +22,6 @@ public class GenreRequest {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
-    }
+    }*/
 
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class CriteriaRequest {
-    String searchWord;
+   /* String searchWord;
     String type;
 
     public String getSearchWord() {
@@ -22,5 +22,5 @@ public class CriteriaRequest {
                 "searchWord='" + searchWord + '\'' +
                 ", type='" + type + '\'' +
                 '}';
-    }
+    }*/
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class PublisherSearchCreateria {
-
+/*
     String searchWord;
     boolean findByCity;
 
@@ -23,5 +23,5 @@ public class PublisherSearchCreateria {
                 "searchWord='" + searchWord + '\'' +
                 ", findByCity=" + findByCity +
                 '}';
-    }
+    }*/
 }

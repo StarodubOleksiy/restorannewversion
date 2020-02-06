@@ -10,6 +10,7 @@ import java.util.Set;
 public class AuthorResponse implements Comparable<AuthorResponse> {
     private Long id;
     private String name;
+    /*
     private Integer[] booksId;
 
     public Long getId() {
@@ -43,7 +44,7 @@ public class AuthorResponse implements Comparable<AuthorResponse> {
         response.setId(author.getId());
         response.setName(author.getFio());
         return response;
-    }
+    }*/
 
     @Override
     public int compareTo(AuthorResponse o) {
