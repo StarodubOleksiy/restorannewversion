@@ -475,7 +475,7 @@
       <workItem from="1581011550531" duration="5180000" />
       <workItem from="1581017820271" duration="6816000" />
       <workItem from="1581094244619" duration="7749000" />
-      <workItem from="1581106748224" duration="375000" />
+      <workItem from="1581106748224" duration="414000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -505,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581107105958</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Third commit. Adding Menu Repository, Service and Controller.">
+      <created>1581107137081</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581107137081</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20715000" />
+    <option name="totallyTimeSpent" value="20754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
