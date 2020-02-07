@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Second commit. Adding Repositories, Services and Controllers.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/MenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/repository/MenuRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/MenuServiceImplementation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/MenuService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_6.xml" afterPath="" />
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/App.class" afterPath="$PROJECT_DIR$/server/target/classes/springLibrary/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/liquibase.iml" afterPath="$PROJECT_DIR$/liquibase/liquibase.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/pom.xml" afterPath="$PROJECT_DIR$/liquibase/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/java/com/smartparking/liquibase/LiquibaseApplication.java" afterPath="$PROJECT_DIR$/liquibase/src/main/java/com/smartparking/liquibase/LiquibaseApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-author/create_table_author.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-author/create_table_author.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-author/insert_into_table_author.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-author/insert_into_table_author.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-book/create_table_book.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-book/create_table_book.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-book/insert_into_table_book.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-book/insert_into_table_book.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-bookAuthor/create_table_bookAuthor.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-bookAuthor/create_table_bookAuthor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-bookAuthor/insert_into_table_bookAuthor.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-bookAuthor/insert_into_table_bookAuthor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-genre/create_table_genre.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-genre/create_table_genre.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-genre/insert_into_table_genre.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-genre/insert_into_table_genre.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-publisher/create_table_publisher.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-publisher/create_table_publisher.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-publisher/insert_into_table_publisher.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-publisher/insert_into_table_publisher.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/App.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Waiter.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Waiter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -499,7 +475,7 @@
       <workItem from="1581011550531" duration="5180000" />
       <workItem from="1581017820271" duration="6816000" />
       <workItem from="1581094244619" duration="7749000" />
-      <workItem from="1581106748224" duration="298000" />
+      <workItem from="1581106748224" duration="375000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -522,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581026323383</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Third commit. Adding Menu Repository, Service and Controller.">
+      <created>1581107105958</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581107105958</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20638000" />
+    <option name="totallyTimeSpent" value="20715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -571,7 +554,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit. Adding Repositories, Services and Controllers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit. Adding Repositories, Services and Controllers." />
+    <MESSAGE value="Third commit. Adding Menu Repository, Service and Controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit. Adding Menu Repository, Service and Controller." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -688,6 +672,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,6 +696,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -723,6 +711,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -730,6 +721,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -751,6 +745,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -782,6 +777,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2301#2302#0" expanded="true" />
+            <element signature="e#2339#2340#0" expanded="true" />
+            <element signature="e#2371#2372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -803,6 +804,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -810,6 +814,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="125" column="6" lean-forward="false" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
+          <folding>
+            <element signature="e#1596#1597#0" expanded="false" />
+            <element signature="e#1625#1626#0" expanded="false" />
+            <element signature="e#1669#1670#0" expanded="false" />
+            <element signature="e#1705#1706#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -817,6 +827,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding>
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
