@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-author/create_table_author.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-dish/create_table_dish.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-author/insert_into_table_author.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/table-dish/insert_into_table_author.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/changelog-master.xml" afterPath="$PROJECT_DIR$/liquibase/src/main/resources/com/smartparking/liquibase/changelog-master.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -548,7 +545,7 @@
       <workItem from="1581017820271" duration="6816000" />
       <workItem from="1581094244619" duration="7749000" />
       <workItem from="1581106748224" duration="2975000" />
-      <workItem from="1581116514754" duration="772000" />
+      <workItem from="1581116514754" duration="795000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -592,11 +589,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581107168823</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Third commit. Adding Menu Repository, Service and Controller.">
+      <created>1581117415568</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1581117415568</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24087000" />
+    <option name="totallyTimeSpent" value="24110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
