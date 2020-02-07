@@ -2,6 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="client" />
+        <module name="liquibase" />
+      </profile>
       <profile name="Annotation profile for Main POM" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,13 +16,6 @@
         <processor name="lombok.launch.AnnotationProcessorHider$AnnotationProcessor" />
         <processor name="org.springframework.boot.configurationprocessor.ConfigurationMetadataAnnotationProcessor" />
         <module name="server" />
-      </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="client" />
-        <module name="liquibase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

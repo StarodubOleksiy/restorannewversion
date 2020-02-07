@@ -7,10 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import springLibrary.controller.DishController;
-import springLibrary.controller.EmployeeController;
-import springLibrary.controller.IngradientController;
-import springLibrary.controller.OrderController;
+import springLibrary.controller.*;
 import springLibrary.service.OrderService;
 
 import java.io.IOException;
@@ -38,13 +35,17 @@ public class App implements CommandLineRunner {
     @Autowired
     IngradientController ingradientController;
 
+    @Autowired
+    MenuController menuController;
+
     @Override
     public void run(String[] args) throws IOException {
         System.out.println("method run=");
         orderController.printOrders();
         dishController.printDishes();
-        employeeController.printEmployees();
         ingradientController.printIngradients();
+        menuController.printOrders();
+        employeeController.printEmployees();
     }
 
     public static void main(String[] args) throws IOException {

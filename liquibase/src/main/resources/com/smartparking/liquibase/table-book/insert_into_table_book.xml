@@ -3,7 +3,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet author="Oleksiy" id="201803202016" dbms="MYSQL">
+    <changeSet author="Oleksiy" id="201803202016" dbms="postgresql">
         <sql>
             INSERT INTO book (name, page_count, isbn, publish_year, descr, ROOM, TYPE, placing, genre_id, publisher_id )
             values('Melovoy chelovek',288,'978-617-12-4331-6',2018,'something about  murder  of  young  girl  and   other  peoples',

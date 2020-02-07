@@ -40,8 +40,22 @@ public class Dish extends AbstractIdentifiableEntity {
     @Column(name = "weight", nullable = false)
     private float weight;
 
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "menuid")
+    private Menu menu;
+
     @Column(name = "image")
     private String image;
+
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "dish_to_ingradient",
+            joinColumns = @JoinColumn(name = "dish_id"),
+            inverseJoinColumns = @JoinColumn(name = "ingradient_id")
+    )
+    private List<Ingradient> ingradients;
 
 
     public void setImage(String image) {
@@ -54,14 +68,8 @@ public class Dish extends AbstractIdentifiableEntity {
 
 
 
-   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "dish_to_ingradient",
-            joinColumns = @JoinColumn(name = "dish_id"),
-            inverseJoinColumns = @JoinColumn(name = "ingradient_id")
-    )
 
-    private List<Ingradient> ingradients;
+
 
     public String getName() {
         return name;
@@ -103,6 +111,13 @@ public class Dish extends AbstractIdentifiableEntity {
         return ingradients;
     }
 
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
 
     @Override
     public boolean equals(Object o) {

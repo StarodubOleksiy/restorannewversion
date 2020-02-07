@@ -19,20 +19,12 @@ import java.util.List;
 @Setter
 public class Menu extends AbstractIdentifiableEntity {
 
-  /*  public Menu() {
-        this.dishes = new ArrayList<Dish>();
-    }*/
 
     @NotNull
     @Column(name = "name", nullable = false)
     private String name;
 
-   /* @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "dish_to_menu",
-            joinColumns = @JoinColumn(name = "menu_id"),
-            inverseJoinColumns = @JoinColumn(name = "dish_id")
-    )
+    @OneToMany(mappedBy = "menu", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Dish> dishes;
 
     public String getName() {
@@ -47,29 +39,10 @@ public class Menu extends AbstractIdentifiableEntity {
         this.name = name;
     }
 
-    public void setDishes(List<Dish> dishes) {
+   public void setDishes(List<Dish> dishes) {
         this.dishes = dishes;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Menu menu = (Menu) o;
-
-        if (!dishes.equals(menu.dishes)) return false;
-        if (!name.equals(menu.name)) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + dishes.hashCode();
-        return result;
-    }
 
     @Override
     public String toString() {
@@ -79,5 +52,5 @@ public class Menu extends AbstractIdentifiableEntity {
                 '}';
     }
 
-*/
+
 }

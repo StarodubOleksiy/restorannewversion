@@ -31,9 +31,9 @@ public class Orders  extends AbstractIdentifiableEntity{
 }
 */
 
-   /* @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "employee_id")
-    private Waiter waiter;*/
+    private Waiter waiter;
 
    /* @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinTable(
@@ -59,7 +59,7 @@ public class Orders  extends AbstractIdentifiableEntity{
     @Column(name = "state" , nullable = false)
     private String state;
 
-  /*  public Waiter getWaiter() {
+    public Waiter getWaiter() {
         return waiter;
     }
 
@@ -67,7 +67,7 @@ public class Orders  extends AbstractIdentifiableEntity{
         this.waiter = waiter;
     }
 
-    public List<Cooked_Dish> getDishes() {
+  /*  public List<Cooked_Dish> getDishes() {
         for(int i = 0; i < dishes.size(); ++i)
         {
             Cooked_Dish dish = dishes.get(i);
@@ -123,7 +123,7 @@ public class Orders  extends AbstractIdentifiableEntity{
       //  if (dishes != null ? !dishes.equals(orders.dishes) : orders.dishes != null) return false;
         if (orderDate != null ? !orderDate.equals(orders.orderDate) : orders.orderDate != null) return false;
         if (state != null ? !state.equals(orders.state) : orders.state != null) return false;
-      //  if (waiter != null ? !waiter.equals(orders.waiter) : orders.waiter != null) return false;
+        if (waiter != null ? !waiter.equals(orders.waiter) : orders.waiter != null) return false;
 
         return true;
     }
