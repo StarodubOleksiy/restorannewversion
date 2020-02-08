@@ -4,8 +4,13 @@ package springLibrary.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springLibrary.model.response.DishResponse;
 import springLibrary.service.DishService;
+
+import java.util.List;
 
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -22,19 +27,20 @@ public class DishController {
         dishService.findAllResponse();
     }
 
-    /*@GetMapping("books")
-    public ResponseEntity<List<BookResponse>> books() {
-        return new ResponseEntity<>(bookService.findAllResponse(), HttpStatus.OK);
+    @GetMapping("dishes")
+    public ResponseEntity<List<DishResponse>> dishes() {
+        return new ResponseEntity<>(dishService.findAllResponse(), HttpStatus.OK);
     }
 
 
-    @GetMapping("books/{id}")
+    @GetMapping("dishes/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
-        return bookService.findByIdResponse(id)
-                .map(book -> new ResponseEntity<Object>(book, HttpStatus.OK))
+        return dishService.findByIdResponse(id)
+                .map(dish -> new ResponseEntity<Object>(dish, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
     }
 
+    /*
     @GetMapping("book/findbyname")
     public List<Book> getBookByName() {
         return bookService.findByName("Melovoy chelovek");

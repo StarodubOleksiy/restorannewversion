@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Dish;
-import springLibrary.model.response.BookResponse;
+import springLibrary.model.response.DishResponse;
 import springLibrary.repository.DishRepository;
 import springLibrary.service.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by Администратор on 23.02.18.
@@ -32,32 +33,25 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     private static final Logger LOGGER = LoggerFactory.getLogger(DishServiceImplementation.class);
 
 
-   /* private BookResponse bookToBookResponse(Book book) {
-        BookResponse response = new BookResponse();
-        response.setId(book.getId());
-        response.setName(book.getName());
-        if (book.getImage() != null)
+    private DishResponse dishToDishResponse(Dish dish) {
+        DishResponse response = new DishResponse();
+        response.setId(dish.getId());
+        response.setName(dish.getName());
+       /* if (book.getImage() != null) {
             response.setImage(book.getImage());
-        response.setIsbn(book.getIsbn());
-        response.setPublishYear(book.getPublishYear());
-        response.setDescr(book.getDescr());
-        response.setRoom(book.getRoom());
-        response.setGenreId(book.getGenre().getId());
-        response.setPublisherId(book.getPublisher().getId());
-        response.setPageCount(book.getPageCount());
-        response.setPlacing(book.getPlacing());
-        response.setType(book.getType());
-        response.setAuthorsId(book.getAuthors());
+        }*/
+        response.setPrice(dish.getPrice());
+        response.setWeight(dish.getWeight());
+        response.setIngradientsId(dish.getIngradients());
         return response;
     }
-*/
-
 
 
     @Override
-    public List<BookResponse> findAllResponse() {
-        getRepository().findAll().forEach(System.out::println);
-        return null;
+    public List<DishResponse> findAllResponse() {
+         return getRepository().findAll().stream()
+                .map(this::dishToDishResponse)
+                .collect(Collectors.toList());
     }
 
 
@@ -73,13 +67,9 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
 
 
     @Override
-    public Optional<BookResponse> findByIdResponse(Long id) {
-        return null;
+    public Optional<DishResponse> findByIdResponse(Long id) {
+        return getRepository().findById(id).map(this::dishToDishResponse);
     }
-
-
-
-
 
 
 }

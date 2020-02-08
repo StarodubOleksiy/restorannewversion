@@ -1,8 +1,7 @@
 package springLibrary.service;
 
 import springLibrary.entities.Dish;
-import springLibrary.model.request.BookRequest;
-import springLibrary.model.response.BookResponse;
+import springLibrary.model.response.DishResponse;
 import springLibrary.repository.DishRepository;
 
 import java.util.List;
@@ -15,9 +14,9 @@ import java.util.Optional;
 public interface DishService extends Service<Dish, Long, DishRepository> {
 
 
-   public List<BookResponse> findAllResponse();
+   public List<DishResponse> findAllResponse();
 
-   public Optional<BookResponse> findByIdResponse(Long id);
+   public Optional<DishResponse> findByIdResponse(Long id);
 
 
 }

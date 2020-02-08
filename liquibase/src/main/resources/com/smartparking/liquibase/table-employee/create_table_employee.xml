@@ -1,0 +1,21 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<changeSet author="Oleksiy" id="201803201835" dbms="postgresql">
+    <sql>
+        CREATE TABLE employee(
+        id serial PRIMARY KEY,
+        name VARCHAR (50) NOT NULL,
+        surname VARCHAR (50) NOT NULL,
+        phone_number VARCHAR (50) UNIQUE NOT NULL,
+        salary double precision NOT NULL,
+        dtype VARCHAR (50) NOT NULL,
+        position VARCHAR (50) NOT NULL
+        );
+    </sql>
+    <comment>Creating table Book</comment>
+</changeSet>
+
+</databaseChangeLog>

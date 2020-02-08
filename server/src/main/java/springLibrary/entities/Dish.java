@@ -2,7 +2,6 @@ package springLibrary.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import springLibrary.enums.DishCategory;
 
 
 import javax.persistence.*;
@@ -24,11 +23,6 @@ public class Dish extends AbstractIdentifiableEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-
-    @NotNull
-    @Column(name = "dish_category", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private DishCategory dishCategory;//
 
     @Min(0)
     @NotNull
@@ -66,25 +60,12 @@ public class Dish extends AbstractIdentifiableEntity {
         return image;
     }
 
-
-
-
-
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public DishCategory getDishCategory() {
-        return dishCategory;
-    }
-
-    public void setDishCategory(DishCategory dishCategory) {
-        this.dishCategory = dishCategory;
     }
 
     public float getPrice() {
@@ -103,7 +84,7 @@ public class Dish extends AbstractIdentifiableEntity {
         this.weight = weight;
     }
 
-  public void setIngradients(List<Ingradient> ingradients) {
+    public void setIngradients(List<Ingradient> ingradients) {
         this.ingradients = ingradients;
     }
 
@@ -128,7 +109,6 @@ public class Dish extends AbstractIdentifiableEntity {
 
         if (Float.compare(dish.price, price) != 0) return false;
         if (Float.compare(dish.weight, weight) != 0) return false;
-        if (dishCategory != dish.dishCategory) return false;
         if (!name.equals(dish.name)) return false;
 
         return true;
@@ -137,7 +117,6 @@ public class Dish extends AbstractIdentifiableEntity {
     @Override
     public int hashCode() {
         int result = name.hashCode();
-        result = 31 * result + dishCategory.hashCode();
         result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
         result = 31 * result + (weight != +0.0f ? Float.floatToIntBits(weight) : 0);
         return result;
@@ -147,7 +126,6 @@ public class Dish extends AbstractIdentifiableEntity {
     public String toString() {
         return "Dish{" +
                 "name='" + name + '\'' +
-                ", dishCategory=" + dishCategory +
                 ", price=" + price +
                 ", weight=" + weight +
                 ", image='" + image + '\'' +

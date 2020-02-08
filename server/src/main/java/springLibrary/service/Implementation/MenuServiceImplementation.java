@@ -4,19 +4,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import springLibrary.entities.Ingradient;
+import springLibrary.entities.Dish;
 import springLibrary.entities.Menu;
-import springLibrary.model.response.BookResponse;
-import springLibrary.model.response.GenreResponse;
-import springLibrary.repository.IngradientRepository;
+import springLibrary.model.response.DishResponse;
+import springLibrary.model.response.MenuResponse;
 import springLibrary.repository.MenuRepository;
-import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
-import springLibrary.service.IngradientService;
 import springLibrary.service.MenuService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuRepository> implements MenuService {
@@ -27,26 +25,26 @@ public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuR
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImplementation.class);
 
-
-    /*private GenreResponse genreToGenreResponse(Genre genre) {
-        GenreResponse response = new GenreResponse();
-        response.setId(genre.getId());
-        response.setName(genre.getName());
+    private MenuResponse menuToMenuResponse(Menu menu) {
+        MenuResponse response = new MenuResponse();
+        response.setId(menu.getId());
+        response.setName(menu.getName());
         return response;
-    }*/
+    }
 
 
     @Override
-    public List<BookResponse> findAllResponse() {
-        getRepository().findAll().forEach(System.out::println);
-        return null;
+    public List<MenuResponse> findAllResponse() {
+        return getRepository().findAll().stream()
+                .map(this::menuToMenuResponse)
+                .collect(Collectors.toList());
     }
 
 
 
     @Override
-    public Optional<BookResponse> findByIdResponse(Long id) {
-        return null;
+    public Optional<MenuResponse> findByIdResponse(Long id) {
+        return getRepository().findById(id).map(this::menuToMenuResponse);
     }
 
 

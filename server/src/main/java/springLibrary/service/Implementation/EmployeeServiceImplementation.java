@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Employee;
-import springLibrary.model.response.AuthorResponse;
+import springLibrary.enums.Position;
+import springLibrary.model.response.EmployeeResponse;
 import springLibrary.repository.EmployeeRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.EmployeeService;
@@ -14,6 +15,7 @@ import springLibrary.service.EmployeeService;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
 
 @Service
 public class EmployeeServiceImplementation extends AbstractService<Employee, Long, EmployeeRepository> implements EmployeeService {
@@ -30,31 +32,33 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-  /*  @Autowired
-    IdOfAuthorsByBookRepository idOfAuthorsByBookRepository;
 
-    private AuthorResponse authorToAuthorResponse(Author author) {
-        AuthorResponse response = new AuthorResponse();
-        response.setId(author.getId());
-        response.setName(author.getFio());
-        response.setBooksId(author.getBooks());
+    private EmployeeResponse employeeToEmployeeResponse(Employee employee) {
+        EmployeeResponse response = new EmployeeResponse();
+        response.setId(employee.getId());
+        response.setName(employee.getName());
+       /* if (book.getImage() != null) {
+            response.setImage(book.getImage());
+        }*/
+        response.setSurname(employee.getSurname());
+        response.setPhoneNumber(employee.getPhoneNumber());
+        response.setPosition(Position.enumToString(employee.getPosition()));
+        response.setSalary(employee.getSalary());
         return response;
     }
-*/
 
     @Override
-    public List<AuthorResponse> findAllResponse() {
-        getRepository().findAll().forEach(System.out::println);
-        return null;
+    public List<EmployeeResponse> findAllResponse() {
+        return getRepository().findAll().stream()
+                .map(this::employeeToEmployeeResponse)
+                .collect(Collectors.toList());
     }
 
 
     @Override
-    public Optional<AuthorResponse> findByIdResponse(Long id) {
-        return null;
+    public Optional<EmployeeResponse> findByIdResponse(Long id) {
+        return getRepository().findById(id).map(this::employeeToEmployeeResponse);
     }
-
-
 
 }
 

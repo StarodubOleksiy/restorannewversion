@@ -1,9 +1,8 @@
 package springLibrary.service;
 
-import springLibrary.entities.Dish;
 import springLibrary.entities.Menu;
-import springLibrary.model.response.BookResponse;
-import springLibrary.repository.DishRepository;
+import springLibrary.model.response.DishResponse;
+import springLibrary.model.response.MenuResponse;
 import springLibrary.repository.MenuRepository;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.Optional;
 
 public interface MenuService extends Service<Menu, Long, MenuRepository> {
 
-    public List<BookResponse> findAllResponse();
+    public List<MenuResponse> findAllResponse();
 
-    public Optional<BookResponse> findByIdResponse(Long id);
+    public Optional<MenuResponse> findByIdResponse(Long id);
 }

@@ -5,12 +5,9 @@
 
     <changeSet author="Oleksiy" id="201809052351" dbms="postgresql">
         <sql>
-            CREATE TABLE IF NOT EXISTS bookauthor
-            (
-            authorid bigint(20) NOT NULL,
-            bookid bigint(20) NOT NULL,
-            constraint fk_between_bookAuthor_and_author foreign key (authorid) references author(id),
-            constraint fk_between_bookAuthor_and_book foreign key (bookid) references book(id)
+            CREATE TABLE menu(
+            id serial PRIMARY KEY,
+            name VARCHAR (50) UNIQUE NOT NULL
             );
         </sql>
         <comment>Creating table Author</comment>

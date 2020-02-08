@@ -9,7 +9,6 @@
             id serial PRIMARY KEY,
             price double precision UNIQUE NOT NULL,
             weight double precision UNIQUE NOT NULL,
-            dish_category VARCHAR (50) UNIQUE NOT NULL,
             name VARCHAR (50) UNIQUE NOT NULL
             );
         </sql>
