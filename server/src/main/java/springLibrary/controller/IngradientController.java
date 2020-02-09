@@ -3,8 +3,14 @@ package springLibrary.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springLibrary.model.response.EmployeeResponse;
+import springLibrary.model.response.IngradientResponse;
 import springLibrary.service.IngradientService;
+
+import java.util.List;
 
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -21,52 +27,18 @@ public class IngradientController {
         ingradientService.findAllResponse();
     }
 
-
-       /* @GetMapping("/booksbypublisher")
-    public ResponseEntity<List<PublisherResponse>> publishers() {
-        return new ResponseEntity<>(publisherService.findAllResponse(), HttpStatus.OK);
-
+    @GetMapping("ingradients")
+    public ResponseEntity<List<IngradientResponse>> ingradients() {
+        return new ResponseEntity<>(ingradientService.findAllResponse(), HttpStatus.OK);
     }
 
 
-    @GetMapping("publisher/{id}")
-    public ResponseEntity<?> configure(@PathVariable Long id) {
-          return publisherService.findByIdResponse(id)
-                .map(publisher -> new ResponseEntity<Object>(publisher, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<Object>("Incorrect publisher id", HttpStatus.BAD_REQUEST));
+    @GetMapping("ingradients/{id}")
+    public ResponseEntity<?> ingradientsById(@PathVariable Long id) {
+        return ingradientService.findByIdResponse(id)
+                .map(ingradient -> new ResponseEntity<Object>(ingradient, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<Object>("Incorrect ingradient id", HttpStatus.BAD_REQUEST));
     }
-
-    @PostMapping("/addpublisher/save")
-    ResponseEntity<?> save(@RequestBody PublisherRequest publisherRequest) {
-        Publisher publisher = publisherRequest.toPublisher();
-        publisherService.save(publisher);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @PostMapping("/publisher/delete")
-    public ResponseEntity<?> delete(@RequestBody PublisherRequest publisherRequest) {
-        Publisher publisher = publisherRequest.toPublisher();
-        publisherService.delete(publisher);
-        return new ResponseEntity<>(HttpStatus.OK);
-
-    }
-
-
-    @PostMapping("/publisher/findbycriteria")
-    public ResponseEntity<List<PublisherResponse>> findPublishers(@RequestBody PublisherSearchCreateria publisherSearchCreateria) {
-       LOGGER.info("publisherSearchCreateria.toString() = "+publisherSearchCreateria.toString());
-        if (publisherSearchCreateria.isFindByCity() == false)
-            return new ResponseEntity<>(publisherService.findByNameResponse(publisherSearchCreateria.getSearchWord()), HttpStatus.OK);
-        else
-            return new ResponseEntity<>(publisherService.findByCityResponse(publisherSearchCreateria.getSearchWord()), HttpStatus.OK);
-    }
-
-
-    @GetMapping("publisher/findbycharacter")
-    public List<PublisherResponse> getPublisherByCharacter(@RequestParam("character") String character) {
-        return publisherService.findByCharacterResponse(character);
-    }
-*/
 
 
 }

@@ -5,13 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
-import springLibrary.model.response.PublisherResponse;
+import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.IngradientRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.IngradientService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -23,27 +24,28 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
     private static final Logger LOGGER = LoggerFactory.getLogger(IngradientServiceImplementation.class);
 
-   /* private PublisherResponse publisherToPublisherResponse(Publisher publisher) {
-        PublisherResponse response = new PublisherResponse();
-        response.setId(publisher.getId());
-        response.setName(publisher.getName());
-        response.setCity(publisher.getCity());
+    private IngradientResponse ingradientToIngradientResponse(Ingradient ingradient) {
+        IngradientResponse response = new IngradientResponse();
+        response.setId(ingradient.getId());
+        response.setName(ingradient.getName());
+        response.setNumberOnStorage(ingradient.getNumerosity());
         return response;
     }
-*/
+
 
 
     @Override
-    public Optional<PublisherResponse> findByIdResponse(Long id) {
-        return null;
+    public Optional<IngradientResponse> findByIdResponse(Long id) {
+        return getRepository().findById(id).map(this::ingradientToIngradientResponse);
     }
 
 
     @Override
-    public List<PublisherResponse> findAllResponse() {
-        System.out.println("Ingradients getRepository().findAll().size() = "+getRepository().findAll().size());
-        getRepository().findAll().forEach(System.out::println);
-        return null;  }
+    public List<IngradientResponse> findAllResponse() {
+        return getRepository().findAll().stream()
+                .map(this::ingradientToIngradientResponse)
+                .collect(Collectors.toList());
+    }
 
 
 }

@@ -5,17 +5,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Orders;
-import springLibrary.model.response.GenreResponse;
+import springLibrary.model.response.OrderResponse;
 import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.OrderService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImplementation extends AbstractService<Orders, Long, OrderRepository> implements OrderService {
-
 
     protected OrderServiceImplementation(@Autowired OrderRepository repository) {
         super(repository);
@@ -23,39 +23,30 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImplementation.class);
 
-
-    /*private GenreResponse genreToGenreResponse(Genre genre) {
-        GenreResponse response = new GenreResponse();
-        response.setId(genre.getId());
-        response.setName(genre.getName());
+    private OrderResponse orderToOrderResponse(Orders order) {
+        OrderResponse response = new OrderResponse();
+        response.setId(order.getId());
+        response.setTableNumber(order.getTableNumber());
+        response.setOrderDate(order.getOrderDate());
+        response.setState(order.getState());
         return response;
-    }*/
-
-
-    @Override
-    public List<GenreResponse> findAllResponse() {
-        getRepository().findAll().forEach(System.out::println);
-        return null;
     }
 
 
 
     @Override
-    public Optional<GenreResponse> findByIdResponse(Long id) {
-        return null;
+    public List<OrderResponse> findAllResponse() {
+        return getRepository().findAll().stream()
+                .map(this::orderToOrderResponse)
+                .collect(Collectors.toList());
     }
 
 
-   /* public void save(Genre genre) {
-        if(genre.getId() == 0)
-            super.save(genre);
-        else {
-            if (getRepository().getOne(genre.getId()).getBooks() != null) ;
-            genre.setBooks(getRepository().getOne(genre.getId()).getBooks());
-            super.save(genre);
-        }
 
-    }*/
+    @Override
+    public Optional<OrderResponse> findByIdResponse(Long id) {
+        return getRepository().findById(id).map(this::orderToOrderResponse);
+    }
 
 
 }

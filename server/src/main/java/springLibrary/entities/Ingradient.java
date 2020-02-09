@@ -23,7 +23,7 @@ public class Ingradient extends AbstractIdentifiableEntity {
 
     @NotNull
     @Column(name = "numerosity", nullable = false)
-    private int numerosity;
+    private float numerosity;
 
 
     public String getName() {
@@ -34,11 +34,11 @@ public class Ingradient extends AbstractIdentifiableEntity {
         this.name = name;
     }
 
-    public int getNumerosity() {
+    public float getNumerosity() {
         return numerosity;
     }
 
-    public void setNumerosity(int numerosity) {
+    public void setNumerosity(float numerosity) {
         this.numerosity = numerosity;
     }
 
