@@ -3,13 +3,15 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet author="Oleksiy" id="201809052323" dbms="postgresql">
+    <changeSet author="Oleksiy" id="201809052323" dbms="POSTGRESQL">
         <sql>
-            CREATE TABLE IF NOT EXISTS genre
-            (
-            id bigint(20) NOT NULL AUTO_INCREMENT,
-            name varchar(255) NOT NULL UNIQUE,
-            CONSTRAINT PGenre_pkey PRIMARY KEY (id));
+            CREATE TABLE orders(
+            id serial PRIMARY KEY,
+            employee_id INTEGER REFERENCES employee(id) NOT NULL,
+            table_number INTEGER NOT NULL,
+            order_date VARCHAR (50) NOT NULL,
+            state VARCHAR (5) NOT NULL
+            );
          </sql>
         <comment>Creating table Genre</comment>
     </changeSet>
