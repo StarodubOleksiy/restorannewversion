@@ -1,53 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Fifth commit. Adding Service, Controller and new Responses of Ingradient and Orders.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/PublisherSearchCriteria.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/SearchCreateria.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-author/add-author.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-author/add-author.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-author/add-author.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-author/add-author.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-genre/add-genre.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-genre/add-genre.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-genre/add-genre.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-genre/add-genre.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-publisher/add-publisher.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-publisher/add-publisher.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-publisher/add-publisher.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/add-publisher/add-publisher.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/author.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/author.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/authors/authors.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/authors/authors.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/authors/authors.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/authors/authors.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/book-detail/book-detail.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/book-detail/book-detail.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/book-detail/book-detail.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/book-detail/book-detail.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/book.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/book.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/books/books.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/genre.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/genre.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/model/book.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/publisher.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/publisher.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/publishers/publishers.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/publishers/publishers.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/publishers/publishers.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/publishers/publishers.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/savebook/savebook.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/savebook/savebook.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/savebook/savebook.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/app/savebook/savebook.component.ts" afterPath="" />
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -598,7 +553,7 @@
       <workItem from="1581270649135" duration="9460000" />
       <workItem from="1581286964511" duration="534000" />
       <workItem from="1581335003766" duration="618000" />
-      <workItem from="1581337051508" duration="3165000" />
+      <workItem from="1581337051508" duration="3190000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -712,11 +667,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581287473794</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fifth commit. Adding Service, Controller and new Responses of Ingradient and Orders.">
+      <created>1581342499262</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1581342499262</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48945000" />
+    <option name="totallyTimeSpent" value="48970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />

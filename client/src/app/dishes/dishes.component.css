@@ -1,0 +1,43 @@
+.dish {
+    border: 2px solid #000000;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+  }
+  
+  .dish table{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    text-align: left;
+  }
+  
+  .input-width {
+  width: 50%;
+  }
+  
+  .findbutton-width {
+  width: 13%;
+  }
+  
+  .createriabutton-width {
+  width: 19%;
+  }
+  
+  .select-width {
+  width: 16%;
+  }
