@@ -3,6 +3,7 @@ import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import { Dish } from '../model/dish';
 import {Observable} from 'rxjs/Observable';
+import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -25,14 +26,15 @@ getDish(id: number): Observable<Dish> {
    return this.http.get<Dish>(this.dishUrl + '/diseh/' + id).map(json => {
      return Dish.copyOf(json);
    });
-    
- }
 
- 
+}
+
 getDishes(): Observable<HttpResponse<Dish[] | any>> {
-      return this.http.get<HttpResponse<Dish[] | any>>(
-        this.dishUrl+'dishes' , {observe: 'response'});
-  }
- 
+  console.log("I am in getDishes() method ");
+  console.log("dishUrl = "+this.dishUrl);
+  return this.http.get<HttpResponse<Dish[] | any>>(
+   
+    this.dishUrl+'dishes' , {observe: 'response'});
+}
 
 }

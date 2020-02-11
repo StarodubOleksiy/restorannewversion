@@ -1,54 +1,8 @@
-<div class="container-fluid">
-  <h1>Books</h1>
-  
-         
- 
- <div class="col-lg-8 shadow-lg p-3 mb-5 bg-white rounded" >
-      <mat-card>
-    <mat-grid-list cols="2" >
-        <mat-grid-tile *ngFor="let dish of dishes" class="dish" >
-                    <div class="w-90 p-3 h-90 d-inline-block mx-auto dish" >
-                         
-                           <table class="table-bordered" >
-                <thead>
-                    <tr>
-                      <th colspan="2" scope="col"><h6>
-                          <a class="list-group-item" routerLink="/books/{{book.id}}">
-                            <strong>{{dish.name}}</strong>
-                        </a>
-                      </h6></th>
-                      </tr>
-                  </thead>
-                <tbody>
-               <tr class="text-center">
-            <th rowspan="3" scope="row">
-                <div class="text-center">
-              <img src="" class="rounded img-thumbnail" style="height: 180px; width:150px;">
-            </div>
-            </th>
-                 
-            </tr>
-              <tr>
-               <th scope="col">    
-                 Рік випуску: {{dish.price}}
-                </th>
-            </tr>  
-            <tr>
-              <th scope="col">    
-                Сторінок: {{dish.weight}}
-               </th>
-           </tr> 
-                      </tbody> 
-                </table>
-               
-                     </div>
-                       </mat-grid-tile>
-      </mat-grid-list>
-        </mat-card>
- </div>
-
-</div>
- 
-
-
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let dish of dishes" class="col-1-4">
+    <div class="module">
+      <h4>{{dish.name}}</h4>
+    </div>
+  </a>
 </div>

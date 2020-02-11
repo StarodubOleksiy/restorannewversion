@@ -1,43 +1,62 @@
-.dish {
-    border: 2px solid #000000;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-right: 2px;
-    margin-left: 2px;
-    padding-top: 2px;
-    padding-right: 2px;
-    padding-bottom: 2px;
-    padding-left: 2px;
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
   }
-  
-  .dish table{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
+  [class*='col-']:last-of-type {
+    padding-right: 0;
   }
-  
   a {
     text-decoration: none;
-    text-align: left;
   }
-  
-  .input-width {
-  width: 50%;
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
-  
-  .findbutton-width {
-  width: 13%;
+  h3 {
+    text-align: center;
+    margin-bottom: 0;
   }
-  
-  .createriabutton-width {
-  width: 19%;
+  h4 {
+    position: relative;
   }
-  
-  .select-width {
-  width: 16%;
+  .grid {
+    margin: 0;
+  }
+  .col-1-4 {
+    width: 25%;
+  }
+  .module {
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+    max-height: 120px;
+    min-width: 120px;
+    background-color: #3f525c;
+    border-radius: 2px;
+  }
+  .module:hover {
+    background-color: #eee;
+    cursor: pointer;
+    color: #607d8b;
+  }
+  .grid-pad {
+    padding: 10px 0;
+  }
+  .grid-pad > [class*='col-']:last-of-type {
+    padding-right: 20px;
+  }
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
   }
