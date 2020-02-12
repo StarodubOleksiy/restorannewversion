@@ -3,6 +3,7 @@ import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import { Dish } from '../model/dish';
 import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions = {

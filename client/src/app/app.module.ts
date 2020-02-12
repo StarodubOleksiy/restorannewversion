@@ -7,18 +7,54 @@ import { DishesComponent } from './dishes/dishes.component';
 import { HerongService } from './herong.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DishService } from './services/dish.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CdkTableModule} from '@angular/cdk/table';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {
+   MatCardModule,
+   MatIconModule,
+  MatSelectModule,
+} from '@angular/material';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PaginationModule } from 'ngx-bootstrap';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AdddishComponent } from './adddish/adddish.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DishesComponent
-  ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    CdkTableModule,
+    NoopAnimationsModule,
+    MatCardModule,
+    MatInputModule,    
+    MatSnackBarModule,  
+    MatGridListModule,
+    MatSelectModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSidenavModule,
+    MatTooltipModule,
+    MatSlideToggleModule,
+    PaginationModule.forRoot()
   ],
+  declarations: [
+    AppComponent,
+    DishesComponent,
+    AdddishComponent
+  ],
+  
   providers: [HerongService,DishService],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,8 @@ export class DishesComponent implements OnInit {
 
   dishes: Dish[] = [];
 
-  constructor(private dishService: DishService) { }
+  constructor(private dishService: DishService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getDishes();
@@ -26,6 +27,11 @@ export class DishesComponent implements OnInit {
       //  this.returnedBooks = this.books.slice(0, 10);
       });
  
+  }
+
+
+  addNewDish() :void {
+    this.router.navigateByUrl('/adddish/add');
   }
 
 }
