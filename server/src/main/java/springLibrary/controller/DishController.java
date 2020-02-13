@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springLibrary.entities.Dish;
+import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.service.DishService;
 
@@ -81,24 +83,25 @@ public class DishController {
         return bookService.findByAuthorResponse(id);
     }
 
-
-    @PostMapping("books/save")
-    public ResponseEntity<?> save(@RequestBody BookRequest bookRequest) {
-        Book book = bookRequest.toBook();
-        book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
-        book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
-        bookService.saveFromRequest(book, bookRequest);
-        if(bookRequest.getId() != null) {
+*/
+    @PostMapping("dish/save")
+   public ResponseEntity<?> save(@RequestBody DishRequest dishRequest) {
+           Dish dish = dishRequest.toDish();
+           LOGGER.info("dishRequest = "+dishRequest);
+       // book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
+       // book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
+        //dishService.saveFromRequest(book, bookRequest);
+       /* if(bookRequest.getId() != null) {
             if (bookRequest.getAuthorsId().length > 0)
                 for (int i = 0; i < bookRequest.getAuthorsId().length; ++i)
                     bookService.insertRelationshipBetweenBookAndAuthor((long) bookRequest.getAuthorsId()[i], bookRequest.getId());
-        }
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
+        }*/
+       return new ResponseEntity<>(HttpStatus.OK);
+   }
+/*
 
     @PostMapping("/book/delete")
-    public ResponseEntity<?> delete(@RequestBody BookRequest bookRequest) {
+    public ResponseEntity<?> delete(@RequestBody DishRequest dishRequest) {
         bookService.deleteBook(bookRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }*/

@@ -38,4 +38,9 @@ getDishes(): Observable<HttpResponse<Dish[] | any>> {
     this.dishUrl+'dishes' , {observe: 'response'});
 }
 
+saveDish(dish: Dish): Observable<HttpResponse<any>> {
+  return this.http.post<HttpResponse<any>>(
+      this.dishUrl + '/dish/save', dish, {observe: 'response'});
+  }
+
 }

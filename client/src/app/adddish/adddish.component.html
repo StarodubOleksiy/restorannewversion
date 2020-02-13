@@ -4,19 +4,13 @@
 <div class="container-fluid">
   <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
           <mat-card-header>
-          <div *ngIf="configureType.text === 'edit'">
-              <legend>Edit book</legend>
-          </div>
-          <div *ngIf="configureType.text === 'add'">
-              <legend>Add new book</legend>
+                <div>
+              <legend>Add new dish</legend>
           </div>
       </mat-card-header>
           <mat-card-content>
   <form class="example-form" [formGroup]="bookConfigureForm" (ngSubmit)="saveBook()">
-      <input hidden [(ngModel)]="book.image" type="file" [formControl]="imageFormControl" accept="image/jpeg" #imgFileInput
-                               (change)="onFileChange($event)"/>
-
-    
+         
 
       <mat-form-field class="example-full-width">
           <input matInput [(ngModel)]="dish.name" placeholder="name"
