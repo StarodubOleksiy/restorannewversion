@@ -7,6 +7,7 @@ import { DishesComponent } from './dishes/dishes.component';
 import { HerongService } from './herong.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DishService } from './services/dish.service';
+import { MenuService } from './services/menu.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -51,11 +52,11 @@ import { AdddishComponent } from './adddish/adddish.component';
   ],
   declarations: [
     AppComponent,
-    DishesComponent,
+    DishesComponent,    
     AdddishComponent
   ],
   
-  providers: [HerongService,DishService],
+  providers: [MenuService,DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

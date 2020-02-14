@@ -33,7 +33,7 @@ public class MenuController {
         menuService.findAllResponse();
     }
 
-    @GetMapping("menu")
+    @GetMapping("/menu")
     public ResponseEntity<List<MenuResponse>> menu() {
         return new ResponseEntity<>(menuService.findAllResponse(), HttpStatus.OK);
     }

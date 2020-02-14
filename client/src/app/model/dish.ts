@@ -4,6 +4,7 @@ export class Dish {
    // image: string;
     price:number;
     weight: number;
+    menuId: number;
     ingradientsId: number[]; 
 
 

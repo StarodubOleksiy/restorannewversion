@@ -16,6 +16,7 @@ public class DishResponse {
     private String name;
     private float price;
     private float weight;
+    private int menuId;
     private Integer[] ingradientsId;
 
     public Long getId() {
@@ -50,6 +51,14 @@ public class DishResponse {
         this.name = name;
     }
 
+    public int getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(int menuId) {
+        this.menuId = menuId;
+    }
+
     public static DishResponse of(Dish dish) {
         DishResponse response = new DishResponse();
         response.setId(dish.getId());
@@ -59,6 +68,7 @@ public class DishResponse {
         }*/
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
+        response.setMenuId(dish.getMenu().getId().intValue());// dish.setMenu(menuService.findById(Long.valueOf(1)).orElse(null));
          return response;
     }
 

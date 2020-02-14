@@ -42,7 +42,7 @@ public class App implements CommandLineRunner {
     public void run(String[] args) throws IOException {
         System.out.println("method run=");
         orderController.printOrders();
-        dishController.printDishes();
+      //  dishController.printDishes();
         ingradientController.printIngradients();
         menuController.printOrders();
         employeeController.printEmployees();

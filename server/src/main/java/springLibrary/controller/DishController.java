@@ -11,6 +11,7 @@ import springLibrary.entities.Dish;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.service.DishService;
+import springLibrary.service.MenuService;
 
 import java.util.List;
 
@@ -22,12 +23,15 @@ public class DishController {
     @Autowired
     private DishService dishService;
 
+    @Autowired
+    private MenuService menuService;
+
     private static final Logger LOGGER = LoggerFactory.getLogger(DishController.class);
 
-    public void printDishes()
+    /*public void printDishes()
     {
         dishService.findAllResponse();
-    }
+    }*/
 
     @GetMapping("dishes")
     public ResponseEntity<List<DishResponse>> dishes() {
@@ -87,10 +91,12 @@ public class DishController {
     @PostMapping("dish/save")
    public ResponseEntity<?> save(@RequestBody DishRequest dishRequest) {
            Dish dish = dishRequest.toDish();
-           LOGGER.info("dishRequest = "+dishRequest);
+           dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
+           LOGGER.info("dish = "+dish);
+           //dish.setMenu(menuService.findById(Long.valueOf(1)).orElse(null));
        // book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
        // book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
-        //dishService.saveFromRequest(book, bookRequest);
+        dishService.saveFromRequest(dish, dishRequest);
        /* if(bookRequest.getId() != null) {
             if (bookRequest.getAuthorsId().length > 0)
                 for (int i = 0; i < bookRequest.getAuthorsId().length; ++i)

@@ -5,11 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import javax.transaction.Transactional;
 import springLibrary.entities.Dish;
+import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.repository.DishRepository;
 import springLibrary.service.*;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -43,6 +46,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
         response.setIngradientsId(dish.getIngradients());
+        response.setMenuId(dish.getMenu().getId().intValue());
         return response;
     }
 
@@ -52,6 +56,24 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
          return getRepository().findAll().stream()
                 .map(this::dishToDishResponse)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public void saveFromRequest(Dish dish, DishRequest dishRequest) {
+       /* if (bookRequest.getImage() != null) {
+            book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
+        }
+        Integer values[] = bookRequest.getAuthorsId();
+        if (book.getId() == null) {
+            for (int i = 0; i < values.length; ++i) {
+                book.addAuthor(authorService.findById((long) values[i]).orElse(null));
+                getRepository().save(book);
+            }
+        } else {
+            this.deleteRelationshipBetweenBooksAndAuthor(book.getId());*/
+            getRepository().save(dish);
+       // }
     }
 
 

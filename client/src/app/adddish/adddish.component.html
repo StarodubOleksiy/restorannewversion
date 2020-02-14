@@ -33,6 +33,16 @@
           formControlName="weight"
           required>
         </mat-form-field>
+
+        <mat-form-field>
+          <mat-select [(value)]="dish.menuId" [(ngModel)]="dish.menuId" placeholder="select menu"
+          formControlName="menus">
+            <mat-option *ngFor="let menu of menus" [value]="menu.id">
+                           {{ menu.name }}
+            </mat-option>
+            </mat-select>
+            
+            </mat-form-field>
                 
               
       <button class="submit-button" mat-raised-button type="submit"

@@ -1,6 +1,7 @@
 package springLibrary.service;
 
 import springLibrary.entities.Dish;
+import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.repository.DishRepository;
 
@@ -17,6 +18,8 @@ public interface DishService extends Service<Dish, Long, DishRepository> {
    public List<DishResponse> findAllResponse();
 
    public Optional<DishResponse> findByIdResponse(Long id);
+
+   public void saveFromRequest(Dish dish, DishRequest dishRequest);
 
 
 }
