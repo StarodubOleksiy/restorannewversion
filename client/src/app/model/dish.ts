@@ -1,7 +1,7 @@
 export class Dish {
     id: number;
     name: string;
-   // image: string;
+    image: string;
     price:number;
     weight: number;
     menuId: number;

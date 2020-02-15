@@ -16,7 +16,7 @@ public class DishRequest {
     private static final Logger LOGGER = LoggerFactory.getLogger(DishRequest.class);
     private Long id;
     private String name;
-    //private String image;
+    private String image;
     private Float price;
     private Float weight;
     private int menuId;
@@ -37,6 +37,14 @@ public class DishRequest {
 
     public void setMenuId(int menuId) {
         this.menuId = menuId;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Dish toDish() {

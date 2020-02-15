@@ -40,7 +40,7 @@ public class Dish extends AbstractIdentifiableEntity {
     private Menu menu;
 
     @Column(name = "image")
-    private String image;
+    private byte[] image;
 
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -52,12 +52,12 @@ public class Dish extends AbstractIdentifiableEntity {
     private List<Ingradient> ingradients;
 
 
-    public void setImage(String image) {
-        this.image = image;
+    public byte[] getImage() {
+        return image;
     }
 
-    public String getImage() {
-        return image;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public String getName() {

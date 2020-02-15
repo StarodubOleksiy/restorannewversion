@@ -25,9 +25,17 @@ export class MenuService {
 }
 
 
+
 getAllMenu(): Observable<Menu[]> {
   return this.http.get<Menu[]>(this.menuUrl + '/menu');
 }
+
+getAnyMenu(): Observable<HttpResponse<Menu[] | any>> {
+  return this.http.get<HttpResponse<Menu[] | any>>(
+    this.menuUrl+'/menu' , {observe: 'response'});
+}
+
+
 
 saveMenu(menu: Menu): Observable<HttpResponse<any>> {
   return this.http.post<HttpResponse<any>>(

@@ -8,6 +8,7 @@ import springLibrary.entities.Ingradient;
 import javax.persistence.Column;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.util.Base64;
 import java.util.List;
 
 @Data
@@ -17,6 +18,7 @@ public class DishResponse {
     private float price;
     private float weight;
     private int menuId;
+    private String image;
     private Integer[] ingradientsId;
 
     public Long getId() {
@@ -59,24 +61,32 @@ public class DishResponse {
         this.menuId = menuId;
     }
 
+    public void setImage(byte[] image) {
+        this.image = Base64.getEncoder().encodeToString(image);
+    }
+
+    public String getImage() {
+        return image;
+    }
+
     public static DishResponse of(Dish dish) {
         DishResponse response = new DishResponse();
         response.setId(dish.getId());
         response.setName(dish.getName());
-       /* if (book.getImage() != null) {
-            response.setImage(book.getImage());
-        }*/
+        if (dish.getImage() != null) {
+            response.setImage(dish.getImage());
+        }
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
-        response.setMenuId(dish.getMenu().getId().intValue());// dish.setMenu(menuService.findById(Long.valueOf(1)).orElse(null));
-         return response;
+        response.setMenuId(dish.getMenu().getId().intValue());
+        return response;
     }
 
     public void setIngradientsId(List<Ingradient> ingradients) {
         this.ingradientsId = new Integer[ingradients.size()];
         int index = 0;
-       for(int i = 0; i < ingradients.size(); ++i)
-           ingradientsId[index++] = (int) ingradients.get(i).getId().longValue();
+        for (int i = 0; i < ingradients.size(); ++i)
+            ingradientsId[index++] = (int) ingradients.get(i).getId().longValue();
        /* for (Iterator<Author> it = authors.iterator(); it.hasNext(); ) {
             Author author = it.next();
             authorsId[index++] = (int) author.getId().longValue();

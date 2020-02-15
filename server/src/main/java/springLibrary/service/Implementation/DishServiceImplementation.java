@@ -5,7 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
+
 import springLibrary.entities.Dish;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
@@ -40,9 +42,9 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
         DishResponse response = new DishResponse();
         response.setId(dish.getId());
         response.setName(dish.getName());
-       /* if (book.getImage() != null) {
-            response.setImage(book.getImage());
-        }*/
+        if (dish.getImage() != null) {
+            response.setImage(dish.getImage());
+        }
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
         response.setIngradientsId(dish.getIngradients());
@@ -53,7 +55,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
 
     @Override
     public List<DishResponse> findAllResponse() {
-         return getRepository().findAll().stream()
+        return getRepository().findAll().stream()
                 .map(this::dishToDishResponse)
                 .collect(Collectors.toList());
     }
@@ -61,10 +63,10 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Override
     @Transactional
     public void saveFromRequest(Dish dish, DishRequest dishRequest) {
-       /* if (bookRequest.getImage() != null) {
-            book.setImage(Base64.getDecoder().decode(bookRequest.getImage()));
-        }
-        Integer values[] = bookRequest.getAuthorsId();
+       if (dishRequest.getImage() != null) //{
+           dish.setImage(Base64.getDecoder().decode(dishRequest.getImage()));
+        //}
+       /* Integer values[] = bookRequest.getAuthorsId();
         if (book.getId() == null) {
             for (int i = 0; i < values.length; ++i) {
                 book.addAuthor(authorService.findById((long) values[i]).orElse(null));
@@ -72,8 +74,8 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
             }
         } else {
             this.deleteRelationshipBetweenBooksAndAuthor(book.getId());*/
-            getRepository().save(dish);
-       // }
+        getRepository().save(dish);
+        // }
     }
 
 

@@ -10,9 +10,20 @@
       </mat-card-header>
           <mat-card-content>
   <form class="example-form" [formGroup]="bookConfigureForm" (ngSubmit)="saveBook()">
-         
+    <span *ngIf="dish.image">
+      <img src="data:image/JPEG;base64,{{dish.image}}" style="height: 50px; width:50px;"
+          >
+  </span>
 
-      <mat-form-field class="example-full-width">
+  <button mat-raised-button type="button" color="primary" (click)="imgFileInput.click()"
+                            style="padding: 5px;">Choose cover of book
+                    </button>
+<input hidden [(ngModel)]="dish.image" type="file" [formControl]="imageFormControl" accept="image/jpeg" #imgFileInput
+                           (change)="onFileChange($event)"/> 
+
+      
+    
+    <mat-form-field class="example-full-width">
           <input matInput [(ngModel)]="dish.name" placeholder="name"
           type="text"
           formControlName="name"
