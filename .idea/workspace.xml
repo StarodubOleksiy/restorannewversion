@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Tenth commit. Add image to dish and show it on menu pages.">
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" afterPath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.ts" afterPath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.css" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.ts" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/model/dish.ts" afterPath="$PROJECT_DIR$/client/src/app/model/dish.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/menu.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/menu.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/DishRequest.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/DishRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishResponse.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -609,7 +598,7 @@
       <workItem from="1581607328428" duration="2119000" />
       <workItem from="1581706585453" duration="3508000" />
       <workItem from="1581710946926" duration="7522000" />
-      <workItem from="1581800930352" duration="2455000" />
+      <workItem from="1581800930352" duration="2500000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -800,11 +789,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581720816006</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Tenth commit. Add image to dish and show it on menu pages.">
+      <created>1581809044508</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1581809044508</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70909000" />
+    <option name="totallyTimeSpent" value="70954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
