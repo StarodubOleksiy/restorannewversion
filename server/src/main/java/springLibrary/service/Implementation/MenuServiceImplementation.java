@@ -48,5 +48,19 @@ public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuR
     }
 
 
+
+    @Override
+    public void save(Menu menu) {
+        //if(menu.getId() == 0)
+            super.save(menu);
+       /* else {
+            if (getRepository().getOne(menu.getId()).getBooks() != null) ;
+            menu.setBooks(getRepository().getOne(menu.getId()).getBooks());
+            super.save(menu);
+        }*/
+
+    }
+
+
 }
 

@@ -5,10 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import springLibrary.entities.Menu;
+import springLibrary.model.request.MenuRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.MenuResponse;
 import springLibrary.service.MenuService;
@@ -44,6 +43,14 @@ public class MenuController {
         return menuService.findByIdResponse(id)
                 .map(menu -> new ResponseEntity<Object>(menu, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
+    }
+
+    @PostMapping("/addmenu/save")
+    ResponseEntity<?> save(@RequestBody MenuRequest menuRequest) {
+        Menu menu = menuRequest.toMenu();
+        LOGGER.info("menu = "+menu);
+        menuService.save(menu);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

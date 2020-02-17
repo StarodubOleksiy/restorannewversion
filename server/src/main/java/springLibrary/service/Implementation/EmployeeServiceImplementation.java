@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import springLibrary.entities.Cook;
 import springLibrary.entities.Employee;
 import springLibrary.enums.Position;
 import springLibrary.model.response.EmployeeResponse;
@@ -34,6 +35,14 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
 
 
     private EmployeeResponse employeeToEmployeeResponse(Employee employee) {
+        LOGGER.info("employee.getClass().getCanonicalName() = " + employee.getClass().getCanonicalName());
+        LOGGER.info("employee.getClass().getName() = " + employee.getClass().getName());
+        LOGGER.info("employee.getClass().getName().getSimpleName() = " + employee.getClass().getSimpleName());
+        LOGGER.info("employee.getClass().getName().getTypeName() = " + employee.getClass().getTypeName());
+        if (employee instanceof Cook)
+            LOGGER.info("instance of cook");
+        else
+            LOGGER.info("instance of waiter");
         EmployeeResponse response = new EmployeeResponse();
         response.setId(employee.getId());
         response.setName(employee.getName());
@@ -49,6 +58,7 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
 
     @Override
     public List<EmployeeResponse> findAllResponse() {
+        LOGGER.info("");
         return getRepository().findAll().stream()
                 .map(this::employeeToEmployeeResponse)
                 .collect(Collectors.toList());

@@ -13,4 +13,6 @@ public interface MenuService extends Service<Menu, Long, MenuRepository> {
     public List<MenuResponse> findAllResponse();
 
     public Optional<MenuResponse> findByIdResponse(Long id);
+
+    public void save(Menu menu);
 }

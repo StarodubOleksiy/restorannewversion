@@ -39,7 +39,7 @@ getAnyMenu(): Observable<HttpResponse<Menu[] | any>> {
 
 saveMenu(menu: Menu): Observable<HttpResponse<any>> {
   return this.http.post<HttpResponse<any>>(
-      this.menuUrl + '/menu/save', menu, {observe: 'response'});
+      this.menuUrl + '/addmenu/save', menu, {observe: 'response'});
   }
 
 }

@@ -1,0 +1,31 @@
+<p>
+  employees works!
+</p>
+
+<table class="table table-hover">
+  <thead>
+  <tr class="text-center">
+      <th scope="col">Прізвище імя і побатькові автора або ініціали</th>
+      <th scope="col">Редагувати автора</th>
+      <th scope="col">Видалити автора</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employee of employees" class="text-center">
+        <th scope="row">
+{{employee.name}}
+</th>
+<th scope="row">
+<button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
+  Редагувати автора
+</button> 
+</th>
+<th scope="row">
+
+<button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
+  Видалити автора
+</button> 
+</th>
+</tr>
+</tbody>
+</table>

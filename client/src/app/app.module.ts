@@ -8,6 +8,7 @@ import { HerongService } from './herong.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DishService } from './services/dish.service';
 import { MenuService } from './services/menu.service';
+import { EmployeeService } from './services/employee.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -26,6 +27,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { PaginationModule } from 'ngx-bootstrap';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AdddishComponent } from './adddish/adddish.component';
+import { AddmenuComponent } from './addmenu/addmenu.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({
@@ -53,10 +56,10 @@ import { AdddishComponent } from './adddish/adddish.component';
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent
   ],
   
-  providers: [MenuService,DishService],
+  providers: [MenuService,DishService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

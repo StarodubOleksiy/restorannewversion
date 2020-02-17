@@ -109,13 +109,16 @@ onFileChange(event) {
       };
   }
 
-  /*
-  this.urlname = this.response.responseList[0].FileName;//here i got the filename which i was looking for
-      this.urlName = this.urlname.split(".", 1);//here i am splitting the filename
-      this.fileName = this.urlName[0];//and the
-  */
-}/*
-const reader = new FileReader();
+}
+
+addNewMenu(): void {
+  console.log(this.router);
+//if (this.route.snapshot.paramMap.get('configureType') === 'add')    
+this.router.navigateByUrl('/addmenu/add');
+//else
+//this.router.navigateByUrl('/addgenre/'+this.book.id+'/add');
+}
+/*const reader = new FileReader();
     reader.readAsDataURL(data.blob);
     let base64Audio ;
     reader.onloadend = function() {
