@@ -43,4 +43,8 @@ export class EmployeesComponent implements OnInit {
        
   }
 
+  addNewEmployee() :void {
+    this.router.navigateByUrl('/addemployee/add');
+  }
+
 }

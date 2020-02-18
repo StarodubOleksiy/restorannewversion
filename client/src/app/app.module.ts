@@ -29,6 +29,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AdddishComponent } from './adddish/adddish.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { AddemployeeComponent } from './addemployee/addemployee.component';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import { EmployeesComponent } from './employees/employees.component';
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent
   ],
   
   providers: [MenuService,DishService,EmployeeService],
