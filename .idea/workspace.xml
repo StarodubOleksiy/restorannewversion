@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/springLibrary/model/request/GenreRequest.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/employees/employees.component.html" afterPath="$PROJECT_DIR$/client/src/app/employees/employees.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/employees/employees.component.ts" afterPath="$PROJECT_DIR$/client/src/app/employees/employees.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -586,7 +581,7 @@
       <workItem from="1581706585453" duration="3508000" />
       <workItem from="1581710946926" duration="7522000" />
       <workItem from="1581800930352" duration="3227000" />
-      <workItem from="1581973333197" duration="7012000" />
+      <workItem from="1581973333197" duration="7062000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -812,11 +807,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581983779894</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Eleven commit. Add employees component and now program can add menu.">
+      <created>1581984904245</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1581984904245</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78693000" />
+    <option name="totallyTimeSpent" value="78743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
