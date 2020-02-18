@@ -22,9 +22,9 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
-  saveEmployee(book: Employee): Observable<HttpResponse<any>> {
+  saveEmployee(employee: Employee): Observable<HttpResponse<any>> {
     return this.http.post<HttpResponse<any>>(
-        this.employeeUrl + '/employees/save', book, {observe: 'response'});
+        this.employeeUrl + '/employees/save', employee, {observe: 'response'});
     }
 
     getEmployees(): Observable<HttpResponse<Employee[] | any>> {

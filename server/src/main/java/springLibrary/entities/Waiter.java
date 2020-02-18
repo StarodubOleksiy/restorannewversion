@@ -1,8 +1,6 @@
 package springLibrary.entities;
 
 
-import springLibrary.enums.Position;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -12,10 +10,10 @@ import java.util.Set;
 @Entity
 public class Waiter extends Employee {
 
-    public Waiter() {
+   /* public Waiter() {
         this.setPosition(Position.WAITER);
     }
-
+*/
 
     @OneToMany(mappedBy = "waiter", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Orders> orders;

@@ -1,13 +1,7 @@
 package springLibrary.model.response;
 
-import springLibrary.entities.Dish;
 import springLibrary.entities.Employee;
-import springLibrary.enums.Position;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.validation.constraints.NotNull;
 
 public class EmployeeResponse {
 
@@ -75,7 +69,6 @@ public class EmployeeResponse {
         }*/
         response.setSurname(employee.getSurname());
         response.setPhoneNumber(employee.getPhoneNumber());
-        response.setPosition(Position.enumToString(employee.getPosition()));
         response.setSalary(employee.getSalary());
         return response;
     }

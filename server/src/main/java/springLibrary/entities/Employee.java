@@ -3,7 +3,6 @@ package springLibrary.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import springLibrary.enums.Position;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -32,17 +31,11 @@ public class Employee extends AbstractIdentifiableEntity {
     private String phoneNumber;
 
     @NotNull
-    @Column(name = "position", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Position position;
-
-    @NotNull
     @Column(name = "salary", nullable = false)
     private Float salary;
 
     @Column(name = "photography")
     private String photography;
-
 
     public String getName() {
         return name;
@@ -56,20 +49,12 @@ public class Employee extends AbstractIdentifiableEntity {
         return phoneNumber;
     }
 
-    public Position getPosition() {
-        return position;
-    }
-
     public Float getSalary() {
         return salary;
     }
 
     public void setSalary(Float salary) {
         this.salary = salary;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -104,7 +89,7 @@ public class Employee extends AbstractIdentifiableEntity {
         if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
         if (phoneNumber != null ? !phoneNumber.equals(employee.phoneNumber) : employee.phoneNumber != null)
             return false;
-        if (position != employee.position) return false;
+      //  if (position != employee.position) return false;
         if (salary != null ? !salary.equals(employee.salary) : employee.salary != null) return false;
         if (surname != null ? !surname.equals(employee.surname) : employee.surname != null) return false;
 
@@ -116,7 +101,7 @@ public class Employee extends AbstractIdentifiableEntity {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
-        result = 31 * result + (position != null ? position.hashCode() : 0);
+       // result = 31 * result + (position != null ? position.hashCode() : 0);
         result = 31 * result + (salary != null ? salary.hashCode() : 0);
         return result;
     }
@@ -128,7 +113,7 @@ public class Employee extends AbstractIdentifiableEntity {
                 ", surname='" + surname + '\'' +
                 ", phone_number=" + phoneNumber +
                 ", salary=" + salary +
-                ", position='" + position + '\'' +
+        //        ", position='" + position + '\'' +
                 '}';
     }
 

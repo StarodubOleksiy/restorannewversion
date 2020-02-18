@@ -41,11 +41,11 @@ public class App implements CommandLineRunner {
     @Override
     public void run(String[] args) throws IOException {
         System.out.println("method run=");
-        orderController.printOrders();
+//        orderController.printOrders();
       //  dishController.printDishes();
         ingradientController.printIngradients();
         menuController.printOrders();
-        employeeController.printEmployees();
+       // employeeController.printEmployees();
     }
 
     public static void main(String[] args) throws IOException {

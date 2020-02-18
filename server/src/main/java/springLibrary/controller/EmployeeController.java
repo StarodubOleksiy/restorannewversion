@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springLibrary.entities.Employee;
+import springLibrary.model.request.EmployeeRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.EmployeeResponse;
 import springLibrary.service.EmployeeService;
@@ -17,30 +19,36 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-  @Autowired
+    @Autowired
     private EmployeeService employeeService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeController.class);
 
-    public void printEmployees()
-    {
+    public void printEmployees() {
         employeeService.findAllResponse();
     }
 
-  @GetMapping("employees")
-  public ResponseEntity<List<EmployeeResponse>> employees() {
-    return new ResponseEntity<>(employeeService.findAllResponse(), HttpStatus.OK);
-  }
+    @GetMapping("employees")
+    public ResponseEntity<List<EmployeeResponse>> employees() {
+        return new ResponseEntity<>(employeeService.findAllResponse(), HttpStatus.OK);
+    }
 
 
-  @GetMapping("employees/{id}")
-  public ResponseEntity<?> configure(@PathVariable Long id) {
-    return employeeService.findByIdResponse(id)
-            .map(employee -> new ResponseEntity<Object>(employee, HttpStatus.OK))
-            .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
-  }
+    @GetMapping("employees/{id}")
+    public ResponseEntity<?> configure(@PathVariable Long id) {
+        return employeeService.findByIdResponse(id)
+                .map(employee -> new ResponseEntity<Object>(employee, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
+    }
 
-
+    @PostMapping("employees/save")
+    public ResponseEntity<?> save(@RequestBody EmployeeRequest employeeRequest) {
+        Employee employee = employeeRequest.toEmployee();
+        LOGGER.info("employeeRequest = "+employeeRequest);
+     //   LOGGER.info("employee = "+employee);
+        employeeService.save(employee);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 
 }

@@ -1,3 +1,73 @@
 <p>
   addemployee works!
 </p>
+<div class="container-fluid">
+  <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+          <mat-card-header>
+                <div>
+              <legend>Add new employee</legend>
+          </div>
+      </mat-card-header>
+          <mat-card-content>
+  <form class="example-form" [formGroup]="employeeConfigureForm" (ngSubmit)="saveEmployee()">
+
+
+  <button mat-raised-button type="button" color="primary" (click)="imgFileInput.click()"
+                            style="padding: 5px;">Choose cover of book
+                    </button>
+      
+    
+         <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="employee.name" placeholder="name"
+          type="text"
+          formControlName="name"
+          required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="employee.surname" placeholder="surname"
+          type="text"
+          formControlName="surname"
+          required>
+        </mat-form-field>
+
+       
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="employee.phoneNumber" placeholder="telephone"
+          type="text"
+          formControlName="telephone"
+          required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="employee.salary" placeholder="salary"
+          type="number"
+          formControlName="salary"
+          required>
+        </mat-form-field>
+        <table >
+          <tr>
+                  <th scope="col"> 
+                    <mat-form-field>
+                      <mat-select [(value)]="employee.position" [(ngModel)]="employee.position" placeholder="position"  formControlName="position"
+                      required>
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let kind of position" [value]="kind.name">
+                          {{kind.name}}
+                        </mat-option>
+                      </mat-select>
+                     
+                      </mat-form-field>
+          </th>
+      
+    </tr>
+  </table >        
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!employeeConfigureForm.valid">
+        Click me!
+        
+      </button>
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </div>

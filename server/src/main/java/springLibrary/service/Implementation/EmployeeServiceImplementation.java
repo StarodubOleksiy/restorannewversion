@@ -7,12 +7,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Cook;
 import springLibrary.entities.Employee;
-import springLibrary.enums.Position;
 import springLibrary.model.response.EmployeeResponse;
 import springLibrary.repository.EmployeeRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.EmployeeService;
 
+import javax.transaction.Transactional;
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -27,9 +28,6 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceImplementation.class);
 
-    /*@Autowired
-    DishService bookService;
-*/
     @Autowired
     JdbcTemplate jdbcTemplate;
 
@@ -51,7 +49,10 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
         }*/
         response.setSurname(employee.getSurname());
         response.setPhoneNumber(employee.getPhoneNumber());
-        response.setPosition(Position.enumToString(employee.getPosition()));
+        if (employee.getClass().getSimpleName().equals("Cook"))
+            response.setPosition("COOK");
+        else
+            response.setPosition("WAITER");
         response.setSalary(employee.getSalary());
         return response;
     }
@@ -68,6 +69,12 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
     @Override
     public Optional<EmployeeResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::employeeToEmployeeResponse);
+    }
+
+    @Override
+    @Transactional
+    public void save(Employee employee) {
+        getRepository().save(employee);
     }
 
 }

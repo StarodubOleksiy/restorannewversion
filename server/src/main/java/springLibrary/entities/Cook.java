@@ -1,7 +1,5 @@
 package springLibrary.entities;
 
-import springLibrary.enums.Position;
-
 import javax.persistence.Entity;
 
 /**
@@ -10,11 +8,11 @@ import javax.persistence.Entity;
 @Entity
 public class Cook extends Employee {
 
-    public Cook()
+   /* public Cook()
     {
         this.setPosition(Position.COOK);
     }
-
+*/
 
 
     /*@OneToMany(mappedBy = "cook", fetch = FetchType.EAGER)

@@ -5,9 +5,11 @@
 <table class="table table-hover">
   <thead>
   <tr class="text-center">
-      <th scope="col">Прізвище імя і побатькові автора або ініціали</th>
-      <th scope="col">Редагувати автора</th>
-      <th scope="col">Видалити автора</th>
+      <th scope="col">Імя</th>
+      <th scope="col">Прізвище</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Позиція</th>
+      <th scope="col">Зарплата</th>
   </tr>
 </thead>
 <tbody>
@@ -15,6 +17,18 @@
         <th scope="row">
 {{employee.name}}
 </th>
+<th scope="row">
+  {{employee.surname}}
+  </th>
+  <th scope="row">
+    {{employee.phoneNumber}}
+    </th>
+    <th scope="row">
+      {{employee.position}}
+      </th>
+      <th scope="row">
+        {{employee.salary}}
+        </th>
 <th scope="row">
 <button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
   Редагувати автора
