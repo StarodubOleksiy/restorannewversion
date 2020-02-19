@@ -35,7 +35,7 @@ public class Employee extends AbstractIdentifiableEntity {
     private Float salary;
 
     @Column(name = "photography")
-    private String photography;
+    private byte[] photography;
 
     public String getName() {
         return name;
@@ -69,15 +69,13 @@ public class Employee extends AbstractIdentifiableEntity {
         this.name = name;
     }
 
-
-    public void setPhotography(String photography) {
-        this.photography = photography;
-    }
-
-    public String getPhotography() {
+    public byte[] getPhotography() {
         return photography;
     }
 
+    public void setPhotography(byte[] photography) {
+        this.photography = photography;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -89,7 +87,6 @@ public class Employee extends AbstractIdentifiableEntity {
         if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
         if (phoneNumber != null ? !phoneNumber.equals(employee.phoneNumber) : employee.phoneNumber != null)
             return false;
-      //  if (position != employee.position) return false;
         if (salary != null ? !salary.equals(employee.salary) : employee.salary != null) return false;
         if (surname != null ? !surname.equals(employee.surname) : employee.surname != null) return false;
 
@@ -101,7 +98,6 @@ public class Employee extends AbstractIdentifiableEntity {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
-       // result = 31 * result + (position != null ? position.hashCode() : 0);
         result = 31 * result + (salary != null ? salary.hashCode() : 0);
         return result;
     }

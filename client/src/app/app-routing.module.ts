@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { DishesComponent } from './dishes/dishes.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AdddishComponent } from './adddish/adddish.component';
+import { PersonnelComponent } from './personnel/personnel.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
   { path: 'employees', component: EmployeesComponent },
+  { path: 'personnel', component: PersonnelComponent },
   { path: 'addemployee', component: AddemployeeComponent },
   { path: 'adddish', children: [
     {

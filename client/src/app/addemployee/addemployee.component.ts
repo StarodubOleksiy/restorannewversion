@@ -71,6 +71,19 @@ export class AddemployeeComponent implements OnInit {
 
 };
 
+onFileChange(event) {
+  let reader = new FileReader();
+  if (event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+      //  let tempString = 
+          this.employee.photography = reader.result.toString().split(',')[1];
+      };
+  }
+
+}
+
 
 }
 

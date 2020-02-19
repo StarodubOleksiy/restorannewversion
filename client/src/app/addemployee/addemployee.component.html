@@ -12,9 +12,15 @@
   <form class="example-form" [formGroup]="employeeConfigureForm" (ngSubmit)="saveEmployee()">
 
 
+    <span *ngIf="employee.photography">
+      <img src="data:image/JPEG;base64,{{employee.photography}}" style="height: 50px; width:50px;">
+  </span>
+
   <button mat-raised-button type="button" color="primary" (click)="imgFileInput.click()"
                             style="padding: 5px;">Choose cover of book
                     </button>
+<input hidden [(ngModel)]="employee.photography" type="file" [formControl]="imageFormControl" accept="image/jpeg" #imgFileInput
+                           (change)="onFileChange($event)"/> 
       
     
          <mat-form-field class="example-full-width">

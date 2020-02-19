@@ -33,6 +33,11 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.findAllResponse(), HttpStatus.OK);
     }
 
+    @GetMapping("waiters")
+    public ResponseEntity<List<EmployeeResponse>> waiters() {
+        return new ResponseEntity<>(employeeService.getAllWaiters(), HttpStatus.OK);
+    }
+
 
     @GetMapping("employees/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
@@ -44,9 +49,9 @@ public class EmployeeController {
     @PostMapping("employees/save")
     public ResponseEntity<?> save(@RequestBody EmployeeRequest employeeRequest) {
         Employee employee = employeeRequest.toEmployee();
-        LOGGER.info("employeeRequest = "+employeeRequest);
-     //   LOGGER.info("employee = "+employee);
-        employeeService.save(employee);
+        LOGGER.info("employeeRequest = " + employeeRequest);
+        //   LOGGER.info("employee = "+employee);
+        employeeService.saveFromRequest(employee, employeeRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

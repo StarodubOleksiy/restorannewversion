@@ -2,6 +2,8 @@ package springLibrary.model.response;
 
 import springLibrary.entities.Employee;
 
+import java.util.Base64;
+
 
 public class EmployeeResponse {
 
@@ -11,6 +13,7 @@ public class EmployeeResponse {
     private String phoneNumber;
     private String position;
     private Float salary;
+    private String photography;
 
     public Long getId() {
         return id;
@@ -60,13 +63,22 @@ public class EmployeeResponse {
         this.salary = salary;
     }
 
+    public String getPhotography() {
+        return photography;
+    }
+
+    public void setPhotography(byte[] photography) {
+
+        this.photography = Base64.getEncoder().encodeToString(photography);
+    }
+
     public static EmployeeResponse of(Employee employee) {
         EmployeeResponse response = new EmployeeResponse();
         response.setId(employee.getId());
         response.setName(employee.getName());
-       /* if (book.getImage() != null) {
-            response.setImage(book.getImage());
-        }*/
+        if (employee.getPhotography() != null) {
+            response.setPhotography(employee.getPhotography());
+        }
         response.setSurname(employee.getSurname());
         response.setPhoneNumber(employee.getPhoneNumber());
         response.setSalary(employee.getSalary());

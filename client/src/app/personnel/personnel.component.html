@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row" *ngFor="let waiter of waiters">
+    <div class="list-group-item col">
+      {{waiter.name}}
+    </div>
+    <div class="list-group-item col">
+      <img src="data:image/JPEG;base64,{{waiter.photography}}" class="rounded img-thumbnail" style="height: 180px; width:150px;">
+    </div>
+  </div>
+</div>

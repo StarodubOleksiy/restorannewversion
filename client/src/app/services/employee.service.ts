@@ -32,4 +32,10 @@ export class EmployeeService {
         this.employeeUrl+'employees' , {observe: 'response'});
   }
 
+  
+  getWaiters(): Observable<HttpResponse<Employee[] | any>> {
+    return this.http.get<HttpResponse<Employee[] | any>>(
+      this.employeeUrl+'waiters' , {observe: 'response'});
+}
+
 }

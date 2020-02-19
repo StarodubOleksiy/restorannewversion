@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './dishes/dishes.component';
-import { HerongService } from './herong.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DishService } from './services/dish.service';
 import { MenuService } from './services/menu.service';
@@ -30,6 +29,7 @@ import { AdddishComponent } from './adddish/adddish.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { PersonnelComponent } from './personnel/personnel.component';
 
 
 @NgModule({
@@ -57,7 +57,7 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent
   ],
   
   providers: [MenuService,DishService,EmployeeService],

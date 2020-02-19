@@ -4,15 +4,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Cook;
 import springLibrary.entities.Employee;
+import springLibrary.mapper.EmployeeMapper;
+import springLibrary.model.request.EmployeeRequest;
 import springLibrary.model.response.EmployeeResponse;
 import springLibrary.repository.EmployeeRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.EmployeeService;
 
 import javax.transaction.Transactional;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +37,8 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    private final String SQL_GET_ALL_WAITERS = "SELECT * FROM employee  where dtype = 'Waiter'";
+
 
     private EmployeeResponse employeeToEmployeeResponse(Employee employee) {
         LOGGER.info("employee.getClass().getCanonicalName() = " + employee.getClass().getCanonicalName());
@@ -44,9 +52,9 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
         EmployeeResponse response = new EmployeeResponse();
         response.setId(employee.getId());
         response.setName(employee.getName());
-       /* if (book.getImage() != null) {
-            response.setImage(book.getImage());
-        }*/
+        if (employee.getPhotography() != null) {
+            response.setPhotography(employee.getPhotography());
+        }
         response.setSurname(employee.getSurname());
         response.setPhoneNumber(employee.getPhoneNumber());
         if (employee.getClass().getSimpleName().equals("Cook"))
@@ -65,6 +73,13 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    public List<EmployeeResponse> getAllWaiters() {
+        return jdbcTemplate.query(SQL_GET_ALL_WAITERS, new EmployeeMapper())
+                .stream().map(this::employeeToEmployeeResponse)
+                .collect(Collectors.toList());
+    }
+
 
     @Override
     public Optional<EmployeeResponse> findByIdResponse(Long id) {
@@ -73,7 +88,9 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
 
     @Override
     @Transactional
-    public void save(Employee employee) {
+    public void saveFromRequest(Employee employee, EmployeeRequest employeeRequest) {
+        if (employeeRequest.getPhotography() != null)
+            employee.setPhotography(Base64.getDecoder().decode(employeeRequest.getPhotography()));
         getRepository().save(employee);
     }
 

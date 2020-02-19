@@ -5,6 +5,7 @@ export class Employee {
     phoneNumber: string;
     position: string;
     salary: number;
+    photography: string;
 
 
 

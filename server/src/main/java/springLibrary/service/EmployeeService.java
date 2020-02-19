@@ -7,6 +7,8 @@ import springLibrary.model.request.EmployeeRequest;
 import springLibrary.model.response.EmployeeResponse;
 import springLibrary.repository.EmployeeRepository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +19,8 @@ public interface EmployeeService extends Service<Employee, Long, EmployeeReposit
 
     public Optional<EmployeeResponse> findByIdResponse(Long id);
 
-    public void save(Employee employee);
+    public List<EmployeeResponse> getAllWaiters();
+
+    public void saveFromRequest(Employee employee, EmployeeRequest employeeRequest);
 
 }

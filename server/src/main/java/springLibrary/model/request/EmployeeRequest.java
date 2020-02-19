@@ -15,6 +15,7 @@ public class EmployeeRequest {
     private String phoneNumber;
     private String position;
     private float salary;
+    private String photography;
 
     public Long getId() {
         return id;
@@ -64,6 +65,14 @@ public class EmployeeRequest {
         this.salary = salary;
     }
 
+    public String getPhotography() {
+        return photography;
+    }
+
+    public void setPhotography(String photography) {
+        this.photography = photography;
+    }
+
     public Employee toEmployee() {
         Employee employee;
         if(position.equals("WAITER"))
@@ -76,6 +85,7 @@ public class EmployeeRequest {
         employee.setSurname(surname);
         employee.setPhoneNumber(phoneNumber);
         employee.setSalary(salary);
+
         return employee;
     }
 
