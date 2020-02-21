@@ -49,10 +49,14 @@ export class StorageComponent implements OnInit {
  
   
 
-
+/*
+  addNewEmployee() :void {
+    this.router.navigateByUrl('/addemployee/add');
+  }
+*/
 
 
   addNewIngradient() :void {
-    //this.router.navigateByUrl('/adddish/add');
+    this.router.navigateByUrl('/addingradient/add');
   }
 }

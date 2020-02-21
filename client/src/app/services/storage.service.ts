@@ -15,7 +15,6 @@ export class StorageService {
   ingradients: Ingradient[]
 
   private ingradientUrl = environment.apiUrl;   // URL to web api
-  //private booksUrl = '/books';
  
    constructor(private http: HttpClient) { }
 
@@ -38,8 +37,8 @@ getIngradients(): Observable<HttpResponse<Ingradient[] | any>> {
 
 
 saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
-  return this.http.post<HttpResponse<any>>(
-      this.ingradientUrl + '/ingradients/save', ingradient, {observe: 'response'});
+  return this.http.post<HttpResponse<any>>( //addingradient/save
+      this.ingradientUrl + 'addingradient/save', ingradient, {observe: 'response'});
   }
 
 

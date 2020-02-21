@@ -1,0 +1,39 @@
+<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewMenu()">
+  Додати нове меню
+</button>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Список меню </mat-header-cell>
+    <mat-cell *matCellDef="let element">   
+    
+    
+      <div class="row">
+        <div class="col">
+          <h4>{{element.name}} </h4>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" (click)="editMenu(element.id)">
+            Редагувати меню
+          </button> 
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
+            Видалити меню
+          </button>         
+        </div>
+      </div>
+
+    </mat-cell>
+    <mat-cell *matCellDef="let element">
+      
+   </mat-cell>
+  </ng-container>
+  
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -43,6 +43,24 @@ public class Ingradient extends AbstractIdentifiableEntity {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ingradient)) return false;
+
+        Ingradient that = (Ingradient) o;
+
+        if (Float.compare(that.getNumerosity(), getNumerosity()) != 0) return false;
+        return getName().equals(that.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName().hashCode();
+        result = 31 * result + (getNumerosity() != +0.0f ? Float.floatToIntBits(getNumerosity()) : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Ingradient{" +
                 ", name='" + name + '\'' +

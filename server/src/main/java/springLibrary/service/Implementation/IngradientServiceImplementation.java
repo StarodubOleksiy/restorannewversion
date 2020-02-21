@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
+import springLibrary.entities.Menu;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.IngradientRepository;
 import springLibrary.service.AbstractService;
@@ -45,6 +46,13 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
         return getRepository().findAll().stream()
                 .map(this::ingradientToIngradientResponse)
                 .collect(Collectors.toList());
+    }
+
+
+    @Override
+    public void save(Ingradient ingradient) {
+        super.save(ingradient);
+
     }
 
 

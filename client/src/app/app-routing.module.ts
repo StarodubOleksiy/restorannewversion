@@ -1,20 +1,50 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DishesComponent } from './dishes/dishes.component';
+import { EditdishesComponent } from './editdishes/editdishes.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { StorageComponent } from './storage/storage.component';
 import { AdddishComponent } from './adddish/adddish.component';
 import { PersonnelComponent } from './personnel/personnel.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
+import { AddingradientComponent } from './addingradient/addingradient.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
+  { path: 'editdishes', component: EditdishesComponent },
   { path: 'ingradients', component: StorageComponent },
   { path: 'employees', component: EmployeesComponent },
   { path: 'personnel', component: PersonnelComponent },
-  { path: 'addemployee', component: AddemployeeComponent },
-  { path: 'adddish', children: [
+  { path: 'addemployee'
+  ,  children: [
+    {
+         path: ':configureType',
+         component: AddemployeeComponent
+    },
+        
+     {
+         path: ':configureType/:id',
+         component: AddemployeeComponent
+     }
+ ] 
+ },
+  { path: 'addingradient',  children: [
+    {
+         path: ':configureType',
+         component: AddingradientComponent
+    },
+        
+     {
+         path: ':configureType/:id',
+         component: AddingradientComponent
+     }
+ ] 
+} ,
+
+ { path: 'menu', component: MenuComponent },
+ { path: 'adddish', children: [
     {
          path: ':configureType',
          component: AdddishComponent

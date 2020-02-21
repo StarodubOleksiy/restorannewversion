@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springLibrary.entities.Ingradient;
+import springLibrary.entities.Menu;
+import springLibrary.model.request.IngradientRequest;
+import springLibrary.model.request.MenuRequest;
 import springLibrary.model.response.EmployeeResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.service.IngradientService;
@@ -38,6 +42,15 @@ public class IngradientController {
         return ingradientService.findByIdResponse(id)
                 .map(ingradient -> new ResponseEntity<Object>(ingradient, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect ingradient id", HttpStatus.BAD_REQUEST));
+    }
+
+
+    @PostMapping("addingradient/save")
+    ResponseEntity<?> save(@RequestBody IngradientRequest ingradientRequest) {
+        Ingradient ingradient = ingradientRequest.toIngradient();
+        LOGGER.info("ingradient = "+ingradient);
+        ingradientService.save(ingradient);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

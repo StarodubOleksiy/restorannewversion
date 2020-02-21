@@ -33,6 +33,9 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { PersonnelComponent } from './personnel/personnel.component';
 import {MatTableModule} from '@angular/material/table';
 import { StorageComponent } from './storage/storage.component';
+import { MenuComponent } from './menu/menu.component';
+import { AddingradientComponent } from './addingradient/addingradient.component';
+import { EditdishesComponent } from './editdishes/editdishes.component';
 
 
 @NgModule({
@@ -61,7 +64,7 @@ import { StorageComponent } from './storage/storage.component';
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent
   ],
   
   providers: [MenuService, DishService, EmployeeService, StorageService],

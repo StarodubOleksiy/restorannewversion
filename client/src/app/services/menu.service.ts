@@ -16,7 +16,7 @@ export class MenuService {
   constructor(private http: HttpClient) { }
 
   getCurrentMenu(id: number): Observable<Menu> {
-    console.log('is this function working?');
+   console.log('is this function working?');
    console.log(this.menuUrl + 'menu/' + id);
    return this.http.get<Menu>(this.menuUrl + '/menu/' + id).map(json => {
      return Menu.copyOf(json);

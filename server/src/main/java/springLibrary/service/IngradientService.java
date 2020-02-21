@@ -1,6 +1,7 @@
 package springLibrary.service;
 
 import springLibrary.entities.Ingradient;
+import springLibrary.entities.Menu;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.IngradientRepository;
 
@@ -12,5 +13,7 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
     public List<IngradientResponse> findAllResponse();
 
     public Optional<IngradientResponse> findByIdResponse(Long id);
+
+    public void save(Ingradient ingradient);
 
 }

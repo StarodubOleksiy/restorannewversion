@@ -7,21 +7,6 @@ import {MatSnackBar} from '@angular/material';
 import {Router,ActivatedRoute} from '@angular/router';
 import {DishService } from '../services/dish.service';
 import {MenuService } from '../services/menu.service';
-/*
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {HttpResponse} from '@angular/common/http';
-import {MatSnackBar} from '@angular/material';
-import {Router,ActivatedRoute} from '@angular/router';
-import { Book } from '../model/book';
-import { Genre } from '../model/genre';
-import { BookService } from '../book.service';
-import { AuthorService } from '../author.service';
-import { GenreService } from '../genre.service';
-import { Author } from '../model/author';
-import { Publisher } from '../model/publisher';
-import { PublisherService } from '../publisher.service';
-*/
 
 
 @Component({
@@ -131,11 +116,11 @@ this.router.navigateByUrl('/addmenu/add');
 
 }
 
-export enum SaveBookConfigureType {
+export enum SaveDishConfigureType {
   EDIT, ADD
 }
 
 class ConfigureType {
-  constructor(public text: string, public type: SaveBookConfigureType) {
+  constructor(public text: string, public type: SaveDishConfigureType) {
   }
 }
