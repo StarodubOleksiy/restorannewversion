@@ -1,0 +1,33 @@
+<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewEmployee()">
+  Додати новий інградіент на склад
+</button>
+
+<table class="table table-hover">
+  <thead>
+  <tr class="text-center">
+      <th scope="col">Назва</th>
+      <th scope="col">Кількість на складі</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let ingradient of ingradients" class="text-center">
+        <th scope="row">
+{{ingradient.name}}
+</th>
+<th scope="row">
+  {{ingradient.numberOnStorage}}
+  </th>
+<th scope="row">
+<button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
+  Редагувати автора
+</button> 
+</th>
+<th scope="row">
+
+<button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
+  Видалити автора
+</button> 
+</th>
+</tr>
+</tbody>
+</table>

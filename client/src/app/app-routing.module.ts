@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DishesComponent } from './dishes/dishes.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { StorageComponent } from './storage/storage.component';
 import { AdddishComponent } from './adddish/adddish.component';
 import { PersonnelComponent } from './personnel/personnel.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
@@ -9,6 +10,7 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
 
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
+  { path: 'ingradients', component: StorageComponent },
   { path: 'employees', component: EmployeesComponent },
   { path: 'personnel', component: PersonnelComponent },
   { path: 'addemployee', component: AddemployeeComponent },

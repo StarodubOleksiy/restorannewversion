@@ -7,6 +7,7 @@ import { DishesComponent } from './dishes/dishes.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DishService } from './services/dish.service';
 import { MenuService } from './services/menu.service';
+import { StorageService } from './services/storage.service';
 import { EmployeeService } from './services/employee.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -30,6 +31,8 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { PersonnelComponent } from './personnel/personnel.component';
+import {MatTableModule} from '@angular/material/table';
+import { StorageComponent } from './storage/storage.component';
 
 
 @NgModule({
@@ -52,15 +55,16 @@ import { PersonnelComponent } from './personnel/personnel.component';
     MatSidenavModule,
     MatTooltipModule,
     MatSlideToggleModule,
+    MatTableModule,
     PaginationModule.forRoot()
   ],
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent
   ],
   
-  providers: [MenuService,DishService,EmployeeService],
+  providers: [MenuService, DishService, EmployeeService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
