@@ -3,18 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" afterPath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.ts" afterPath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.ts" afterPath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/dish.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/dish.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Ingradient.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Ingradient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -580,7 +568,7 @@
       <workItem from="1582293662363" duration="4371000" />
       <workItem from="1582311932439" duration="289000" />
       <workItem from="1582313018807" duration="2228000" />
-      <workItem from="1582370357375" duration="5477000" />
+      <workItem from="1582370357375" duration="5666000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit. Adding Repositories, Services and Controllers.">
       <created>1581020467007</created>
@@ -862,11 +850,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582370394459</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Sixteenth commit. Creating connection between dish and ingradients.">
+      <created>1582379410189</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1582379410189</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110752000" />
+    <option name="totallyTimeSpent" value="110941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -885,6 +880,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -898,7 +894,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -926,7 +921,8 @@
     <MESSAGE value="Threeteenth commit. Add page personnel component." />
     <MESSAGE value="Fourteenth commit. Add page storage ingradients component." />
     <MESSAGE value="Fifteenth commit. Add save ingradients component." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fifteenth commit. Add save ingradients component." />
+    <MESSAGE value="Sixteenth commit. Creating connection between dish and ingradients." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sixteenth commit. Creating connection between dish and ingradients." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
