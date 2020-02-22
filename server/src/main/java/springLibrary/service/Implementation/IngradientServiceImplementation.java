@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
 import springLibrary.model.response.IngradientResponse;
+import springLibrary.repository.DishRepository;
 import springLibrary.repository.IngradientRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.IngradientService;
@@ -18,6 +19,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class IngradientServiceImplementation extends AbstractService<Ingradient, Long, IngradientRepository> implements IngradientService {
+
+    @Autowired
+    private DishRepository dishRepository;
+
 
     protected IngradientServiceImplementation(@Autowired IngradientRepository repository) {
         super(repository);
@@ -34,7 +39,6 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     }
 
 
-
     @Override
     public Optional<IngradientResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::ingradientToIngradientResponse);
@@ -44,6 +48,14 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     @Override
     public List<IngradientResponse> findAllResponse() {
         return getRepository().findAll().stream()
+                .map(this::ingradientToIngradientResponse)
+                .collect(Collectors.toList());
+    }
+
+
+    @Override
+    public List<IngradientResponse> findIngradientsByDishIdResponse(Long id) {
+        return dishRepository.getOne(id).getIngradients().stream()
                 .map(this::ingradientToIngradientResponse)
                 .collect(Collectors.toList());
     }

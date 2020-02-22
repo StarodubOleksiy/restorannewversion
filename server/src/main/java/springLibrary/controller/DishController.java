@@ -28,10 +28,6 @@ public class DishController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DishController.class);
 
-    /*public void printDishes()
-    {
-        dishService.findAllResponse();
-    }*/
 
     @GetMapping("dishes")
     public ResponseEntity<List<DishResponse>> dishes() {
@@ -39,7 +35,8 @@ public class DishController {
     }
 
 
-    @GetMapping("dishes/{id}")
+
+    @GetMapping("/dishes/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
         return dishService.findByIdResponse(id)
                 .map(dish -> new ResponseEntity<Object>(dish, HttpStatus.OK))

@@ -16,4 +16,6 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
 
     public void save(Ingradient ingradient);
 
+    public List<IngradientResponse> findIngradientsByDishIdResponse(Long id);
+
 }

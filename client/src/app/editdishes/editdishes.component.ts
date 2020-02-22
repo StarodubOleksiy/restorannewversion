@@ -41,4 +41,9 @@ export class EditdishesComponent implements OnInit {
     this.router.navigateByUrl('/adddish/add');
   }
 
+
+  editDish(id: number) : void {
+    this.router.navigateByUrl('/adddish/edit/' + id);
+  }
+
 }

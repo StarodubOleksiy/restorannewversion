@@ -24,7 +24,7 @@ export class DishService {
 getDish(id: number): Observable<Dish> {
    console.log('is this function working?');
    console.log(this.dishUrl + 'dish/' + id);
-   return this.http.get<Dish>(this.dishUrl + '/diseh/' + id).map(json => {
+   return this.http.get<Dish>(this.dishUrl + '/dishes/' + id).map(json => {
      return Dish.copyOf(json);
    });
 

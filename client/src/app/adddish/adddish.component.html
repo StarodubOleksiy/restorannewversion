@@ -4,7 +4,10 @@
 <div class="container-fluid">
   <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
           <mat-card-header>
-                <div>
+            <div *ngIf="configureType.text === 'edit'">
+              <legend>Edit dish</legend>
+          </div>
+          <div *ngIf="configureType.text === 'add'">
               <legend>Add new dish</legend>
           </div>
       </mat-card-header>
@@ -63,13 +66,22 @@
             </button>
         </th>
     </tr>
-  </table >        
+  </table >     
+
       <button class="submit-button" mat-raised-button type="submit"
        color="accent" [disabled]="!bookConfigureForm.valid">
         Click me!
         
       </button>
     </form>
+
   </mat-card-content>
+  <div *ngIf="configureType.text === 'edit'">
+    <button type="button" class="btn btn-primary" mat-raised-button type="submit"
+    color="accent" [disabled]="!bookConfigureForm.valid">
+     Edit ingradients between dish and ingradients  
+   </button>  
+  </div>
   </mat-card>
+ 
   </div>

@@ -16,8 +16,10 @@ import {MenuService } from '../services/menu.service';
 })
 export class AdddishComponent implements OnInit {
 
+  loadedDish: Dish;
   dish : Dish;
   menus: Menu[] = [];
+  configureType: ConfigureType;
   bookConfigureForm = new FormGroup({
     name: new FormControl('', [
         Validators.required,
@@ -34,26 +36,43 @@ export class AdddishComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
+      this.configureType = new ConfigureType('edit', SaveDishConfigureType.EDIT);
+      this.loadDish()
+      this.getMenu();
+    } 
+    else
+    {
+    this.configureType = new ConfigureType('add', SaveDishConfigureType.ADD);
     this.dish = new Dish();
     this.getMenu();
+    }
   }
 
+
+  loadDish(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.dishService.getDish(id)
+        .subscribe(dish => {
+            this.loadedDish = dish;
+            this.dish = dish.clone();            
+        });
+    }
 
 
   saveBook(): void {
     this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
-    //if (this.configureType.type === SaveBookConfigureType.ADD) {
+    if (this.configureType.type === SaveDishConfigureType.ADD) {
       this.snackBar.open('Нова страва успішно додана.', null, {
           duration: 2000
       });
-      //this.router.navigate(['books']);
-  /*} else {
-      this.snackBar.open('Книжка успішно відредагована.', null, {
+      this.router.navigate(['editdishes']);
+  } else {
+      this.snackBar.open('Страва успішно відредагована.', null, {
           duration: 2000
       });
-      this.router.navigate(['books']);
-  }*/
-   
+      this.router.navigate(['editdishes']);
+  }   
   }, error => {
       this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
           , null, {

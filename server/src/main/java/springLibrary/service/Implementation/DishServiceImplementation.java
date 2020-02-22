@@ -30,7 +30,6 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-
     protected DishServiceImplementation(@Autowired DishRepository repository) {
         super(repository);
     }
@@ -47,7 +46,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
         }
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
-        response.setIngradientsId(dish.getIngradients());
+       // response.setIngradientsId(dish.getIngradients());
         response.setMenuId(dish.getMenu().getId().intValue());
         return response;
     }

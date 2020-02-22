@@ -21,13 +21,12 @@ import java.util.List;
 @RestController
 public class IngradientController {
 
-   private static final Logger LOGGER = LoggerFactory.getLogger(IngradientController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(IngradientController.class);
 
     @Autowired
     private IngradientService ingradientService;
 
-    public void printIngradients()
-    {
+    public void printIngradients() {
         ingradientService.findAllResponse();
     }
 
@@ -45,10 +44,16 @@ public class IngradientController {
     }
 
 
+    @GetMapping("dishingradients/{id}")
+    public ResponseEntity<?> ingradientsByDishId(@PathVariable Long id) {
+        return new ResponseEntity<>(ingradientService.findIngradientsByDishIdResponse(id), HttpStatus.OK);
+    }
+
+
     @PostMapping("addingradient/save")
     ResponseEntity<?> save(@RequestBody IngradientRequest ingradientRequest) {
         Ingradient ingradient = ingradientRequest.toIngradient();
-        LOGGER.info("ingradient = "+ingradient);
+        LOGGER.info("ingradient = " + ingradient);
         ingradientService.save(ingradient);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Администратор on 09.06.16.
@@ -49,7 +50,7 @@ public class Dish extends AbstractIdentifiableEntity {
             joinColumns = @JoinColumn(name = "dish_id"),
             inverseJoinColumns = @JoinColumn(name = "ingradient_id")
     )
-    private List<Ingradient> ingradients;
+    private Set<Ingradient> ingradients;
 
 
     public byte[] getImage() {
@@ -84,11 +85,11 @@ public class Dish extends AbstractIdentifiableEntity {
         this.weight = weight;
     }
 
-    public void setIngradients(List<Ingradient> ingradients) {
+    public void setIngradients(Set<Ingradient> ingradients) {
         this.ingradients = ingradients;
     }
 
-    public List<Ingradient> getIngradients() {
+    public Set<Ingradient> getIngradients() {
         return ingradients;
     }
 
