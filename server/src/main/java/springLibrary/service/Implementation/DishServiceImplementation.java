@@ -46,7 +46,6 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
         }
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
-       // response.setIngradientsId(dish.getIngradients());
         response.setMenuId(dish.getMenu().getId().intValue());
         return response;
     }
@@ -62,31 +61,10 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Override
     @Transactional
     public void saveFromRequest(Dish dish, DishRequest dishRequest) {
-       if (dishRequest.getImage() != null) //{
-           dish.setImage(Base64.getDecoder().decode(dishRequest.getImage()));
-        //}
-       /* Integer values[] = bookRequest.getAuthorsId();
-        if (book.getId() == null) {
-            for (int i = 0; i < values.length; ++i) {
-                book.addAuthor(authorService.findById((long) values[i]).orElse(null));
-                getRepository().save(book);
-            }
-        } else {
-            this.deleteRelationshipBetweenBooksAndAuthor(book.getId());*/
+        if (dishRequest.getImage() != null) //{
+            dish.setImage(Base64.getDecoder().decode(dishRequest.getImage()));
         getRepository().save(dish);
-        // }
     }
-
-
-    /*@Override
-    public List<BookResponse> findByCharacterResponse(String character) {
-        return null;
-    }
-
-    @Override
-    public List<BookResponse> findByTitleResponse(String title) {
-        return null;
-    }*/
 
 
     @Override

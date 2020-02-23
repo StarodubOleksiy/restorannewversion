@@ -82,14 +82,4 @@ public class DishResponse {
         return response;
     }
 
-    public void setIngradientsId(List<Ingradient> ingradients) {
-        this.ingradientsId = new Integer[ingradients.size()];
-        int index = 0;
-        for (int i = 0; i < ingradients.size(); ++i)
-            ingradientsId[index++] = (int) ingradients.get(i).getId().longValue();
-       /* for (Iterator<Author> it = authors.iterator(); it.hasNext(); ) {
-            Author author = it.next();
-            authorsId[index++] = (int) author.getId().longValue();
-        }*/
-    }
 }

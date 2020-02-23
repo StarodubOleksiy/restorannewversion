@@ -43,71 +43,15 @@ public class DishController {
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
     }
 
-    /*
-    @GetMapping("book/findbyname")
-    public List<Book> getBookByName() {
-        return bookService.findByName("Melovoy chelovek");
-    }
 
-
-    @GetMapping("book/findbycharacter")
-    public List<BookResponse> getBookByCharacter(@RequestParam("character") String character) {
-        return bookService.findByCharacterResponse(character);
-    }
-
-
-    @PostMapping("book/findbycriteria")
-    public ResponseEntity<List<BookResponse>> findBooks(@RequestBody CriteriaRequest criteriaRequest) {
-        LOGGER.info("criteriaRequest.toString() = "+criteriaRequest.toString());
-        if (criteriaRequest.getType() == null)
-            return new ResponseEntity<>(bookService.findByTitleResponse(criteriaRequest.getSearchWord()), HttpStatus.OK);
-        else
-            return new ResponseEntity<>(bookService.findByPlacingResponse(criteriaRequest.getType(),criteriaRequest.getSearchWord()), HttpStatus.OK);
-    }
-
-
-    @GetMapping("getbygenre/{id}")
-    public List<BookResponse> findByGenreBooks(@PathVariable Long id) {
-        return bookService.findByGenreResponse(id);
-
-    }
-
-
-    @GetMapping("getbypublisher/{id}")
-    public List<BookResponse> getBooksByPublisher(@PathVariable Long id) {
-        return bookService.findByPublisherResponse(id);
-    }
-
-
-    @GetMapping("getbyauthor/{id}")
-    public List<BookResponse> getBooksByAuthor(@PathVariable Long id) {
-        return bookService.findByAuthorResponse(id);
-    }
-
-*/
     @PostMapping("dish/save")
    public ResponseEntity<?> save(@RequestBody DishRequest dishRequest) {
            Dish dish = dishRequest.toDish();
            dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
            LOGGER.info("dish = "+dish);
-           //dish.setMenu(menuService.findById(Long.valueOf(1)).orElse(null));
-       // book.setGenre(genreService.findById(bookRequest.getGenreId()).orElse(null));
-       // book.setPublisher(publisherService.findById(bookRequest.getPublisherId()).orElse(null));
         dishService.saveFromRequest(dish, dishRequest);
-       /* if(bookRequest.getId() != null) {
-            if (bookRequest.getAuthorsId().length > 0)
-                for (int i = 0; i < bookRequest.getAuthorsId().length; ++i)
-                    bookService.insertRelationshipBetweenBookAndAuthor((long) bookRequest.getAuthorsId()[i], bookRequest.getId());
-        }*/
        return new ResponseEntity<>(HttpStatus.OK);
    }
-/*
-
-    @PostMapping("/book/delete")
-    public ResponseEntity<?> delete(@RequestBody DishRequest dishRequest) {
-        bookService.deleteBook(bookRequest);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }*/
 
 
 }

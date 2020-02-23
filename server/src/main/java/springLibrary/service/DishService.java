@@ -14,12 +14,10 @@ import java.util.Optional;
 
 public interface DishService extends Service<Dish, Long, DishRepository> {
 
-
    public List<DishResponse> findAllResponse();
 
    public Optional<DishResponse> findByIdResponse(Long id);
 
    public void saveFromRequest(Dish dish, DishRequest dishRequest);
-
 
 }
