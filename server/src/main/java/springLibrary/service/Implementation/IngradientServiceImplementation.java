@@ -3,34 +3,30 @@ package springLibrary.service.Implementation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
+import springLibrary.model.response.DishIngradientsResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.DishRepository;
 import springLibrary.repository.IngradientRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.IngradientService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-class SomeClass
-{
-    public SomeClass()
-    {
-
-    }
-}
-
-
 
 @Service
 public class IngradientServiceImplementation extends AbstractService<Ingradient, Long, IngradientRepository> implements IngradientService {
 
     @Autowired
     private DishRepository dishRepository;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
 
     protected IngradientServiceImplementation(@Autowired IngradientRepository repository) {
@@ -62,18 +58,19 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     }
 
 
-    @Override //https://mkyong.com/spring/spring-jdbctemplate-querying-examples/
-    public List<IngradientResponse> findIngradientsByDishIdResponse(Long id) {
-        dishRepository.getOne(id).getIngradients().forEach(ingradient
-                ->{
-                    ingradient.getId();
-                    SomeClass someClass = new SomeClass();
-        }
+    @Override //mkyong.com/spring/spring-jdbctemplate-querying-examples/
+    public List<DishIngradientsResponse> findIngradientsByDishIdResponse(Long dish_id) {
+        List <DishIngradientsResponse> listDishIngradientsResponse = new ArrayList<>();
+        String sql = "SELECT numerosity FROM dish_to_ingradient WHERE dish_id = ? and ingradient_id = ?";
+        dishRepository.getOne(dish_id).getIngradients().forEach(
+                ingradient
+                        -> {
+                    listDishIngradientsResponse.add(new DishIngradientsResponse(dish_id,ingradient.getId(),
+                            ingradient.getName(),jdbcTemplate.queryForObject(
+                            sql, new Object[]{dish_id, ingradient.getId()}, Integer.class)));
+                }
         );
-
-        return dishRepository.getOne(id).getIngradients().stream()
-                .map(this::ingradientToIngradientResponse)
-                .collect(Collectors.toList());
+        return listDishIngradientsResponse;
     }
 
 
