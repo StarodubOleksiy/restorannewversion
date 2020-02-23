@@ -16,6 +16,15 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+class SomeClass
+{
+    public SomeClass()
+    {
+
+    }
+}
+
+
 
 @Service
 public class IngradientServiceImplementation extends AbstractService<Ingradient, Long, IngradientRepository> implements IngradientService {
@@ -53,8 +62,15 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     }
 
 
-    @Override
+    @Override //https://mkyong.com/spring/spring-jdbctemplate-querying-examples/
     public List<IngradientResponse> findIngradientsByDishIdResponse(Long id) {
+        dishRepository.getOne(id).getIngradients().forEach(ingradient
+                ->{
+                    ingradient.getId();
+                    SomeClass someClass = new SomeClass();
+        }
+        );
+
         return dishRepository.getOne(id).getIngradients().stream()
                 .map(this::ingradientToIngradientResponse)
                 .collect(Collectors.toList());

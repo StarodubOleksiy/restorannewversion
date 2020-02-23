@@ -105,21 +105,14 @@ public class Dish extends AbstractIdentifiableEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Dish dish = (Dish) o;
-
-        if (Float.compare(dish.price, price) != 0) return false;
-        if (Float.compare(dish.weight, weight) != 0) return false;
-        if (!name.equals(dish.name)) return false;
-
+        if (!name.toLowerCase().equals(dish.name.toLowerCase())) return false;
         return true;
     }
 
     @Override
     public int hashCode() {
         int result = name.hashCode();
-        result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
-        result = 31 * result + (weight != +0.0f ? Float.floatToIntBits(weight) : 0);
         return result;
     }
 
