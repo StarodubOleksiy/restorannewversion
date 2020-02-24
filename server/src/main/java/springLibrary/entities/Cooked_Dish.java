@@ -17,28 +17,19 @@ import java.util.Date;
 @Setter
 public class Cooked_Dish extends AbstractIdentifiableEntity {
 
-    /*private Dish dish;
+    @OneToOne
+    @JoinColumn(name = "dish_id")
+    private Dish dish;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
     private Cook  cook;
 
-
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Orders order;*/
+    private Orders order;
 
-    @NotNull
-    @Column(name = "date", nullable = false)
-    private String date;
-
-   public Cooked_Dish()
-   {
-       this.date = new Date().toString();
-   }
-
-
-   /* public void setOrder(Orders order) {
+    /* public void setOrder(Orders order) {
         this.order = order;
     }
 
