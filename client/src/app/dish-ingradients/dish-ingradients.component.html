@@ -1,0 +1,39 @@
+<p>
+ 
+  dish-ingradients works!
+</p>
+<h1><strong>{{dish.name}}</strong></h1>
+<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewIngradient()">
+  Додати новий інградіент до страви
+</button>
+
+<table class="table table-hover">
+  <thead>
+  <tr class="text-center">
+      <th scope="col">Назва інградіенту</th>
+      <th scope="col">Кількість іградіентів в страві</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let ingradient of dishIngradients" class="text-center">
+        <th scope="row">
+   {{ingradient.ingradientName}}
+</th>
+<th scope="row">
+  {{ingradient.numerosity}}
+  </th>
+<th scope="row">
+<button type="button" class="btn btn-primary" (click)="editDishIngradients(ingradient.ingradientId)">
+  Редагувати кількість інградіентів в страві
+</button> 
+</th>
+<th scope="row">
+
+<button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
+  Видалити автора
+</button> 
+</th>
+</tr>
+</tbody>
+</table>
+

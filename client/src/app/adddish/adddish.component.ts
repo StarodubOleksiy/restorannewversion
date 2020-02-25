@@ -115,6 +115,10 @@ onFileChange(event) {
 
 }
 
+dishIngradients(id: number) : void {
+  this.router.navigateByUrl('dishingradients/'+id);
+}
+
 addNewMenu(): void {
   console.log(this.router);
 //if (this.route.snapshot.paramMap.get('configureType') === 'add')    

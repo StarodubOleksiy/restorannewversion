@@ -10,6 +10,8 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { AddingradientComponent } from './addingradient/addingradient.component';
 import { MenuComponent } from './menu/menu.component';
+import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
+import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
@@ -84,7 +86,9 @@ const routes: Routes = [
        component: AddemployeeComponent
    }
 ]
-}
+},
+{ path: 'dishingradients/:dishid', component: DishIngradientsComponent },
+{ path: ':dishid/editdishingradients/:ingradientid', component: EditDishIngradientComponent }
 ];
 
 @NgModule({

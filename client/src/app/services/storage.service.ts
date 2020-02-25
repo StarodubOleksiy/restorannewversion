@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Ingradient } from '../model/ingradient';
+import { DishIngradient } from '../model/dishingradients';
 import {Observable} from 'rxjs/Observable';
 import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -33,6 +34,14 @@ getIngradients(): Observable<HttpResponse<Ingradient[] | any>> {
   return this.http.get<HttpResponse<Ingradient[] | any>>(
    
     this.ingradientUrl+'ingradients' , {observe: 'response'});
+}
+
+getIngradientsByDishId(id:number): Observable<HttpResponse<Ingradient[] | any>> {
+  console.log("I am in dish getIngradientsByDishId(id:number) method ");
+  console.log("dishIngradientUrl = "+this.ingradientUrl+'ingradients');
+  return this.http.get<HttpResponse<DishIngradient[] | any>>(
+   
+    this.ingradientUrl+'dishingradients/'+id , {observe: 'response'});
 }
 
 

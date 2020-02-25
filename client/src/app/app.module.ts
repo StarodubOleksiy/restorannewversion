@@ -36,6 +36,8 @@ import { StorageComponent } from './storage/storage.component';
 import { MenuComponent } from './menu/menu.component';
 import { AddingradientComponent } from './addingradient/addingradient.component';
 import { EditdishesComponent } from './editdishes/editdishes.component';
+import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
+import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 
 
 @NgModule({
@@ -64,7 +66,7 @@ import { EditdishesComponent } from './editdishes/editdishes.component';
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent
   ],
   
   providers: [MenuService, DishService, EmployeeService, StorageService],
