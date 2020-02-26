@@ -6,12 +6,12 @@ import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import {environment} from '../../environments/environment';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
 @Injectable()
 export class StorageService {
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   ingradients: Ingradient[]
 
@@ -31,10 +31,17 @@ export class StorageService {
 getIngradients(): Observable<HttpResponse<Ingradient[] | any>> {
   console.log("I am in getIngradients() method ");
   console.log("ingradientUrl = "+this.ingradientUrl+'ingradients');
-  return this.http.get<HttpResponse<Ingradient[] | any>>(
-   
+  return this.http.get<HttpResponse<Ingradient[] | any>>(   
     this.ingradientUrl+'ingradients' , {observe: 'response'});
 }
+
+getNewIngradients(id: number): Observable<HttpResponse<Ingradient[] | any>> {
+  console.log("I am in getIngradients() method ");
+  console.log("ingradientUrl = "+this.ingradientUrl+'ingradients');
+  return this.http.get<HttpResponse<Ingradient[] | any>>(   
+    this.ingradientUrl+'newingradients/'+id , {observe: 'response'});
+}
+
 
 getIngradientsByDishId(id:number): Observable<HttpResponse<Ingradient[] | any>> {
   console.log("I am in dish getIngradientsByDishId(id:number) method ");
@@ -49,6 +56,17 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
   return this.http.post<HttpResponse<any>>( //addingradient/save
       this.ingradientUrl + 'addingradient/save', ingradient, {observe: 'response'});
   }
+
+
+  addNewIngradientToDish(ingradient: DishIngradient): Observable<HttpResponse<any>> { 
+    return this.http.post<HttpResponse<any>>( //addingradient/save
+      this.ingradientUrl + 'adddishingradient', ingradient, {observe: 'response'});
+  
+    }
+
+  /*
+
+  */
 
 
 

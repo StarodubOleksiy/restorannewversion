@@ -4,6 +4,10 @@ import { StorageService } from '../services/storage.service';
 import { DishService } from '../services/dish.service';
 import { DishIngradient } from '../model/dishingradients';
 import { Dish } from '../model/dish';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { Ingradient } from '../model/ingradient';
+import {MatSnackBar} from '@angular/material';
+import {HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-dish-ingradients',
@@ -13,16 +17,32 @@ import { Dish } from '../model/dish';
 export class DishIngradientsComponent implements OnInit {
 
   dishIngradients: DishIngradient[] = [];
+  ingradients: Ingradient[] = [];
   dish : Dish;
+  idOfIngradient: number;
+  numerosity:number;
+  dishIngradient: DishIngradient;
+  
+  addIngradientForm = new FormGroup({
+    ingradientName: new FormControl('', [
+        Validators.required,
+    ]),
+    numerosity: new FormControl('', [Validators.required,])
+}); 
 
   constructor(private router: Router,
     private route: ActivatedRoute ,
     private storageService: StorageService,
-    private dishService: DishService) { }
+    private dishService: DishService,
+    private snackBar: MatSnackBar) { }
+
+
 
   ngOnInit() {
     this.loadDish();
     this.getIngradients();
+    this.dishIngradient = new DishIngradient();
+  //  this.getNewIngradients();
    
   }
 
@@ -31,6 +51,7 @@ export class DishIngradientsComponent implements OnInit {
     this.loadDish();
     //console.log('selectedId ='+this.selectedId);
      this.getIngradients();
+     //this.getNewIngradients();
     
   }
 
@@ -52,7 +73,8 @@ export class DishIngradientsComponent implements OnInit {
     this.dishService.getDish(id)
         .subscribe(dish => {
             this.dish = dish;   
-            console.log("this.dish.name = "+this.dish.name);        
+          //  console.log("this.dish.name = "+this.dish.name);  
+            this.getNewIngradients();      
         });      
     }
 
@@ -60,18 +82,39 @@ export class DishIngradientsComponent implements OnInit {
       this.router.navigateByUrl(this.dish.id+'/editdishingradients/'+id);
     }
 
-    /*
-     const id = parseInt(this.route.snapshot.paramMap.get('id'));
-         this.bookService.getBook(id)
-            .subscribe(book => {
-                 this.book = book;
-                 this.getGenre();
-                 this.getPublisher();
-                 this.getAuthors();
+
+    getNewIngradients(): void {
+      this.storageService.getNewIngradients(this.dish.id)
+      .subscribe(ingradients => 
+        { 
+          this.ingradients = ingradients.body;
+           }); 
+  
+        
+    }
+  
+//addNewIngradientToDish(
+    addIngradientToDish(): void {
+      this.dishIngradient.dishId = this.dish.id;
+      console.log("dishid = "+this.dishIngradient.dishId);
+      console.log("idOfIngradient = "+this.dishIngradient.ingradientId);
+      console.log("numerosity = "+this.dishIngradient.numerosity);
+      this.storageService.addNewIngradientToDish( this.dishIngradient).subscribe((response: HttpResponse<any>) => 
+     { 
+        this.snackBar.open('Новий інградіент до страви успішно доданий', null, {
+            duration: 2000
+       });    
+     this.refresh();    
+      }, error => {
+        this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+            , null, {
+                duration: 2000
             });
-    */
+    });
 
 
+
+  };
 
 
   

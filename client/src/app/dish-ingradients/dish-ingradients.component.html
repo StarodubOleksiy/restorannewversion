@@ -1,11 +1,33 @@
-<p>
  
-  dish-ingradients works!
-</p>
-<h1><strong>{{dish.name}}</strong></h1>
-<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewIngradient()">
-  Додати новий інградіент до страви
-</button>
+  <h1><strong>Страва: {{dish.name}}</strong></h1>
+
+  <form class="example-form" [formGroup]="addIngradientForm" (ngSubmit)="addIngradientToDish()">
+      
+    <mat-form-field>
+      <mat-select [(value)]="idOfIngradients" [(ngModel)]="dishIngradient.ingradientId" placeholder="select ingradient"
+      formControlName="ingradientName">
+        <mat-option *ngFor="let ingradient of ingradients" [value]="ingradient.id">
+                       {{ ingradient.name }}
+        </mat-option>
+        </mat-select>
+
+              
+        </mat-form-field>
+
+         <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="dishIngradient.numerosity" placeholder="numerosity"
+          type="number"
+          formControlName="numerosity"
+          required>
+        </mat-form-field>
+           
+
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!addIngradientForm.valid">
+        Додати новий інградіент до страви
+        
+      </button>
+    </form>
 
 <table class="table table-hover">
   <thead>

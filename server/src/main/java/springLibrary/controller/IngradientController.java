@@ -8,12 +8,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
+import springLibrary.model.request.DishIngradientRequest;
 import springLibrary.model.request.IngradientRequest;
 import springLibrary.model.request.MenuRequest;
 import springLibrary.model.response.EmployeeResponse;
 import springLibrary.model.response.IngradientResponse;
+import springLibrary.service.DishService;
 import springLibrary.service.IngradientService;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -22,6 +26,9 @@ import java.util.List;
 public class IngradientController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(IngradientController.class);
+
+    @Autowired
+    private DishService dishService;
 
     @Autowired
     private IngradientService ingradientService;
@@ -33,6 +40,11 @@ public class IngradientController {
     @GetMapping("ingradients")
     public ResponseEntity<List<IngradientResponse>> ingradients() {
         return new ResponseEntity<>(ingradientService.findAllResponse(), HttpStatus.OK);
+    }
+
+    @GetMapping("newingradients/{id}")
+    public ResponseEntity<List<IngradientResponse>> newIngradients(@PathVariable Long id) {
+        return new ResponseEntity<>(ingradientService.findNewIngradientsResponse(id), HttpStatus.OK);
     }
 
 
@@ -55,6 +67,14 @@ public class IngradientController {
         Ingradient ingradient = ingradientRequest.toIngradient();
         LOGGER.info("ingradient = " + ingradient);
         ingradientService.save(ingradient);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @PostMapping("adddishingradient")
+    ResponseEntity<?> addIngradientToDish(@RequestBody DishIngradientRequest dishIngradientRequest) {
+        LOGGER.info("dishIngradientRequest = " + dishIngradientRequest.toString());
+        ingradientService.addIngradientToDish(dishIngradientRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

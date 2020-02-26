@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
+import springLibrary.model.request.DishIngradientRequest;
 import springLibrary.model.response.DishIngradientsResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.DishRepository;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import javax.transaction.Transactional;
 
 @Service
 public class IngradientServiceImplementation extends AbstractService<Ingradient, Long, IngradientRepository> implements IngradientService {
@@ -57,6 +59,17 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<IngradientResponse> findNewIngradientsResponse(Long id)
+    {
+        List<IngradientResponse> newIngradients = new ArrayList<>();
+        getRepository().findAll().forEach(ingradient -> {
+            if(!dishRepository.getOne(id).getIngradients().contains(ingradient))
+                newIngradients.add(ingradientToIngradientResponse(ingradient));
+        });
+        return newIngradients;
+    }
+
 
     @Override //mkyong.com/spring/spring-jdbctemplate-querying-examples/
     public List<DishIngradientsResponse> findIngradientsByDishIdResponse(Long dish_id) {
@@ -72,6 +85,17 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
         );
         return listDishIngradientsResponse;
     }
+
+
+    @Override
+    @Transactional
+    public void addIngradientToDish(DishIngradientRequest dishIngradientRequest) {
+        jdbcTemplate.update("INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) VALUES (?, ?, ?)",
+                dishIngradientRequest.getDishId(),dishIngradientRequest.getIngradientId(),dishIngradientRequest.getNumerosity());
+
+    }
+
+
 
 
     @Override
