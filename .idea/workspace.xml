@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/edit-dish-ingradient/edit-dish-ingradient.component.html" afterPath="$PROJECT_DIR$/client/src/app/edit-dish-ingradient/edit-dish-ingradient.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -605,14 +606,7 @@
       <workItem from="1582472937669" duration="2040000" />
       <workItem from="1582576830857" duration="3298000" />
       <workItem from="1582661840364" duration="3823000" />
-      <workItem from="1582736379153" duration="13057000" />
-    </task>
-    <task id="LOCAL-00010" summary="Fifth commit. Adding Service, Controller and new Responses of Ingradient and Orders.">
-      <created>1581279609271</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1581279609271</updated>
+      <workItem from="1582736379153" duration="13664000" />
     </task>
     <task id="LOCAL-00011" summary="Fifth commit. Adding Service, Controller and new Responses of Ingradient and Orders.">
       <created>1581279640125</created>
@@ -950,11 +944,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582757803964</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Nineteenth commit. Now we can add ingredients to dishes.">
+      <created>1582757822870</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1582757822870</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140144000" />
+    <option name="totallyTimeSpent" value="140751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
