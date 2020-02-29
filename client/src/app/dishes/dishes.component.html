@@ -1,18 +1,16 @@
 <h3>Наші страви</h3>
 
-<form class="needs-validation list-group-item" name="searchForm" novalidate (ngSubmit)="findDishByName()">    
+<form class="needs-validation" name="searchForm" novalidate (ngSubmit)="findDishByName()">    
   <label for="validationCustom03">Пошук страви за її назвою</label>
-   <div class="form-row">
-   
-      
-      <div class="col-8"> 
+   <div class="form-row"> 
+          <div class="col-8 list-group-item"> 
       <input type="text" name="search" [(ngModel)]="searchDishWord" class="form-control" placeholder="Введіть назву страви яку бажаєте знайти" id="search" required>
       <div class="invalid-feedback">
         Please a valid name of the dish.
       </div>
     </div> 
-    <div class="col-4">  
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Знайти страву</button>
+    <div class="col-4 list-group-item">  
+      <button [disabled]="searchDishWord.length === 0" class="btn btn-primary btn-lg btn-block" type="submit">Знайти страву</button>
     </div> 
      
      
