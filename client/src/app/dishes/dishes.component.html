@@ -1,7 +1,26 @@
 <h3>Наші страви</h3>
-<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewDish()">
-  Додати нову страву
-</button>
+
+<form class="needs-validation list-group-item" name="searchForm" novalidate (ngSubmit)="findDishByName()">    
+  <label for="validationCustom03">Пошук страви за її назвою</label>
+   <div class="form-row">
+   
+      
+      <div class="col-8"> 
+      <input type="text" name="search" [(ngModel)]="searchDishWord" class="form-control" placeholder="Введіть назву страви яку бажаєте знайти" id="search" required>
+      <div class="invalid-feedback">
+        Please a valid name of the dish.
+      </div>
+    </div> 
+    <div class="col-4">  
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Знайти страву</button>
+    </div> 
+     
+     
+       
+    
+    </div>  
+</form>
+
 
 <div class="col-lg-4 shadow-lg p-3 mb-5 bg-white rounded" >  
  

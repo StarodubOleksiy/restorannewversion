@@ -29,12 +29,8 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
     @JoinColumn(name = "order_id")
     private Orders order;
 
-    /* public void setOrder(Orders order) {
+     public void setOrder(Orders order) {
         this.order = order;
-    }
-
-    public void setOrderDate(String orderDate) {
-        this.date = orderDate;
     }
 
     public void setCook(Cook cook) {
@@ -54,15 +50,10 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
         return order;
     }
 
-    public String getOrderDate() {
-        return date;
-    }
-
     @Override
     public String toString() {
         return "CookedDishes{" +
                 ", dish=" + dish +
-                ", orderDate='" + date + '\'' +
                 '}';
     }
 
@@ -76,9 +67,7 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
             if (cook != null ? !cook.equals(that.cook) : that.cook != null) return false;
         if (dish != null ? !dish.equals(that.dish) : that.dish != null) return false;
         if (order != null ? !order.equals(that.order) : that.order != null) return false;
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
-
-        return true;
+            return true;
     }
 
     @Override
@@ -87,7 +76,6 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
         result = 31 * result + (dish != null ? dish.hashCode() : 0);
         result = 31 * result + (cook != null ? cook.hashCode() : 0);
         result = 31 * result + (order != null ? order.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
-    }*/
+             return result;
+    }
 }

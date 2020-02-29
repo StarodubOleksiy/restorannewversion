@@ -40,7 +40,6 @@ export class EditDishIngradientComponent implements OnInit {
     console.log('dishid = '+dishid);
     console.log('ingradientid = '+ingradientid);
     this.dishIngradient = new DishIngradient();
-    this.validationFunction();
     this.loadDish();
     this.loadIngradient();
   }
@@ -48,7 +47,6 @@ export class EditDishIngradientComponent implements OnInit {
   refresh(): void {
     const dishid = parseInt(this.route.snapshot.paramMap.get('dishid'));
     const ingradientid = parseInt(this.route.snapshot.paramMap.get('ingradientid'));
-    this.validationFunction();
     this.loadDish();
     this.loadIngradient();
     
@@ -74,26 +72,6 @@ export class EditDishIngradientComponent implements OnInit {
               this.dish = dish;    
           });      
       }
-
-
-
-  validationFunction() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  };
 
 
   changeNumerosity(): void {
