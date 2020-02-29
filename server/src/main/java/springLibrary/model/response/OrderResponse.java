@@ -14,6 +14,8 @@ public class OrderResponse {
     private Long id;
     private int tableNumber;
     private String orderDate;
+    private String waiterName;
+    private String waiterSurname;
     private String state;
 
     public Long getId() {
@@ -46,6 +48,22 @@ public class OrderResponse {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getWaiterName() {
+        return waiterName;
+    }
+
+    public void setWaiterName(String waiterName) {
+        this.waiterName = waiterName;
+    }
+
+    public String getWaiterSurname() {
+        return waiterSurname;
+    }
+
+    public void setWaiterSurname(String waiterSurname) {
+        this.waiterSurname = waiterSurname;
     }
 
     public static OrderResponse of(Orders order) {

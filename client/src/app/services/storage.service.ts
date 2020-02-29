@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import {environment} from '../../environments/environment';
+import { getTime } from 'ngx-bootstrap/chronos/utils/date-getters';
 
 @Injectable()
 export class StorageService {
@@ -20,12 +21,23 @@ export class StorageService {
    constructor(private http: HttpClient) { }
 
    getIngradient(id: number): Observable<Ingradient> {
-    console.log('is this function working?');
+   console.log('is this function working?');
+   console.log(this.ingradientUrl + '=== ingradients/' + id);
    console.log(this.ingradientUrl + 'ingradients/' + id);
-   return this.http.get<Ingradient>(this.ingradientUrl + '/ingradient/' + id).map(json => {
+   return this.http.get<Ingradient>(this.ingradientUrl + 'ingradients/' + id,
+     ).map(json => {
      return Ingradient.copyOf(json);
    });
+}
 
+getCurrentDishIngradient(dish_id: string, ingradient_id: string): Observable<DishIngradient> {
+ return this.http.get<DishIngradient>(this.ingradientUrl + 'dishingradientresponse',
+ {  params: {
+    dish_id: dish_id,
+    ingradient_id: ingradient_id
+  } } ).map(json => {
+   return DishIngradient.copyOf(json);
+ });
 }
 
 getIngradients(): Observable<HttpResponse<Ingradient[] | any>> {
@@ -64,10 +76,18 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
   
     }
 
-  /*
+    changeNumerosityOfIngradientsInDish(ingradient: DishIngradient): Observable<HttpResponse<any>> { 
+      return this.http.post<HttpResponse<any>>( //addingradient/save
+        this.ingradientUrl + 'changenumerosity', ingradient, {observe: 'response'});
+    
+      }
 
-  */
-
+      deleteIngradientFromDish(ingradient: DishIngradient): Observable<HttpResponse<any>> {
+        return this.http.post<HttpResponse<any>>(
+                                      // deleteingeadientfromdish
+          this.ingradientUrl + 'deleteingradientfromdish',ingradient ,{observe: 'response'}
+        );
+    }
 
 
 }

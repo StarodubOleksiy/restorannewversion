@@ -11,7 +11,9 @@ import springLibrary.entities.Menu;
 import springLibrary.model.request.DishIngradientRequest;
 import springLibrary.model.request.IngradientRequest;
 import springLibrary.model.request.MenuRequest;
+import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.EmployeeResponse;
+import springLibrary.model.response.InfoResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.service.DishService;
 import springLibrary.service.IngradientService;
@@ -55,6 +57,16 @@ public class IngradientController {
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect ingradient id", HttpStatus.BAD_REQUEST));
     }
 
+    @GetMapping("dishingradientresponse")
+    public ResponseEntity<?> dishIngradientResponse(@RequestParam("dish_id") String dishId,@RequestParam("ingradient_id") String ingradientId) {
+        LOGGER.info(" dish_id = "+dishId+ " ingradientId = "+ingradientId);
+        return ingradientService.getCurrentIngradientInDish(Long.valueOf(dishId),Long.valueOf(ingradientId))
+                .map(ingradient -> new ResponseEntity<Object>(ingradient, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<Object>("Incorrect ingradient id", HttpStatus.BAD_REQUEST));
+
+    }
+
+
 
     @GetMapping("dishingradients/{id}")
     public ResponseEntity<?> ingradientsByDishId(@PathVariable Long id) {
@@ -75,6 +87,22 @@ public class IngradientController {
     ResponseEntity<?> addIngradientToDish(@RequestBody DishIngradientRequest dishIngradientRequest) {
         LOGGER.info("dishIngradientRequest = " + dishIngradientRequest.toString());
         ingradientService.addIngradientToDish(dishIngradientRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("changenumerosity")
+    ResponseEntity<?> changeNumerosityOfIngradientsInDish(@RequestBody DishIngradientRequest dishIngradientRequest) {
+        LOGGER.info("changeNumerosityOfIngradientsInDish method");
+        LOGGER.info("dishIngradientRequest = " + dishIngradientRequest.toString());
+        ingradientService.changeNumerosityOfIngradientsInDish(dishIngradientRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @PostMapping("deleteingradientfromdish")
+    ResponseEntity<?> deleteFromIngradientFromDish(@RequestBody DishIngradientRequest dishIngradientRequest) {
+        LOGGER.info("deleteFromIngradientFromDish method");
+        LOGGER.info("dishIngradientRequest = " + dishIngradientRequest.toString());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

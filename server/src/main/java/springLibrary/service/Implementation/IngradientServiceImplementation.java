@@ -28,6 +28,9 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     private DishRepository dishRepository;
 
     @Autowired
+    private IngradientRepository ingradientRepository;
+
+    @Autowired
     JdbcTemplate jdbcTemplate;
 
 
@@ -71,6 +74,19 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     }
 
 
+    @Override
+    public Optional<DishIngradientsResponse> getCurrentIngradientInDish(Long dish_id, Long ingradient_id)
+    {
+        String sql = "SELECT numerosity FROM dish_to_ingradient WHERE dish_id = ? and ingradient_id = ?";
+        Optional<DishIngradientsResponse> optionalIngradientResponse = Optional.of(
+                new DishIngradientsResponse(dish_id, ingradient_id,
+                ingradientRepository.getOne(ingradient_id).getName(),jdbcTemplate.queryForObject(
+                sql, new Object[]{dish_id, ingradient_id}, Integer.class)));
+        return optionalIngradientResponse;
+    }
+
+
+
     @Override //mkyong.com/spring/spring-jdbctemplate-querying-examples/
     public List<DishIngradientsResponse> findIngradientsByDishIdResponse(Long dish_id) {
         List <DishIngradientsResponse> listDishIngradientsResponse = new ArrayList<>();
@@ -92,6 +108,14 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     public void addIngradientToDish(DishIngradientRequest dishIngradientRequest) {
         jdbcTemplate.update("INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) VALUES (?, ?, ?)",
                 dishIngradientRequest.getDishId(),dishIngradientRequest.getIngradientId(),dishIngradientRequest.getNumerosity());
+
+    }
+
+    @Override
+    @Transactional
+    public void changeNumerosityOfIngradientsInDish(DishIngradientRequest dishIngradientRequest) {
+        jdbcTemplate.update("UPDATE dish_to_ingradient SET numerosity = ? WHERE dish_id = ? and ingradient_id = ?",
+                dishIngradientRequest.getNumerosity(),dishIngradientRequest.getDishId(),dishIngradientRequest.getIngradientId());
 
     }
 

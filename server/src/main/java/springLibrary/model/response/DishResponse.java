@@ -18,8 +18,8 @@ public class DishResponse {
     private float price;
     private float weight;
     private int menuId;
+    private String menuName;
     private String image;
-    private Integer[] ingradientsId;
 
     public Long getId() {
         return id;
@@ -67,6 +67,14 @@ public class DishResponse {
 
     public String getImage() {
         return image;
+    }
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
     public static DishResponse of(Dish dish) {

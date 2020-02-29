@@ -27,11 +27,12 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
         OrderResponse response = new OrderResponse();
         response.setId(order.getId());
         response.setTableNumber(order.getTableNumber());
+        response.setWaiterName(order.getWaiter().getName());
+        response.setWaiterSurname(order.getWaiter().getSurname());
         response.setOrderDate(order.getOrderDate());
         response.setState(order.getState());
         return response;
     }
-
 
 
     @Override
@@ -40,7 +41,6 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
                 .map(this::orderToOrderResponse)
                 .collect(Collectors.toList());
     }
-
 
 
     @Override

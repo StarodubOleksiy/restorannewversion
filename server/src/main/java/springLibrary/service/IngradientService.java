@@ -24,4 +24,8 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
 
     public void addIngradientToDish(DishIngradientRequest dishIngradientRequest);
 
+    public Optional<DishIngradientsResponse> getCurrentIngradientInDish(Long dish_id, Long ingradient_id);
+
+    public void changeNumerosityOfIngradientsInDish(DishIngradientRequest dishIngradientRequest);
+
 }

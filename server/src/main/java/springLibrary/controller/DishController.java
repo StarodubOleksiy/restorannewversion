@@ -35,7 +35,6 @@ public class DishController {
     }
 
 
-
     @GetMapping("/dishes/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
         return dishService.findByIdResponse(id)

@@ -3,27 +3,31 @@
 </p>
 
 <div class="container">
+  Change numerosity
   <div class="row">
     <div class="col">
-      1 of 2
+     dish name: <strong>{{dish.name}}</strong>
     </div>
     <div class="col">
-      2 of 2
+      ingradient name:  <strong>{{dishIngradient.ingradientName}}</strong>
     </div>
   </div>
-      <form class="needs-validation" novalidate>
-      <div class="row">
-          <label for="validationCustom03">City</label>
-          <input type="text" class="form-control" id="validationCustom03" required>
+  <form class="example-form needs-validation" [formGroup]="editIngradientForm" (ngSubmit)="changeNumerosity()" novalidate>
+   
+         <mat-form-field class="example-full-width">
+          <input class="form-control" matInput [(ngModel)]="dishIngradient.numerosity" placeholder="numerosity"
+          type="number"
+          formControlName="numerosity"
+          required>
           <div class="invalid-feedback">
-            Please provide a valid city.
-               </div>
+            Please provide a valid numerosity.
+          </div>
+        </mat-form-field>           
+
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!editIngradientForm.valid">
+       Поміняти кількість інградієнтів в страві
         
-      </div>
-      <div class="row align-items-start">
-        <div class="col">
-        <button class="btn btn-primary" type="submit">Submit form</button>     
-      </div>
-    </div>
-      </form>
+      </button>
+    </form>
 </div>

@@ -8,6 +8,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Ingradient } from '../model/ingradient';
 import {MatSnackBar} from '@angular/material';
 import {HttpResponse} from '@angular/common/http';
+import * as HttpStatus from 'http-status-codes';
 
 @Component({
   selector: 'app-dish-ingradients',
@@ -115,6 +116,35 @@ export class DishIngradientsComponent implements OnInit {
 
 
   };
+
+
+
+  onIngradientDeleteClick(dishIngradient: DishIngradient): void {
+console.log("onIngradientDeleteClick( meyhod");
+console.log("onIngradientDeleteClick( meyhod = "+dishIngradient.dishId);
+console.log("onIngradientDeleteClick( meyhod = "+dishIngradient.ingradientId);
+    var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей жанр?');
+    if (deleteConfirmation)  
+    this.storageService.deleteIngradientFromDish(dishIngradient)
+                .subscribe(response => this.onIngradientGenreResponse(dishIngradient, response)
+                , error => {
+                  this.snackBar.open('Genre cannot be deleted. It is not empty and has books.'
+                      , null, {
+                          duration: 2000
+                      });
+              });
+             //   this.getIngradients();
+  }
+  
+  private onIngradientGenreResponse(dishIngradient: DishIngradient, response: HttpResponse<any>): void {
+    if (response.status === HttpStatus.OK) {
+        this.snackBar.open('Genre deleted sucsessfully.', null, {
+            duration: 2000
+        });
+        let index = this.dishIngradients.indexOf(dishIngradient);
+        this.dishIngradients.splice(index, 1);
+    }
+  }
 
 
   

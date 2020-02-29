@@ -30,13 +30,13 @@ public class OrderController {
     }
 
 
-  @GetMapping("orders")
+  @GetMapping("/orders")
   public ResponseEntity<List<OrderResponse>> ingradients() {
     return new ResponseEntity<>(orderService.findAllResponse(), HttpStatus.OK);
   }
 
 
-  @GetMapping("orders/{id}")
+  @GetMapping("/orders/{id}")
   public ResponseEntity<?> ingradientsById(@PathVariable Long id) {
     return orderService.findByIdResponse(id)
             .map(order -> new ResponseEntity<Object>(order, HttpStatus.OK))

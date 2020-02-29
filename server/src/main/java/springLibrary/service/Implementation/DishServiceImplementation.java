@@ -47,6 +47,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
         response.setPrice(dish.getPrice());
         response.setWeight(dish.getWeight());
         response.setMenuId(dish.getMenu().getId().intValue());
+        response.setMenuName(dish.getMenu().getName());
         return response;
     }
 
