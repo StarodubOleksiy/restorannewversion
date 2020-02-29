@@ -612,14 +612,7 @@
       <workItem from="1582920766237" duration="9541000" />
       <workItem from="1582940025386" duration="5566000" />
       <workItem from="1582998339521" duration="3006000" />
-      <workItem from="1583012042112" duration="1251000" />
-    </task>
-    <task id="LOCAL-00022" summary="Seventh commit. Adding client AddDish.">
-      <created>1581541654762</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1581541654762</updated>
+      <workItem from="1583012042112" duration="1267000" />
     </task>
     <task id="LOCAL-00023" summary="Seventh commit. Adding client AddDish.">
       <created>1581541928634</created>
@@ -957,11 +950,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583013741598</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Twentee first commit. Adding search form to dish.">
+      <created>1583013755782</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1583013755782</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160185000" />
+    <option name="totallyTimeSpent" value="160201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
