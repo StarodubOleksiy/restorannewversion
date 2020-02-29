@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -612,14 +613,7 @@
       <workItem from="1582920766237" duration="9541000" />
       <workItem from="1582940025386" duration="5566000" />
       <workItem from="1582998339521" duration="3006000" />
-      <workItem from="1583012042112" duration="954000" />
-    </task>
-    <task id="LOCAL-00019" summary="Fifth commit. Adding Service, Controller and new Responses of Ingradient and Orders.">
-      <created>1581342567892</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1581342567892</updated>
+      <workItem from="1583012042112" duration="1214000" />
     </task>
     <task id="LOCAL-00020" summary="Sixth commit. Adding client Angular.">
       <created>1581454821624</created>
@@ -957,11 +951,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583013440986</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Twentee first commit. Adding search form to dish.">
+      <created>1583013459388</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1583013459388</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159888000" />
+    <option name="totallyTimeSpent" value="160148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />

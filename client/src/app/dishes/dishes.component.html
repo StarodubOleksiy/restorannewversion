@@ -10,7 +10,7 @@
       </div>
     </div> 
     <div class="col-4 list-group-item">  
-      <button [disabled]="searchDishWord.length === 0" class="btn btn-primary btn-lg btn-block" type="submit">Знайти страву</button>
+      <button [disabled]="searchDishWord === undefined || searchDishWord.length === 0" class="btn btn-primary btn-lg btn-block" type="submit">Знайти страву</button>
     </div> 
      
      
