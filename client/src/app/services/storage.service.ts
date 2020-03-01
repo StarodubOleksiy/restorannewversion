@@ -84,10 +84,15 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
 
       deleteIngradientFromDish(ingradient: DishIngradient): Observable<HttpResponse<any>> {
         return this.http.post<HttpResponse<any>>(
-                                      // deleteingeadientfromdish
           this.ingradientUrl + 'deleteingradientfromdish',ingradient ,{observe: 'response'}
         );
     }
+
+    deleteAllIngradientsFromCurrentDish(id: number): Observable<HttpResponse<any>> {
+      return this.http.delete<HttpResponse<any>>(
+        this.ingradientUrl + '/'+id + '/deleteallingradientsfromcurrentdish', {observe: 'response'}
+      );                         //{id}/deleteallingradientsfromcurrentdish
+  } 
 
 
 }

@@ -119,6 +119,23 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
     }
 
+    @Override
+    @Transactional
+    public void deleteIngradientFromCurrentDish(DishIngradientRequest dishIngradientRequest) {
+        jdbcTemplate.update("DELETE FROM dish_to_ingradient WHERE dish_id = ? and ingradient_id = ?",
+               dishIngradientRequest.getDishId(),dishIngradientRequest.getIngradientId());
+
+    }
+
+    @Override
+    @Transactional
+    public void deleteAllIngradientsFromCurrentDish(Long dishId) {
+        jdbcTemplate.update("DELETE FROM dish_to_ingradient WHERE dish_id = ?",
+                dishId);
+
+    }
+
+
 
 
 

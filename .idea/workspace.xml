@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/storage/storage.component.html" afterPath="$PROJECT_DIR$/client/src/app/storage/storage.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/storage/storage.component.ts" afterPath="$PROJECT_DIR$/client/src/app/storage/storage.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.html" afterPath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.ts" afterPath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/storage.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/storage.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -22,15 +26,27 @@
       <file leaf-file-name="IngradientServiceImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="27" selection-end-column="42" />
+            <state relative-caret-position="116">
+              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1582938602348" expanded="true" signature="2760:2841" ph="SELECT numer... dish_to_ingradient" />
-                <marker date="1582938602348" expanded="true" signature="3495:3576" ph="SELECT numer... dish_to_ingradient" />
-                <marker date="1582938602348" expanded="true" signature="4206:4290" ph="delete from " />
-                <marker date="1582938602348" expanded="true" signature="4592:4676" ph="UPDATE dish_... " />
+                <marker date="1583057774498" expanded="true" signature="2760:2841" ph="SELECT numer... dish_to_ingradient" />
+                <marker date="1583057774498" expanded="true" signature="3495:3576" ph="SELECT numer... dish_to_ingradient" />
+                <marker date="1583057774498" expanded="true" signature="4206:4290" ph="delete from " />
+                <marker date="1583057774498" expanded="true" signature="4592:4676" ph="UPDATE dish_... " />
+                <marker date="1583057774498" expanded="true" signature="4974:5044" ph="UPDATE dish_... " />
+                <marker date="1583057774498" expanded="true" signature="5275:5323" ph="DELETE FROM " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IngradientService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,11 +93,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CookedDishServiceImplementation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CookedDishServiceImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="237">
               <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IngradientController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="113" column="7" lean-forward="false" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DishIngradientRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/DishIngradientRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -112,36 +148,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
               <caret line="42" column="5" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CookedDishService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuServiceImplementation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/MenuServiceImplementation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="61" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderServiceImplementation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/OrderServiceImplementation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="38" column="33" lean-forward="false" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -210,15 +216,15 @@
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishResponse.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/InfoResponse.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cooked_Dish.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/CookedDishResponse.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
       </list>
     </option>
   </component>
@@ -617,14 +623,7 @@
       <workItem from="1583012042112" duration="1287000" />
       <workItem from="1583014097778" duration="242000" />
       <workItem from="1583023147099" duration="2007000" />
-      <workItem from="1583045298652" duration="681000" />
-    </task>
-    <task id="LOCAL-00027" summary="Nineth commit. Add new field to save dish page.">
-      <created>1581720816006</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1581720816006</updated>
+      <workItem from="1583045298652" duration="4117000" />
     </task>
     <task id="LOCAL-00028" summary="Tenth commit. Add image to dish and show it on menu pages.">
       <created>1581809044508</created>
@@ -962,11 +961,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583029245710</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Twentee first commit. Adding search form to dish.">
+      <created>1583056635546</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1583056635546</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163151000" />
+    <option name="totallyTimeSpent" value="166587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -985,6 +991,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -998,7 +1005,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1162,27 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/DishIngradientRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#217#218#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#288#289#0" expanded="false" />
-            <element signature="e#324#325#0" expanded="false" />
-            <element signature="e#361#362#0" expanded="false" />
-            <element signature="e#396#397#0" expanded="false" />
-            <element signature="e#450#451#0" expanded="false" />
-            <element signature="e#498#499#0" expanded="false" />
-            <element signature="e#532#533#0" expanded="false" />
-            <element signature="e#565#566#0" expanded="false" />
-            <element signature="e#614#615#0" expanded="false" />
-            <element signature="e#658#659#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -1248,25 +1233,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/IngradientRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="28" column="97" lean-forward="false" selection-start-line="28" selection-start-column="97" selection-end-line="28" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,20 +1309,6 @@
         <state relative-caret-position="595">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="61" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1582938602348" expanded="true" signature="2760:2841" ph="SELECT numer... dish_to_ingradient" />
-            <marker date="1582938602348" expanded="true" signature="3495:3576" ph="SELECT numer... dish_to_ingradient" />
-            <marker date="1582938602348" expanded="true" signature="4206:4290" ph="delete from " />
-            <marker date="1582938602348" expanded="true" signature="4592:4676" ph="UPDATE dish_... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1430,6 +1386,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/DishIngradientRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1583057774498" expanded="true" signature="2760:2841" ph="SELECT numer... dish_to_ingradient" />
+            <marker date="1583057774498" expanded="true" signature="3495:3576" ph="SELECT numer... dish_to_ingradient" />
+            <marker date="1583057774498" expanded="true" signature="4206:4290" ph="delete from " />
+            <marker date="1583057774498" expanded="true" signature="4592:4676" ph="UPDATE dish_... " />
+            <marker date="1583057774498" expanded="true" signature="4974:5044" ph="UPDATE dish_... " />
+            <marker date="1583057774498" expanded="true" signature="5275:5323" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="113" column="7" lean-forward="false" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
           <folding />
         </state>
       </provider>

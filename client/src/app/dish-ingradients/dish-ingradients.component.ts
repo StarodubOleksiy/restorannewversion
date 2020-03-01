@@ -123,12 +123,12 @@ export class DishIngradientsComponent implements OnInit {
 console.log("onIngradientDeleteClick( meyhod");
 console.log("onIngradientDeleteClick( meyhod = "+dishIngradient.dishId);
 console.log("onIngradientDeleteClick( meyhod = "+dishIngradient.ingradientId);
-    var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей жанр?');
+    var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей інградіент?');
     if (deleteConfirmation)  
     this.storageService.deleteIngradientFromDish(dishIngradient)
-                .subscribe(response => this.onIngradientGenreResponse(dishIngradient, response)
+                .subscribe(response => this.onIngradientDeleteResponse(dishIngradient, response)
                 , error => {
-                  this.snackBar.open('Genre cannot be deleted. It is not empty and has books.'
+                  this.snackBar.open('Ingradient cannot be deleted. It is not empty and has books.'
                       , null, {
                           duration: 2000
                       });
@@ -136,15 +136,43 @@ console.log("onIngradientDeleteClick( meyhod = "+dishIngradient.ingradientId);
              //   this.getIngradients();
   }
   
-  private onIngradientGenreResponse(dishIngradient: DishIngradient, response: HttpResponse<any>): void {
+  private onIngradientDeleteResponse(dishIngradient: DishIngradient, response: HttpResponse<any>): void {
     if (response.status === HttpStatus.OK) {
-        this.snackBar.open('Genre deleted sucsessfully.', null, {
+        this.snackBar.open('Ingradient deleted sucsessfully.', null, {
             duration: 2000
         });
         let index = this.dishIngradients.indexOf(dishIngradient);
-        this.dishIngradients.splice(index, 1);
+        this.dishIngradients.splice(index, 1);   
     }
   }
+
+
+  deleteAllIngradients(dish)
+  {
+    var deleteConfirmation = confirm('Ви впевнені що хочете видалити цей інградіент?');
+    if (deleteConfirmation)  
+    this.storageService.deleteAllIngradientsFromCurrentDish(dish.id)
+                .subscribe(response => this.onDeleteAllIngradientsResponse(response)
+                , error => {
+                  this.snackBar.open('Ingradient cannot be deleted. It is not empty and has books.'
+                      , null, {
+                          duration: 2000
+                      });
+              });
+
+  }
+
+  private onDeleteAllIngradientsResponse(response: HttpResponse<any>): void {
+    if (response.status === HttpStatus.OK) {
+        this.snackBar.open('All ingradients deleted successfully.', null, {
+            duration: 2000
+        });
+     //   let index = this.dishIngradients.indexOf(dishIngradient);
+       // this.dishIngradients.splice(this.dishIngradients.length, this.dishIngradients.length);
+       this.refresh();   
+    }
+  }
+
 
 
   

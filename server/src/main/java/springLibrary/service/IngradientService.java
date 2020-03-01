@@ -28,4 +28,8 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
 
     public void changeNumerosityOfIngradientsInDish(DishIngradientRequest dishIngradientRequest);
 
+    public void deleteIngradientFromCurrentDish(DishIngradientRequest dishIngradientRequest);
+
+    public void deleteAllIngradientsFromCurrentDish(Long dishId);
+
 }

@@ -103,7 +103,16 @@ public class IngradientController {
     ResponseEntity<?> deleteFromIngradientFromDish(@RequestBody DishIngradientRequest dishIngradientRequest) {
         LOGGER.info("deleteFromIngradientFromDish method");
         LOGGER.info("dishIngradientRequest = " + dishIngradientRequest.toString());
+        ingradientService.deleteIngradientFromCurrentDish(dishIngradientRequest);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @DeleteMapping("/{id}/deleteallingradientsfromcurrentdish")
+    ResponseEntity<?> deleteAllIngradientsFromCurrentDish(@PathVariable Long id) {
+        LOGGER.info("dishid = "+id);
+        ingradientService.deleteAllIngradientsFromCurrentDish(id);
+        return new  ResponseEntity<>(HttpStatus.OK);
     }
 
 
