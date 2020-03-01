@@ -617,14 +617,7 @@
       <workItem from="1583012042112" duration="1287000" />
       <workItem from="1583014097778" duration="242000" />
       <workItem from="1583023147099" duration="2007000" />
-      <workItem from="1583045298652" duration="4192000" />
-    </task>
-    <task id="LOCAL-00029" summary="Tenth commit. Add image to dish and show it on menu pages.">
-      <created>1581809067980</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1581809067980</updated>
+      <workItem from="1583045298652" duration="4209000" />
     </task>
     <task id="LOCAL-00030" summary="Tenth commit. Add image to dish and show it on menu pages.">
       <created>1581809672341</created>
@@ -962,11 +955,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583060120640</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Twentee second commit. Adding posibility to delete one ingradient and all ingradients from dish.">
+      <created>1583060138603</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1583060138603</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166662000" />
+    <option name="totallyTimeSpent" value="166679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
