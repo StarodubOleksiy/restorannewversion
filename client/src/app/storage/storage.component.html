@@ -1,14 +1,14 @@
-<form class="needs-validation" name="searchForm" novalidate (ngSubmit)="findIngradientByName()">    
+<form class="needs-validation" name="searchForm" novalidate>    
   <label for="validationCustom03">Пошук інградієнта за його назвою</label>
    <div class="form-row shadow-lg p-3 mb-5"> 
           <div class="col-8 list-group-item"> 
-      <input type="text" name="search" [(ngModel)]="searchIngradientWord" class="form-control" placeholder="Введіть назву інградієнта бажаєте знайти" id="search" required>
+      <input type="text" (keyup)="onKey()" name="search" [(ngModel)]="searchIngradientWord" class="form-control" placeholder="Введіть назву інградієнта бажаєте знайти" id="search" required>
       <div class="invalid-feedback">
-        Please a valid name of the ingradient.
+        Please, enter a valid name of the ingradient.
       </div>
     </div> 
     <div class="col-4 list-group-item">  
-      <button [disabled]="searchIngradientWord === undefined || searchIngradientWord.length === 0" class="btn btn-primary btn-lg btn-block" type="submit">Знайти страву</button>
+      <button [disabled]=" disabledSearch === false " class="btn btn-primary btn-lg btn-block" id="searchButton" type="submit">Знайти інградіент</button>
     </div> 
           
     </div>  
