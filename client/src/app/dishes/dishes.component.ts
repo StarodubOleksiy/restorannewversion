@@ -28,6 +28,13 @@ export class DishesComponent implements OnInit {
   }
 
 
+  refresh(): void {
+    this.validationFunction(); 
+  }
+
+
+
+
   getDishes(): void {
     this.dishService.getDishes()
     .subscribe(dishes => 
@@ -60,10 +67,12 @@ export class DishesComponent implements OnInit {
   validationFunction() {
     'use strict';
     window.addEventListener('load', function() {
+      console.log("window.addEventListener('load', function())");
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
+        console.log("why you are not here?");
         form.addEventListener('submit', function(event) {
           if (form.checkValidity() === false) {
             event.preventDefault();
