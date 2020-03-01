@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.html" afterPath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.ts" afterPath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/storage.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/storage.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -623,14 +617,7 @@
       <workItem from="1583012042112" duration="1287000" />
       <workItem from="1583014097778" duration="242000" />
       <workItem from="1583023147099" duration="2007000" />
-      <workItem from="1583045298652" duration="4117000" />
-    </task>
-    <task id="LOCAL-00028" summary="Tenth commit. Add image to dish and show it on menu pages.">
-      <created>1581809044508</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1581809044508</updated>
+      <workItem from="1583045298652" duration="4192000" />
     </task>
     <task id="LOCAL-00029" summary="Tenth commit. Add image to dish and show it on menu pages.">
       <created>1581809067980</created>
@@ -968,11 +955,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583056635546</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Twentee second commit. Adding posibility to delete one ingradient and all ingradients from dish.">
+      <created>1583060120640</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1583060120640</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166587000" />
+    <option name="totallyTimeSpent" value="166662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -1038,7 +1032,8 @@
     <MESSAGE value="Nineteenth commit. Now we can add ingredients to dishes." />
     <MESSAGE value="Twenteenth commit. Now we can edit nu,erosity of ingradients and delete ingradient from dish." />
     <MESSAGE value="Twentee first commit. Adding search form to dish." />
-    <option name="LAST_COMMIT_MESSAGE" value="Twentee first commit. Adding search form to dish." />
+    <MESSAGE value="Twentee second commit. Adding posibility to delete one ingradient and all ingradients from dish." />
+    <option name="LAST_COMMIT_MESSAGE" value="Twentee second commit. Adding posibility to delete one ingradient and all ingradients from dish." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
