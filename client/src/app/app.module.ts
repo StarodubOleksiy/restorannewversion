@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ModalModule } from 'ngx-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './dishes/dishes.component';
@@ -9,6 +9,7 @@ import { DishService } from './services/dish.service';
 import { MenuService } from './services/menu.service';
 import { StorageService } from './services/storage.service';
 import { EmployeeService } from './services/employee.service';
+import {OrderService } from './services/order.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -38,7 +39,7 @@ import { AddingradientComponent } from './addingradient/addingradient.component'
 import { EditdishesComponent } from './editdishes/editdishes.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
-
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   imports: [
@@ -66,10 +67,10 @@ import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-in
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent
   ],
   
-  providers: [MenuService, DishService, EmployeeService, StorageService],
+  providers: [MenuService, DishService, EmployeeService, StorageService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

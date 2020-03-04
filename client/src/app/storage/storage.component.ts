@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,TemplateRef } from '@angular/core';
 import { Ingradient } from '../model/ingradient';
 import { StorageService } from '../services/storage.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Router,ActivatedRoute} from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Directive, HostListener } from '@angular/core';
+
 
 
 @Component({
@@ -33,7 +34,7 @@ export class StorageComponent implements OnInit {
   constructor(private storageService: StorageService,
     private router: Router) { }
 
-  
+    
   refresh(): void {
     console.log('method reflesh()');
     //this.getIngradients();
@@ -77,9 +78,29 @@ validationFunction(): void {
 
  @HostListener('click', ['$event.target.id']) onClick(id: 'searchButton') {
      this.validationFunction();
+    /* this.storageService.getIngradientsByName(this.searchIngradientWord)
+     .subscribe(ingradients => 
+      { 
+      //  this.validationFunction();
+        this.ingradients = ingradients;   
+      });
      console.log("this.searchIngradientWord = "+this.searchIngradientWord);
-     console.log("this.disabledSearch = "+this.disabledSearch);
+     console.log("this.disabledSearch = "+this.disabledSearch);*/
   }
+
+
+
+  
+  findIngradientByName(): void {
+    console.log("this.searchDishWord = "+this.searchIngradientWord);
+    this.storageService.getIngradientsByName(this.searchIngradientWord)
+    .subscribe(ingradients => 
+    { 
+      this.ingradients = ingradients;  
+    });
+};
+
+  
 
 
 

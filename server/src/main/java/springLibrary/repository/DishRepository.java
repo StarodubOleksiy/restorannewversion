@@ -11,6 +11,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public interface DishRepository extends JpaRepository<Dish, Long> {
 
-
+    @Query("select d from Dish d where d.name like %?1%")
+    public List<Dish> findByName(String name);
 
 }

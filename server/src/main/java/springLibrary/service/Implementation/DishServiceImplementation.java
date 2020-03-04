@@ -53,6 +53,14 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
 
 
     @Override
+    public List<DishResponse> findDishesByName(String name) {
+        return getRepository().findByName(name).stream()
+                .map(this::dishToDishResponse)
+                .collect(Collectors.toList());
+    }
+
+
+    @Override
     public List<DishResponse> findAllResponse() {
         return getRepository().findAll().stream()
                 .map(this::dishToDishResponse)

@@ -59,9 +59,17 @@ export class DishesComponent implements OnInit {
     this.router.navigateByUrl('/adddish/add');
   }
 
+
+
   findDishByName(): void {
     console.log("this.searchDishWord = "+this.searchDishWord);
+    this.dishService.getDishesByName(this.searchDishWord)
+    .subscribe(dishes => 
+    { 
+      this.dishes = dishes;   
+    });
 };
+
 
 
   validationFunction() {

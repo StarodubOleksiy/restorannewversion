@@ -1,0 +1,57 @@
+<p>
+  orders works!
+</p>
+
+<table class="table table-hover">
+  <thead>
+  <tr class="text-center">
+      <th scope="col">Номер замовлення</th>
+      <th scope="col">Номер стола</th>
+      <th scope="col">Дата замовлення</th>
+      <th scope="col">Імя офіціанта</th>
+      <th scope="col">Прізвище офіціанта</th>
+      <th scope="col">Статус замовлення</th>
+      <th scope="col">Закрити замовлення</th>
+      <th scope="col">Редагувати замовлення</th>
+      <th scope="col">Видалити замовлення</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let order of orders" class="text-center">
+        <th scope="row">
+  {{order.id}}
+</th>
+<th scope="row">
+  {{order.tableNumber}}
+  </th>
+  <th scope="row">
+    {{order.orderDate}}
+   </th>
+   <th scope="row">
+    {{order.waiterName}}
+   </th>
+   <th scope="row">
+    {{order.waiterSurname}}
+   </th>
+   <th scope="row">
+    {{order.state}}
+   </th>
+<th scope="row">
+  <button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
+    Закрити замовлення
+  </button> 
+</th>
+<th scope="row">
+<button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
+  Редагувати замовлення
+</button> 
+</th>
+<th scope="row">
+
+<button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
+  Видалити Замовлення
+</button> 
+</th>
+</tr>
+</tbody>
+</table>

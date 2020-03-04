@@ -53,4 +53,11 @@ public class DishController {
    }
 
 
+    @GetMapping("/dishname")
+    public List<DishResponse> getDishessByName(@RequestParam("name") String name) {
+        LOGGER.info("dishName = "+name);
+        return dishService.findDishesByName(name);
+    }
+
+
 }

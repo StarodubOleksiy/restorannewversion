@@ -43,4 +43,25 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
       this.dishUrl + '/dish/save', dish, {observe: 'response'});
   }
 
+
+  
+  getDishesByName(name: string): Observable<Dish[]> {
+    return this.http.get<Dish[]>(this.dishUrl + '/dishname',
+    {  
+      params: {
+      name: name,
+       } 
+    });
+   }
+   /*
+    getAuthorsByName(name: string): Observable<Author[]> {
+      return this.http.get<Author[]>(this.authorUrl+'/author/findbyname',
+          {
+              params: {
+                name: name
+                      }
+          });
+    }
+
+   */ 
 }

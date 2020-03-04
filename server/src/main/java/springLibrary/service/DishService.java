@@ -20,4 +20,6 @@ public interface DishService extends Service<Dish, Long, DishRepository> {
 
    public void saveFromRequest(Dish dish, DishRequest dishRequest);
 
+   public List<DishResponse> findDishesByName(String name);
+
 }
