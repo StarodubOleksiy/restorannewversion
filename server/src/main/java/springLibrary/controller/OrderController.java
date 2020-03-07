@@ -56,10 +56,10 @@ public class OrderController {
     public ResponseEntity<?> save(@RequestBody OrderRequest orderRequest) {
         LocalDate date = LocalDate.now();
         Orders order = orderRequest.toOrder();
-        order.setId(Long.valueOf("47856"));
+        //order.setId(Long.valueOf("47856"));
         order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
         order.setOrderDate(date.toString());
-        order.setState(OrderStatus.OPEN);
+        order.setState(OrderStatus.open);
         //LOGGER.info("employeeService.getOne(orderRequest.getWaiterId()).toString() = "+employeeService.getOne(orderRequest.getWaiterId()).toString());
         // LOGGER.info("orderRequest = " + orderRequest);
         LOGGER.info("order = " + order);

@@ -35,6 +35,7 @@ public class Orders extends AbstractIdentifiableEntity {
     @Column(name = "state", nullable = false)
     @Enumerated(EnumType.STRING)
     private OrderStatus state;
+    //private String state;
 
     public Waiter getWaiter() {
         return waiter;

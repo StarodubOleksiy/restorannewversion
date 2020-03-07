@@ -1,8 +1,9 @@
 package springLibrary.entities;
 
 public enum OrderStatus {
-    OPEN("OPEN"),
-    CLOSE("CLOSE");
+    open("open"),
+    close("close");
+
 
     private String status;
 
@@ -16,10 +17,10 @@ public enum OrderStatus {
 
     public static OrderStatus stringToEnum(String status) {
         switch (status) {
-            case "OPEN":
-                return OPEN;
-                 default:
-                return CLOSE;
+            case "open":
+                return open;
+            default:
+                return close;
         }
     }
 
@@ -27,4 +28,4 @@ public enum OrderStatus {
         return orderStatus.getStatus();
     }
 
-    }
+}

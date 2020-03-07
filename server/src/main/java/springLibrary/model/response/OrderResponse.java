@@ -81,7 +81,7 @@ public class OrderResponse {
         response.setId(order.getId());
         response.setTableNumber(order.getTableNumber());
         response.setOrderDate(order.getOrderDate());
-        response.setState(OrderStatus.enumToString(order.getState()));
+      //  response.setState(OrderStatus.enumToString(order.getState()));
         return response;
     }
 
