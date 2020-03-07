@@ -17,6 +17,7 @@ import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-in
 
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
+  { path: 'dishesbymenu/:id', component: DishesComponent },
   { path: 'editdishes', component: EditdishesComponent },
   { path: 'ingradients', component: StorageComponent },
   { path: 'employees', component: EmployeesComponent },

@@ -63,7 +63,7 @@ export class AddorderComponent implements OnInit {
       this.snackBar.open('Нове замовлення успішно додане.', null, {
           duration: 2000
       });
-   //   this.router.navigate(['editdishes']);
+     this.router.navigate(['orders']);
   }/* else {
       this.snackBar.open('Страва успішно відредагована.', null, {
           duration: 2000

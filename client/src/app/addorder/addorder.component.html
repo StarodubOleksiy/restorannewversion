@@ -14,7 +14,7 @@
           <mat-card-content>
   <form class="example-form" [formGroup]="orderConfigureForm" (ngSubmit)="saveOrder()">
      
-        <mat-form-field>
+        <mat-form-field class="example-full-width">
           <mat-select [(value)]="order.waiterId" [(ngModel)]="order.waiterId" placeholder="select waiter"
           formControlName="waiter">
             <mat-option *ngFor="let waiter of waiters" [value]="waiter.id">
@@ -24,7 +24,7 @@
             
             </mat-form-field>
 
-            <mat-form-field>
+            <mat-form-field class="example-full-width">
               <mat-label>Choose a number of table</mat-label>
               <mat-select [(value)]="order.tableNumber" formControlName="tableNumber">
                 <mat-option value="1">1</mat-option>

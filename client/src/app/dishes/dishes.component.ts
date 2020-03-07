@@ -15,6 +15,7 @@ export class DishesComponent implements OnInit {
   dishes: Dish[] = [];
 
   menus: Menu[] = []; 
+  public selectedId:number;
   searchDishWord: string;
 
   constructor(private dishService: DishService,
@@ -22,9 +23,16 @@ export class DishesComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    if(isNaN(this.selectedId) === true)
+    {
+      console.log('all dishes');
     this.getMenu();
     this.getDishes();
     this.validationFunction();
+    } else
+    {
+      console.log('dishes by menu');
+    }
   }
 
 
