@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Twentee fourth commit. Adding save order component.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/app/addorder/addorder.component.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/app/addorder/addorder.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/app/addorder/addorder.component.spec.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/app/addorder/addorder.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/OrderStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/OrderRequest.java" />
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/model/order.ts" afterPath="$PROJECT_DIR$/client/src/app/model/order.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/orders/orders.component.html" afterPath="$PROJECT_DIR$/client/src/app/orders/orders.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/orders/orders.component.ts" afterPath="$PROJECT_DIR$/client/src/app/orders/orders.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/order.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/order.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/storage/storage.component.ts" afterPath="$PROJECT_DIR$/client/src/app/storage/storage.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/OrderController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/OrderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Waiter.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Waiter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/OrderResponse.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/OrderResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/repository/IngradientRepository.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/repository/IngradientRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/OrderServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/OrderServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/IngradientService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/OrderService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/OrderService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -548,14 +524,7 @@
       <workItem from="1583023147099" duration="2007000" />
       <workItem from="1583045298652" duration="4819000" />
       <workItem from="1583355060572" duration="5656000" />
-      <workItem from="1583540158020" duration="9932000" />
-    </task>
-    <task id="LOCAL-00032" summary="Eleven commit. Add employees component and now program can add menu.">
-      <created>1581983779894</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1581983779894</updated>
+      <workItem from="1583540158020" duration="9966000" />
     </task>
     <task id="LOCAL-00033" summary="Eleven commit. Add employees component and now program can add menu.">
       <created>1581984904245</created>
@@ -893,11 +862,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583363245980</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Twentee fourth commit. Adding save order component.">
+      <created>1583554498478</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1583554498478</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182877000" />
+    <option name="totallyTimeSpent" value="182911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
