@@ -32,4 +32,6 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
 
     public void deleteAllIngradientsFromCurrentDish(Long dishId);
 
+    public List<IngradientResponse> findIngradientsByName(String name);
+
 }

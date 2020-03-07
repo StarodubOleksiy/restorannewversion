@@ -35,7 +35,7 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
         response.setDishId(cookedDish.getDish().getId());
         response.setDishName(cookedDish.getDish().getName());
         response.setDishPrice(cookedDish.getDish().getPrice());
-        response.setCookerId(cookedDish.getCook().getId());
+        response.setCookerId(cookedDish.getCook().getId());//
         response.setCookerName(cookedDish.getCook().getName());
         response.setCookerSurname(cookedDish.getCook().getSurname());
         return response;

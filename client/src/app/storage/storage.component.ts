@@ -68,6 +68,7 @@ validationFunction(): void {
         console.log("this.disabledSearch"+this.disabledSearch);
         event.preventDefault();
         event.stopPropagation();
+        //this.getIngradients();
        }
       form.classList.add('was-validated');
       

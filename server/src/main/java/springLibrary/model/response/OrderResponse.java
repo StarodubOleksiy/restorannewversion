@@ -3,6 +3,7 @@ package springLibrary.model.response;
 
 import lombok.Data;
 import springLibrary.entities.Ingradient;
+import springLibrary.entities.OrderStatus;
 import springLibrary.entities.Orders;
 
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ public class OrderResponse {
     private Long id;
     private int tableNumber;
     private String orderDate;
+    private Long waiterId;
     private String waiterName;
     private String waiterSurname;
     private String state;
@@ -66,12 +68,20 @@ public class OrderResponse {
         this.waiterSurname = waiterSurname;
     }
 
+    public Long getWaiterId() {
+        return waiterId;
+    }
+
+    public void setWaiterId(Long waiterId) {
+        this.waiterId = waiterId;
+    }
+
     public static OrderResponse of(Orders order) {
         OrderResponse response = new OrderResponse();
         response.setId(order.getId());
         response.setTableNumber(order.getTableNumber());
         response.setOrderDate(order.getOrderDate());
-        response.setState(order.getState());
+        response.setState(OrderStatus.enumToString(order.getState()));
         return response;
     }
 

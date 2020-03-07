@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springLibrary.entities.Ingradient;
+import springLibrary.entities.OrderStatus;
 import springLibrary.entities.Orders;
 import springLibrary.model.response.OrderResponse;
 import springLibrary.repository.OrderRepository;
@@ -27,10 +29,11 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
         OrderResponse response = new OrderResponse();
         response.setId(order.getId());
         response.setTableNumber(order.getTableNumber());
+        response.setWaiterId(order.getWaiter().getId());
         response.setWaiterName(order.getWaiter().getName());
         response.setWaiterSurname(order.getWaiter().getSurname());
         response.setOrderDate(order.getOrderDate());
-        response.setState(order.getState());
+        response.setState(OrderStatus.enumToString(order.getState()));// response.setState(OrderStatus.enumToString(order.getState()));
         return response;
     }
 
@@ -46,6 +49,12 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     @Override
     public Optional<OrderResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::orderToOrderResponse);
+    }
+
+    @Override
+    public void save(Orders order) {
+        super.save(order);
+
     }
 
 

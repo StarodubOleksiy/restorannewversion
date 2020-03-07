@@ -116,9 +116,9 @@ public class IngradientController {
     }
 
     @GetMapping("/ingredientname")
-    public List<DishResponse> getIngradientsByName(@RequestParam("name") String name) {
-        LOGGER.info("dishName = "+name);
-        return null;//dishService.findDishesByName(name);
+    public List<IngradientResponse> getIngradientsByName(@RequestParam("name") String name) {
+        LOGGER.info("ingradientName = "+name);
+        return ingradientService.findIngradientsByName(name);
     }
 
 

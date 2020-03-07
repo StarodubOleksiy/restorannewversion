@@ -1,0 +1,49 @@
+<p>
+  addorder works!
+</p>
+<div class="container-fluid">
+  <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+          <mat-card-header>
+            <div *ngIf="configureType.text === 'edit'">
+              <legend>Edit order</legend>
+          </div>
+          <div *ngIf="configureType.text === 'add'">
+              <legend>Add new order</legend>
+          </div>
+      </mat-card-header>
+          <mat-card-content>
+  <form class="example-form" [formGroup]="orderConfigureForm" (ngSubmit)="saveOrder()">
+     
+        <mat-form-field>
+          <mat-select [(value)]="order.waiterId" [(ngModel)]="order.waiterId" placeholder="select waiter"
+          formControlName="waiter">
+            <mat-option *ngFor="let waiter of waiters" [value]="waiter.id">
+                           {{ waiter.name }} {{ waiter.surname}}
+            </mat-option>
+            </mat-select>
+            
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Choose a number of table</mat-label>
+              <mat-select [(value)]="order.tableNumber" formControlName="tableNumber">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+                <mat-option value="6">6</mat-option>
+              </mat-select>
+            </mat-form-field>
+        
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!orderConfigureForm.valid">
+        Click me!
+       </button>
+    </form>
+
+  </mat-card-content>
+  
+  </mat-card>
+ 
+  </div>

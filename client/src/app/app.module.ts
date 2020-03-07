@@ -40,6 +40,7 @@ import { EditdishesComponent } from './editdishes/editdishes.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AddorderComponent } from './addorder/addorder.component';
 
 @NgModule({
   imports: [
@@ -67,7 +68,7 @@ import { OrdersComponent } from './orders/orders.component';
   declarations: [
     AppComponent,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent
   ],
   
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService],

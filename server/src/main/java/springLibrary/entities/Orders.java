@@ -33,7 +33,8 @@ public class Orders extends AbstractIdentifiableEntity {
 
     @NotNull
     @Column(name = "state", nullable = false)
-    private String state;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus state;
 
     public Waiter getWaiter() {
         return waiter;
@@ -59,11 +60,11 @@ public class Orders extends AbstractIdentifiableEntity {
         this.orderDate = orderDate;
     }
 
-    public void setState(String state) {
+    public void setState(OrderStatus state) {
         this.state = state;
     }
 
-    public String getState() {
+    public OrderStatus getState() {
         return state;
     }
 
@@ -96,6 +97,7 @@ public class Orders extends AbstractIdentifiableEntity {
     @Override
     public String toString() {
         return "Orders{" +
+                "id=" + super.getId() +
                 "tableNumber=" + tableNumber +
                 ", orderDate='" + orderDate + '\'' +
                 ", state='" + state + '\'' +

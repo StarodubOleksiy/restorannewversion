@@ -21,6 +21,13 @@ export class OrderService {
     return this.http.get<HttpResponse<Order[] | any>>(   
       this.orderUrl+'/orders' , {observe: 'response'});
   }
+
+
+
+  saveOrder(order: Order): Observable<HttpResponse<any>> {
+    return this.http.post<HttpResponse<any>>(
+        this.orderUrl + '/addorder/save', order, {observe: 'response'});
+    }
   
 
 }

@@ -9,6 +9,7 @@ import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
 import springLibrary.model.request.DishIngradientRequest;
 import springLibrary.model.response.DishIngradientsResponse;
+import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.DishRepository;
 import springLibrary.repository.IngradientRepository;
@@ -133,6 +134,14 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
         jdbcTemplate.update("DELETE FROM dish_to_ingradient WHERE dish_id = ?",
                 dishId);
 
+    }
+
+
+    @Override
+    public List<IngradientResponse> findIngradientsByName(String name) {
+        return getRepository().findByName(name).stream()
+                .map(this::ingradientToIngradientResponse)
+                .collect(Collectors.toList());
     }
 
 

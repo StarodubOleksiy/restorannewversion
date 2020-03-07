@@ -32,6 +32,16 @@ export class OrdersComponent implements OnInit {
       });     
   }
 
+  addNewOrder(): void {
+    console.log(this.router);
+  //if (this.route.snapshot.paramMap.get('configureType') === 'add')    
+  this.router.navigateByUrl('/addorder/add');
+  //else
+  //this.router.navigateByUrl('/addgenre/'+this.book.id+'/add');
+  }
+
+
+
 
 
 }

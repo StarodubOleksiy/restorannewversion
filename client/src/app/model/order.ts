@@ -3,6 +3,7 @@ export class Order {
     id: number;
     tableNumber: string;
     orderDate: string;
+    waiterId: number;
     waiterName: string;
     waiterSurname: string;
     state: string;

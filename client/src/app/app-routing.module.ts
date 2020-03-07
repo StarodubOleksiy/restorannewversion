@@ -11,6 +11,7 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
 import { AddingradientComponent } from './addingradient/addingradient.component';
 import { MenuComponent } from './menu/menu.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AddorderComponent } from './addorder/addorder.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 
@@ -45,7 +46,18 @@ const routes: Routes = [
      }
  ] 
 } ,
-
+{ path: 'addorder',  children: [
+    {
+         path: ':configureType',
+         component: AddorderComponent
+    },
+        
+     {
+         path: ':configureType/:id',
+         component: AddorderComponent
+     }
+ ] 
+},
  { path: 'menu', component: MenuComponent },
  { path: 'orders', component: OrdersComponent },
  { path: 'adddish', children: [
