@@ -22,4 +22,6 @@ public interface DishService extends Service<Dish, Long, DishRepository> {
 
    public List<DishResponse> findDishesByName(String name);
 
+   public List<DishResponse> findDishesByMenu(Long id);
+
 }

@@ -17,21 +17,27 @@ export class DishesComponent implements OnInit {
   menus: Menu[] = []; 
   public selectedId:number;
   searchDishWord: string;
+  menu: Menu;
 
-  constructor(private dishService: DishService,
+  constructor(
+    private route: ActivatedRoute,
+    private dishService: DishService,
               private menuService: MenuService,
     private router: Router) { }
 
   ngOnInit() {
+    this.getMenu();
+    this.validationFunction();
+    this.selectedId = parseInt(this.route.snapshot.paramMap.get('id'));
     if(isNaN(this.selectedId) === true)
     {
-      console.log('all dishes');
-    this.getMenu();
-    this.getDishes();
-    this.validationFunction();
-    } else
+      console.log('all dishes');    
+    this.getDishes();  
+    } 
+    else
     {
       console.log('dishes by menu');
+      
     }
   }
 
@@ -77,6 +83,37 @@ export class DishesComponent implements OnInit {
       this.dishes = dishes;   
     });
 };
+
+getDishesByMenu(id:number): void {
+  console.log('this.route.snapshot.paramMap.get(id) = method getDishesByMenu(id:number)'+this.route.snapshot.paramMap.get('id'));
+    this.dishService.getDishesByMenu(id)
+   .subscribe(dishes => 
+    { 
+      this.dishes = dishes.body;
+      //this.returnedBooks = this.books.slice(0, 10);
+      this.router.navigate(['dishesbymenu/:' + this.selectedId]);     
+     });                   //dishesbymenu/:id
+
+}
+
+
+onSelect(menu) {
+  console.log('this.route.snapshot.paramMap.get(id) = method onSelect(genre) '+this.route);//From here you can extract by author and by publisher
+   this.selectedId = menu.id;
+this.dishService.getDishesByMenu(this.selectedId)
+ .subscribe(dishes => 
+  { 
+    this.dishes = dishes.body;
+   // this.returnedBooks = this.books.slice(0, 10);
+    this.router.navigate(['dishesbymenu/:' + this.selectedId]);     
+   });
+  // this.returnedBooks = this.books.slice(0, 10); 
+
+}
+
+
+
+
 
 
 

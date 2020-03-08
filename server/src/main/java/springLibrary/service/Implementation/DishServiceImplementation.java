@@ -12,6 +12,7 @@ import springLibrary.entities.Dish;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.repository.DishRepository;
+import springLibrary.repository.MenuRepository;
 import springLibrary.service.*;
 
 import java.util.Base64;
@@ -29,6 +30,9 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    MenuRepository menuRepository;
 
     protected DishServiceImplementation(@Autowired DishRepository repository) {
         super(repository);
@@ -55,6 +59,13 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Override
     public List<DishResponse> findDishesByName(String name) {
         return getRepository().findByName(name).stream()
+                .map(this::dishToDishResponse)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<DishResponse> findDishesByMenu(Long id) {
+        return menuRepository.getOne(id).getDishes().stream()
                 .map(this::dishToDishResponse)
                 .collect(Collectors.toList());
     }

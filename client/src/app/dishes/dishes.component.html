@@ -26,8 +26,8 @@
   <li class="list-group-item shadow p-1 mb-1 bg-white rounded" role="presentation" *ngFor="let menu of menus"
     (click)="onSelect(menu)" align="left">
      <span class="list-group-item">
-  <a class="list-group-item shadow-sm p-2 mb-2 bg-white rounded" routerLink="/dishesbymenu/{{menu.id}}" >{{menu.name}}</a>
-</span>
+  <a class="list-group-item shadow-sm p-2 mb-2 bg-white rounded" routerLink="/dishesbymenu/:{{menu.id}}" >{{menu.name}}</a>
+</span>                                                                     
   </li>
 </ul>
 </mat-card>

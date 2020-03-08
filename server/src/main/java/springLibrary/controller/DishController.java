@@ -60,4 +60,11 @@ public class DishController {
     }
 
 
+    @GetMapping("/dishesbymenu/{id}")
+    public ResponseEntity<List<DishResponse>> dishesByMenu(@PathVariable Long id)  {
+        return new ResponseEntity<>(dishService.findDishesByMenu(id), HttpStatus.OK);
+    }
+
+
+
 }

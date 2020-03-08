@@ -53,6 +53,12 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
        } 
     });
    }
+
+
+   getDishesByMenu(id: number): Observable<HttpResponse<Dish[] | any>> {
+    return this.http.get<HttpResponse<Dish[] | any>>(
+    this.dishUrl+'/dishesbymenu/'+id , {observe: 'response'});
+}
    /*
     getAuthorsByName(name: string): Observable<Author[]> {
       return this.http.get<Author[]>(this.authorUrl+'/author/findbyname',
