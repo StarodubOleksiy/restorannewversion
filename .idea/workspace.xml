@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Twentee fifth commit. Adding filter dishes by menu and dish details.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
@@ -614,14 +614,7 @@
       <workItem from="1583355060572" duration="5656000" />
       <workItem from="1583540158020" duration="10588000" />
       <workItem from="1583568126600" duration="4946000" />
-      <workItem from="1583641491652" duration="3147000" />
-    </task>
-    <task id="LOCAL-00041" summary="Sixteenth commit. Creating connection between dish and ingradients.">
-      <created>1582379410189</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1582379410189</updated>
+      <workItem from="1583641491652" duration="3773000" />
     </task>
     <task id="LOCAL-00042" summary="Sixteenth commit. Creating connection between dish and ingradients.">
       <created>1582379434853</created>
@@ -959,11 +952,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583651259556</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Twentee fifth commit. Adding filter dishes by menu and dish details.">
+      <created>1583651369791</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1583651369791</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191626000" />
+    <option name="totallyTimeSpent" value="192252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
