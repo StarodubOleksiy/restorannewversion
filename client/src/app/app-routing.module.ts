@@ -14,9 +14,10 @@ import { OrdersComponent } from './orders/orders.component';
 import { AddorderComponent } from './addorder/addorder.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
-
+import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
+  { path: 'dishes/:id', component: DishdetailsComponent },
   { path: 'dishesbymenu/:id', component: DishesComponent },
   { path: 'editdishes', component: EditdishesComponent },
   { path: 'ingradients', component: StorageComponent },
