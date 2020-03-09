@@ -1,3 +1,50 @@
 <p>
   dishdetails works!
 </p>
+<div class="container-fluid">
+   
+  <div class="row-fluid">
+      <h3>Інгредієнти:</h3> 
+          <ul class="nav list-group list-group-horizontal">
+                  <li *ngFor="let ingradient of ingradients" class="list-group-item list-group-item-action" >
+                         <h6>{{ingradient.ingradientName}} </h6>
+                  </li>
+                </ul>
+      <div class="col-lg">
+          
+        <table class="table" >
+          <thead>
+              <tr>
+                <th colspan="2" scope="col"><h1>
+                  <strong>{{dish.name}}</strong>
+                  </h1></th>
+                </tr>
+            </thead>
+          <tbody>
+         <tr class="text-center">
+      <th rowspan="4" scope="row">
+              <figure class="figure shadow-lg p-3 mb-5 bg-white rounded">
+        <img src="data:image/JPEG;base64,{{dish.image}}"  class="figure-img rounded" style="height: 600px; width:500px;">
+      </figure>
+      </th>
+  </tr> 
+  <tr> 
+        <th scope="col">    
+              <a  routerLink="/dishesbymenu/{{menu.id}}" class="btn btn-link" >Категорія меню: {{menu.name}}</a>
+            </th>
+      
+      </tr>
+      <th scope="col">    
+          <h2>Ціна: {{dish.price}}</h2>
+        </th>
+        <tr>
+         <th scope="col">    
+            <h2>Вага: {{dish.weight}}</h2>
+          </th>
+      </tr>      
+                </tbody> 
+          </table>
+<button (click)="goBack()">Повернутися на попередню сторінку</button>
+</div>
+</div>
+</div>

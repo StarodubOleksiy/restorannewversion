@@ -13,6 +13,7 @@ import {Router,ActivatedRoute} from '@angular/router';
 export class DishesComponent implements OnInit {
 
   dishes: Dish[] = [];
+  returnedDishes: Dish[]  = [];
 
   menus: Menu[] = []; 
   public selectedId:number;
@@ -26,24 +27,54 @@ export class DishesComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+  /*  console.log('this.route.toString() = '+this.route.toString());
+    this.validationFunction();
+    
+    if(this.route.toString().includes("dishesbymenu"))
+    console.log('is includes all'); 
+    else 
+    console.log('is not includes nothing'); */
+    this.selectedId = parseInt(this.route.snapshot.paramMap.get('id'));
+    if(isNaN(this.selectedId) === true)
+    this.getDishes();
+    else
+    this.getDishesByMenu(this.selectedId)
+
+    
+    /*if(this.route.toString().includes("dishesbymenu"))
+    {
+      console.log('dishes by menu');
+      console.log('this.selectedId = '+this.selectedId); 
+     // this.router.navigate(['/dishes']);   
+    //this.getDishes();  
+    var id = parseInt(this.route.snapshot.paramMap.get('id'));
+      this.getDishesByMenu(id);
+    } 
+    else
+    {
+      this.getDishes(); 
+     
+      //this.getDishesByMenu(this.selectedId)
+    }*/
+    this.getMenu();
+  }
+
+
+  refresh(): void {
     this.getMenu();
     this.validationFunction();
     this.selectedId = parseInt(this.route.snapshot.paramMap.get('id'));
     if(isNaN(this.selectedId) === true)
     {
-      console.log('all dishes');    
+      console.log('all dishes method reflesh()');    
     this.getDishes();  
     } 
     else
     {
       console.log('dishes by menu');
-      
+      const id = parseInt(this.route.snapshot.paramMap.get('id'));
+      this.getDishesByMenu(id)
     }
-  }
-
-
-  refresh(): void {
-    this.validationFunction(); 
   }
 
 
@@ -53,9 +84,9 @@ export class DishesComponent implements OnInit {
     this.dishService.getDishes()
     .subscribe(dishes => 
       { this.dishes = dishes.body;
-      //  this.returnedBooks = this.books.slice(0, 10);
+       this.returnedDishes = this.dishes.slice(0, 10);
       });
- 
+     // this.dishes = this.dishes;
   }
 
   getMenu(): void {
@@ -86,27 +117,38 @@ export class DishesComponent implements OnInit {
 
 getDishesByMenu(id:number): void {
   console.log('this.route.snapshot.paramMap.get(id) = method getDishesByMenu(id:number)'+this.route.snapshot.paramMap.get('id'));
-    this.dishService.getDishesByMenu(id)
+ 
+ // this.router.navigate(['dishesbymenu/:' + this.selectedId]); 
+  this.dishService.getDishesByMenu(id)
    .subscribe(dishes => 
     { 
       this.dishes = dishes.body;
+      this.returnedDishes = this.dishes.slice(0, 10);
+      this.router.navigate(['dishesbymenu/:' + id]);  
       //this.returnedBooks = this.books.slice(0, 10);
-      this.router.navigate(['dishesbymenu/:' + this.selectedId]);     
+         
      });                   //dishesbymenu/:id
 
 }
 
 
-onSelect(menu) {
+onSelect(id:number) {
+  console.log('onSelect method');
   console.log('this.route.snapshot.paramMap.get(id) = method onSelect(genre) '+this.route);//From here you can extract by author and by publisher
-   this.selectedId = menu.id;
-this.dishService.getDishesByMenu(this.selectedId)
+   //this.selectedId = id;
+ //  this.router.navigate(['dishesbymenu/:' + id]);
+this.dishService.getDishesByMenu(id)
  .subscribe(dishes => 
   { 
-    this.dishes = dishes.body;
-   // this.returnedBooks = this.books.slice(0, 10);
-    this.router.navigate(['dishesbymenu/:' + this.selectedId]);     
+   // this.dishes = dishes.body;
+  // this.returnedDishes = this.dishes.slice(0, 10);
+    
+    this.dishes = dishes.body; 
+    this.returnedDishes = this.dishes.slice(0, 10);
+    this.router.navigate(['dishesbymenu/:' + id]);  
+
    });
+   //this.dishes = dishes;
   // this.returnedBooks = this.books.slice(0, 10); 
 
 }

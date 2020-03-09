@@ -23,7 +23,7 @@ export class DishService {
 
 getDish(id: number): Observable<Dish> {
    console.log('is this function working?');
-   console.log(this.dishUrl + 'dish/' + id);
+   console.log(this.dishUrl + '/dishes/' + id);
    return this.http.get<Dish>(this.dishUrl + '/dishes/' + id).map(json => {
      return Dish.copyOf(json);
    });
@@ -60,14 +60,11 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
     this.dishUrl+'/dishesbymenu/'+id , {observe: 'response'});
 }
    /*
-    getAuthorsByName(name: string): Observable<Author[]> {
-      return this.http.get<Author[]>(this.authorUrl+'/author/findbyname',
-          {
-              params: {
-                name: name
-                      }
-          });
-    }
+  getBooksByGenre(id: number): Observable<HttpResponse<Book[] | any>> {
+     return this.http.get<HttpResponse<Book[] | any>>(
+     this.booksUrl+'getbygenre/'+id , {observe: 'response'});
+
+}
 
    */ 
 }
