@@ -27,35 +27,11 @@ export class DishesComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-  /*  console.log('this.route.toString() = '+this.route.toString());
-    this.validationFunction();
-    
-    if(this.route.toString().includes("dishesbymenu"))
-    console.log('is includes all'); 
-    else 
-    console.log('is not includes nothing'); */
     this.selectedId = parseInt(this.route.snapshot.paramMap.get('id'));
     if(isNaN(this.selectedId) === true)
     this.getDishes();
     else
     this.getDishesByMenu(this.selectedId)
-
-    
-    /*if(this.route.toString().includes("dishesbymenu"))
-    {
-      console.log('dishes by menu');
-      console.log('this.selectedId = '+this.selectedId); 
-     // this.router.navigate(['/dishes']);   
-    //this.getDishes();  
-    var id = parseInt(this.route.snapshot.paramMap.get('id'));
-      this.getDishesByMenu(id);
-    } 
-    else
-    {
-      this.getDishes(); 
-     
-      //this.getDishesByMenu(this.selectedId)
-    }*/
     this.getMenu();
   }
 
