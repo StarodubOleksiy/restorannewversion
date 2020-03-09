@@ -635,14 +635,7 @@
       <workItem from="1583568126600" duration="4946000" />
       <workItem from="1583641491652" duration="3804000" />
       <workItem from="1583728521342" duration="1453000" />
-      <workItem from="1583735681817" duration="1202000" />
-    </task>
-    <task id="LOCAL-00047" summary="Sixteenth commit. Creating connection between dish and ingradients.">
-      <created>1582461945347</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1582461945347</updated>
+      <workItem from="1583735681817" duration="1229000" />
     </task>
     <task id="LOCAL-00048" summary="Sixteenth commit. Creating connection between dish and ingradients.">
       <created>1582464058577</created>
@@ -980,11 +973,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583740821373</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Twentee fifth commit. Adding filter dishes by menu and dish details.">
+      <created>1583740847779</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1583740847779</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194938000" />
+    <option name="totallyTimeSpent" value="194965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
