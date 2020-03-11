@@ -43,6 +43,7 @@ import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-in
 import { OrdersComponent } from './orders/orders.component';
 import { AddorderComponent } from './addorder/addorder.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -66,6 +67,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatTooltipModule,
     MatSlideToggleModule,
     MatTableModule,
+    MatPaginatorModule,
     PaginationModule.forRoot(),
     NgbModule.forRoot()
   ],

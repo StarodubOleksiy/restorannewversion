@@ -3,6 +3,7 @@ import { Dish } from '../model/dish';
 import { Menu } from '../model/menu';
 import { DishService } from '../services/dish.service';
 import { MenuService } from '../services/menu.service';
+import {PageEvent} from '@angular/material/paginator';
 import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -14,11 +15,15 @@ export class DishesComponent implements OnInit {
 
   dishes: Dish[] = [];
   returnedDishes: Dish[]  = [];
+  pageEvent: PageEvent;
 
   menus: Menu[] = []; 
   public selectedId:number;
   searchDishWord: string;
   menu: Menu;
+  length: number;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
 
   constructor(
     private route: ActivatedRoute,
@@ -60,6 +65,7 @@ export class DishesComponent implements OnInit {
     this.dishService.getDishes()
     .subscribe(dishes => 
       { this.dishes = dishes.body;
+        this.length = this.dishes.length;
        this.returnedDishes = this.dishes.slice(0, 10);
       });
      // this.dishes = this.dishes;
@@ -87,7 +93,8 @@ export class DishesComponent implements OnInit {
     this.dishService.getDishesByName(this.searchDishWord)
     .subscribe(dishes => 
     { 
-      this.dishes = dishes;   
+      this.dishes = dishes;  
+      this.length = this.dishes.length; 
     });
 };
 
@@ -99,12 +106,18 @@ getDishesByMenu(id:number): void {
    .subscribe(dishes => 
     { 
       this.dishes = dishes.body;
+      this.length = this.dishes.length;
       this.returnedDishes = this.dishes.slice(0, 10);
       this.router.navigate(['dishesbymenu/:' + id]);  
       //this.returnedBooks = this.books.slice(0, 10);
          
      });                   //dishesbymenu/:id
 
+}
+
+pageChanged(): void {
+ console.log("Page changed is working");
+ console.log("Index is: "+this.pageEvent.pageIndex);
 }
 
 
@@ -120,12 +133,15 @@ this.dishService.getDishesByMenu(id)
   // this.returnedDishes = this.dishes.slice(0, 10);
     
     this.dishes = dishes.body; 
+    this.length = this.dishes.length;
     this.returnedDishes = this.dishes.slice(0, 10);
     this.router.navigate(['dishesbymenu/:' + id]);  
 
    });
    //this.dishes = dishes;
   // this.returnedBooks = this.books.slice(0, 10); 
+
+ 
 
 }
 
