@@ -30,6 +30,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { AdddishComponent } from './adddish/adddish.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { NgbdModalConfirm } from './employees/employees.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { PersonnelComponent } from './personnel/personnel.component';
 import {MatTableModule} from '@angular/material/table';
@@ -42,6 +43,7 @@ import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-in
 import { OrdersComponent } from './orders/orders.component';
 import { AddorderComponent } from './addorder/addorder.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -64,14 +66,16 @@ import { DishdetailsComponent } from './dishdetails/dishdetails.component';
     MatTooltipModule,
     MatSlideToggleModule,
     MatTableModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,
+    NgbdModalConfirm,
     DishesComponent,    
     AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent
   ],
-  
+  entryComponents: [NgbdModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService],
   bootstrap: [AppComponent]
 })

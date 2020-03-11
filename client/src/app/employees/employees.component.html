@@ -2,7 +2,7 @@
   Додати нового співробітника
 </button>
 
-<table class="table table-hover">
+<table class="table table-hover table-striped">
   <thead>
   <tr class="text-center">
       <th scope="col">Імя</th>
@@ -31,15 +31,18 @@
         </th>
 <th scope="row">
 <button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
-  Редагувати автора
+  Редагувати співробітника
 </button> 
 </th>
 <th scope="row">
 
-<button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
-  Видалити автора
-</button> 
+  <button class="btn btn-outline-primary mr-2" (click)="open(employee)" >
+    <div>Open confirm modal</div>
+    <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
+  </button>
 </th>
 </tr>
 </tbody>
 </table>
+
+
