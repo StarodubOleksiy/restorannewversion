@@ -10,6 +10,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @Component({
   selector: 'ngbd-modal-confirm',
   template: `
@@ -34,7 +35,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class NgbdModalConfirm {
   id : number;
-  employee: Employee
+  employee: Employee;
+  snackBar: MatSnackBar;
   constructor(public modal: NgbActiveModal) {}
 
 
@@ -43,6 +45,9 @@ export class NgbdModalConfirm {
     console.log("Employee name is: "+this.employee.name);
     console.log("Employee surname is: "+this.employee.surname);
     this.modal.close();
+    this.snackBar.open('Нове меню успішно доданий.', null, {
+      duration: 2000
+  });
   }
 }
 
@@ -59,8 +64,10 @@ export class EmployeesComponent implements OnInit {
   employees: Employee[]  = []; 
 
   constructor(private employeeService: EmployeeService,
-    private router: Router, public snackBar: MatSnackBar,
-    private _modalService: NgbModal) { }
+    private router: Router,
+    public snackBar: MatSnackBar,
+    private _modalService: NgbModal
+    ) { }
 
   
   
@@ -94,6 +101,7 @@ export class EmployeesComponent implements OnInit {
         const modalRef = this._modalService.open(NgbdModalConfirm);
        // modalRef.componentInstance.id = id;
        modalRef.componentInstance.employee = employee;
+       modalRef.componentInstance.snackBar = this.snackBar;
       }
   
   
