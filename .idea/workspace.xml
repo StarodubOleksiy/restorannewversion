@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cooked_Dish.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cooked_Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -648,14 +643,7 @@
       <workItem from="1583742771144" duration="373000" />
       <workItem from="1583875516369" duration="1218000" />
       <workItem from="1583945235031" duration="2831000" />
-      <workItem from="1584026339308" duration="2548000" />
-    </task>
-    <task id="LOCAL-00061" summary="Nineteenth commit. Now we can add ingredients to dishes.">
-      <created>1582758516794</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1582758516794</updated>
+      <workItem from="1584026339308" duration="2606000" />
     </task>
     <task id="LOCAL-00062" summary="Twenteenth commit. Now we can edit nu,erosity of ingradients and delete ingradient from dish.">
       <created>1582946358338</created>
@@ -993,11 +981,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583969204729</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Twentee seven commit. Adding posibility to find cooked dishes by it's own order.">
+      <created>1584028931307</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1584028931307</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202961000" />
+    <option name="totallyTimeSpent" value="203019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -1041,7 +1036,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fifth commit. Adding Service, Controller and new Responses of Ingradient and Orders." />
     <MESSAGE value="Sixth commit. Adding client Angular." />
     <MESSAGE value="Seventh commit. Adding client AddDish." />
     <MESSAGE value="Eighth commit. Save dish first part." />
@@ -1066,7 +1060,8 @@
     <MESSAGE value="Twentee fifth commit. Adding filter dishes by menu and dish details." />
     <MESSAGE value="Twentee sixth commit. Adding modal window that can delete employee profile." />
     <MESSAGE value="Twentee sixth commit. Adding modal window that can delete employee profile and adding pagination to dishes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Twentee sixth commit. Adding modal window that can delete employee profile and adding pagination to dishes." />
+    <MESSAGE value="Twentee seven commit. Adding posibility to find cooked dishes by it's own order." />
+    <option name="LAST_COMMIT_MESSAGE" value="Twentee seven commit. Adding posibility to find cooked dishes by it's own order." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
