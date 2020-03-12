@@ -36,4 +36,12 @@ public class CookedDishController {
                         new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
     }
 
+
+
+    @GetMapping("/cookeddishesbyorderid/{id}")
+    public ResponseEntity<List<CookedDishResponse>>  cookedDishesByOrderId(@PathVariable Long id) {
+        return new ResponseEntity<>(cookedDishService.findByOrderIdResponse(id), HttpStatus.OK);
+    }
+
+
 }

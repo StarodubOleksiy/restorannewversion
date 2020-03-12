@@ -9,6 +9,7 @@ import springLibrary.model.response.CookedDishResponse;
 import springLibrary.model.response.DishResponse;
 import springLibrary.repository.CookedDishRepository;
 import springLibrary.repository.DishRepository;
+import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.CookedDishService;
 import springLibrary.service.DishService;
@@ -20,10 +21,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish, Long, CookedDishRepository> implements CookedDishService
-{
+public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish, Long, CookedDishRepository> implements CookedDishService {
     @Autowired
     private DishRepository dishRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     protected CookedDishServiceImplementation(@Autowired CookedDishRepository repository) {
         super(repository);
@@ -43,7 +46,7 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
 
     @Override
-    public List< CookedDishResponse> findAllResponse() {
+    public List<CookedDishResponse> findAllResponse() {
         return getRepository().findAll().stream()
                 .map(this::cookedDishToCookedDishResponse)
                 .collect(Collectors.toList());
@@ -51,7 +54,15 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
 
     @Override
-    public Optional< CookedDishResponse> findByIdResponse(Long id) {
+    public List<CookedDishResponse> findByOrderIdResponse(Long orderId) {
+        return orderRepository.getOne(orderId).getDishes().stream()
+                .map(this::cookedDishToCookedDishResponse)
+                .collect(Collectors.toList());
+    }
+
+
+    @Override
+    public Optional<CookedDishResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::cookedDishToCookedDishResponse);
     }
 

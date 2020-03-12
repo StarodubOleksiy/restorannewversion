@@ -15,4 +15,6 @@ public interface CookedDishService extends Service<Cooked_Dish, Long, CookedDish
 
     public Optional< CookedDishResponse> findByIdResponse(Long id);
 
+    public List< CookedDishResponse> findByOrderIdResponse(Long orderId);
+
 }

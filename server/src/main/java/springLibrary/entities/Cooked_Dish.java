@@ -29,7 +29,7 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
     @JoinColumn(name = "order_id")
     private Orders order;
 
-     public void setOrder(Orders order) {
+    public void setOrder(Orders order) {
         this.order = order;
     }
 
@@ -61,21 +61,12 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Cooked_Dish that = (Cooked_Dish) o;
-
-            if (cook != null ? !cook.equals(that.cook) : that.cook != null) return false;
-        if (dish != null ? !dish.equals(that.dish) : that.dish != null) return false;
-        if (order != null ? !order.equals(that.order) : that.order != null) return false;
-            return true;
+        return getId() == that.getId();
     }
 
     @Override
     public int hashCode() {
-        int result = 1;
-        result = 31 * result + (dish != null ? dish.hashCode() : 0);
-        result = 31 * result + (cook != null ? cook.hashCode() : 0);
-        result = 31 * result + (order != null ? order.hashCode() : 0);
-             return result;
+       return getId().intValue();
     }
 }

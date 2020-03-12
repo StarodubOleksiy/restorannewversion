@@ -21,7 +21,7 @@ public class Orders extends AbstractIdentifiableEntity {
     private Waiter waiter;
 
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Cooked_Dish> dishes;
+    private Set<Cooked_Dish> dishes;
 
     @NotNull
     @Column(name = "table_number", nullable = false)
@@ -69,6 +69,13 @@ public class Orders extends AbstractIdentifiableEntity {
         return state;
     }
 
+    public Set<Cooked_Dish> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(Set<Cooked_Dish> dishes) {
+        this.dishes = dishes;
+    }
 
     @Override
     public boolean equals(Object o) {
