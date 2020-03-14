@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/EmployeeController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/EmployeeService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/EmployeeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -547,14 +544,7 @@
       <workItem from="1583875516369" duration="1218000" />
       <workItem from="1583945235031" duration="2831000" />
       <workItem from="1584026339308" duration="3310000" />
-      <workItem from="1584148426172" duration="1799000" />
-    </task>
-    <task id="LOCAL-00067" summary="Twentee first commit. Adding search form to dish.">
-      <created>1583013440986</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1583013440986</updated>
+      <workItem from="1584148426172" duration="1834000" />
     </task>
     <task id="LOCAL-00068" summary="Twentee first commit. Adding search form to dish.">
       <created>1583013459388</created>
@@ -892,11 +882,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584149421724</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Twentee eight commit. Adding pagination to dishes and adding cook response List.">
+      <created>1584150479601</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1584150479601</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205522000" />
+    <option name="totallyTimeSpent" value="205557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -940,7 +937,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Seventh commit. Adding client AddDish." />
     <MESSAGE value="Eighth commit. Save dish first part." />
     <MESSAGE value="Nineth commit. Add new field to save dish page." />
     <MESSAGE value="Tenth commit. Add image to dish and show it on menu pages." />
@@ -965,7 +961,8 @@
     <MESSAGE value="Twentee sixth commit. Adding modal window that can delete employee profile and adding pagination to dishes." />
     <MESSAGE value="Twentee seven commit. Adding posibility to find cooked dishes by it's own order." />
     <MESSAGE value="Twentee eight commit. Adding pagination to dishes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Twentee eight commit. Adding pagination to dishes." />
+    <MESSAGE value="Twentee eight commit. Adding pagination to dishes and adding cook response List." />
+    <option name="LAST_COMMIT_MESSAGE" value="Twentee eight commit. Adding pagination to dishes and adding cook response List." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
