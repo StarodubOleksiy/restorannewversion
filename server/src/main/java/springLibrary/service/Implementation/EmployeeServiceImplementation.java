@@ -39,6 +39,8 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
 
     private final String SQL_GET_ALL_WAITERS = "SELECT * FROM employee  where dtype = 'Waiter'";
 
+    private final String SQL_GET_ALL_COOKERS = "SELECT * FROM employee  where dtype = 'Cook'";
+
 
     private EmployeeResponse employeeToEmployeeResponse(Employee employee) {
         LOGGER.info("employee.getClass().getCanonicalName() = " + employee.getClass().getCanonicalName());
@@ -76,6 +78,13 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
     @Transactional
     public List<EmployeeResponse> getAllWaiters() {
         return jdbcTemplate.query(SQL_GET_ALL_WAITERS, new EmployeeMapper())
+                .stream().map(this::employeeToEmployeeResponse)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public List<EmployeeResponse> getAllCookers() {
+        return jdbcTemplate.query(SQL_GET_ALL_COOKERS, new EmployeeMapper())
                 .stream().map(this::employeeToEmployeeResponse)
                 .collect(Collectors.toList());
     }

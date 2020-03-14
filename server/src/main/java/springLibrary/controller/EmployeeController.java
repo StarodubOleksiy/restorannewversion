@@ -38,6 +38,11 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getAllWaiters(), HttpStatus.OK);
     }
 
+    @GetMapping("cookers")
+    public ResponseEntity<List<EmployeeResponse>> cookers() {
+        return new ResponseEntity<>(employeeService.getAllCookers(), HttpStatus.OK);
+    }
+
 
     @GetMapping("employees/{id}")
     public ResponseEntity<?> configure(@PathVariable Long id) {
