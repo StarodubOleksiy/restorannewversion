@@ -116,40 +116,21 @@ getDishesByMenu(id:number): void {
 }
 
 pageChanged(): void {
+  const startItem = this.pageEvent.pageIndex * this.pageSize;
+  const endItem = (this.pageEvent.pageIndex + 1) * this.pageSize;
+  this.returnedDishes = this.dishes.slice(startItem, endItem);
  console.log("Page changed is working");
  console.log("Index is: "+this.pageEvent.pageIndex);
 }
 
-
-onSelect(id:number) {
-  console.log('onSelect method');
-  console.log('this.route.snapshot.paramMap.get(id) = method onSelect(genre) '+this.route);//From here you can extract by author and by publisher
-   //this.selectedId = id;
- //  this.router.navigate(['dishesbymenu/:' + id]);
-this.dishService.getDishesByMenu(id)
- .subscribe(dishes => 
-  { 
-   // this.dishes = dishes.body;
-  // this.returnedDishes = this.dishes.slice(0, 10);
-    
-    this.dishes = dishes.body; 
-    this.length = this.dishes.length;
-    this.returnedDishes = this.dishes.slice(0, 10);
-    this.router.navigate(['dishesbymenu/:' + id]);  
-
-   });
-   //this.dishes = dishes;
-  // this.returnedBooks = this.books.slice(0, 10); 
-
- 
-
+/*
+pageChanged(event: PageChangedEvent): void {
+  const startItem = (event.page - 1) * event.itemsPerPage;
+  const endItem = event.page * event.itemsPerPage;
+   this.returnedBooks = this.books.slice(startItem, endItem);
 }
 
-
-
-
-
-
+*/
 
   validationFunction() {
     'use strict';
