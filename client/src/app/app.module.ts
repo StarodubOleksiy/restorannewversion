@@ -47,6 +47,7 @@ import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
+import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component';
 
 @NgModule({
   imports: [
@@ -77,7 +78,7 @@ import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
     AppComponent,
     NgbdModalConfirm,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent
   ],
   entryComponents: [NgbdModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService],

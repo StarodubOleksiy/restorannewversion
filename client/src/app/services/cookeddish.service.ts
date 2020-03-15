@@ -20,4 +20,12 @@ export class CookeddishService {
     this.coockedDishesUrl+'/cookeddishesbyorderid/'+id , {observe: 'response'});
 }
 
+
+getCookedDish(id: number): Observable<CookedDish> {
+  return this.http.get<CookedDish>(this.coockedDishesUrl + '/cookeddishes/' + id).map(json => {
+    return CookedDish.copyOf(json);
+  });
+
+}
+
 }

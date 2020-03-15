@@ -1,0 +1,51 @@
+<p>
+  addcookeddish works!
+</p>
+
+<div class="container-fluid">
+  <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+          <mat-card-header>
+            <div *ngIf="configureType.text === 'edit'">
+              <legend>Change cooker</legend>
+          </div>
+          <div *ngIf="configureType.text === 'add'">
+              <legend>Add new cooked dish to order</legend>
+          </div>
+      </mat-card-header>
+          <mat-card-content>
+  <form class="example-form" [formGroup]="cookedDishConfigureForm" (ngSubmit)="saveOrder()">
+    
+        <mat-form-field class="example-full-width">
+          <mat-select [(value)]="cookedDish.cookerId" [(ngModel)]="cookedDish.cookerId" placeholder="select cooker"
+          formControlName="cooker">
+            <mat-option *ngFor="let cook of cookers" [value]="cook.id">
+                           {{ cook.name }} {{ cook.surname}}
+            </mat-option>
+            </mat-select>
+            
+            </mat-form-field>
+           
+           <div *ngIf="configureType.text === 'add'">
+            <mat-form-field class="example-full-width">
+              <mat-select [(value)]="cookedDish.dishId" [(ngModel)]="cookedDish.dishId" placeholder="select dish"
+              formControlName="dish">
+                <mat-option *ngFor="let dish of dishes" [value]="dish.id">
+                               {{ dish.name }} 
+                </mat-option>
+                </mat-select>
+                
+                </mat-form-field>
+              </div>
+      
+        
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!cookedDishConfigureForm.valid">
+        Click me!
+       </button>
+    </form>
+
+  </mat-card-content>
+  
+  </mat-card>
+ 
+  </div>

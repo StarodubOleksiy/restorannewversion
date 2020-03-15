@@ -16,6 +16,9 @@ import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
+import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component';
+
+
 const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
   { path: 'dishes/:id', component: DishdetailsComponent },
@@ -105,6 +108,19 @@ const routes: Routes = [
    }
 ]
 },
+{ path: 'addcookeddish', children: [
+    {
+         path: ':orderid/:configureType',
+         component: AddcookeddishComponent
+    }, 
+        
+     {
+         path: ':orderid/:configureType/:cookeddishid',
+         component: AddcookeddishComponent
+     }
+  ]
+  }
+  ,
 { path: 'dishingradients/:dishid', component: DishIngradientsComponent },
 { path: ':dishid/editdishingradients/:ingradientid', component: EditDishIngradientComponent }
 ];

@@ -41,4 +41,35 @@ export class CookeddishesComponent implements OnInit {
   
   }
 
+  changeCook(cookeddishid:number): void {
+    // console.log(this.router);
+   //if (this.route.snapshot.paramMap.get('configureType') === 'add') 
+   console.log('Add cooked dish');   
+   this.router.navigateByUrl('/addcookeddish/'+this.orderId+'/edit/'+cookeddishid);
+   }
+
+  addCookedDish(): void {
+   // console.log(this.router);
+  //if (this.route.snapshot.paramMap.get('configureType') === 'add') 
+  console.log('Add cooked dish');   
+  this.router.navigateByUrl('/addcookeddish/'+this.orderId+'/add');
+  } /*
+  editDishIngradients(id: number) : void {
+      this.router.navigateByUrl(this.dish.id+'/editdishingradients/'+id);
+    }
+
+{ path: 'addcookeddish', children: [
+    {
+         path: ':orderid/configureType',
+         component: AddcookeddishComponent
+    },
+        
+     {
+         path: ':orderid/configureType/:cookeddishid',
+         component: AddcookeddishComponent
+     }
+  ]
+  }
+         */
+
 }
