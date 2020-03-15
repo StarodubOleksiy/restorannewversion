@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.ts" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -592,14 +590,7 @@
       <workItem from="1584148426172" duration="2444000" />
       <workItem from="1584151867989" duration="758000" />
       <workItem from="1584238885555" duration="2394000" />
-      <workItem from="1584264834286" duration="3936000" />
-    </task>
-    <task id="LOCAL-00075" summary="Twentee first commit. Adding search form to dish.">
-      <created>1583029245710</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1583029245710</updated>
+      <workItem from="1584264834286" duration="3978000" />
     </task>
     <task id="LOCAL-00076" summary="Twentee first commit. Adding search form to dish.">
       <created>1583056635546</created>
@@ -937,11 +928,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584275530292</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
+      <created>1584279692220</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1584279692220</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213255000" />
+    <option name="totallyTimeSpent" value="213297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -986,7 +984,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tenth commit. Add image to dish and show it on menu pages." />
     <MESSAGE value="Eleven commit. Add employees component and now program can add menu." />
     <MESSAGE value="Tvelve commit. Add save employee component." />
     <MESSAGE value="Twelve commit. Add save employee component." />
@@ -1011,7 +1008,8 @@
     <MESSAGE value="Twentee eight commit. Adding pagination to dishes and adding cook response List." />
     <MESSAGE value="Twentee ninenth commit. Addinf List, service and model of cooked dishes." />
     <MESSAGE value="Thirty commit. Addind Save cooked dish component." />
-    <option name="LAST_COMMIT_MESSAGE" value="Thirty commit. Addind Save cooked dish component." />
+    <MESSAGE value="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
