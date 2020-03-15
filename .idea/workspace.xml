@@ -590,14 +590,7 @@
       <workItem from="1584148426172" duration="2444000" />
       <workItem from="1584151867989" duration="758000" />
       <workItem from="1584238885555" duration="2394000" />
-      <workItem from="1584264834286" duration="4806000" />
-    </task>
-    <task id="LOCAL-00080" summary="Twentee third commit. Adding orders and posibility to find dishes by name.">
-      <created>1583363245979</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1583363245980</updated>
+      <workItem from="1584264834286" duration="4827000" />
     </task>
     <task id="LOCAL-00081" summary="Twentee fourth commit. Adding save order component.">
       <created>1583554498478</created>
@@ -935,11 +928,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584279928131</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
+      <created>1584280589791</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1584280589791</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214125000" />
+    <option name="totallyTimeSpent" value="214146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
