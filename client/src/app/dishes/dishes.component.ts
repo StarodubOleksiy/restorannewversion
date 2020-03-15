@@ -23,6 +23,8 @@ export class DishesComponent implements OnInit {
   menu: Menu;
   length: number;
   pageSize = 10;
+  pageIndex: number;
+  option: number;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   constructor(
@@ -71,6 +73,29 @@ export class DishesComponent implements OnInit {
      // this.dishes = this.dishes;
   }
 
+  /*
+  /*
+public getServerData(event?:PageEvent){
+  this.fooService.getdata(event).subscribe(
+    response =>{
+      if(response.error) {
+        // handle error
+      } else {
+        this.datasource = response.data;
+        this.pageIndex = response.pageIndex;
+        this.pageSize = response.pageSize;
+        this.length = response.length;
+      }
+    },
+    error =>{
+      // handle error
+    }
+  );
+  return event;
+}
+*/
+  
+
   getMenu(): void {
     //this.menuService.getAllMenu()
     this.menuService.getAnyMenu()
@@ -98,6 +123,8 @@ export class DishesComponent implements OnInit {
     });
 };
 
+
+
 getDishesByMenu(id:number): void {
   console.log('this.route.snapshot.paramMap.get(id) = method getDishesByMenu(id:number)'+this.route.snapshot.paramMap.get('id'));
  
@@ -115,22 +142,31 @@ getDishesByMenu(id:number): void {
 
 }
 
-pageChanged(): void {
-  const startItem = this.pageEvent.pageIndex * this.pageSize;
-  const endItem = (this.pageEvent.pageIndex + 1) * this.pageSize;
+public handlePage(event: any) {
+  console.log('event.pageIndex = '+event.pageIndex);
+  console.log('event.pageSize = '+event.pageSize);
+  const startItem =event.pageIndex * event.pageSize;
+  const endItem = (event.pageIndex + 1) * event.pageSize;
   this.returnedDishes = this.dishes.slice(startItem, endItem);
- console.log("Page changed is working");
+  //this.currentPage = e.pageIndex;
+  //this.pageSize = e.pageSize;
+ // this.iterator();
+}
+
+
+/*pageChanged(): void {
+
+  const startItem = this.pageEvent.pageIndex * this.pageEvent.pageSize;
+  const endItem = (this.pageEvent.pageIndex + 1) * this.pageEvent.pageSize;
+  this.returnedDishes = this.dishes.slice(startItem, endItem);
+  console.log("this.pageEvent.length = "+this.pageEvent.length);
+  console.log("this.pageSize = "+this.pageSize);
+  console.log("this.pageEvent.pageSize = "+this.pageEvent.pageSize);
+  console.log("startItem = "+startItem);
+  console.log("endItem = "+endItem);
+  console.log("Page changed is working");
  console.log("Index is: "+this.pageEvent.pageIndex);
-}
-
-/*
-pageChanged(event: PageChangedEvent): void {
-  const startItem = (event.page - 1) * event.itemsPerPage;
-  const endItem = event.page * event.itemsPerPage;
-   this.returnedBooks = this.books.slice(startItem, endItem);
-}
-
-*/
+}*/
 
   validationFunction() {
     'use strict';

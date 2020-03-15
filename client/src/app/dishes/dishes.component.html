@@ -76,10 +76,9 @@
                    </mat-grid-tile>
   </mat-grid-list>
   <mat-paginator [length]="length"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="pageSizeOptions"
-               (page)="pageEvent = $event"
-               (click)="pageChanged()">
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = handlePage($event)">
 </mat-paginator>
  </mat-card>
 </div>
