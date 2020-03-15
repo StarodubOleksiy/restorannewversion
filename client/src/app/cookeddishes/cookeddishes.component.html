@@ -1,0 +1,45 @@
+<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewEmployee()">
+  Додати Нову страву до замовлення
+</button>
+<h1>Номер замовлення {{orderId}}</h1>
+Приготовані страви
+<table class="table table-hover table-striped">
+  <thead>
+  <tr class="text-center">
+      <th scope="col">Назва страви</th>
+      <th scope="col">Ціна страви</th>
+      <th scope="col">Імя повара</th>
+      <th scope="col">Прізвище повара</th>
+      <th scope="col">Змінити повара</th>
+      <th scope="col">Видалити страву із замовлення</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let cookedDish of cookedDishdishes" class="text-center">
+<th scope="row">
+  {{cookedDish.dishName}}
+  </th>
+  <th scope="row">
+    {{cookedDish.dishPrice}}
+    </th>
+    <th scope="row">
+      {{cookedDish.cookerName}}
+      </th>
+      <th scope="row">
+        {{cookedDish.cookerSurname}}
+        </th>
+ <th scope="row">
+<button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
+  Змінити повара
+</button> 
+</th>
+<th scope="row">
+
+  <button class="btn btn-outline-primary mr-2" (click)="open(employee)" >
+    <div>Open confirm modal</div>
+    <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
+  </button>
+</th>
+</tr>
+</tbody>
+</table>

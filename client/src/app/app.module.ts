@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DishService } from './services/dish.service';
+import { CookeddishService } from './services/cookeddish.service';
 import { MenuService } from './services/menu.service';
 import { StorageService } from './services/storage.service';
 import { EmployeeService } from './services/employee.service';
@@ -45,6 +46,7 @@ import { AddorderComponent } from './addorder/addorder.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
 
 @NgModule({
   imports: [
@@ -75,10 +77,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     NgbdModalConfirm,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent
   ],
   entryComponents: [NgbdModalConfirm],
-  providers: [MenuService, DishService, EmployeeService, StorageService, OrderService],
+  providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

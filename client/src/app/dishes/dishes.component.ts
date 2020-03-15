@@ -28,7 +28,7 @@ export class DishesComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private dishService: DishService,
-              private menuService: MenuService,
+    private menuService: MenuService,
     private router: Router) { }
 
   ngOnInit() {

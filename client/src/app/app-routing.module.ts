@@ -12,6 +12,7 @@ import { AddingradientComponent } from './addingradient/addingradient.component'
 import { MenuComponent } from './menu/menu.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AddorderComponent } from './addorder/addorder.component';
+import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'dishes', component: DishesComponent },
   { path: 'dishes/:id', component: DishdetailsComponent },
   { path: 'dishesbymenu/:id', component: DishesComponent },
+  { path: 'cookeddish/:id', component: CookeddishesComponent },
   { path: 'editdishes', component: EditdishesComponent },
   { path: 'ingradients', component: StorageComponent },
   { path: 'employees', component: EmployeesComponent },

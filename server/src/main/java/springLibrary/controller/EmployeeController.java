@@ -35,7 +35,7 @@ public class EmployeeController {
 
     @GetMapping("waiters")
     public ResponseEntity<List<EmployeeResponse>> waiters() {
-        return new ResponseEntity<>(employeeService.getAllWaiters(), HttpStatus.OK);
+           return new ResponseEntity<>(employeeService.getAllWaiters(), HttpStatus.OK);
     }
 
     @GetMapping("cookers")

@@ -21,7 +21,7 @@
 <tbody>
     <tr *ngFor="let order of orders" class="text-center">
         <th scope="row">
-  {{order.id}}
+          <a class="list-group-item shadow-sm p-2 mb-2 bg-white rounded" routerLink="/cookeddish/{{order.id}}" >{{order.id}}</a>
 </th>
 <th scope="row">
   {{order.tableNumber}}
