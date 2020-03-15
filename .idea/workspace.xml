@@ -590,14 +590,7 @@
       <workItem from="1584148426172" duration="2444000" />
       <workItem from="1584151867989" duration="758000" />
       <workItem from="1584238885555" duration="2394000" />
-      <workItem from="1584264834286" duration="3978000" />
-    </task>
-    <task id="LOCAL-00076" summary="Twentee first commit. Adding search form to dish.">
-      <created>1583056635546</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1583056635546</updated>
+      <workItem from="1584264834286" duration="4001000" />
     </task>
     <task id="LOCAL-00077" summary="Twentee second commit. Adding posibility to delete one ingradient and all ingradients from dish.">
       <created>1583060120640</created>
@@ -935,11 +928,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584279692220</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
+      <created>1584279712737</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1584279712737</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213297000" />
+    <option name="totallyTimeSpent" value="213320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
