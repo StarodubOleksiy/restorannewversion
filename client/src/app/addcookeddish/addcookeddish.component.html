@@ -13,7 +13,7 @@
           </div>
       </mat-card-header>
           <mat-card-content>
-  <form class="example-form" [formGroup]="cookedDishConfigureForm" (ngSubmit)="saveOrder()">
+  <form class="example-form" [formGroup]="cookedDishConfigureForm" (ngSubmit)="saveCookedDish()">
     
         <mat-form-field class="example-full-width">
           <mat-select [(value)]="cookedDish.cookerId" [(ngModel)]="cookedDish.cookerId" placeholder="select cooker"
@@ -25,9 +25,9 @@
             
             </mat-form-field>
            
-           <div *ngIf="configureType.text === 'add'">
+           <div>
             <mat-form-field class="example-full-width">
-              <mat-select [(value)]="cookedDish.dishId" [(ngModel)]="cookedDish.dishId" placeholder="select dish"
+              <mat-select [disabled]="configureType.text === 'edit'" [(value)]="cookedDish.dishId" [(ngModel)]="cookedDish.dishId" placeholder="select dish"
               formControlName="dish">
                 <mat-option *ngFor="let dish of dishes" [value]="dish.id">
                                {{ dish.name }} 

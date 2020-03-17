@@ -3,6 +3,7 @@ export class CookedDish {
     id: number;
     dishId: number;
     cookerId: number;
+    orderId: number;
     cookerName: string;
     cookerSurname: string;
     dishPrice: number;

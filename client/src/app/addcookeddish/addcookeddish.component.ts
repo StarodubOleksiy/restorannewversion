@@ -7,7 +7,9 @@ import { Dish } from '../model/dish';
 import { Employee } from '../model/employee';
 import {PageEvent} from '@angular/material/paginator';
 import {Router,ActivatedRoute} from '@angular/router';
+import {HttpResponse} from '@angular/common/http';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-addcookeddish',
@@ -34,7 +36,8 @@ export class AddcookeddishComponent implements OnInit {
     private cookedDishService: CookeddishService,
     private dishService: DishService,
     private employeeService: EmployeeService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
@@ -42,6 +45,7 @@ export class AddcookeddishComponent implements OnInit {
      // this.getCookers();
       this.loadDish();
       this.getCookers();
+      this.getDishes();
     } 
     else
     {
@@ -81,6 +85,35 @@ export class AddcookeddishComponent implements OnInit {
       });       
        console.log("authors.size() = "+this.dishes.length);
          }
+
+
+
+         saveCookedDish(): void { //saveCookedDish
+          const cookedDishid = parseInt(this.route.snapshot.paramMap.get('cookeddishid'));
+          const orderid= parseInt(this.route.snapshot.paramMap.get('orderid'));
+          console.log('cookeddishid = '+cookedDishid);
+          console.log('orderid = '+orderid);
+          this.cookedDish.orderId = orderid;
+          this.cookedDishService.saveCookedDish(this.cookedDish).subscribe((response: HttpResponse<any>) => {
+          if (this.configureType.type === AddCookedDishConfigureType.ADD) {
+            this.snackBar.open('Нова страва успішно додана для приготування.', null, {
+                duration: 2000
+            });
+            this.router.navigate(['/cookeddish/'+orderid]);
+        } else {
+            this.snackBar.open('Повар успішно змінений.', null, {
+                duration: 2000
+            });
+            this.router.navigate(['/cookeddish/'+orderid]);
+        }   
+        }, error => {
+            this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+                , null, {
+                    duration: 2000
+                });
+        });
+      
+      };
 
 }
 
