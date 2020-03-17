@@ -571,14 +571,7 @@
       <workItem from="1584151867989" duration="758000" />
       <workItem from="1584238885555" duration="2394000" />
       <workItem from="1584264834286" duration="4848000" />
-      <workItem from="1584468570059" duration="4472000" />
-    </task>
-    <task id="LOCAL-00084" summary="Twentee fourth commit. Adding save order component.">
-      <created>1583570387595</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1583570387595</updated>
+      <workItem from="1584468570059" duration="4546000" />
     </task>
     <task id="LOCAL-00085" summary="Twentee fourth commit. Adding save order component.">
       <created>1583575152961</created>
@@ -916,11 +909,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584473551929</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Thirty first commit. Continue editing save cooked dishes.">
+      <created>1584473577394</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1584473577395</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218639000" />
+    <option name="totallyTimeSpent" value="218713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
