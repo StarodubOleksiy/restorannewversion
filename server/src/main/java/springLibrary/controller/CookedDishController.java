@@ -51,11 +51,9 @@ public class CookedDishController {
 
     @PostMapping("cookeddish/save")
     public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest) {
-        //Dish dish = dishRequest.toDish();
-       // dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
         LOGGER.info("Method public ResponseEntity<?> save(@RequestBody Cooked_Dish cookedDishRequest) ");
         LOGGER.info("cookedDishRequest = "+cookedDishRequest);
-      //  dishService.saveFromRequest(dish, dishRequest);
+        cookedDishService.saveCookedDish(cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

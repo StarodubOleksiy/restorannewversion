@@ -14,6 +14,21 @@ import java.util.List;
 @Entity
 public class Cook extends Employee {
 
+    public Cook()
+    {
+
+    }
+
+    public Cook(Employee employee)
+    {
+        // if(em)
+        this.setId(employee.getId());
+        this.setName(employee.getName());
+        this.setPhoneNumber(employee.getPhoneNumber());
+        this.setPhotography(employee.getPhotography());
+        this.setSalary(employee.getSalary());
+    }
+
     @OneToMany
     @JoinColumn(name = "employee_id")
     @Fetch(FetchMode.JOIN)

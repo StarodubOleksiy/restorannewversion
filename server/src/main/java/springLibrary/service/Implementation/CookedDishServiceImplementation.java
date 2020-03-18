@@ -2,13 +2,16 @@ package springLibrary.service.Implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springLibrary.entities.Cook;
 import springLibrary.entities.Cooked_Dish;
 import springLibrary.entities.Dish;
+import springLibrary.model.request.CookedDishRequest;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.CookedDishResponse;
 import springLibrary.model.response.DishResponse;
 import springLibrary.repository.CookedDishRepository;
 import springLibrary.repository.DishRepository;
+import springLibrary.repository.EmployeeRepository;
 import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.CookedDishService;
@@ -27,6 +30,9 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
     protected CookedDishServiceImplementation(@Autowired CookedDishRepository repository) {
         super(repository);
@@ -64,6 +70,19 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
     @Override
     public Optional<CookedDishResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::cookedDishToCookedDishResponse);
+    }
+
+
+    @Override
+    @Transactional
+    public void saveCookedDish(CookedDishRequest cookedDishRequest) {
+        Cooked_Dish cookedDish = new Cooked_Dish();
+        if (cookedDishRequest.getId() != null)
+            cookedDish.setId(cookedDishRequest.getId());
+        cookedDish.setCook(new Cook(employeeRepository.getOne(cookedDishRequest.getCookerId())));
+        cookedDish.setOrder(orderRepository.getOne(cookedDishRequest.getOrderId()));
+        cookedDish.setDish(dishRepository.getOne(cookedDishRequest.getDishId()));
+        getRepository().save(cookedDish);
     }
 
 

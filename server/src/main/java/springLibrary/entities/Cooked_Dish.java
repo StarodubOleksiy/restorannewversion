@@ -50,6 +50,10 @@ public class Cooked_Dish extends AbstractIdentifiableEntity {
         return order;
     }
 
+    public void setDish(Dish dish) {
+        this.dish = dish;
+    }
+
     @Override
     public String toString() {
         return "CookedDishes{" +
