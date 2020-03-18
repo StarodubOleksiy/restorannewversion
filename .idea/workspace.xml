@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cook.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cooked_Dish.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Cooked_Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/CookedDishServiceImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -658,14 +653,7 @@
       <workItem from="1584468570059" duration="4904000" />
       <workItem from="1584476858472" duration="324000" />
       <workItem from="1584477392189" duration="260000" />
-      <workItem from="1584557831931" duration="4002000" />
-    </task>
-    <task id="LOCAL-00087" summary="Twentee fifth commit. Adding filter dishes by menu.">
-      <created>1583649242822</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1583649242822</updated>
+      <workItem from="1584557831931" duration="4062000" />
     </task>
     <task id="LOCAL-00088" summary="Twentee fifth commit. Adding filter dishes by menu and dish details.">
       <created>1583651242268</created>
@@ -1003,11 +991,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584473834430</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Thirty second commit. Finishing editing save cooked dishes.">
+      <created>1584562558245</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1584562558246</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223657000" />
+    <option name="totallyTimeSpent" value="223717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -1052,7 +1047,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tvelve commit. Add save employee component." />
     <MESSAGE value="Twelve commit. Add save employee component." />
     <MESSAGE value="Threeteenth commit. Add page personnel component." />
     <MESSAGE value="Fourteenth commit. Add page storage ingradients component." />
@@ -1077,7 +1071,8 @@
     <MESSAGE value="Thirty commit. Addind Save cooked dish component." />
     <MESSAGE value="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages." />
     <MESSAGE value="Thirty first commit. Continue editing save cooked dishes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Thirty first commit. Continue editing save cooked dishes." />
+    <MESSAGE value="Thirty second commit. Finishing editing save cooked dishes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Thirty second commit. Finishing editing save cooked dishes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
