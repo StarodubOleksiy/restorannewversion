@@ -1,9 +1,63 @@
 <p>
   orders works!
 </p>
+<p>
+  <button type="button" class="btn btn-outline-primary" (click)="openSearchByDatePickerForm()"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+    Filter by order date
+  </button>
+  <button type="button" class="btn btn-outline-primary" (click)="openSearchByTableNumberForm()"
+  [attr.aria-expanded]="!filterByTable" aria-controls="filterByTableForm">
+  Filter by table number
+</button>
+<button type="button" class="btn btn-outline-primary" (click)="openSearchByWaiterForm()"
+[attr.aria-expanded]="!filterByWaiter" aria-controls="filterByTableForm">
+Filter by order waiter
+</button>
+</p>
+<div id="collapseExample" [ngbCollapse]="!isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      <form class="example-form" [formGroup]="datePickerConfigureForm" (ngSubmit)="filterOrdersByDate()">
+       
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker"
+          [(ngModel)]="date"
+          formControlName="date"
+          required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>        
+  
+    <button class="submit-button" mat-raised-button type="submit"
+     color="accent" [disabled]="!datePickerConfigureForm.valid">
+      Search by date      
+    </button>
+  </form>
+    </div>
+  </div>
+</div>
+
+<div id="filterByTableForm" [ngbCollapse]="!filterByTable">
+  <div class="card">
+    <div class="card-body">
+      Here is will be search table form
+    </div>
+  </div>
+</div>
+
+<div id="filterByWaiterForm" [ngbCollapse]="!filterByWaiter">
+  <div class="card">
+    <div class="card-body">
+      Here is will be search waiter form
+    </div>
+  </div>
+</div>
 <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewOrder()">
   Додати нове замовлення
 </button>
+
 <table class="table table-hover">
   <thead>
   <tr class="text-center">

@@ -20,6 +20,7 @@ import {
    MatCardModule,
    MatIconModule,
   MatSelectModule,
+  MatNativeDateModule
 } from '@angular/material';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -48,6 +49,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
 import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -71,6 +73,8 @@ import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component'
     MatSlideToggleModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
     PaginationModule.forRoot(),
     NgbModule.forRoot()
   ],
@@ -81,7 +85,7 @@ import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component'
     AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent
   ],
   entryComponents: [NgbdModalConfirm],
-  providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService],
+  providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService, MatDatepickerModule,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
