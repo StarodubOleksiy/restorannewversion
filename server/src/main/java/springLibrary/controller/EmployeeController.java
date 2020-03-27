@@ -53,10 +53,22 @@ public class EmployeeController {
 
     @PostMapping("employees/save")
     public ResponseEntity<?> save(@RequestBody EmployeeRequest employeeRequest) {
-        Employee employee = employeeRequest.toEmployee();
+
         LOGGER.info("employeeRequest = " + employeeRequest);
         //   LOGGER.info("employee = "+employee);
-        employeeService.saveFromRequest(employee, employeeRequest);
+        if(employeeRequest.getId() == null) {
+            Employee employee = employeeRequest.toEmployee();
+            employeeService.saveFromRequest(employee, employeeRequest);
+        }
+        else
+        {
+            Employee employee = employeeService.getOne(employeeRequest.getId());
+            employee.setName(employeeRequest.getName());
+            employee.setSurname(employeeRequest.getSurname());
+            employee.setPhoneNumber(employeeRequest.getPhoneNumber());
+            employee.setSalary(employeeRequest.getSalary());
+            employeeService.saveFromRequest(employee, employeeRequest);
+        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

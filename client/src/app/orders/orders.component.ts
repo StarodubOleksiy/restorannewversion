@@ -94,19 +94,11 @@ export class OrdersComponent implements OnInit {
   };
 
   filterOrdersByDate(): void {
-    console.log("date is = "+this.date);
-    console.log("date.toString() is = "+this.date.toString());
-    console.log("year is = "+this.date.getFullYear());
-    console.log("month is = "+this.date.getMonth());
-    console.log("this.date.getUTCDate() = "+this.date.getUTCDate());
-    console.log("this.date.getUTCDay() = "+this.date.getUTCDay());
-
-    /*this.dishService.getDishesByName(this.searchDishWord)
-    .subscribe(dishes => 
-    { 
-      this.dishes = dishes;  
-      this.length = this.dishes.length; 
-    });*/
+           this.orderService.getOrdersByDate(this.date.toLocaleDateString())
+    .subscribe(orders => 
+      { 
+        this.orders = orders;
+      });
   }
 
 

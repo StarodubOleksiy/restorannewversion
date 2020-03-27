@@ -28,6 +28,16 @@ export class OrderService {
     return this.http.post<HttpResponse<any>>(
         this.orderUrl + '/addorder/save', order, {observe: 'response'});
     }
+
+
+    getOrdersByDate(date: string): Observable<Order[]> {
+      return this.http.get<Order[]>(this.orderUrl + '/date',
+      {  
+        params: {
+          date: date
+         } 
+      });
+     }
   
 
 }

@@ -1,10 +1,9 @@
 package springLibrary.model.request;
 
 import lombok.Data;
-import springLibrary.entities.Cook;
-import springLibrary.entities.Dish;
-import springLibrary.entities.Employee;
-import springLibrary.entities.Waiter;
+import springLibrary.entities.*;
+
+import java.util.List;
 
 @Data
 public class EmployeeRequest {
@@ -79,8 +78,6 @@ public class EmployeeRequest {
             employee = new Waiter();
         else
             employee = new Cook();
-        if (id != null)
-            employee.setId(id);
         employee.setName(name);
         employee.setSurname(surname);
         employee.setPhoneNumber(phoneNumber);
@@ -88,7 +85,7 @@ public class EmployeeRequest {
         return employee;
     }
 
-    
+
     @Override
     public String toString() {
         return "EmployeeRequest{" +

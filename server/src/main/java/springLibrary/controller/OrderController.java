@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.*;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.request.OrderRequest;
+import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.model.response.OrderResponse;
 import springLibrary.service.EmployeeService;
 import springLibrary.service.OrderService;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
@@ -50,6 +52,15 @@ public class OrderController {
                 .map(order -> new ResponseEntity<Object>(order, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect order id", HttpStatus.BAD_REQUEST));
     }
+
+    @GetMapping("/date")
+    public List<OrderResponse> getDishessByName(@RequestParam("date") String date) {
+        LOGGER.info("date = "+date);// 26.03.2020
+       // LocalDate localDate = LocalDate.parse(date);
+       // LOGGER.info("localDate.toString() = " +localDate.toString());
+        return orderService.findAllResponse();
+    }
+
 
 
     @PostMapping("/addorder/save")
