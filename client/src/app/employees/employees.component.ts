@@ -128,7 +128,7 @@ export class EmployeesComponent implements OnInit {
             });          
             let index = id
             this.employeeComponent.employees.splice(index, 1);
-           // this.employeeComponent.returnedBooks.splice(index, 1);  
+            this.employeeComponent.returnedEmployees.splice(index, 1);  
            this.employeeComponent.ngOnInit();      
         }
       }
