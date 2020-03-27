@@ -4,7 +4,10 @@
 <div class="container-fluid">
   <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
           <mat-card-header>
-                <div>
+            <div *ngIf="configureType.text === 'edit'">
+              <legend>Edit employee</legend>
+          </div>
+          <div *ngIf="configureType.text === 'add'">
               <legend>Add new employee</legend>
           </div>
       </mat-card-header>
@@ -55,7 +58,7 @@
           <tr>
                   <th scope="col"> 
                     <mat-form-field>
-                      <mat-select [(value)]="employee.position" [(ngModel)]="employee.position" placeholder="position"  formControlName="position"
+                      <mat-select [disabled]="configureType.text === 'edit'" [(value)]="employee.position" [(ngModel)]="employee.position" placeholder="position"  formControlName="position"
                       required>
                         <mat-option>--</mat-option>
                         <mat-option *ngFor="let kind of position" [value]="kind.name">

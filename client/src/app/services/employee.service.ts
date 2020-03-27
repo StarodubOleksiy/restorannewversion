@@ -51,4 +51,13 @@ deleteEmployee(id: number): Observable<HttpResponse<any>> {
   );                       
 }
 
+getEmployee(id: number): Observable<Employee> {
+  console.log('is this function working?');
+  console.log(this.employeeUrl + '/employees/' + id);
+  return this.http.get<Employee>(this.employeeUrl + '/employees/' + id).map(json => {
+    return Employee.copyOf(json);
+});
+
+}
+
 }

@@ -75,7 +75,7 @@ public class EmployeeRequest {
 
     public Employee toEmployee() {
         Employee employee;
-        if(position.equals("WAITER"))
+        if (position.equals("WAITER"))
             employee = new Waiter();
         else
             employee = new Cook();
@@ -85,10 +85,10 @@ public class EmployeeRequest {
         employee.setSurname(surname);
         employee.setPhoneNumber(phoneNumber);
         employee.setSalary(salary);
-
         return employee;
     }
 
+    
     @Override
     public String toString() {
         return "EmployeeRequest{" +

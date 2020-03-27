@@ -41,28 +41,32 @@ export class AddemployeeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
+      this.configureType = new ConfigureType('edit', SaveEmployeeConfigureType.EDIT);
+      this.loadEmployee();
+    } else 
+    {
     this.configureType = new ConfigureType('add', SaveEmployeeConfigureType.ADD);
     this.loadedEmployee = new Employee();
     this.employee = new Employee();
+    }
   }
   
 
   saveEmployee(): void {
     this.employeeServise.saveEmployee(this.employee).subscribe((response: HttpResponse<any>) => {
-    //if (this.configureType.type === SaveBookConfigureType.ADD) {
+    if (this.configureType.type === SaveEmployeeConfigureType.ADD) {
       this.snackBar.open('Новий співробітник успішно доданий.', null, {
           duration: 2000
       });
       this.router.navigate(['employees']);
-  } /*else {
-      this.snackBar.open('Книжка успішно відредагована.', null, {
+  } else {
+      this.snackBar.open('Співробітник успішно відредагований.', null, {
           duration: 2000
-      });*/
-     // this.router.navigate(['books']);
-  //}
-   
- //}
- , error => {
+      });
+      this.router.navigate(['employees']);
+  }  
+ } , error => {
       this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
           , null, {
               duration: 2000
@@ -83,6 +87,17 @@ onFileChange(event) {
   }
 
 }
+
+
+loadEmployee(): void {
+  const id = parseInt(this.route.snapshot.paramMap.get('id'));
+  this.employeeServise.getEmployee(id)
+      .subscribe(employee => {
+          this.loadedEmployee = employee;
+          this.employee = employee.clone();            
+      });
+  }
+
 
 
 }

@@ -57,6 +57,10 @@ export class EmployeesComponent implements OnInit {
     this.router.navigateByUrl('/addemployee/add');
   }
 
+  editEmployee(id: number) : void {
+    this.router.navigateByUrl('/addemployee/edit/' + id);
+  }
+
   pageChanged(event: PageChangedEvent): void {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
