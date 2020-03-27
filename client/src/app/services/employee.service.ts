@@ -44,4 +44,11 @@ getCookers(): Observable<HttpResponse<Employee[] | any>> {
     this.employeeUrl+'cookers' , {observe: 'response'});
 }
 
+
+deleteEmployee(id: number): Observable<HttpResponse<any>> {
+  return this.http.delete<HttpResponse<any>>(
+    this.employeeUrl + 'deleteemployee/'+id, {observe: 'response'}
+  );                       
+}
+
 }

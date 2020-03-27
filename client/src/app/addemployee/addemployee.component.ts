@@ -53,7 +53,7 @@ export class AddemployeeComponent implements OnInit {
       this.snackBar.open('Новий співробітник успішно доданий.', null, {
           duration: 2000
       });
-     // this.router.navigate(['books']);
+      this.router.navigate(['employees']);
   } /*else {
       this.snackBar.open('Книжка успішно відредагована.', null, {
           duration: 2000

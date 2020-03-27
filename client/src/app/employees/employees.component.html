@@ -13,7 +13,7 @@
   </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let employee of employees" class="text-center">
+    <tr *ngFor="let employee of returnedEmployees" class="text-center">
         <th scope="row">
 {{employee.name}}
 </th>
@@ -43,6 +43,10 @@
 </th>
 </tr>
 </tbody>
+<div class="m-2 p-2 mx-auto">
+  <pagination [totalItems]="employees.length" (pageChanged)="pageChanged($event)"></pagination>
+</div>
+
 </table>
 
 
