@@ -50,6 +50,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CookeddishesComponent } from './cookeddishes/cookeddishes.component';
 import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   imports: [
@@ -82,7 +84,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     AppComponent,
     NgbdModalConfirm,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent, SignUpFormComponent, AdminPanelComponent
   ],
   entryComponents: [NgbdModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService, MatDatepickerModule,],

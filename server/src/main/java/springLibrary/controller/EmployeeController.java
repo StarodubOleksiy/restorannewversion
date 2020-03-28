@@ -53,7 +53,6 @@ public class EmployeeController {
 
     @PostMapping("employees/save")
     public ResponseEntity<?> save(@RequestBody EmployeeRequest employeeRequest) {
-
         LOGGER.info("employeeRequest = " + employeeRequest);
         //   LOGGER.info("employee = "+employee);
         if(employeeRequest.getId() == null) {

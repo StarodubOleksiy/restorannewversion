@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <mat-card class="card offset-sm-1 col-sm-10 offset-md-1 col-md-10 offset-lg-1 col-lg-10">
+          <mat-card-header>
+                <div>
+              <legend>Log in</legend>
+          </div>
+      </mat-card-header>
+          <mat-card-content>
+  <form class="example-form" [formGroup]="signUpForm" (ngSubmit)="logIn()">
+        
+     <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="login" placeholder="login"
+          type="text"
+          formControlName="login"
+          required>
+        </mat-form-field>
+       
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="password" placeholder="password"
+          type="password"
+          formControlName="password"
+          required>
+        </mat-form-field>        
+      
+      <button class="submit-button" mat-raised-button type="submit"
+       color="accent" [disabled]="!signUpForm.valid">
+        Click me!        
+      </button>
+
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </div>

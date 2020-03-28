@@ -17,10 +17,14 @@ import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.co
 import { EditDishIngradientComponent } from './edit-dish-ingradient/edit-dish-ingradient.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 const routes: Routes = [
+  { path: 'adminpanel', component: AdminPanelComponent },
   { path: 'dishes', component: DishesComponent },
+  { path: 'admin', component: SignUpFormComponent },
   { path: 'dishes/:id', component: DishdetailsComponent },
   { path: 'dishesbymenu/:id', component: DishesComponent },
   { path: 'cookeddish/:id', component: CookeddishesComponent },
