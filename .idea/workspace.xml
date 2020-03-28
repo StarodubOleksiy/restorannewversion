@@ -658,14 +658,7 @@
       <workItem from="1584837489639" duration="121000" />
       <workItem from="1585315923760" duration="4022000" />
       <workItem from="1585327969783" duration="8703000" />
-      <workItem from="1585382623986" duration="5894000" />
-    </task>
-    <task id="LOCAL-00110" summary="Twentee seven commit. Adding posibility to find cooked dishes by it's own order.">
-      <created>1584028931307</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1584028931307</updated>
+      <workItem from="1585382623986" duration="6428000" />
     </task>
     <task id="LOCAL-00111" summary="Twentee seven commit. Adding posibility to find cooked dishes by it's own order.">
       <created>1584028962200</created>
@@ -1003,11 +996,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585391943741</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
+      <created>1585391965266</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1585391965266</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245072000" />
+    <option name="totallyTimeSpent" value="245606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
