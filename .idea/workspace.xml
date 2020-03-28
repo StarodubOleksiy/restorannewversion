@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/log/2020-03-28.log" afterPath="$PROJECT_DIR$/server/log/2020-03-28.log" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -661,14 +662,7 @@
       <workItem from="1585315923760" duration="4022000" />
       <workItem from="1585327969783" duration="8703000" />
       <workItem from="1585382623986" duration="7042000" />
-      <workItem from="1585401719271" duration="853000" />
-    </task>
-    <task id="LOCAL-00113" summary="Twentee eight commit. Adding pagination to dishes.">
-      <created>1584149389351</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1584149389353</updated>
+      <workItem from="1585401719271" duration="1068000" />
     </task>
     <task id="LOCAL-00114" summary="Twentee eight commit. Adding pagination to dishes.">
       <created>1584149400558</created>
@@ -1006,11 +1000,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585406998186</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
+      <created>1585407130258</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1585407130258</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247073000" />
+    <option name="totallyTimeSpent" value="247288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
