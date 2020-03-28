@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/OrderController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/OrderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/repository/OrderRepository.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/repository/OrderRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/OrderServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/OrderServiceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/OrderService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/OrderService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -615,14 +611,7 @@
       <workItem from="1584837489639" duration="121000" />
       <workItem from="1585315923760" duration="4022000" />
       <workItem from="1585327969783" duration="8703000" />
-      <workItem from="1585382623986" duration="2709000" />
-    </task>
-    <task id="LOCAL-00101" summary="Twentee fifth commit. Adding filter dishes by menu and dish details.">
-      <created>1583742831976</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1583742831977</updated>
+      <workItem from="1585382623986" duration="2733000" />
     </task>
     <task id="LOCAL-00102" summary="Twentee fifth commit. Adding filter dishes by menu and dish details.">
       <created>1583742965303</created>
@@ -960,11 +949,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585340610216</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
+      <created>1585385341022</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1585385341023</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241887000" />
+    <option name="totallyTimeSpent" value="241911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
