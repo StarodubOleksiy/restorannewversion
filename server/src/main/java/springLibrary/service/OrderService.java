@@ -16,4 +16,6 @@ public interface OrderService extends Service<Orders, Long, OrderRepository> {
 
     public Optional<OrderResponse> findByIdResponse(Long id);
 
+    public List<OrderResponse> findOrdersByDate(String date);
+
  }

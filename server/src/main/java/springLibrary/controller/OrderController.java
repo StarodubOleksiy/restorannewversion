@@ -54,11 +54,16 @@ public class OrderController {
     }
 
     @GetMapping("/date")
-    public List<OrderResponse> getDishessByName(@RequestParam("date") String date) {
+    public List<OrderResponse> getOrdersByDate(@RequestParam("date") String date) {
         LOGGER.info("date = "+date);// 26.03.2020
-       // LocalDate localDate = LocalDate.parse(date);
-       // LOGGER.info("localDate.toString() = " +localDate.toString());
-        return orderService.findAllResponse();
+        String replaceDate = date.replace(".","/");//Because this method does not split string with replacement .
+        LOGGER.info("replaceDate = "+replaceDate);
+        String[] dateArray = replaceDate.split("/");
+        LOGGER.info("dateArray.length = "+dateArray.length);
+        for(int i = 0; i < dateArray.length; ++i )
+            LOGGER.info("dateArray["+i+"]"+dateArray[i]);
+        StringBuilder finalDate = new StringBuilder(dateArray[2]+"-"+dateArray[1]+"-"+dateArray[0]);
+        return orderService.findOrdersByDate(finalDate.toString());
     }
 
 
@@ -67,12 +72,9 @@ public class OrderController {
     public ResponseEntity<?> save(@RequestBody OrderRequest orderRequest) {
         LocalDate date = LocalDate.now();
         Orders order = orderRequest.toOrder();
-        //order.setId(Long.valueOf("47856"));
         order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
         order.setOrderDate(date.toString());
         order.setState(OrderStatus.open);
-        //LOGGER.info("employeeService.getOne(orderRequest.getWaiterId()).toString() = "+employeeService.getOne(orderRequest.getWaiterId()).toString());
-        // LOGGER.info("orderRequest = " + orderRequest);
         LOGGER.info("order = " + order);
         orderService.save(order);
         return new ResponseEntity<>(HttpStatus.OK);

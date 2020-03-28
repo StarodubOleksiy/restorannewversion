@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.OrderStatus;
 import springLibrary.entities.Orders;
+import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.OrderResponse;
 import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
@@ -55,6 +56,13 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     public void save(Orders order) {
         super.save(order);
 
+    }
+
+    @Override
+    public List<OrderResponse> findOrdersByDate(String date) {
+        return getRepository().findByDate(date).stream()
+                .map(this::orderToOrderResponse)
+                .collect(Collectors.toList());
     }
 
 
