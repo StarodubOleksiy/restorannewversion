@@ -95,6 +95,7 @@ export class DishesComponent implements OnInit {
     .subscribe(dishes => 
     { 
       this.dishes = dishes;  
+      this.returnedDishes = this.dishes.slice(0, 10);
       this.length = this.dishes.length; 
     });
 };
