@@ -19,9 +19,14 @@ import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-
+import { MainPageComponent } from './main-page/main-page.component';
+import { RestoranSchemaComponent } from './restoran-schema/restoran-schema.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'restoranschema', component: RestoranSchemaComponent },
+  { path: 'mainpage', component: MainPageComponent },
   { path: 'adminpanel', component: AdminPanelComponent },
   { path: 'dishes', component: DishesComponent },
   { path: 'admin', component: SignUpFormComponent },

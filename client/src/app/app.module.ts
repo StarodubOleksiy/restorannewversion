@@ -52,6 +52,9 @@ import { AddcookeddishComponent } from './addcookeddish/addcookeddish.component'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { RestoranSchemaComponent } from './restoran-schema/restoran-schema.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   imports: [
@@ -84,7 +87,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     AppComponent,
     NgbdModalConfirm,
     DishesComponent,    
-    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent, SignUpFormComponent, AdminPanelComponent
+    AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent, SignUpFormComponent, AdminPanelComponent, MainPageComponent, RestoranSchemaComponent, ContactsComponent
   ],
   entryComponents: [NgbdModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService, MatDatepickerModule,],
