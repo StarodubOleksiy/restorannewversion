@@ -26,7 +26,7 @@ getDish(id: number): Observable<Dish> {
    console.log(this.dishUrl + '/dishes/' + id);
    return this.http.get<Dish>(this.dishUrl + '/dishes/' + id).map(json => {
      return Dish.copyOf(json);
-   });
+   })
 
 }
 
@@ -59,12 +59,8 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
     return this.http.get<HttpResponse<Dish[] | any>>(
     this.dishUrl+'/dishesbymenu/'+id , {observe: 'response'});
 }
-   /*
-  getBooksByGenre(id: number): Observable<HttpResponse<Book[] | any>> {
-     return this.http.get<HttpResponse<Book[] | any>>(
-     this.booksUrl+'getbygenre/'+id , {observe: 'response'});
 
-}
 
-   */ 
+ 
+
 }

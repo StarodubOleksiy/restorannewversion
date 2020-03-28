@@ -33,10 +33,17 @@ export class AddmenuComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) { }
 
+
   ngOnInit() {
+    if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
+      this.configureType = new ConfigureType('edit', SaveMenuConfigureType.EDIT);
+      this.loadMenu();
+    } else 
+    {
     this.configureType = new ConfigureType('add', SaveMenuConfigureType.ADD);
     this.loadedMenu = new Menu();
     this.menu = new Menu();
+    }
   }
 
   saveMenu(): void {
@@ -65,6 +72,15 @@ export class AddmenuComponent implements OnInit {
           });
   });
 };
+
+loadMenu(): void {
+  const id = parseInt(this.route.snapshot.paramMap.get('id'));
+  this.menuServise.getCurrentMenu(id)
+      .subscribe(menu => {
+          this.loadedMenu = menu;
+          this.menu = menu.clone();            
+      });
+  }
 
 }
 

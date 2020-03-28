@@ -14,7 +14,8 @@ import {HttpResponse} from '@angular/common/http';
 export class AddingradientComponent implements OnInit {
 
   ingradient : Ingradient;
- 
+  loadedIngradient: Ingradient;
+  configureType: ConfigureType;
 
   ingradientConfigureForm = new FormGroup({
     name: new FormControl('', [
@@ -28,25 +29,32 @@ export class AddingradientComponent implements OnInit {
     private storageService: StorageService,
     private route: ActivatedRoute) { }
 
+
   ngOnInit() {
+    if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
+      this.configureType = new ConfigureType('edit', SaveIngradientConfigureType.EDIT);
+      this.loadIngradient();
+    } else 
+    {
+      this.configureType = new ConfigureType('add', SaveIngradientConfigureType.ADD);
     this.ingradient = new Ingradient();
+    }
   }
 
-
+ 
   saveIngradient(): void {
     this.storageService.saveIngradient(this.ingradient).subscribe((response: HttpResponse<any>) => {
-    //if (this.configureType.type === SaveBookConfigureType.ADD) {
-      this.snackBar.open('Новий інградіент успішно додана.', null, {
-          duration: 2000
-      });
-      //this.router.navigate(['books']);
-  /*} else {
-      this.snackBar.open('Книжка успішно відредагована.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['books']);
-  }*/
-   
+      if (this.configureType.type === SaveIngradientConfigureType.ADD) {
+        this.snackBar.open('Новий інградіент успішно доданий.', null, {
+            duration: 2000
+        });
+        this.router.navigate(['ingradients']);
+    } else {
+        this.snackBar.open('Інградіент відредагований.', null, {
+            duration: 2000
+        });
+        this.router.navigate(['ingradients']);
+    } 
   }, error => {
       this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
           , null, {
@@ -55,6 +63,15 @@ export class AddingradientComponent implements OnInit {
   });
 
 };
+
+loadIngradient(): void {
+  const id = parseInt(this.route.snapshot.paramMap.get('id'));
+  this.storageService.getIngradient(id)
+      .subscribe(ingradient => {
+          this.loadedIngradient = ingradient;
+          this.ingradient = ingradient.clone();            
+      });
+  }
 
 }
 
