@@ -116,13 +116,16 @@ validationFunction(): void {
   addNewIngradient() :void {
     this.router.navigateByUrl('/addingradient/add');
   }
-
+ /*
+   editDish(id: number) : void {
+    this.router.navigateByUrl('/adddish/edit/' + id);
+  }
+  */
  
- /* findIngradientByName(): void {
-    this.validationFunction();
-     console.log("this.searchIngradientWord = "+this.searchIngradientWord);
-     console.log("this.disabledSearch = "+this.disabledSearch);
-};*/
+
+  editIngradient(id:number) :void {
+    this.router.navigateByUrl('/addingradient/edit/' + id);
+  }
 
 
 

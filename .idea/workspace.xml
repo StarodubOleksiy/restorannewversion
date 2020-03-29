@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Thirty fifth commit. Adding possibility to edit menu and ingradients.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/addingradient/addingradient.component.html" afterPath="$PROJECT_DIR$/client/src/app/addingradient/addingradient.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/addmenu/addmenu.component.html" afterPath="$PROJECT_DIR$/client/src/app/addmenu/addmenu.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/addmenu/addmenu.component.ts" afterPath="$PROJECT_DIR$/client/src/app/addmenu/addmenu.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/menu/menu.component.html" afterPath="$PROJECT_DIR$/client/src/app/menu/menu.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/menu/menu.component.ts" afterPath="$PROJECT_DIR$/client/src/app/menu/menu.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/storage/storage.component.html" afterPath="$PROJECT_DIR$/client/src/app/storage/storage.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/storage/storage.component.ts" afterPath="$PROJECT_DIR$/client/src/app/storage/storage.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -20,17 +27,17 @@
       <file leaf-file-name="DishController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
+            <state relative-caret-position="782">
               <caret line="58" column="37" lean-forward="false" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="288">
               <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="26" />
               <folding />
             </state>
@@ -40,8 +47,8 @@
       <file leaf-file-name="IngradientController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="510">
+              <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -114,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menu.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/app/menu/menu.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
+            <state relative-caret-position="17">
               <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -447,9 +454,9 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -682,14 +689,8 @@
       <workItem from="1585327969783" duration="8703000" />
       <workItem from="1585382623986" duration="7042000" />
       <workItem from="1585401719271" duration="1683000" />
-      <workItem from="1585426933754" duration="854000" />
-    </task>
-    <task id="LOCAL-00116" summary="Twentee eight commit. Adding pagination to dishes and adding cook response List.">
-      <created>1584150479601</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1584150479601</updated>
+      <workItem from="1585426933754" duration="877000" />
+      <workItem from="1585473511713" duration="1229000" />
     </task>
     <task id="LOCAL-00117" summary="Twentee eight commit. Adding pagination to dishes and adding cook response List.">
       <created>1584150497740</created>
@@ -1027,11 +1028,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585431084219</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
+      <created>1585431109263</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1585431109263</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248757000" />
+    <option name="totallyTimeSpent" value="250009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -1039,14 +1047,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.4956597" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5043403" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5043403" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1076,7 +1084,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sixteenth commit. Creating connection between dish and ingradients." />
     <MESSAGE value="Seventeenth commit. Adding class DishIngradientsResponse." />
     <MESSAGE value="Eighteenth commit. Adding and editing connection between dishes and ingradients." />
     <MESSAGE value="Nineteenth commit. Now we can add ingredients to dishes." />
@@ -1101,7 +1108,8 @@
     <MESSAGE value="Thirty fourth commit. Adding posibility of deleting employee." />
     <MESSAGE value="Thirty fourth commit. Adding posibility of deleting and editing employee." />
     <MESSAGE value="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date." />
-    <option name="LAST_COMMIT_MESSAGE" value="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date." />
+    <MESSAGE value="Thirty fifth commit. Adding possibility to edit menu and ingradients." />
+    <option name="LAST_COMMIT_MESSAGE" value="Thirty fifth commit. Adding possibility to edit menu and ingradients." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1485,19 +1493,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/menu/menu.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
+        <state relative-caret-position="782">
           <caret line="58" column="37" lean-forward="false" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding />
         </state>
@@ -1505,17 +1503,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="28" />
+        <state relative-caret-position="510">
+          <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="288">
           <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/menu/menu.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

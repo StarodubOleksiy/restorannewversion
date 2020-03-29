@@ -46,25 +46,20 @@ export class AddmenuComponent implements OnInit {
     }
   }
 
-  saveMenu(): void {
-    if (this.configureType.type === SaveMenuConfigureType.EDIT)
-  this.menu.id = this.loadedMenu.id;
+
+  saveMenu(): void { 
   this.menuServise.saveMenu(this.menu).subscribe((response: HttpResponse<any>) => {
-   // if (this.configureType.type === SaveGenreConfigureType.ADD) {
-      this.snackBar.open('Нове меню успішно доданий.', null, {
+    if (this.configureType.type === SaveMenuConfigureType.ADD) {
+      this.snackBar.open('Нове меню успішно додане.', null, {
           duration: 2000
       });
-   // if(isNaN(this.bookId))
-   // this.router.navigate(['/savebook/add']);
-  //   else
-    // this.router.navigate(['/savebook/edit/'+this.bookId]);
-  /*} else {
-      this.snackBar.open('Жанр успішно відредагований.', null, {
+      this.router.navigate(['menu']);
+  } else {
+      this.snackBar.open('Меню успішно відредаговане.', null, {
           duration: 2000
       });
-      this.router.navigate(['books']);
-  }*/
-   
+      this.router.navigate(['menu']);
+  }    
   }, error => {
       this.snackBar.open('Menu with the such name is already exists in database .'
           , null, {

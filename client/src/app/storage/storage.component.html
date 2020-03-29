@@ -9,16 +9,18 @@
   </div>
 
 <form class="needs-validation" name="searchForm" (ngSubmit)="findIngradientByName()" novalidate>    
-  <label for="validationCustom03">Пошук інградієнта за його назвою</label>
+  <label for="validationCustom03">Find ingradient by it's name</label>
    <div class="form-row shadow-lg p-3 mb-5"> 
           <div class="col-8 list-group-item"> 
-      <input type="text" (keyup)="onKey()" name="search" [(ngModel)]="searchIngradientWord" class="form-control" placeholder="Введіть назву інградієнта який бажаєте знайти" id="search" required>
+      <input type="text" (keyup)="onKey()" name="search" [(ngModel)]="searchIngradientWord" class="form-control" placeholder="Enter the name of the ingradient you want to find" id="search" required>
       <div class="invalid-feedback">
         Please, enter a valid name of the ingradient.
       </div>
     </div> 
     <div class="col-4 list-group-item">  
-      <button [disabled]=" disabledSearch === false " class="btn btn-primary btn-lg btn-block" id="searchButton" type="submit">Знайти інградіент</button>
+      <button [disabled]=" disabledSearch === false " class="btn btn-primary btn-lg btn-block" id="searchButton" type="submit">
+        Find ingradient
+      </button>
     </div> 
           
     </div>  
@@ -26,14 +28,16 @@
 
 
 <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewIngradient()">
-  Додати новий інградіент на склад
+  Add new ingradient on storage
 </button>
 
 <table class="table table-hover">
   <thead>
   <tr class="text-center">
-      <th scope="col">Назва</th>
-      <th scope="col">Кількість на складі</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number on storage</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
   </tr>
 </thead>
 <tbody>
@@ -45,14 +49,14 @@
   {{ingradient.numberOnStorage}}
   </th>
 <th scope="row">
-<button type="button" class="btn btn-primary" (click)="editAuthor(author.id)">
-  Редагувати автора
+<button type="button" class="btn btn-primary" (click)="editIngradient(ingradient.id)">
+  Edit ingradient
 </button> 
 </th>
 <th scope="row">
 
 <button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
-  Видалити автора
+  Delete ingradient
 </button> 
 </th>
 </tr>

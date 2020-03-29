@@ -18,29 +18,25 @@ export class MenuComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.getMenu();
- //  this.dataSource = this.menus;
+    this.getMenu(); 
   }
 
   getMenu(): void {
     this.menuService.getAllMenu()
-       .subscribe(//menus => this.menus = menus
-        menus => this.dataSource  = menus);
-      
-       
-  }
+       .subscribe(
+        menus => this.dataSource  = menus);     
+               }
 
 
   editMenu(id: number) : void {
    console.log("Menu editing with id:"+id);
+   this.router.navigateByUrl('/addmenu/edit/'+id);
   }
 
+ 
   addNewMenu(): void {
-    console.log(this.router);
-  //if (this.route.snapshot.paramMap.get('configureType') === 'add')    
+    console.log(this.router); 
   this.router.navigateByUrl('/addmenu/add');
-  //else
-  //this.router.navigateByUrl('/addgenre/'+this.book.id+'/add');
   }
 
 }

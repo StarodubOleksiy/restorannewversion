@@ -10,7 +10,7 @@
 
 
 <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewMenu()">
-  Додати нове меню
+  Add new menu
 </button>
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
@@ -18,7 +18,7 @@
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef>Список меню </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef><h1>Menu list</h1> </mat-header-cell>
     <mat-cell *matCellDef="let element">   
     
     
@@ -28,12 +28,12 @@
         </div>
         <div class="col">
           <button type="button" class="btn btn-primary" (click)="editMenu(element.id)">
-            Редагувати меню
+            Edit menu
           </button> 
         </div>
         <div class="col">
           <button type="button" class="btn btn-primary" (click)="onAuthorDeleteClick(author)">
-            Видалити меню
+            Delete menu
           </button>         
         </div>
       </div>
