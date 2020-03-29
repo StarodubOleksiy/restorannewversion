@@ -33,6 +33,7 @@ import { AdddishComponent } from './adddish/adddish.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { NgbdModalConfirm } from './employees/employees.component';
+import {NgDishModalConfirm } from './editdishes/editdishes.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { PersonnelComponent } from './personnel/personnel.component';
 import {MatTableModule} from '@angular/material/table';
@@ -86,10 +87,11 @@ import { ContactsComponent } from './contacts/contacts.component';
   declarations: [
     AppComponent,
     NgbdModalConfirm,
+    NgDishModalConfirm,
     DishesComponent,    
     AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent, SignUpFormComponent, AdminPanelComponent, MainPageComponent, RestoranSchemaComponent, ContactsComponent
   ],
-  entryComponents: [NgbdModalConfirm],
+  entryComponents: [NgbdModalConfirm,NgDishModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService, MatDatepickerModule,],
   bootstrap: [AppComponent]
 })

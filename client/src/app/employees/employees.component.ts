@@ -78,7 +78,6 @@ export class EmployeesComponent  implements OnInit   {
 
 
 
-
       open(employee: Employee) {//NgbdModalConfirm
         const modalRef = this._modalService.open(NgbdModalConfirm);
        modalRef.componentInstance.employee = employee;
