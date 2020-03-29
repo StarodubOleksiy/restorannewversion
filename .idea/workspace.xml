@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.ts" afterPath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/employees/employees.component.ts" afterPath="$PROJECT_DIR$/client/src/app/employees/employees.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -588,14 +584,7 @@
       <workItem from="1585382623986" duration="7042000" />
       <workItem from="1585401719271" duration="1683000" />
       <workItem from="1585426933754" duration="877000" />
-      <workItem from="1585473511713" duration="3975000" />
-    </task>
-    <task id="LOCAL-00124" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
-      <created>1584279692220</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1584279692220</updated>
+      <workItem from="1585473511713" duration="4027000" />
     </task>
     <task id="LOCAL-00125" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
       <created>1584279712737</created>
@@ -933,11 +922,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585486789525</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="Thirty fifth commit. Adding possibility to edit menu, ingradients and delete dish.">
+      <created>1585490422946</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1585490422946</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252755000" />
+    <option name="totallyTimeSpent" value="252807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -982,7 +978,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Seventeenth commit. Adding class DishIngradientsResponse." />
     <MESSAGE value="Eighteenth commit. Adding and editing connection between dishes and ingradients." />
     <MESSAGE value="Nineteenth commit. Now we can add ingredients to dishes." />
     <MESSAGE value="Twenteenth commit. Now we can edit nu,erosity of ingradients and delete ingradient from dish." />
@@ -1007,7 +1002,8 @@
     <MESSAGE value="Thirty fourth commit. Adding posibility of deleting and editing employee." />
     <MESSAGE value="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date." />
     <MESSAGE value="Thirty fifth commit. Adding possibility to edit menu and ingradients." />
-    <option name="LAST_COMMIT_MESSAGE" value="Thirty fifth commit. Adding possibility to edit menu and ingradients." />
+    <MESSAGE value="Thirty fifth commit. Adding possibility to edit menu, ingradients and delete dish." />
+    <option name="LAST_COMMIT_MESSAGE" value="Thirty fifth commit. Adding possibility to edit menu, ingradients and delete dish." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
