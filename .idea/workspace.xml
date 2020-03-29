@@ -584,14 +584,7 @@
       <workItem from="1585382623986" duration="7042000" />
       <workItem from="1585401719271" duration="1683000" />
       <workItem from="1585426933754" duration="877000" />
-      <workItem from="1585473511713" duration="2943000" />
-    </task>
-    <task id="LOCAL-00122" summary="Thirty commit. Addind Save cooked dish component.">
-      <created>1584275497723</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1584275497725</updated>
+      <workItem from="1585473511713" duration="3365000" />
     </task>
     <task id="LOCAL-00123" summary="Thirty commit. Addind Save cooked dish component.">
       <created>1584275530292</created>
@@ -929,11 +922,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585486345507</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="Thirty fifth commit. Adding possibility to edit menu and ingradients.">
+      <created>1585486364535</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1585486364535</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251723000" />
+    <option name="totallyTimeSpent" value="252145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
