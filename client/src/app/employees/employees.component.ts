@@ -8,6 +8,8 @@ import {MatDialog, MatSelect, MatSnackBar} from '@angular/material';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from '../app.component';
+
 
 
 
@@ -21,25 +23,32 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 
-export class EmployeesComponent implements OnInit {
+export class EmployeesComponent  implements OnInit   {
 
   employees: Employee[]  = []; 
   returnedEmployees: Employee[]  = [];
+  
+  
 
   constructor(public employeeService: EmployeeService,
     public router: Router,
     public snackBar: MatSnackBar,
-    public _modalService: NgbModal
+    public _modalService: NgbModal,
+    public app: AppComponent
+    
     ) { }
 
   
   
     ngOnInit() {
     this.getAuthors();
+    this.app.showAdminMenu();
+    //this.sh
   }
 
   refresh(): void {
        this.getAuthors();
+      
   }
 
 

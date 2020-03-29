@@ -5,6 +5,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Router,ActivatedRoute} from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Directive, HostListener } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 
 
@@ -22,6 +23,7 @@ export class StorageComponent implements OnInit {
     console.log('method ngOnInit()');
    this.getIngradients();
    this.disabledSearch = false;
+   this.app.showAdminMenu();
   }
 
   disabledSearch:boolean;
@@ -32,7 +34,8 @@ export class StorageComponent implements OnInit {
 
 
   constructor(private storageService: StorageService,
-    private router: Router) { }
+    private router: Router,
+    public app: AppComponent) { }
 
     
   refresh(): void {

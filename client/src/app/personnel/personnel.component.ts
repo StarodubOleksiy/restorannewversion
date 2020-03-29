@@ -7,6 +7,7 @@ import * as HttpStatus from 'http-status-codes';
 import {MatDialog, MatSelect, MatSnackBar} from '@angular/material';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-personnel',
@@ -18,11 +19,13 @@ export class PersonnelComponent implements OnInit {
   waiters: Employee[]  = []; 
 
   constructor(private employeeService: EmployeeService,
-    private router: Router, public snackBar: MatSnackBar) { }
+    private router: Router, public snackBar: MatSnackBar,
+    private app: AppComponent) { }
 
   
   
     ngOnInit() {
+    this.app.hideAdminMenu();
     this.getWaiters();
   }
 

@@ -8,6 +8,7 @@ import { DishService } from '../services/dish.service';
 import { MenuService } from '../services/menu.service';
 import { DishIngradient } from '../model/dishingradients';
 import { StorageService } from '../services/storage.service';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -26,9 +27,11 @@ export class DishdetailsComponent implements OnInit {
     private dishService: DishService,
     private menuService: MenuService,
     private storageService: StorageService,
-    private location: Location) { }
+    private location: Location,
+    private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.hideAdminMenu();
     this.getDish();
   }
 

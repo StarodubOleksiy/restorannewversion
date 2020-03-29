@@ -3,6 +3,7 @@ import { CookedDish } from '../model/cookeddish';
 import { CookeddishService } from '../services/cookeddish.service';
 import {PageEvent} from '@angular/material/paginator';
 import {Router,ActivatedRoute} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-cookeddishes',
@@ -17,9 +18,11 @@ export class CookeddishesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private cookedDishService: CookeddishService,
-    private router: Router) { }
+    private router: Router,
+    private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.showAdminMenu();
     this.orderId = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getCookedDishesByOrder(this.orderId);
   }

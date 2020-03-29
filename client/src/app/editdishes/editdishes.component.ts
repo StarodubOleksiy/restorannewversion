@@ -4,6 +4,7 @@ import { Menu } from '../model/menu';
 import { DishService } from '../services/dish.service';
 import { MenuService } from '../services/menu.service';
 import {Router,ActivatedRoute} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-editdishes',
@@ -15,10 +16,11 @@ export class EditdishesComponent implements OnInit {
   dishes: Dish[] = [];
 
   constructor(private dishService: DishService,
-              private menuService: MenuService,
-    private router: Router) { }
+                 private router: Router,
+                 private app:AppComponent) { }
 
   ngOnInit() {
+    this.app.showAdminMenu();
       this.getDishes();
   }
 

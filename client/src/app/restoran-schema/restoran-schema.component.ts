@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-restoran-schema',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestoranSchemaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.hideAdminMenu();
   }
 
 }

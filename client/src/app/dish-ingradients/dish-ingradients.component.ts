@@ -9,6 +9,7 @@ import { Ingradient } from '../model/ingradient';
 import {MatSnackBar} from '@angular/material';
 import {HttpResponse} from '@angular/common/http';
 import * as HttpStatus from 'http-status-codes';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-dish-ingradients',
@@ -35,11 +36,13 @@ export class DishIngradientsComponent implements OnInit {
     private route: ActivatedRoute ,
     private storageService: StorageService,
     private dishService: DishService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private app: AppComponent) { }
 
 
 
   ngOnInit() {
+    this.app.showAdminMenu();
     this.loadDish();
     this.getIngradients();
     this.dishIngradient = new DishIngradient();

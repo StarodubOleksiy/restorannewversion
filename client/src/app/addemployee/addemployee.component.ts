@@ -5,6 +5,7 @@ import {MatSnackBar} from '@angular/material';
 import {Router,ActivatedRoute} from '@angular/router';
 import {EmployeeService} from '../services/employee.service';
 import {Employee} from '../model/employee';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -37,10 +38,12 @@ export class AddemployeeComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router,
     private employeeServise : EmployeeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private app :AppComponent
   ) { }
 
   ngOnInit() {
+    this.app.showAdminMenu();
     if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
       this.configureType = new ConfigureType('edit', SaveEmployeeConfigureType.EDIT);
       this.loadEmployee();

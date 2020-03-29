@@ -6,6 +6,7 @@ import {Router,ActivatedRoute} from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Directive, HostListener } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-orders',
@@ -28,10 +29,12 @@ export class OrdersComponent implements OnInit {
 });
 
   constructor(private orderService: OrderService,
-    private router: Router) { }
+    private router: Router,
+    private app:AppComponent) { }
 
     
   ngOnInit() {
+    this.app.showAdminMenu();
     this.getOrders();
   }
 

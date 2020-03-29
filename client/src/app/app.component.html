@@ -1,4 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
 <nav class="navbar navbar-inverse navbar-expand-md navbar-dark bg-dark fixed-top">
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -20,6 +21,19 @@
 </li>
 </ul>
 </div>
+
 </nav>
+  <div class="p-5" style="text-align:center" *ngIf="showMenu === true">
+    <nav>
+      <a routerLink="/employees">Employees</a>
+      <a routerLink="/ingradients">Storage</a>
+      <a routerLink="/menu">Menu</a>
+      <a routerLink="/editdishes">Edit dishes</a>
+      <a routerLink="/orders">Orders</a>
+    </nav>
+    </div>
 <router-outlet></router-outlet>
+
 </div>
+
+

@@ -7,6 +7,7 @@ import {MatSnackBar} from '@angular/material';
 import {Router,ActivatedRoute} from '@angular/router';
 import {DishService } from '../services/dish.service';
 import {MenuService } from '../services/menu.service';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -33,9 +34,11 @@ export class AdddishComponent implements OnInit {
     private router: Router,
     private dishService: DishService,
     private menuService: MenuService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.showAdminMenu()
     if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
       this.configureType = new ConfigureType('edit', SaveDishConfigureType.EDIT);
       this.loadDish()
@@ -121,21 +124,9 @@ dishIngradients(id: number) : void {
 
 addNewMenu(): void {
   console.log(this.router);
-//if (this.route.snapshot.paramMap.get('configureType') === 'add')    
 this.router.navigateByUrl('/addmenu/add');
-//else
-//this.router.navigateByUrl('/addgenre/'+this.book.id+'/add');
-}
-/*const reader = new FileReader();
-    reader.readAsDataURL(data.blob);
-    let base64Audio ;
-    reader.onloadend = function() {
-      const base64data = reader.result;
-      console.log(base64data);
 
-     base64Audio = base64data.split(' , ')[1];
-      console.log(base64Audio);
-*/
+}
 
 }
 

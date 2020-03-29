@@ -6,6 +6,7 @@ import {Router,ActivatedRoute} from '@angular/router';
 import { Menu } from '../model/menu';
 import {MenuService } from '../services/menu.service';
 import { Location } from '@angular/common';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-addmenu',
@@ -31,10 +32,12 @@ export class AddmenuComponent implements OnInit {
     private router: Router,
     private menuServise : MenuService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private app: AppComponent) { }
 
 
   ngOnInit() {
+    this.app.showAdminMenu();
     if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
       this.configureType = new ConfigureType('edit', SaveMenuConfigureType.EDIT);
       this.loadMenu();

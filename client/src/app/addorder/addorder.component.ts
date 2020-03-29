@@ -7,6 +7,7 @@ import {Router,ActivatedRoute} from '@angular/router';
 import {HttpResponse} from '@angular/common/http';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-addorder',
@@ -32,9 +33,11 @@ export class AddorderComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService,
     private orderService: OrderService,
-    private router: Router, public snackBar: MatSnackBar) { }
+    private router: Router, public snackBar: MatSnackBar,
+    private app:AppComponent) { }
 
   ngOnInit() {
+    this.app.showAdminMenu();
     this.getWaiters();
     this.configureType = new ConfigureType('add', SaveOrderConfigureType.ADD);
     this.order = new Order();

@@ -5,6 +5,7 @@ import { DishService } from '../services/dish.service';
 import { MenuService } from '../services/menu.service';
 import {PageEvent} from '@angular/material/paginator';
 import {Router,ActivatedRoute} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-dishes',
@@ -31,9 +32,11 @@ export class DishesComponent implements OnInit {
     private route: ActivatedRoute,
     private dishService: DishService,
     private menuService: MenuService,
-    private router: Router) { }
+    private router: Router,
+    private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.hideAdminMenu();
     this.selectedId = parseInt(this.route.snapshot.paramMap.get('id'));
     if(isNaN(this.selectedId) === true)
     this.getDishes();

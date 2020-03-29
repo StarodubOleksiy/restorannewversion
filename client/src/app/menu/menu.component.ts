@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from '../model/menu';
 import {MenuService } from '../services/menu.service';
 import {Router,ActivatedRoute} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -15,9 +16,11 @@ export class MenuComponent implements OnInit {
   dataSource = null;
 
   constructor(private menuService: MenuService,
-    private router: Router) { }
+    private router: Router,
+    private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.showAdminMenu();
     this.getMenu(); 
   }
 

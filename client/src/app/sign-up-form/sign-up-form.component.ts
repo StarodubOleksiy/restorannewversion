@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router,ActivatedRoute} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -12,7 +13,8 @@ export class SignUpFormComponent implements OnInit {
   login:string;
   password:string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private app:AppComponent) { }
 
   signUpForm = new FormGroup({
     login: new FormControl('', [
@@ -22,6 +24,7 @@ export class SignUpFormComponent implements OnInit {
 });
 
   ngOnInit() {
+    this.app.hideAdminMenu();
   }
 
   logIn() :void {

@@ -5,6 +5,7 @@ import {MatSnackBar} from '@angular/material';
 import {Router,ActivatedRoute} from '@angular/router';
 import {StorageService } from '../services/storage.service';
 import {HttpResponse} from '@angular/common/http';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-addingradient',
@@ -27,10 +28,12 @@ export class AddingradientComponent implements OnInit {
   constructor(private snackBar: MatSnackBar,
     private router: Router,
     private storageService: StorageService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private app:AppComponent) { }
 
 
   ngOnInit() {
+    this.app.showAdminMenu();
     if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
       this.configureType = new ConfigureType('edit', SaveIngradientConfigureType.EDIT);
       this.loadIngradient();

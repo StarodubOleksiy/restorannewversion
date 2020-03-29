@@ -8,6 +8,7 @@ import {MatSnackBar} from '@angular/material';
 import { DishIngradient } from '../model/dishingradients';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpResponse} from '@angular/common/http';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-edit-dish-ingradient',
@@ -16,7 +17,6 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class EditDishIngradientComponent implements OnInit {
 
-  
   dish : Dish;
   ingradient: Ingradient;
   dishIngradient: DishIngradient;
@@ -31,9 +31,11 @@ export class EditDishIngradientComponent implements OnInit {
     private route: ActivatedRoute,
     private dishService: DishService,
     private storageService: StorageService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.showAdminMenu();
     const dishid = parseInt(this.route.snapshot.paramMap.get('dishid'));
     const ingradientid = parseInt(this.route.snapshot.paramMap.get('ingradientid'));
     console.log('ngOnInit() function ');
