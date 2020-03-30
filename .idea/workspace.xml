@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/employees/employees.component.html" afterPath="$PROJECT_DIR$/client/src/app/employees/employees.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/orders/orders.component.html" afterPath="$PROJECT_DIR$/client/src/app/orders/orders.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -607,14 +605,7 @@
       <workItem from="1585401719271" duration="1683000" />
       <workItem from="1585426933754" duration="877000" />
       <workItem from="1585473511713" duration="5353000" />
-      <workItem from="1585581984099" duration="1923000" />
-    </task>
-    <task id="LOCAL-00129" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
-      <created>1584280589791</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1584280589791</updated>
+      <workItem from="1585581984099" duration="1952000" />
     </task>
     <task id="LOCAL-00130" summary="Thirty commit. Addind Save cooked dish component and editing pagination of dishes pages.">
       <created>1584280607756</created>
@@ -952,11 +943,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585592823464</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="Thirty sixth commit. Adding header image.">
+      <created>1585593413854</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1585593413855</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256056000" />
+    <option name="totallyTimeSpent" value="256085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
