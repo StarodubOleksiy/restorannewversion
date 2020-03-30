@@ -1,28 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<body>
 
-<div style="text-align:center">
-<nav class="navbar navbar-inverse navbar-expand-md navbar-dark bg-dark fixed-top">
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-  <ul class="navbar-nav mr-auto nav-pills nav-justified text-center">
+<div style="text-align:center" >
+  <nav class="navbar navbar-inverse navbar-expand-md"  id="navigator">
+    <img src="/assets/images/meal.jpg" alt="image">
+      <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto nav-pills nav-justified text-center">
+      <li class="nav-item divider-vertical"  role="presentation">
+    <a class="navbar-brand btn-large" routerLink="/mainpage">Main page</a>
+  </li>
     <li class="nav-item divider-vertical"  role="presentation">
-  <a class="navbar-brand btn-large" routerLink="/mainpage">Main page</a>
-</li>
-  <li class="nav-item divider-vertical"  role="presentation">
-  <a class="navbar-brand btn-large" routerLink="/dishes">Dishes</a>
-</li>
-  <li class="nav-item divider-vertical"  role="presentation">
-  <a class="navbar-brand btn-large" routerLink="/personnel">Personnel</a>
-</li>
-  <li class="nav-item divider-vertical"  role="presentation">
-  <a class="navbar-brand btn-large" routerLink="/restoranschema">Scheme of the restaurant</a>
-</li>
-  <li class="nav-item divider-vertical"  role="presentation">
-  <a class="navbar-brand btn-large" routerLink="/contacts">Our address</a>
-</li>
-</ul>
-</div>
+    <a class="navbar-brand btn-large" routerLink="/dishes">Dishes</a>
+  </li>
+    <li class="nav-item divider-vertical"  role="presentation">
+    <a class="navbar-brand btn-large" routerLink="/personnel">Personnel</a>
+  </li>
+    <li class="nav-item divider-vertical"  role="presentation">
+    <a class="navbar-brand btn-large" routerLink="/restoranschema">Scheme of the restaurant</a>
+  </li>
+    <li class="nav-item divider-vertical"  role="presentation">
+    <a class="navbar-brand btn-large" routerLink="/contacts">Our address</a>
+  </li>
+  </ul>
+  </div>
+  
+  </nav>
 
-</nav>
   <div class="p-5" style="text-align:center" *ngIf="showMenu === true">
     <nav>
       <a routerLink="/employees">Employees</a>
@@ -35,5 +38,5 @@
 <router-outlet></router-outlet>
 
 </div>
-
+</body>
 
