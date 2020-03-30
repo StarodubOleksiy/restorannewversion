@@ -13,6 +13,8 @@
       <th scope="col">Телефон</th>
       <th scope="col">Позиція</th>
       <th scope="col">Зарплата</th>
+      <th scope="col">Edit employee</th>
+      <th scope="col">Delete employee</th>
   </tr>
 </thead>
 <tbody>
@@ -33,15 +35,15 @@
         {{employee.salary}}
         </th>
 <th scope="row">
-<button type="button" class="btn btn-primary" (click)="editEmployee(employee.id)">
-  Редагувати співробітника
+<button type="button" class="btn btn-outline-primary mr-2" (click)="editEmployee(employee.id)">
+  <div>Edit</div>
 </button> 
 </th>
 <th scope="row">
 
   <button class="btn btn-outline-primary mr-2" (click)="open(employee)" >
-    <div>Open confirm modal</div>
-    <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
+    <div>Delete</div>
+    
   </button>
 </th>
 </tr>
