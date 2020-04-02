@@ -540,14 +540,7 @@
       <workItem from="1585674044393" duration="74000" />
       <workItem from="1585687592045" duration="644000" />
       <workItem from="1585688537821" duration="150000" />
-      <workItem from="1585841558806" duration="2125000" />
-    </task>
-    <task id="LOCAL-00135" summary="Thirty first commit. Continue editing save cooked dishes.">
-      <created>1584473834430</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1584473834430</updated>
+      <workItem from="1585841558806" duration="2133000" />
     </task>
     <task id="LOCAL-00136" summary="Thirty second commit. Finishing editing save cooked dishes.">
       <created>1584562558245</created>
@@ -885,11 +878,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585843875930</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="Thirty seventh commit. Adding possibility to delete dish by id.">
+      <created>1585843889198</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1585843889198</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259877000" />
+    <option name="totallyTimeSpent" value="259885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
