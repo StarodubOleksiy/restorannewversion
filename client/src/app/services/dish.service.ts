@@ -61,6 +61,14 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
 }
 
 
+
+deleteDish(id: number): Observable<HttpResponse<any>> {
+  return this.http.delete<HttpResponse<any>>(
+    this.dishUrl + 'deletedish/'+id, {observe: 'response'}
+  );                       
+}
+
+
  
 
 }

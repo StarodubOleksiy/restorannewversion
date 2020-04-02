@@ -34,6 +34,10 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Autowired
     MenuRepository menuRepository;
 
+    @Autowired
+    IngradientService ingradientService;
+
+
     protected DishServiceImplementation(@Autowired DishRepository repository) {
         super(repository);
     }
@@ -90,6 +94,12 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Override
     public Optional<DishResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::dishToDishResponse);
+    }
+
+    @Override
+    public void deleteDish(Long id) {
+        ingradientService.deleteAllIngradientsFromCurrentDish(id);
+        getRepository().deleteById(id);
     }
 
 

@@ -148,11 +148,7 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
 
 
-    @Override
-    public void save(Ingradient ingradient) {
-        super.save(ingradient);
 
-    }
 
 
 }

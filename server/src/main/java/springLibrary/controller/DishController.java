@@ -66,5 +66,14 @@ public class DishController {
     }
 
 
+    @DeleteMapping("deletedish/{id}")
+    ResponseEntity<?> deleteDish(@PathVariable Long id) {
+        LOGGER.info(" delete dishid = "+id);
+        dishService.deleteDish(id);
+        return new  ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+
 
 }

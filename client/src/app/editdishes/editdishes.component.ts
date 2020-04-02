@@ -3,6 +3,7 @@ import { Dish } from '../model/dish';
 import { Menu } from '../model/menu';
 import { DishService } from '../services/dish.service';
 import { MenuService } from '../services/menu.service';
+import {MatDialog, MatSelect, MatSnackBar} from '@angular/material';
 import {Router,ActivatedRoute} from '@angular/router';
 import { AppComponent } from '../app.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -18,10 +19,11 @@ export class EditdishesComponent implements OnInit {
 
   dishes: Dish[] = [];
 
-  constructor(private dishService: DishService,
-                 private router: Router,
+  constructor(public dishService: DishService,
+                 public router: Router,
                  public _modalService: NgbModal,
-                 private app:AppComponent) { }
+                 public app:AppComponent,
+                 public snackBar: MatSnackBar,) { }
 
   ngOnInit() {
     this.app.showAdminMenu();
@@ -87,29 +89,28 @@ export class NgDishModalConfirm {
 
 
   onDishDeleteClick(): void {
-    /*this.employeeComponent.employeeService.deleteEmployee(this.employee.id)
+    this.dishComponent.dishService.deleteDish(this.dish.id)
                 .subscribe(response => {                      
-                  this.onDeleteEmployeeResponse(this.employee.id, response)
+                  this.onDeleteDishResponse(this.dish.id, response)
                 },  error => {
-                  this.employeeComponent.snackBar.open('Employee cannot be deleted because he has open orders or cooked dishes.'
+                  this.dishComponent.snackBar.open('Dish can not be delete.'
                       , null, {
                           duration: 2000
                       });
               });
-                this.employeeComponent.getAuthors();
-                this.modal.close();*/
+                this.dishComponent.getDishes();
+                this.modal.close();
                       
   }   
   
-  private onDeleteEmployeeResponse(id: number, response: HttpResponse<any>): void {
+  private onDeleteDishResponse(id: number, response: HttpResponse<any>): void {
     if (response.status === HttpStatus.OK) {
-         /*  this.employeeComponent.snackBar.open('Employee deleted sucsessfully.', null, {
+          this.dishComponent.snackBar.open('Dish deleted sucsessfully.', null, {
             duration: 2000
         });          
         let index = id
-        this.employeeComponent.employees.splice(index, 1);
-        this.employeeComponent.returnedEmployees.splice(index, 1);  
-       this.employeeComponent.ngOnInit();   */   
+        this.dishComponent.dishes.splice(index, 1);
+       this.dishComponent.ngOnInit();    
     }
   }
 

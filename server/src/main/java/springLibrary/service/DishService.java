@@ -24,4 +24,6 @@ public interface DishService extends Service<Dish, Long, DishRepository> {
 
    public List<DishResponse> findDishesByMenu(Long id);
 
+   public void deleteDish(Long id);
+
 }
