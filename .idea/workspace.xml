@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" afterPath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/DishController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishIngradientsResponse.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishIngradientsResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishResponse.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/IngradientResponse.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/IngradientResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/DishService.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/DishService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishdetails/dishdetails.component.html" afterPath="$PROJECT_DIR$/client/src/app/dishdetails/dishdetails.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/personnel/personnel.component.html" afterPath="$PROJECT_DIR$/client/src/app/personnel/personnel.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -56,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DishIngradientsResponse.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DishIngradientsResponse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishIngradientsResponse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -86,16 +80,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/MenuResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="31" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DishService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/DishService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,21 +90,39 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="EmployeeServiceImplementation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-31">
+              <caret line="41" column="109" lean-forward="false" selection-start-line="41" selection-start-column="109" selection-end-line="41" selection-end-column="109" />
+              <folding>
+                <marker date="1586074657571" expanded="true" signature="1385:1431" ph="SELECT * FRO... employee" />
+                <marker date="1586074657571" expanded="true" signature="1385:1448" ph="SELECT * FRO... employee" />
+                <marker date="1586074657571" expanded="true" signature="1500:1544" ph="SELECT * FRO... employee" />
+                <marker date="1586074657571" expanded="true" signature="1500:1561" ph="SELECT * FRO... employee" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Employee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="27" />
+              <folding>
+                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1046#1047#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DishServiceImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/DishServiceImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
               <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Menu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,7 +173,6 @@
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/OrderResponse.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/OrderStatus.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Orders.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/request/CookedDishRequest.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/CookedDishService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Waiter.java" />
@@ -199,6 +200,7 @@
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/IngradientResponse.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/IngradientController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishIngradientsResponse.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java" />
       </list>
     </option>
   </component>
@@ -674,14 +676,7 @@
       <workItem from="1585852548062" duration="628000" />
       <workItem from="1585935259467" duration="311000" />
       <workItem from="1586038275893" duration="2154000" />
-      <workItem from="1586068208391" duration="3736000" />
-    </task>
-    <task id="LOCAL-00139" summary="Thirty third commit. Adding filter by date.">
-      <created>1584836107800</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1584836107800</updated>
+      <workItem from="1586068208391" duration="5038000" />
     </task>
     <task id="LOCAL-00140" summary="Thirty third commit. Adding filter by date.">
       <created>1584836149798</created>
@@ -1019,11 +1014,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586044935823</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="Thirty eighth commit. Adding possibility to sorting menu, dishes and ingradients, also dishIngradients by streams.">
+      <created>1586074018597</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1586074018598</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266735000" />
+    <option name="totallyTimeSpent" value="268037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -1068,7 +1070,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Twentee first commit. Adding search form to dish." />
     <MESSAGE value="Twentee second commit. Adding posibility to delete one ingradient and all ingradients from dish." />
     <MESSAGE value="Twentee third commit. Adding orders and posibility to find dishes by name." />
     <MESSAGE value="Twentee fourth commit. Adding save order component." />
@@ -1093,7 +1094,8 @@
     <MESSAGE value="Thirty sixth commit. Adding header image." />
     <MESSAGE value="Thirty seventh commit. Adding possibility to delete dish by id." />
     <MESSAGE value="Thirty eighth commit. Adding possibility to sorting menu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Thirty eighth commit. Adding possibility to sorting menu." />
+    <MESSAGE value="Thirty eighth commit. Adding possibility to sorting menu, dishes and ingradients, also dishIngradients by streams." />
+    <option name="LAST_COMMIT_MESSAGE" value="Thirty eighth commit. Adding possibility to sorting menu, dishes and ingradients, also dishIngradients by streams." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1207,13 +1209,6 @@
         <state relative-caret-position="428">
           <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1370,17 +1365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="101" column="98" lean-forward="false" selection-start-line="100" selection-start-column="7" selection-end-line="101" selection-end-column="98" />
-          <folding>
-            <marker date="1584149864261" expanded="true" signature="1385:1431" ph="SELECT * FRO... employee" />
-            <marker date="1584149864261" expanded="true" signature="1483:1527" ph="SELECT * FRO... employee" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/IngradientServiceImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -1424,14 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/DishService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="25" column="55" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1481,6 +1457,38 @@
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/DishService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="25" column="55" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/service/Implementation/EmployeeServiceImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <caret line="41" column="109" lean-forward="false" selection-start-line="41" selection-start-column="109" selection-end-line="41" selection-end-column="109" />
+          <folding>
+            <marker date="1586074657571" expanded="true" signature="1385:1431" ph="SELECT * FRO... employee" />
+            <marker date="1586074657571" expanded="true" signature="1385:1448" ph="SELECT * FRO... employee" />
+            <marker date="1586074657571" expanded="true" signature="1500:1544" ph="SELECT * FRO... employee" />
+            <marker date="1586074657571" expanded="true" signature="1500:1561" ph="SELECT * FRO... employee" />
+          </folding>
         </state>
       </provider>
     </entry>

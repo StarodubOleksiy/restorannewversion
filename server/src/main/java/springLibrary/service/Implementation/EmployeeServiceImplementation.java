@@ -37,9 +37,9 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    private final String SQL_GET_ALL_WAITERS = "SELECT * FROM employee  where dtype = 'Waiter'";
+    private final String SQL_GET_ALL_WAITERS = "SELECT * FROM employee  where dtype = 'Waiter' order BY surname";
 
-    private final String SQL_GET_ALL_COOKERS = "SELECT * FROM employee  where dtype = 'Cook'";
+    private final String SQL_GET_ALL_COOKERS = "SELECT * FROM employee  where dtype = 'Cook' order BY surname";
 
 
     private EmployeeResponse employeeToEmployeeResponse(Employee employee) {
