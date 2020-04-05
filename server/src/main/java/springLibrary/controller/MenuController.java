@@ -13,6 +13,7 @@ import springLibrary.model.response.MenuResponse;
 import springLibrary.service.MenuService;
 import springLibrary.service.OrderService;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -34,7 +35,9 @@ public class MenuController {
 
     @GetMapping("/menu")
     public ResponseEntity<List<MenuResponse>> menu() {
-        return new ResponseEntity<>(menuService.findAllResponse(), HttpStatus.OK);
+        List<MenuResponse> menuList = menuService.findAllResponse();
+        Collections.sort(menuList);
+        return new ResponseEntity<>(menuList, HttpStatus.OK);
     }
 
 

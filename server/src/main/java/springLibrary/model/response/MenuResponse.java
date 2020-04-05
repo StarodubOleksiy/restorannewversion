@@ -5,7 +5,7 @@ import springLibrary.entities.Dish;
 import springLibrary.entities.Menu;
 
 @Data
-public class MenuResponse {
+public class MenuResponse implements Comparable<MenuResponse> {
     private Long id;
     private String name;
 
@@ -23,5 +23,11 @@ public class MenuResponse {
         response.setId(menu.getId());
         response.setName(menu.getName());
         return response;
+    }
+
+    @Override
+    public int compareTo(MenuResponse o) {
+        int result = this.name.compareTo(o.name);
+        return result;
     }
 }
