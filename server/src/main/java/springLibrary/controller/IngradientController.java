@@ -14,6 +14,7 @@ import springLibrary.service.DishService;
 import springLibrary.service.IngradientService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -34,12 +35,15 @@ public class IngradientController {
 
     @GetMapping("ingradients")
     public ResponseEntity<List<IngradientResponse>> ingradients() {
-        return new ResponseEntity<>(ingradientService.findAllResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(ingradientService.findAllResponse()
+                .stream()
+                .sorted().collect(Collectors.toList()), HttpStatus.OK);
     }
 
     @GetMapping("newingradients/{id}")
     public ResponseEntity<List<IngradientResponse>> newIngradients(@PathVariable Long id) {
-        return new ResponseEntity<>(ingradientService.findNewIngradientsResponse(id), HttpStatus.OK);
+        return new ResponseEntity<>(ingradientService.findNewIngradientsResponse(id)
+                .stream().sorted().collect(Collectors.toList()), HttpStatus.OK);
     }
 
 
@@ -63,7 +67,9 @@ public class IngradientController {
 
     @GetMapping("dishingradients/{id}")
     public ResponseEntity<?> ingradientsByDishId(@PathVariable Long id) {
-        return new ResponseEntity<>(ingradientService.findIngradientsByDishIdResponse(id), HttpStatus.OK);
+        return new ResponseEntity<>(ingradientService.findIngradientsByDishIdResponse(id)
+                .stream().sorted().collect(Collectors.toList())
+                , HttpStatus.OK);
     }
 
 

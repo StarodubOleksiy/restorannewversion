@@ -13,7 +13,10 @@ import springLibrary.model.response.DishResponse;
 import springLibrary.service.DishService;
 import springLibrary.service.MenuService;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -62,7 +65,8 @@ public class DishController {
 
     @GetMapping("/dishesbymenu/{id}")
     public ResponseEntity<List<DishResponse>> dishesByMenu(@PathVariable Long id)  {
-        return new ResponseEntity<>(dishService.findDishesByMenu(id), HttpStatus.OK);
+       return new ResponseEntity<>(dishService.findDishesByMenu(id).stream()
+               .sorted().collect(Collectors.toList()),HttpStatus.OK);
     }
 
 

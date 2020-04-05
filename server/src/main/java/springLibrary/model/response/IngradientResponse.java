@@ -5,7 +5,7 @@ import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
 
 @Data
-public class IngradientResponse {
+public class IngradientResponse implements Comparable<IngradientResponse>{
     private Long id;
     private String name;
     private float numberOnStorage;
@@ -40,6 +40,13 @@ public class IngradientResponse {
         response.setName(ingradient.getName());
         response.setNumberOnStorage(ingradient.getNumerosity());
         return response;
+    }
+
+
+    @Override
+    public int compareTo(IngradientResponse o) {
+        int result = this.name.compareTo(o.name);
+        return result;
     }
 
 }

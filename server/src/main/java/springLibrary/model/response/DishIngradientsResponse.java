@@ -4,7 +4,7 @@ package springLibrary.model.response;
 import lombok.Data;
 
 @Data
-public class DishIngradientsResponse {
+public class DishIngradientsResponse implements Comparable<DishIngradientsResponse> {
     private Long dishId;
     private Long ingradientId;
     private String ingradientName;
@@ -15,5 +15,11 @@ public class DishIngradientsResponse {
         this.ingradientId = ingradientId;
         this.ingradientName = ingradientName;
         this.numerosity = numerosity;
+    }
+
+    @Override
+    public int compareTo(DishIngradientsResponse o) {
+        int result = this.ingradientName.compareTo(o.ingradientName);
+        return result;
     }
 }

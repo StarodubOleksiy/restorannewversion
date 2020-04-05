@@ -12,7 +12,7 @@ import java.util.Base64;
 import java.util.List;
 
 @Data
-public class DishResponse {
+public class DishResponse implements Comparable<DishResponse>{
     private Long id;
     private String name;
     private float price;
@@ -88,6 +88,12 @@ public class DishResponse {
         response.setWeight(dish.getWeight());
         response.setMenuId(dish.getMenu().getId().intValue());
         return response;
+    }
+
+    @Override
+    public int compareTo(DishResponse o) {
+        int result = this.name.compareTo(o.name);
+        return result;
     }
 
 }

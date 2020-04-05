@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Администратор on 20.08.16.
@@ -25,13 +26,13 @@ public class Menu extends AbstractIdentifiableEntity {
     private String name;
 
     @OneToMany(mappedBy = "menu", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Dish> dishes;
+    private Set<Dish> dishes;
 
     public String getName() {
         return name;
     }
 
-    public List<Dish> getDishes() {
+    public Set<Dish> getDishes() {
         return dishes;
     }
 
@@ -39,7 +40,7 @@ public class Menu extends AbstractIdentifiableEntity {
         this.name = name;
     }
 
-   public void setDishes(List<Dish> dishes) {
+   public void setDishes(Set<Dish> dishes) {
         this.dishes = dishes;
     }
 

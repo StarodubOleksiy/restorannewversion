@@ -18,6 +18,7 @@ import springLibrary.service.*;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -71,7 +72,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     public List<DishResponse> findDishesByMenu(Long id) {
         return menuRepository.getOne(id).getDishes().stream()
                 .map(this::dishToDishResponse)
-                .collect(Collectors.toList());
+                   .collect(Collectors.toList());
     }
 
 
