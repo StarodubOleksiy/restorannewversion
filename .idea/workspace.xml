@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" afterPath="$PROJECT_DIR$/client/src/app/adddish/adddish.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/addemployee/addemployee.component.html" afterPath="$PROJECT_DIR$/client/src/app/addemployee/addemployee.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.html" afterPath="$PROJECT_DIR$/client/src/app/dish-ingradients/dish-ingradients.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishdetails/dishdetails.component.css" afterPath="$PROJECT_DIR$/client/src/app/dishdetails/dishdetails.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishdetails/dishdetails.component.html" afterPath="$PROJECT_DIR$/client/src/app/dishdetails/dishdetails.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/dishes/dishes.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/edit-dish-ingradient/edit-dish-ingradient.component.html" afterPath="$PROJECT_DIR$/client/src/app/edit-dish-ingradient/edit-dish-ingradient.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.html" afterPath="$PROJECT_DIR$/client/src/app/editdishes/editdishes.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/employees/employees.component.html" afterPath="$PROJECT_DIR$/client/src/app/employees/employees.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/orders/orders.component.html" afterPath="$PROJECT_DIR$/client/src/app/orders/orders.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -587,14 +577,7 @@
       <workItem from="1586038275893" duration="2154000" />
       <workItem from="1586068208391" duration="5215000" />
       <workItem from="1586185063723" duration="645000" />
-      <workItem from="1586191821049" duration="3000" />
-    </task>
-    <task id="LOCAL-00141" summary="Thirty third commit. Adding filter by date.">
-      <created>1584836168646</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1584836168646</updated>
+      <workItem from="1586191821049" duration="77000" />
     </task>
     <task id="LOCAL-00142" summary="Thirty third commit. Adding filter by date.">
       <created>1584836299191</created>
@@ -932,11 +915,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586077385946</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="Thirty eighth commit. Adding possibility to sorting menu, dishes and ingradients, also dishIngradients by streams.">
+      <created>1586191857877</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1586191857877</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268862000" />
+    <option name="totallyTimeSpent" value="268936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
