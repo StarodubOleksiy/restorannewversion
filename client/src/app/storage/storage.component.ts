@@ -6,6 +6,9 @@ import {Router,ActivatedRoute} from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Directive, HostListener } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {HttpResponse} from '@angular/common/http';
+import {MatSnackBar} from '@angular/material';
 
 
 
@@ -35,7 +38,9 @@ export class StorageComponent implements OnInit {
 
   constructor(private storageService: StorageService,
     private router: Router,
-    public app: AppComponent) { }
+    public app: AppComponent,
+    public _modalService: NgbModal,
+    public snackBar: MatSnackBar) { }
 
     
   refresh(): void {
@@ -119,17 +124,94 @@ validationFunction(): void {
   addNewIngradient() :void {
     this.router.navigateByUrl('/addingradient/add');
   }
- /*
-   editDish(id: number) : void {
-    this.router.navigateByUrl('/adddish/edit/' + id);
-  }
-  */
- 
+  
 
   editIngradient(id:number) :void {
     this.router.navigateByUrl('/addingradient/edit/' + id);
   }
 
+  open(ingradient: Ingradient) {//NgbdModalConfirm
+    const modalRef = this._modalService.open(NgStorageModalConfirm);
+   // modalRef.componentInstance.id = id;
+   modalRef.componentInstance.ingradient = ingradient;
+   modalRef.componentInstance.storageComponent = this;
+   modalRef.componentInstance.snackBar = this.snackBar;
+  }
+
 
 
 }
+
+@Component({
+  selector: 'ngbd-modal-confirm',
+  template: `
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Ingradient deletion</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to delete <span class="text-primary">{{ingradient.name}}</span> ingradient?</strong></p>
+    <p>All information associated to this ingradient will be permanently deleted.
+    <span class="text-danger">This operation can not be undone.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="onMenuDeleteClick()">Ok</button>
+  </div>
+  `
+})
+
+export class NgStorageModalConfirm  {
+  id : number;
+  ingradient: Ingradient;
+  storageComponent: StorageComponent;
+  constructor(public modal: NgbActiveModal
+    ) {
+
+    }
+    onMenuDeleteClick(): void {
+      /*this.bookComponent.bookService.deleteBook(this.menu)
+                  .subscribe(response => {
+                    this.modal.close();
+                    this.onDeleteBookResponse(this.book, response)
+                  }
+                    );    */  
+    }   
+    
+    private onDeleteMenuResponse(ingradient: Ingradient, response: HttpResponse<any>): void {
+      /*if (response.status === HttpStatus.OK) {
+             this.bookComponent.snackBar.open('Book deleted sucsessfully.', null, {
+              duration: 2000
+          });          
+          let index = this.bookComponent.books.indexOf(book);
+          this.bookComponent.books.splice(index, 1);
+          this.bookComponent.returnedBooks.splice(index, 1);
+          console.log('==============.bookComponent.selectedId================='+this.bookComponent.selectedId);
+            if(isNaN(this.bookComponent.selectedId) === true)
+            {
+              console.log('==============selectedId================='+this.bookComponent.selectedId);
+              console.log('==============is nun nothing includes=================');
+          this.bookComponent.ngOnInit();
+            }
+          else if(this.bookComponent.route.toString().includes("author"))
+           {
+         console.log('==============includes authors=================');
+         this.bookComponent.getBooksByAuthor(this.bookComponent.selectedId);
+           } 
+         else if(this.bookComponent.route.toString().includes("publisher"))
+          {
+         this.bookComponent.getBooksByPublisher(this.bookComponent.selectedId);
+         console.log('==============includes publishers=================');
+          } 
+         else {
+          console.log('==============includes genres=================');
+          this.bookComponent.getBooksByGenre(this.bookComponent.selectedId);        
+        }
+      }*/
+    }
+  
+}
+

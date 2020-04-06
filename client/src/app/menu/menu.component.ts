@@ -3,6 +3,9 @@ import { Menu } from '../model/menu';
 import {MenuService } from '../services/menu.service';
 import {Router,ActivatedRoute} from '@angular/router';
 import { AppComponent } from '../app.component';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {HttpResponse} from '@angular/common/http';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -15,9 +18,11 @@ export class MenuComponent implements OnInit {
   displayedColumns: string[] = ['name'];
   dataSource = null;
 
-  constructor(private menuService: MenuService,
+  constructor(public menuService: MenuService,
     private router: Router,
-    private app: AppComponent) { }
+    public _modalService: NgbModal,
+    private app: AppComponent,
+    public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.app.showAdminMenu();
@@ -42,4 +47,87 @@ export class MenuComponent implements OnInit {
   this.router.navigateByUrl('/addmenu/add');
   }
 
+  open(menu: Menu) {//NgbdModalConfirm
+    const modalRef = this._modalService.open(NgMenuModalConfirm);
+   // modalRef.componentInstance.id = id;
+   modalRef.componentInstance.menu = menu;
+   modalRef.componentInstance.menuComponent = this;
+   modalRef.componentInstance.snackBar = this.snackBar;
+  }
+
+
+
+}
+
+@Component({
+  selector: 'ngbd-modal-confirm',
+  template: `
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Menu deletion</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to delete <span class="text-primary">{{menu.name}}</span> menu?</strong></p>
+    <p>All information associated to this menu will be permanently deleted.
+    <span class="text-danger">This operation can not be undone.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="onMenuDeleteClick()">Ok</button>
+  </div>
+  `
+})
+
+export class NgMenuModalConfirm  {
+  id : number;
+  menu: Menu;
+  menuComponent: MenuComponent;
+  constructor(public modal: NgbActiveModal
+    ) {
+
+    }
+    onMenuDeleteClick(): void {
+      /*this.bookComponent.bookService.deleteBook(this.menu)
+                  .subscribe(response => {
+                    this.modal.close();
+                    this.onDeleteBookResponse(this.book, response)
+                  }
+                    );    */  
+    }   
+    
+    private onDeleteMenuResponse(menu: Menu, response: HttpResponse<any>): void {
+      /*if (response.status === HttpStatus.OK) {
+             this.bookComponent.snackBar.open('Book deleted sucsessfully.', null, {
+              duration: 2000
+          });          
+          let index = this.bookComponent.books.indexOf(book);
+          this.bookComponent.books.splice(index, 1);
+          this.bookComponent.returnedBooks.splice(index, 1);
+          console.log('==============.bookComponent.selectedId================='+this.bookComponent.selectedId);
+            if(isNaN(this.bookComponent.selectedId) === true)
+            {
+              console.log('==============selectedId================='+this.bookComponent.selectedId);
+              console.log('==============is nun nothing includes=================');
+          this.bookComponent.ngOnInit();
+            }
+          else if(this.bookComponent.route.toString().includes("author"))
+           {
+         console.log('==============includes authors=================');
+         this.bookComponent.getBooksByAuthor(this.bookComponent.selectedId);
+           } 
+         else if(this.bookComponent.route.toString().includes("publisher"))
+          {
+         this.bookComponent.getBooksByPublisher(this.bookComponent.selectedId);
+         console.log('==============includes publishers=================');
+          } 
+         else {
+          console.log('==============includes genres=================');
+          this.bookComponent.getBooksByGenre(this.bookComponent.selectedId);        
+        }
+      }*/
+    }
+  
 }

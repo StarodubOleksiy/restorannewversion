@@ -39,6 +39,7 @@ import { PersonnelComponent } from './personnel/personnel.component';
 import {MatTableModule} from '@angular/material/table';
 import { StorageComponent } from './storage/storage.component';
 import { MenuComponent } from './menu/menu.component';
+import { NgMenuModalConfirm } from './menu/menu.component';
 import { AddingradientComponent } from './addingradient/addingradient.component';
 import { EditdishesComponent } from './editdishes/editdishes.component';
 import { DishIngradientsComponent } from './dish-ingradients/dish-ingradients.component';
@@ -56,6 +57,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RestoranSchemaComponent } from './restoran-schema/restoran-schema.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { NgStorageModalConfirm } from './storage/storage.component';
 
 @NgModule({
   imports: [
@@ -88,10 +90,12 @@ import { ContactsComponent } from './contacts/contacts.component';
     AppComponent,
     NgbdModalConfirm,
     NgDishModalConfirm,
+    NgMenuModalConfirm,
+    NgStorageModalConfirm,
     DishesComponent,    
     AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent, SignUpFormComponent, AdminPanelComponent, MainPageComponent, RestoranSchemaComponent, ContactsComponent
   ],
-  entryComponents: [NgbdModalConfirm,NgDishModalConfirm],
+  entryComponents: [NgbdModalConfirm,NgDishModalConfirm, NgMenuModalConfirm, NgStorageModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService, MatDatepickerModule,],
   bootstrap: [AppComponent]
 })
