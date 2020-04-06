@@ -1,17 +1,17 @@
 
 <button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addNewDish()">
-  Додати нову страву
+  Add New Dish
 </button>
 
 <table class="table table-hover">
   <thead>
   <tr class="text-center">
-      <th scope="col">Назва страви</th>
-      <th scope="col">Ціна</th>
-      <th scope="col">Вага</th>
-      <th scope="col">Меню</th>
-      <th scope="col">Редагувати</th>
-      <th scope="col">Видалити</th>
+      <th scope="col">Dish Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Menu</th>
+      <th scope="col">Edit Dish</th>
+      <th scope="col">Delete Dish</th>
   </tr>
 </thead>
 <tbody>
@@ -20,23 +20,23 @@
 {{dish.name}}
 </th>
 <th scope="row">
- {{dish.price}}
+ {{dish.price}} $
   </th>
   <th scope="row">
-    {{dish.weight}}
+    {{dish.weight}} oz
    </th>
    <th scope="row">
    {{dish.menuName}}
    </th>
    <th scope="row">
 <button type="button" class="btn btn-primary" (click)="editDish(dish.id)">
-  Редагувати страву
+  Edit
 </button> 
 </th>
 <th scope="row">
 
 <button type="button" class="btn btn-primary" (click)="open(dish)">
-  Видалити страву
+  Delete
 </button> 
 </th>
 </tr>

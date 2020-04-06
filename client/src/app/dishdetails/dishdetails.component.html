@@ -27,17 +27,17 @@
   </tr> 
   <tr> 
         <th scope="col"> 
-          Категорія меню:   
+         <h3> Menu category: </h3>  
               <a  routerLink="/dishesbymenu/{{menu.id}}" class="btn btn-link" > {{menu.name}}</a>
             </th>
       
       </tr>
       <th scope="col">    
-          <h2>Ціна: {{dish.price}}</h2>
+          <h2>Price: <strong>{{dish.price}}</strong> $</h2>
         </th>
         <tr>
          <th scope="col">    
-            <h2>Вага: {{dish.weight}}</h2>
+            <h2>Вага: <strong>{{dish.weight}}</strong> oz</h2>
           </th>
       </tr>      
                 </tbody> 

@@ -22,7 +22,7 @@
   <mat-card>
    
 <ul class="nav list-group d-flex justify-content-between align-items-left shadow p-2 mb-2 bg-white rounded" >
-    <li class="nav-header">Menu</li>
+    <li class="nav-header"><h2>Menu</h2></li>
   <li class="list-group-item shadow p-1 mb-1 bg-white rounded" role="presentation" *ngFor="let menu of menus"
     (click)="getDishesByMenu(menu.id)" align="left">
      <span class="list-group-item">
@@ -61,12 +61,12 @@
           </tr>
           <tr>
            <th scope="col">    
-             Ціна: {{dish.price}} $
+             Price: {{dish.price}} $
             </th>
         </tr>  
         <tr>
           <th scope="col">    
-            Вага: {{dish.weight}} oz
+            Weight: {{dish.weight}} oz
            </th>
        </tr>                
            </tbody> 
