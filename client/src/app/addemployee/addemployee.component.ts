@@ -27,6 +27,7 @@ export class AddemployeeComponent implements OnInit {
 
 
   employeeConfigureForm = new FormGroup({
+   image: new FormControl('', []),
    name: new FormControl('', [Validators.required,]),
    surname: new FormControl('', [Validators.required,]),
    telephone: new FormControl('', [Validators.required,]),

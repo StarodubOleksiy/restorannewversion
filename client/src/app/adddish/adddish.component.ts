@@ -22,6 +22,7 @@ export class AdddishComponent implements OnInit {
   menus: Menu[] = [];
   configureType: ConfigureType;
   bookConfigureForm = new FormGroup({
+    image: new FormControl('', []),
     name: new FormControl('', [
         Validators.required,
     ]),
