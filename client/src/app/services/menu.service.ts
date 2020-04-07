@@ -42,4 +42,11 @@ saveMenu(menu: Menu): Observable<HttpResponse<any>> {
       this.menuUrl + '/addmenu/save', menu, {observe: 'response'});
   }
 
+
+  deleteMenu(id: number): Observable<HttpResponse<any>> {
+    return this.http.delete<HttpResponse<any>>(
+      this.menuUrl + 'deletemenu/'+id, {observe: 'response'}
+    );                       
+  }
+
 }

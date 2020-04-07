@@ -106,4 +106,12 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
    }
 
 
+   deleteIngradient(id: number): Observable<HttpResponse<any>> {
+    return this.http.delete<HttpResponse<any>>(
+      this.ingradientUrl + 'deleteingradient/'+id, {observe: 'response'}
+    );                       
+  }
+
+
+
 }

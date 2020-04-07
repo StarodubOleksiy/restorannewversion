@@ -9,6 +9,7 @@ import { AppComponent } from '../app.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {HttpResponse} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material';
+import * as HttpStatus from 'http-status-codes';
 
 
 
@@ -36,7 +37,7 @@ export class StorageComponent implements OnInit {
   
 
 
-  constructor(private storageService: StorageService,
+  constructor(public storageService: StorageService,
     private router: Router,
     public app: AppComponent,
     public _modalService: NgbModal,
@@ -159,7 +160,7 @@ validationFunction(): void {
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
-    <button type="button" class="btn btn-danger" (click)="onMenuDeleteClick()">Ok</button>
+    <button type="button" class="btn btn-danger" (click)="onIngradientDeleteClick()">Ok</button>
   </div>
   `
 })
@@ -172,46 +173,35 @@ export class NgStorageModalConfirm  {
     ) {
 
     }
-    onMenuDeleteClick(): void {
-      /*this.bookComponent.bookService.deleteBook(this.menu)
-                  .subscribe(response => {
-                    this.modal.close();
-                    this.onDeleteBookResponse(this.book, response)
-                  }
-                    );    */  
-    }   
-    
-    private onDeleteMenuResponse(ingradient: Ingradient, response: HttpResponse<any>): void {
-      /*if (response.status === HttpStatus.OK) {
-             this.bookComponent.snackBar.open('Book deleted sucsessfully.', null, {
-              duration: 2000
-          });          
-          let index = this.bookComponent.books.indexOf(book);
-          this.bookComponent.books.splice(index, 1);
-          this.bookComponent.returnedBooks.splice(index, 1);
-          console.log('==============.bookComponent.selectedId================='+this.bookComponent.selectedId);
-            if(isNaN(this.bookComponent.selectedId) === true)
-            {
-              console.log('==============selectedId================='+this.bookComponent.selectedId);
-              console.log('==============is nun nothing includes=================');
-          this.bookComponent.ngOnInit();
-            }
-          else if(this.bookComponent.route.toString().includes("author"))
-           {
-         console.log('==============includes authors=================');
-         this.bookComponent.getBooksByAuthor(this.bookComponent.selectedId);
-           } 
-         else if(this.bookComponent.route.toString().includes("publisher"))
-          {
-         this.bookComponent.getBooksByPublisher(this.bookComponent.selectedId);
-         console.log('==============includes publishers=================');
-          } 
-         else {
-          console.log('==============includes genres=================');
-          this.bookComponent.getBooksByGenre(this.bookComponent.selectedId);        
-        }
-      }*/
-    }
+
+
+    onIngradientDeleteClick(): void {
+      this.storageComponent.storageService.deleteIngradient(this.ingradient.id)
+      .subscribe(response => {                      
+       this.onDeleteIngradientResponse(this.ingradient, response)
+     },  error => {
+       this.storageComponent.snackBar.open('Ingradient can not be delete.'
+           , null, {
+               duration: 2000
+           });
+   });
+     this.storageComponent.getIngradients();
+     this.modal.close();
+     }   
+ 
+ 
+     
+     private onDeleteIngradientResponse(ingradient: Ingradient, response: HttpResponse<any>): void {
+       if (response.status === HttpStatus.OK) {
+         this.storageComponent.snackBar.open('Ingradient deleted sucsessfully.', null, {
+           duration: 2000
+       });          
+       let index = ingradient.id
+       this.storageComponent.ingradients.splice(index, 1);
+      this.storageComponent.ngOnInit();    
+   }
+     }
+   
   
 }
 

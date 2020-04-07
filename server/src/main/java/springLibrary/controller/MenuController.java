@@ -56,5 +56,12 @@ public class MenuController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @DeleteMapping("deletemenu/{id}")
+    ResponseEntity<?> deleteMenu(@PathVariable Long id) {
+        LOGGER.info(" delete menuid = "+id);
+        //menuService.deleteMenu(id);
+        return new  ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 }

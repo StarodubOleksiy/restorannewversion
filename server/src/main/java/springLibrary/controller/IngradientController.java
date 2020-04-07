@@ -121,4 +121,12 @@ public class IngradientController {
     }
 
 
+    @DeleteMapping("deleteingradient/{id}")
+    ResponseEntity<?> deleteIngradient(@PathVariable Long id) {
+        LOGGER.info(" delete ingradientid = "+id);
+        //menuService.deleteMenu(id);
+        return new  ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 }

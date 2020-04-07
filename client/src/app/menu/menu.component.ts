@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {HttpResponse} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material';
+import * as HttpStatus from 'http-status-codes';
 
 
 @Component({
@@ -89,45 +90,33 @@ export class NgMenuModalConfirm  {
     ) {
 
     }
+
+  
     onMenuDeleteClick(): void {
-      /*this.bookComponent.bookService.deleteBook(this.menu)
-                  .subscribe(response => {
-                    this.modal.close();
-                    this.onDeleteBookResponse(this.book, response)
-                  }
-                    );    */  
+     this.menuComponent.menuService.deleteMenu(this.menu.id)
+     .subscribe(response => {                      
+      this.onDeleteMenuResponse(this.menu, response)
+    },  error => {
+      this.menuComponent.snackBar.open('Menu can not be delete.'
+          , null, {
+              duration: 2000
+          });
+  });
+    this.menuComponent.getMenu();
+    this.modal.close();
     }   
+
+
     
     private onDeleteMenuResponse(menu: Menu, response: HttpResponse<any>): void {
-      /*if (response.status === HttpStatus.OK) {
-             this.bookComponent.snackBar.open('Book deleted sucsessfully.', null, {
-              duration: 2000
-          });          
-          let index = this.bookComponent.books.indexOf(book);
-          this.bookComponent.books.splice(index, 1);
-          this.bookComponent.returnedBooks.splice(index, 1);
-          console.log('==============.bookComponent.selectedId================='+this.bookComponent.selectedId);
-            if(isNaN(this.bookComponent.selectedId) === true)
-            {
-              console.log('==============selectedId================='+this.bookComponent.selectedId);
-              console.log('==============is nun nothing includes=================');
-          this.bookComponent.ngOnInit();
-            }
-          else if(this.bookComponent.route.toString().includes("author"))
-           {
-         console.log('==============includes authors=================');
-         this.bookComponent.getBooksByAuthor(this.bookComponent.selectedId);
-           } 
-         else if(this.bookComponent.route.toString().includes("publisher"))
-          {
-         this.bookComponent.getBooksByPublisher(this.bookComponent.selectedId);
-         console.log('==============includes publishers=================');
-          } 
-         else {
-          console.log('==============includes genres=================');
-          this.bookComponent.getBooksByGenre(this.bookComponent.selectedId);        
-        }
-      }*/
+      if (response.status === HttpStatus.OK) {
+        this.menuComponent.snackBar.open('Menu deleted sucsessfully.', null, {
+          duration: 2000
+      });          
+      let index = menu.id
+      this.menuComponent.menus.splice(index, 1);
+     this.menuComponent.ngOnInit();    
+  }
     }
   
 }
