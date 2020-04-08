@@ -47,6 +47,11 @@ public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuR
         return getRepository().findById(id).map(this::menuToMenuResponse);
     }
 
+    @Override
+    public void deleteMenu(Long id) {
+        getRepository().deleteById(id);
+    }
+
 
 
     @Override

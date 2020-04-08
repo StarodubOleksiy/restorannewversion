@@ -145,6 +145,12 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     }
 
 
+    @Override
+    public void deleteIngradient(Long id) {
+        getRepository().deleteById(id);
+    }
+
+
 
 
 

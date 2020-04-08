@@ -15,4 +15,6 @@ public interface MenuService extends Service<Menu, Long, MenuRepository> {
     public Optional<MenuResponse> findByIdResponse(Long id);
 
     public void save(Menu menu);
+
+    public void deleteMenu(Long id);
 }

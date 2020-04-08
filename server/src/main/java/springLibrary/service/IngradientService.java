@@ -34,4 +34,6 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
 
     public List<IngradientResponse> findIngradientsByName(String name);
 
+    public void deleteIngradient(Long id);
+
 }
