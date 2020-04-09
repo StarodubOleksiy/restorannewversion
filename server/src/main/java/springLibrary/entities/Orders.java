@@ -65,6 +65,10 @@ public class Orders extends AbstractIdentifiableEntity {
         this.state = state;
     }
 
+    public void setStateClose() {
+        this.state = OrderStatus.close;
+    }
+
     public OrderStatus getState() {
         return state;
     }

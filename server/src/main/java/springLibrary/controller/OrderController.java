@@ -67,6 +67,16 @@ public class OrderController {
     }
 
 
+    @PutMapping("/setclose")
+    public ResponseEntity<?> setOrderClose(@RequestBody OrderRequest orderRequest) {
+        Orders order = orderService.getOne(orderRequest.getId());
+        LOGGER.info("order = " + order);
+        order.setStateClose();
+        orderService.save(order);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 
     @PostMapping("/addorder/save")
     public ResponseEntity<?> save(@RequestBody OrderRequest orderRequest) {

@@ -22,6 +22,11 @@ export class OrderService {
       this.orderUrl+'/orders' , {observe: 'response'});
   }
 
+  setOrderClose(order: Order): Observable<HttpResponse<any>> {
+    return this.http.put<HttpResponse<any>>(
+        this.orderUrl + '/setclose', order, {observe: 'response'});
+    }
+
 
 
   saveOrder(order: Order): Observable<HttpResponse<any>> {

@@ -93,6 +93,8 @@ onFileChange(event) {
 }
 
 
+
+
 loadEmployee(): void {
   const id = parseInt(this.route.snapshot.paramMap.get('id'));
   this.employeeServise.getEmployee(id)

@@ -7,6 +7,8 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Directive, HostListener } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { AppComponent } from '../app.component';
+import {MatSnackBar} from '@angular/material';
+import {HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-orders',
@@ -30,7 +32,8 @@ export class OrdersComponent implements OnInit {
 
   constructor(private orderService: OrderService,
     private router: Router,
-    private app:AppComponent) { }
+    private app:AppComponent,
+    public snackBar: MatSnackBar) { }
 
     
   ngOnInit() {
@@ -103,6 +106,51 @@ export class OrdersComponent implements OnInit {
         this.orders = orders;
       });
   }
+/*
+  saveOrder(): void {
+    this.orderService.saveOrder(this.order).subscribe((response: HttpResponse<any>) => {
+    if (this.configureType.type === SaveOrderConfigureType.ADD) {
+      this.snackBar.open('Нове замовлення успішно додане.', null, {
+          duration: 2000
+      });
+     this.router.navigate(['orders']);
+  }else {
+      this.snackBar.open('Страва успішно відредагована.', null, {
+          duration: 2000
+      });
+      this.router.navigate(['editdishes']);
+  }   
+}, error => {
+  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+      , null, {
+          duration: 2000
+      });
+});
+
+};
+*/
+
+
+
+  setOrderClose(order: Order): void {
+    var confirmation = confirm('Ви впевнені що хочете закрити це замовлення?');
+    if (confirmation)  
+    this.orderService.setOrderClose(order).subscribe((response: HttpResponse<any>) => {
+       this.snackBar.open('Замовлення успішно закрите.', null, {
+          duration: 2000      }    
+     
+      );
+      this.ngOnInit();
+     }, error => {
+      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+          , null, {
+              duration: 2000
+          });
+    });
+  };
+ 
+
+
 
 
 
