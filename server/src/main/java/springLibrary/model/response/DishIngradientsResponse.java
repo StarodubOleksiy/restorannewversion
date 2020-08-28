@@ -22,4 +22,20 @@ public class DishIngradientsResponse implements Comparable<DishIngradientsRespon
         int result = this.ingradientName.compareTo(o.ingradientName);
         return result;
     }
+
+    public Long getDishId() {
+        return dishId;
+    }
+
+    public Long getIngradientId() {
+        return ingradientId;
+    }
+
+    public String getIngradientName() {
+        return ingradientName;
+    }
+
+    public Integer getNumerosity() {
+        return numerosity;
+    }
 }

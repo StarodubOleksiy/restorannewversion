@@ -9,12 +9,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Cooked_Dish;
 import springLibrary.entities.Dish;
+import springLibrary.entities.Ingradient;
 import springLibrary.model.request.CookedDishRequest;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.CookedDishResponse;
 import springLibrary.model.response.DishResponse;
 import springLibrary.service.CookedDishService;
 import springLibrary.service.DishService;
+import springLibrary.service.IngradientService;
 
 import java.util.List;
 
@@ -26,6 +28,12 @@ public class CookedDishController {
 
     @Autowired
     private CookedDishService cookedDishService;
+
+    @Autowired
+    private DishService dishService;
+
+    @Autowired
+    private IngradientService ingradientService;
 
     @GetMapping("cookeddishes")
     public ResponseEntity<List<CookedDishResponse>> dishes() {
@@ -53,6 +61,18 @@ public class CookedDishController {
     public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest) {
         LOGGER.info("Method public ResponseEntity<?> save(@RequestBody Cooked_Dish cookedDishRequest) ");
         LOGGER.info("cookedDishRequest = "+cookedDishRequest);
+        ingradientService.findIngradientsByDishIdResponse(cookedDishRequest.getDishId()).forEach(
+                ingradient->{
+                    LOGGER.info("ingradient  = "+ingradient);
+                    LOGGER.info("STORAGE = "+ingradientService.findById(ingradient.getIngradientId()));
+                    LOGGER.info("STORAGE NUMEROSITY= "+ingradientService.findById(ingradient.getIngradientId()).get().getNumerosity());
+                    LOGGER.info("ingradient.getIngradientId()  = "+ingradient.getIngradientId());
+                    LOGGER.info("ingradient.getNumerosity()  = "+ingradient.getNumerosity());
+                    Ingradient storage = ingradientService.findById(ingradient.getIngradientId()).get();
+                    storage.setNumerosity(123321);
+                    ingradientService.save(storage);
+                }
+        );
         cookedDishService.saveCookedDish(cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }

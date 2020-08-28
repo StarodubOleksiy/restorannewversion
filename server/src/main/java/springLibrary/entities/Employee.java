@@ -34,8 +34,10 @@ public class Employee extends AbstractIdentifiableEntity {
     @Column(name = "salary", nullable = false)
     private Float salary;
 
+    String myGoalIs = "to obtain the perspective position Java QA Automation Engineer, gain work experience, new knowledge and skills about QA automation technologies, participate in the automation testing and improve software projects, make it better, more user-friendly, more reliable and become professional QA Automation Engineer";
+
     @Column(name = "photography")
-    private byte[] photography;
+    private byte[] photography ;
 
     public String getName() {
         return name;
