@@ -107,7 +107,7 @@ export class AddcookeddishComponent implements OnInit {
             this.router.navigate(['/cookeddish/'+orderid]);
         }   
         }, error => {
-            this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+            this.snackBar.open('Інградіенти на складі закінчились. Поповніть їх запас!'
                 , null, {
                     duration: 2000
                 });

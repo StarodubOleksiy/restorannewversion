@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Cooked_Dish;
 import springLibrary.entities.Dish;
 import springLibrary.entities.Ingradient;
+import springLibrary.exceptions.NoIngradientsOnStorageException;
 import springLibrary.model.request.CookedDishRequest;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.CookedDishResponse;
@@ -58,7 +59,7 @@ public class CookedDishController {
 
 
     @PostMapping("cookeddish/save")
-    public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest) {
+    public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest){
         LOGGER.info("Method public ResponseEntity<?> save(@RequestBody Cooked_Dish cookedDishRequest) ");
         LOGGER.info("cookedDishRequest = "+cookedDishRequest);
         ingradientService.findIngradientsByDishIdResponse(cookedDishRequest.getDishId()).forEach(
@@ -69,7 +70,10 @@ public class CookedDishController {
                     LOGGER.info("ingradient.getIngradientId()  = "+ingradient.getIngradientId());
                     LOGGER.info("ingradient.getNumerosity()  = "+ingradient.getNumerosity());
                     Ingradient storage = ingradientService.findById(ingradient.getIngradientId()).get();
-                    storage.setNumerosity(123321);
+                    storage.setNumerosity(storage.getNumerosity()-ingradient.getNumerosity());
+                    if(storage.getNumerosity() < 0)
+                       throw new NoIngradientsOnStorageException("There are no more ingradients on the storage.");
+                    else
                     ingradientService.save(storage);
                 }
         );
