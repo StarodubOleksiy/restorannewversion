@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Fourteth commit. Add posibility to close order.">
+    <list default="true" id="b1484cae-361b-4f37-baa6-79d12833d974" name="Default" comment="Fourty first commit. Adding checking numerosity of ingradients on storage.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/order.service.ts" afterPath="$PROJECT_DIR$/client/src/app/services/order.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Employee.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/entities/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishIngradientsResponse.java" afterPath="$PROJECT_DIR$/server/src/main/java/springLibrary/model/response/DishIngradientsResponse.java" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/liquibase/target/" />
@@ -24,8 +20,8 @@
       <file leaf-file-name="CookedDishController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+            <state relative-caret-position="255">
+              <caret line="73" column="17" lean-forward="true" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -605,14 +601,7 @@
       <workItem from="1586350411331" duration="2479000" />
       <workItem from="1586450095064" duration="3365000" />
       <workItem from="1595020133710" duration="866000" />
-      <workItem from="1598650858444" duration="8134000" />
-    </task>
-    <task id="LOCAL-00159" summary="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
-      <created>1585391965266</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1585391965266</updated>
+      <workItem from="1598650858444" duration="9075000" />
     </task>
     <task id="LOCAL-00160" summary="Thirty fourth commit. Adding posibility of deleting, editing employee and adding filter order by date.">
       <created>1585392500821</created>
@@ -950,11 +939,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586452907860</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="Fourty first commit. Adding checking numerosity of ingradients on storage.">
+      <created>1598659064150</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1598659064151</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288148000" />
+    <option name="totallyTimeSpent" value="289089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1168" height="840" extended-state="6" />
@@ -973,6 +969,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -986,7 +983,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -999,7 +995,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Twentee fourth commit. Adding save order component." />
     <MESSAGE value="Twentee fifth commit. Adding filter dishes by menu." />
     <MESSAGE value="Twentee fifth commit. Adding filter dishes by menu and dish details." />
     <MESSAGE value="Twentee sixth commit. Adding modal window that can delete employee profile." />
@@ -1024,7 +1019,8 @@
     <MESSAGE value="Thirty eighth commit. Adding possibility to sorting menu, dishes and ingradients, also dishIngradients by streams." />
     <MESSAGE value="Thirty nineth commit. Adding possibility to deleting menu and ingradients." />
     <MESSAGE value="Fourteth commit. Add posibility to close order." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourteth commit. Add posibility to close order." />
+    <MESSAGE value="Fourty first commit. Adding checking numerosity of ingradients on storage." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourty first commit. Adding checking numerosity of ingradients on storage." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1440,8 +1436,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/springLibrary/controller/CookedDishController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+        <state relative-caret-position="255">
+          <caret line="73" column="17" lean-forward="true" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
           <folding />
         </state>
       </provider>
