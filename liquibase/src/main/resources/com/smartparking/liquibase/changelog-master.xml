@@ -4,7 +4,9 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="com/smartparking/liquibase/table-menu/create_table_menu.xml"/>
+    <include file="com/smartparking/liquibase/table-menu/insert_into_table_menu.xml"/>
     <include file="com/smartparking/liquibase/table-dish/create_table_dish.xml"/>
+    <include file="com/smartparking/liquibase/table-dish/insert_into_table_dish.xml"/>
     <include file="com/smartparking/liquibase/table-employee/create_table_employee.xml"/>
     <include file="com/smartparking/liquibase/table-ingradients/create_table_ingradients.xml"/>
     <include file="com/smartparking/liquibase/table-orders/create_table_orders.xml"/>

@@ -5,12 +5,12 @@
 
     <changeSet author="Oleksiy" id="201810050111" dbms="postgresql">
         <sql>
-            INSERT INTO bookauthor (authorid, bookid) values(1,1);
-            INSERT INTO bookauthor (authorid, bookid) values(2,2);
-            INSERT INTO bookauthor (authorid, bookid) values(3,3);
-            INSERT INTO bookauthor (authorid, bookid) values(4,4);
-            INSERT INTO bookauthor (authorid, bookid) values(5,5);
-            INSERT INTO bookauthor (authorid, bookid) values(6,6);
+            INSERT INTO menu (name) values('menu1');
+            INSERT INTO menu (name) values('menu2');
+            INSERT INTO menu (name) values('menu3');
+            INSERT INTO menu (name) values('menu4');
+            INSERT INTO menu (name) values('menu5');
+            INSERT INTO menu (name) values('menu6');
        </sql>
         <comment>Inserting data</comment>
     </changeSet>

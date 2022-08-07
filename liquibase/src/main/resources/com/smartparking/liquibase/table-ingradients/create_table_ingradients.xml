@@ -6,9 +6,9 @@
     <changeSet author="Oleksiy" id="201809052324" dbms="postgresql">
         <sql>
             CREATE TABLE IF NOT EXISTS ingradientsOnStorage(
-            user_id serial PRIMARY KEY,
+            id serial PRIMARY KEY,
             name VARCHAR (50) UNIQUE NOT NULL,
-            numerosity double precision NOT NULL
+            numerosity INTEGER NOT NULL
             );
         </sql>
         <comment>Creating table Publisher</comment>
