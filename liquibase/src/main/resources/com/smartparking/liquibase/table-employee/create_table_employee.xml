@@ -5,12 +5,13 @@
 
 <changeSet author="Oleksiy" id="201803201835" dbms="postgresql">
     <sql>
-        CREATE TABLE employee(
+        CREATE TABLE IF NOT EXISTS employee(
         id serial PRIMARY KEY,
         name VARCHAR (50) NOT NULL,
         surname VARCHAR (50) NOT NULL,
         phone_number VARCHAR (50) UNIQUE NOT NULL,
         salary double precision NOT NULL,
+        photography bytea UNIQUE,
         dtype VARCHAR (50) NOT NULL,
         position VARCHAR (50) NOT NULL
         );

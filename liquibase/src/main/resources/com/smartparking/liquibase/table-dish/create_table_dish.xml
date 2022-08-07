@@ -5,11 +5,13 @@
 
     <changeSet author="Oleksiy" id="201809052340" dbms="postgresql">
         <sql>
-            CREATE TABLE dish(
+            CREATE TABLE IF NOT EXISTS dish(
             id serial PRIMARY KEY,
-            price double precision UNIQUE NOT NULL,
-            weight double precision UNIQUE NOT NULL,
-            name VARCHAR (50) UNIQUE NOT NULL
+            name VARCHAR (50) UNIQUE NOT NULL,
+            price double precision NOT NULL,
+            weight double precision NOT NULL,
+            image bytea UNIQUE,
+            menuid INTEGER REFERENCES menu(id) NOT NULL
             );
         </sql>
         <comment>Creating table Author</comment>
