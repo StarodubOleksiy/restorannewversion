@@ -9,8 +9,8 @@
     <include file="com/smartparking/liquibase/table-dish/insert_into_table_dish.xml"/>
     <include file="com/smartparking/liquibase/table-employee/create_table_employee.xml"/>
     <include file="com/smartparking/liquibase/table-employee/insert_into_table_employee.xml"/>
-    <include file="com/smartparking/liquibase/table-ingradients/create_table_ingradients.xml"/>
-    <include file="com/smartparking/liquibase/table-ingradients/insert_into_table_ingradients.xml"/>
+    <include file="com/smartparking/liquibase/table-storage/create_table_storage.xml"/>
+    <include file="com/smartparking/liquibase/table-storage/insert_into_table_storage.xml"/>
     <include file="com/smartparking/liquibase/table-orders/create_table_orders.xml"/>
     <include file="com/smartparking/liquibase/table-dish-to-ingradient/create_table_dish_to_ingradient.xml"/>
     <include file="com/smartparking/liquibase/table-dish-to-ingradient/insert_into_table_dish_to_ingradients.xml"/>

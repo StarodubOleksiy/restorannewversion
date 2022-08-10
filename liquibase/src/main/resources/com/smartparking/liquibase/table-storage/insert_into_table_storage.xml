@@ -1,0 +1,18 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Oleksiy" id="201810050040" dbms="postgresql">
+        <sql>
+            INSERT INTO storage (name, numerosity) values('first ingradient', 345);
+            INSERT INTO storage (name, numerosity) values('second ingradient', 6534);
+            INSERT INTO storage (name, numerosity) values('third ingradient', 934);
+            INSERT INTO storage (name, numerosity) values('fourth ingradient', 856);
+            INSERT INTO storage (name, numerosity) values('fifth ingradient', 512);
+            INSERT INTO storage (name, numerosity) values('sixth ingradient', 256);
+            INSERT INTO storage (name, numerosity) values('seventh ingradient', 128);
+        </sql>
+        <comment>Inserting data</comment>
+    </changeSet>
+</databaseChangeLog>

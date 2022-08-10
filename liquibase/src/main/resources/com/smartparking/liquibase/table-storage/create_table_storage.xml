@@ -5,7 +5,7 @@
 
     <changeSet author="Oleksiy" id="201809052324" dbms="postgresql">
         <sql>
-            CREATE TABLE IF NOT EXISTS ingradientsOnStorage(
+            CREATE TABLE IF NOT EXISTS storage(
             id serial PRIMARY KEY,
             name VARCHAR (50) UNIQUE NOT NULL,
             numerosity INTEGER NOT NULL

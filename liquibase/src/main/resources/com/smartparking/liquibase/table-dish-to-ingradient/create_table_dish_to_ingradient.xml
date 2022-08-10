@@ -7,7 +7,7 @@
         <sql>
             CREATE TABLE IF NOT EXISTS dish_to_ingradient(
             dish_id INTEGER REFERENCES dish(id) NOT NULL,
-            ingradient_id INTEGER REFERENCES ingradientsOnStorage(id) NOT NULL,
+            ingradient_id INTEGER REFERENCES storage(id) NOT NULL,
             numerosity INTEGER NOT NULL
             );
         </sql>
