@@ -5,18 +5,18 @@
 
     <changeSet author="Oleksiy" id="201803202016" dbms="postgresql">
         <sql>
-            INSERT INTO employee (name, surname, phone_number, salary, dtype, position)
-            values('Melovoy', 'Chelovek','978-617-12',2018.98,'Waiter','Waiter');
-            INSERT INTO employee (name, surname, phone_number, salary, dtype,position)
-            values('Mirror', 'Fromthepast','12-4740-6',2078.8,'Waiter','Waiter');
-            INSERT INTO employee (name, surname, phone_number, salary, dtype, position)
-            values('Cemetry', 'Ofdomesticanimals','66-14-9118',2015.23,'Cook','Cook');
-            INSERT INTO employee  (name, surname, phone_number, salary, dtype, position)
-            values('Iswearto', 'Takiysstelash','78-87-2115',2564.7,'Cook','Cook');
-            INSERT INTO employee  (name, surname, phone_number, salary, dtype, position)
-            values('Ifyoulove', 'Letgo','256-4730-78',7412.5,'Cook','Cook');
-            INSERT INTO employee(name, surname, phone_number, salary, dtype, position)
-            values('Loseweight', 'Together','176-4716-6178',3018.43,'Waiter','Waiter');
+            INSERT INTO employee (name, surname, phone_number, salary, dtype)
+            values('Melovoy', 'Chelovek','978-617-12',2018.98,'Waiter');
+            INSERT INTO employee (name, surname, phone_number, salary, dtype)
+            values('Mirror', 'Fromthepast','12-4740-6',2078.8,'Waiter');
+            INSERT INTO employee (name, surname, phone_number, salary, dtype)
+            values('Cemetry', 'Ofdomesticanimals','66-14-9118',2015.23,'Cook');
+            INSERT INTO employee  (name, surname, phone_number, salary, dtype)
+            values('Iswearto', 'Takiysstelash','78-87-2115',2564.7,'Cook');
+            INSERT INTO employee  (name, surname, phone_number, salary, dtype)
+            values('Ifyoulove', 'Letgo','256-4730-78',7412.5,'Cook');
+            INSERT INTO employee(name, surname, phone_number, salary, dtype)
+            values('Loseweight', 'Together','176-4716-6178',3018.43,'Waiter');
         </sql>
         <comment>Inserting data</comment>
     </changeSet>

@@ -48,7 +48,7 @@ public class EmployeeController {
     public ResponseEntity<?> configure(@PathVariable Long id) {
         return employeeService.findByIdResponse(id)
                 .map(employee -> new ResponseEntity<Object>(employee, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<Object>("Incorrect book id", HttpStatus.BAD_REQUEST));
+                .orElseGet(() -> new ResponseEntity<Object>("Incorrect employee id", HttpStatus.BAD_REQUEST));
     }
 
     @PostMapping("employees/save")

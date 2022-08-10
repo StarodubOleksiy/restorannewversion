@@ -12,8 +12,7 @@
         phone_number VARCHAR (50) UNIQUE NOT NULL,
         salary double precision NOT NULL,
         photography bytea UNIQUE,
-        dtype VARCHAR (50) NOT NULL,
-        position VARCHAR (50) NOT NULL
+        dtype VARCHAR (50) NOT NULL
         );
     </sql>
     <comment>Creating table Book</comment>
