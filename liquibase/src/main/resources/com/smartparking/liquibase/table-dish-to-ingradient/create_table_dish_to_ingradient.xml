@@ -6,7 +6,6 @@
     <changeSet author="Oleksiy" id="201809052340" dbms="postgresql">
         <sql>
             CREATE TABLE IF NOT EXISTS dish_to_ingradient(
-            price double precision NOT NULL,
             dish_id INTEGER REFERENCES dish(id) NOT NULL,
             ingradient_id INTEGER REFERENCES ingradientsOnStorage(id) NOT NULL,
             numerosity INTEGER NOT NULL

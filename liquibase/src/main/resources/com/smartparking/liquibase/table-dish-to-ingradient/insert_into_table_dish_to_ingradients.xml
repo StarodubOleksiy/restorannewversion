@@ -1,0 +1,20 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Oleksiy" id="201810050040" dbms="postgresql">
+        <sql>
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(1, 2, 34);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(2, 1, 65);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(3, 4, 93);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(4, 3, 85);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(5, 6, 51);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(6, 5, 25);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(1, 7, 12);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(2, 3, 35);
+            INSERT INTO dish_to_ingradient (dish_id, ingradient_id, numerosity) values(3, 2, 43);
+        </sql>
+        <comment>Inserting data</comment>
+    </changeSet>
+</databaseChangeLog>

@@ -21,7 +21,7 @@ public class LiquibaseApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(LiquibaseApplication.class);
     private static final String JDBC_DRIVER = "org.postgresql.Driver";
     private static final String CONNECTION_URL = "jdbc:postgresql://localhost:5432/";
-    private static final String DATABASE_NAME = "library";
+    private static final String DATABASE_NAME = "restoran";
     private static final String USER = "postgres";
     private static final String PASSWORD = "root";
     private static final String CHANGE_LOG_FILE = "com/smartparking/liquibase/changelog-master.xml";
