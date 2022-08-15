@@ -86,6 +86,15 @@ export class AdddishComponent implements OnInit {
 
 };
 
+editDish(): void {
+  this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
+        this.snackBar.open('Нова страва успішно додана.', null, {
+          duration: 2000
+      });
+      this.router.navigate(['editdishes']);
+    });
+  };
+
 getMenu(): void {
   this.menuService.getAllMenu()
      .subscribe(menus => this.menus = menus);
