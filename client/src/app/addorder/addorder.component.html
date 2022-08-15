@@ -5,6 +5,7 @@
           <mat-card-header>
             <div *ngIf="configureType.text === 'edit'">
               <legend>Edit order</legend>
+             
           </div>
           <div *ngIf="configureType.text === 'add'">
               <legend>Add new order</legend>
@@ -22,7 +23,9 @@
             </mat-select>
             
             </mat-form-field>
-
+            <div *ngIf="configureType.text === 'edit'">
+              <legend>Number of table is {{order.tableNumber}}</legend>
+              </div>
             <mat-form-field class="example-full-width">
               <mat-label>Choose a number of table</mat-label>
               <mat-select [(value)]="order.tableNumber" 
@@ -34,6 +37,12 @@
                 <mat-option value="4">4</mat-option>
                 <mat-option value="5">5</mat-option>
                 <mat-option value="6">6</mat-option>
+                <mat-option value="7">7</mat-option>
+                <mat-option value="8">8</mat-option>
+                <mat-option value="9">9</mat-option>
+                <mat-option value="10">10</mat-option>
+                <mat-option value="11">11</mat-option>
+                <mat-option value="12">12</mat-option>
               </mat-select>
             </mat-form-field>
         
