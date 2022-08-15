@@ -19,6 +19,7 @@ export class AddorderComponent implements OnInit {
   waiters: Employee[]  = []; 
 
   order : Order;
+  loadedOrder: Order;
   configureType: ConfigureType;
 
   orderConfigureForm = new FormGroup({
@@ -33,15 +34,28 @@ export class AddorderComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService,
     private orderService: OrderService,
-    private router: Router, public snackBar: MatSnackBar,
+    private router: Router,
+    public snackBar: MatSnackBar,
+    private route: ActivatedRoute,
     private app:AppComponent) { }
+
 
   ngOnInit() {
     this.app.showAdminMenu();
+   if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
+      this.getWaiters();
+      this.configureType = new ConfigureType('edit', SaveOrderConfigureType.EDIT);
+      this.loadOrder();
+      
+    }
+    else
+    {
     this.getWaiters();
     this.configureType = new ConfigureType('add', SaveOrderConfigureType.ADD);
     this.order = new Order();
+    }
   }
+
 
   refresh(): void {
     //console.log('selectedId ='+this.selectedId);
@@ -60,6 +74,16 @@ export class AddorderComponent implements OnInit {
        
   }
 
+  loadOrder(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.orderService.getOrder(id)
+        .subscribe(order => {
+            this.loadedOrder = order;
+            this.order = order.clone();            
+        });
+    }
+
+
 
   
   saveOrder(): void {
@@ -69,12 +93,12 @@ export class AddorderComponent implements OnInit {
           duration: 2000
       });
      this.router.navigate(['orders']);
-  }/* else {
-      this.snackBar.open('Страва успішно відредагована.', null, {
+  }else {
+      this.snackBar.open('Замовлення успішно відредаговане.', null, {
           duration: 2000
       });
-      this.router.navigate(['editdishes']);
-  }   */
+      this.router.navigate(['orders']);
+  }   
   }, error => {
       this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
           , null, {

@@ -22,6 +22,16 @@ export class OrderService {
       this.orderUrl+'/orders' , {observe: 'response'});
   }
 
+
+  getOrder(id: number): Observable<Order> {
+    console.log('is this function about orders working?');
+    console.log(this.orderUrl + '/orders/' + id);
+    return this.http.get<Order>(this.orderUrl + '/orders/' + id).map(json => {
+      return Order.copyOf(json);
+    })
+ 
+ }
+
   setOrderClose(order: Order): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
         this.orderUrl + '/setclose', order, {observe: 'response'});

@@ -50,6 +50,10 @@ export class OrdersComponent implements OnInit {
       });     
   }
 
+  editOrder(id: number) : void {
+    this.router.navigateByUrl('/addorder/edit/' + id);
+  }
+
   addNewOrder(): void {
     console.log(this.router);
   //if (this.route.snapshot.paramMap.get('configureType') === 'add')    

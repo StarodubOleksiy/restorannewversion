@@ -25,7 +25,9 @@
 
             <mat-form-field class="example-full-width">
               <mat-label>Choose a number of table</mat-label>
-              <mat-select [(value)]="order.tableNumber" formControlName="tableNumber">
+              <mat-select [(value)]="order.tableNumber" 
+              [(ngModel)]="order.tableNumber"
+              formControlName="tableNumber">
                 <mat-option value="1">1</mat-option>
                 <mat-option value="2">2</mat-option>
                 <mat-option value="3">3</mat-option>

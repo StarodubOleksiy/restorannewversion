@@ -48,6 +48,7 @@ public class OrderController {
 
     @GetMapping("/orders/{id}")
     public ResponseEntity<?> ingradientsById(@PathVariable Long id) {
+        LOGGER.info("=====================in function ingradientsById(@PathVariable Long id================)============");
         return orderService.findByIdResponse(id)
                 .map(order -> new ResponseEntity<Object>(order, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect order id", HttpStatus.BAD_REQUEST));
