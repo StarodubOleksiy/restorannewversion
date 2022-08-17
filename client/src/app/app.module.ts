@@ -58,6 +58,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { RestoranSchemaComponent } from './restoran-schema/restoran-schema.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { NgStorageModalConfirm } from './storage/storage.component';
+import {NgCoockedDishModalConfirm } from './cookeddishes/cookeddishes.component';
 
 @NgModule({
   imports: [
@@ -92,10 +93,11 @@ import { NgStorageModalConfirm } from './storage/storage.component';
     NgDishModalConfirm,
     NgMenuModalConfirm,
     NgStorageModalConfirm,
+    NgCoockedDishModalConfirm,
     DishesComponent,    
     AdddishComponent, AddmenuComponent, EmployeesComponent, AddemployeeComponent, PersonnelComponent, StorageComponent, MenuComponent, AddingradientComponent, EditdishesComponent, DishIngradientsComponent, EditDishIngradientComponent, OrdersComponent, AddorderComponent, DishdetailsComponent, CookeddishesComponent, AddcookeddishComponent, SignUpFormComponent, AdminPanelComponent, MainPageComponent, RestoranSchemaComponent, ContactsComponent
   ],
-  entryComponents: [NgbdModalConfirm,NgDishModalConfirm, NgMenuModalConfirm, NgStorageModalConfirm],
+  entryComponents: [NgbdModalConfirm,NgDishModalConfirm, NgMenuModalConfirm, NgStorageModalConfirm,NgCoockedDishModalConfirm],
   providers: [MenuService, DishService, EmployeeService, StorageService, OrderService, CookeddishService, MatDatepickerModule,],
   bootstrap: [AppComponent]
 })

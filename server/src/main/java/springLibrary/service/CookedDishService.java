@@ -20,4 +20,5 @@ public interface CookedDishService extends Service<Cooked_Dish, Long, CookedDish
 
     public void saveCookedDish(CookedDishRequest cookedDishRequest);
 
+    public void deleteCookedDish(Long id);
 }

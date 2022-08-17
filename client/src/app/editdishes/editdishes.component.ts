@@ -23,7 +23,7 @@ export class EditdishesComponent implements OnInit {
                  public router: Router,
                  public _modalService: NgbModal,
                  public app:AppComponent,
-                 public snackBar: MatSnackBar,) { }
+                 public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.app.showAdminMenu();

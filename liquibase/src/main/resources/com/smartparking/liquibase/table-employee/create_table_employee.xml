@@ -11,7 +11,7 @@
         surname VARCHAR (50) NOT NULL,
         phone_number VARCHAR (50) UNIQUE NOT NULL,
         salary double precision NOT NULL,
-        photography bytea UNIQUE,
+        photography bytea,
         dtype VARCHAR (50) NOT NULL
         );
     </sql>

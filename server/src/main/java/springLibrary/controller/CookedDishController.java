@@ -51,36 +51,55 @@ public class CookedDishController {
     }
 
 
-
     @GetMapping("/cookeddishesbyorderid/{id}")
-    public ResponseEntity<List<CookedDishResponse>>  cookedDishesByOrderId(@PathVariable Long id) {
+    public ResponseEntity<List<CookedDishResponse>> cookedDishesByOrderId(@PathVariable Long id) {
         return new ResponseEntity<>(cookedDishService.findByOrderIdResponse(id), HttpStatus.OK);
     }
 
 
     @PostMapping("cookeddish/save")
-    public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest){
+    public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest) {
         LOGGER.info("Method public ResponseEntity<?> save(@RequestBody Cooked_Dish cookedDishRequest) ");
-        LOGGER.info("cookedDishRequest = "+cookedDishRequest);
+        LOGGER.info("cookedDishRequest = " + cookedDishRequest);
         ingradientService.findIngradientsByDishIdResponse(cookedDishRequest.getDishId()).forEach(
-                ingradient->{
-                    LOGGER.info("ingradient  = "+ingradient);
-                    LOGGER.info("STORAGE = "+ingradientService.findById(ingradient.getIngradientId()));
-                    LOGGER.info("STORAGE NUMEROSITY= "+ingradientService.findById(ingradient.getIngradientId()).get().getNumerosity());
-                    LOGGER.info("ingradient.getIngradientId()  = "+ingradient.getIngradientId());
-                    LOGGER.info("ingradient.getNumerosity()  = "+ingradient.getNumerosity());
+                ingradient -> {
+                    LOGGER.info("ingradient  = " + ingradient);
+                    LOGGER.info("STORAGE = " + ingradientService.findById(ingradient.getIngradientId()));
+                    LOGGER.info("STORAGE NUMEROSITY= " + ingradientService.findById(ingradient.getIngradientId()).get().getNumerosity());
+                    LOGGER.info("ingradient.getIngradientId()  = " + ingradient.getIngradientId());
+                    LOGGER.info("ingradient.getNumerosity()  = " + ingradient.getNumerosity());
                     Ingradient storage = ingradientService.findById(ingradient.getIngradientId()).get();
-                    storage.setNumerosity(storage.getNumerosity()-ingradient.getNumerosity());
-                    if(storage.getNumerosity() < 0)
-                       throw new NoIngradientsOnStorageException("There are no more ingradients on the storage.");
+                    storage.setNumerosity(storage.getNumerosity() - ingradient.getNumerosity());
+                    if (storage.getNumerosity() < 0)
+                        throw new NoIngradientsOnStorageException("There are no more ingradients on the storage.");
                     else
-                    ingradientService.save(storage);
+                        ingradientService.save(storage);
                 }
         );
         cookedDishService.saveCookedDish(cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
+    @DeleteMapping("deletecookeddish/{id}")
+    ResponseEntity<?> deleteCookedDish(@PathVariable Long id) {
+        LOGGER.info(" delete dishid ========***///---+++++= " + id);//DELETE FROM cooked_dish WHERE id=6;
+        LOGGER.info("cookedDishService.findByIdResponse(id).get().getDishId() =" + cookedDishService.findById(id).get().getDish().getId());
+        ingradientService.findIngradientsByDishIdResponse(cookedDishService.findById(id).get().getDish().getId()).forEach(
+                ingradient -> {
+                    LOGGER.info("ingradient  = " + ingradient);
+                    LOGGER.info("STORAGE = " + ingradientService.findById(ingradient.getIngradientId()));
+                    LOGGER.info("STORAGE NUMEROSITY= " + ingradientService.findById(ingradient.getIngradientId()).get().getNumerosity());
+                    LOGGER.info("ingradient.getIngradientId()  = " + ingradient.getIngradientId());
+                    LOGGER.info("ingradient.getNumerosity()  = " + ingradient.getNumerosity());
+                    Ingradient storage = ingradientService.findById(ingradient.getIngradientId()).get();
+                    storage.setNumerosity(storage.getNumerosity() + ingradient.getNumerosity());
+                    ingradientService.save(storage);
+                }
+        );
+        cookedDishService.deleteCookedDish(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 
 }

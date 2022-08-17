@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-import {environment} from '../../environments/environment';
 import { HttpClient,  HttpResponse, HttpHeaders } from '@angular/common/http';
+import {environment} from '../../environments/environment';
+
 import { CookedDish } from '../model/cookeddish';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { catchError, map, tap } from 'rxjs/operators';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class CookeddishService {
@@ -32,6 +37,15 @@ saveCookedDish(cookedDish:CookedDish): Observable<HttpResponse<any>> {
   return this.http.post<HttpResponse<any>>(
       this.coockedDishesUrl + '/cookeddish/save', cookedDish, {observe: 'response'});
   }                           //cookeddish/save
+
+
+
+  deleteCookedDish(id: number): Observable<HttpResponse<any>> {
+   console.log("I am in the deleteCookedDish(id: number) method");
+    return this.http.delete<HttpResponse<any>>(
+      this.coockedDishesUrl + '/deletecookeddish/'+id, {observe: 'response'}
+    );                     
+  }
 
 
 }

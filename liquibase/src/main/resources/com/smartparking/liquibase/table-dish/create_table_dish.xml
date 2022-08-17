@@ -10,7 +10,7 @@
             name VARCHAR (50) UNIQUE NOT NULL,
             price double precision NOT NULL,
             weight double precision NOT NULL,
-            image bytea UNIQUE,
+            image bytea,
             menuid INTEGER REFERENCES menu(id) NOT NULL
             );
         </sql>

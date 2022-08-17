@@ -1,30 +1,27 @@
 package springLibrary.service.Implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Cook;
 import springLibrary.entities.Cooked_Dish;
-import springLibrary.entities.Dish;
 import springLibrary.model.request.CookedDishRequest;
-import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.CookedDishResponse;
-import springLibrary.model.response.DishResponse;
 import springLibrary.repository.CookedDishRepository;
 import springLibrary.repository.DishRepository;
 import springLibrary.repository.EmployeeRepository;
 import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.CookedDishService;
-import springLibrary.service.DishService;
 
 import javax.transaction.Transactional;
-import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish, Long, CookedDishRepository> implements CookedDishService {
+
     @Autowired
     private DishRepository dishRepository;
 
@@ -33,6 +30,11 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    private final String SQL_DELETE_COOKED_DISH = "DELETE FROM cooked_dish WHERE id=%d";
 
     protected CookedDishServiceImplementation(@Autowired CookedDishRepository repository) {
         super(repository);
@@ -52,6 +54,7 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
 
     @Override
+    @Transactional
     public List<CookedDishResponse> findAllResponse() {
         return getRepository().findAll().stream()
                 .map(this::cookedDishToCookedDishResponse)
@@ -60,6 +63,7 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
 
     @Override
+    @Transactional
     public List<CookedDishResponse> findByOrderIdResponse(Long orderId) {
         return orderRepository.getOne(orderId).getDishes().stream()
                 .map(this::cookedDishToCookedDishResponse)
@@ -68,13 +72,14 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
 
 
     @Override
+    @Transactional
     public Optional<CookedDishResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::cookedDishToCookedDishResponse);
     }
 
 
-    @Override
-    @Transactional
+   @Override
+   @Transactional
     public void saveCookedDish(CookedDishRequest cookedDishRequest) {
         Cooked_Dish cookedDish = new Cooked_Dish();
         if (cookedDishRequest.getId() != null)
@@ -83,6 +88,14 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
         cookedDish.setOrder(orderRepository.getOne(cookedDishRequest.getOrderId()));
         cookedDish.setDish(dishRepository.getOne(cookedDishRequest.getDishId()));
         getRepository().save(cookedDish);
+    }
+
+
+    @Override
+    @Transactional
+    public void deleteCookedDish(Long id) {
+       // getRepository().deleteById(id); //Todo this method does not work and I do not know why.
+        jdbcTemplate.execute(String.format(SQL_DELETE_COOKED_DISH,id));
     }
 
 
