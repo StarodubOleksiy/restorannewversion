@@ -9,6 +9,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { AppComponent } from '../app.component';
 import {MatSnackBar} from '@angular/material';
 import {HttpResponse} from '@angular/common/http';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as HttpStatus from 'http-status-codes';
 
 @Component({
   selector: 'app-orders',
@@ -30,7 +32,9 @@ export class OrdersComponent implements OnInit {
     ])   
 });
 
-  constructor(private orderService: OrderService,
+  constructor(
+    public orderService: OrderService,
+    public modalService: NgbModal,
     private router: Router,
     private app:AppComponent,
     public snackBar: MatSnackBar) { }
@@ -110,31 +114,6 @@ export class OrdersComponent implements OnInit {
         this.orders = orders;
       });
   }
-/*
-  saveOrder(): void {
-    this.orderService.saveOrder(this.order).subscribe((response: HttpResponse<any>) => {
-    if (this.configureType.type === SaveOrderConfigureType.ADD) {
-      this.snackBar.open('Нове замовлення успішно додане.', null, {
-          duration: 2000
-      });
-     this.router.navigate(['orders']);
-  }else {
-      this.snackBar.open('Страва успішно відредагована.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['editdishes']);
-  }   
-}, error => {
-  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-      , null, {
-          duration: 2000
-      });
-});
-
-};
-*/
-
-
 
   setOrderClose(order: Order): void {
     var confirmation = confirm('Ви впевнені що хочете закрити це замовлення?');
@@ -152,12 +131,71 @@ export class OrdersComponent implements OnInit {
           });
     });
   };
+
+  delete(order: Order) {
+    console.log("I am in the method delete(order: Order)");
+   const modalRef = this.modalService.open(NgOrderModalConfirm);
+   modalRef.componentInstance.order = order;
+   modalRef.componentInstance.ordersComponent = this;
+  }
  
+}
+
+@Component({
+  selector: 'ngbd-modal-confirm',
+  template: `
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Dish deletion</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to delete <span class="text-primary">{{order.id}}</span> order?</strong></p>
+    <p>All information associated to this dish will be permanently deleted.
+    <span class="text-danger">This operation can not be undone.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="onOrderDeleteClick()">Ok</button>
+  </div>
+  `
+})
+
+export class NgOrderModalConfirm {
+  order: Order
+  ordersComponent: OrdersComponent;
+  constructor(public modal: NgbActiveModal) {}
 
 
 
 
-
+  onOrderDeleteClick(): void {
+    this.ordersComponent.orderService.deleteOrder(this.order.id)
+                .subscribe(response => {                      
+                  this.onDeletOrderResponse(this.order.id, response)
+                },  error => {
+                  this.ordersComponent.snackBar.open('Order can not be delete.'
+                      , null, {
+                          duration: 2000
+                      });
+              });
+                this.ordersComponent.getOrders();
+                this.modal.close();
+                      
+  }   
+  
+  private onDeletOrderResponse(id: number, response: HttpResponse<any>): void {
+    if (response.status === HttpStatus.OK) {
+          this.ordersComponent.snackBar.open('Order deleted sucsessfully.', null, {
+            duration: 2000
+        });          
+        let index = id
+        this.ordersComponent.orders.splice(index, 1);
+       this.ordersComponent.ngOnInit();    
+    }
+  }
 
 
 }

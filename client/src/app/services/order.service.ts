@@ -53,6 +53,13 @@ export class OrderService {
          } 
       });
      }
+
+
+     deleteOrder(id: number): Observable<HttpResponse<any>> {
+      return this.http.delete<HttpResponse<any>>(
+        this.orderUrl + '/deleteorder/'+id, {observe: 'response'}
+      );                       
+    }
   
 
 }

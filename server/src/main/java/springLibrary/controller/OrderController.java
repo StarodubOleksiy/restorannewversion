@@ -14,6 +14,7 @@ import springLibrary.model.request.OrderRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.model.response.OrderResponse;
+import springLibrary.service.CookedDishService;
 import springLibrary.service.EmployeeService;
 import springLibrary.service.OrderService;
 
@@ -31,6 +32,9 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private CookedDishService cookedDishService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
 
@@ -54,6 +58,7 @@ public class OrderController {
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect order id", HttpStatus.BAD_REQUEST));
     }
 
+    // ResponseEntity<List<OrderResponse>> ingradients()
     @GetMapping("/date")
     public List<OrderResponse> getOrdersByDate(@RequestParam("date") String date) {
         LOGGER.info("date = "+date);// 26.03.2020
@@ -64,6 +69,7 @@ public class OrderController {
         for(int i = 0; i < dateArray.length; ++i )
             LOGGER.info("dateArray["+i+"]"+dateArray[i]);
         StringBuilder finalDate = new StringBuilder(dateArray[2]+"-"+dateArray[1]+"-"+dateArray[0]);
+        //new ResponseEntity<>(orderService.findAllResponse(), HttpStatus.OK);
         return orderService.findOrdersByDate(finalDate.toString());
     }
 
@@ -88,6 +94,19 @@ public class OrderController {
         order.setState(OrderStatus.open);
         LOGGER.info("order = " + order);
         orderService.save(order);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @DeleteMapping("/deleteorder/{id}")
+    ResponseEntity<?> deleteOrder(@PathVariable Long id) {
+        LOGGER.info(" delete order by it's id ========***///---+++++= " + id);
+        orderService.findById(id).get().getDishes().forEach(
+                dish->cookedDishService.deleteCookedDish(dish.getId())
+        );
+      //  orderService.delete(orderService.findById(id).get());
+     //  orderService.deleteById(id);
+        orderService.deleteOrderById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

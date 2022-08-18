@@ -32,7 +32,7 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
     private EmployeeRepository employeeRepository;
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     private final String SQL_DELETE_COOKED_DISH = "DELETE FROM cooked_dish WHERE id=%d";
 

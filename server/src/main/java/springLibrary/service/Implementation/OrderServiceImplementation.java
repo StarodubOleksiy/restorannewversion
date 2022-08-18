@@ -3,6 +3,7 @@ package springLibrary.service.Implementation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.OrderStatus;
@@ -13,6 +14,7 @@ import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.OrderService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -25,6 +27,11 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     }
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImplementation.class);
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    private final String SQL_DELETE_ORDER = "DELETE FROM orders WHERE id=%d";
 
     private OrderResponse orderToOrderResponse(Orders order) {
         OrderResponse response = new OrderResponse();
@@ -63,6 +70,15 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
         return getRepository().findByDate(date).stream()
                 .map(this::orderToOrderResponse)
                 .collect(Collectors.toList());
+    }
+
+
+    @Override
+    @Transactional
+    public void deleteOrderById(long id) {
+        // getRepository().deleteById(id); //Todo this method does not work and I do not know why.
+        LOGGER.info("this.getOne(id).getState().getStatus() ===!!!" + this.getOne(id).getState().getStatus());
+        jdbcTemplate.execute(String.format(SQL_DELETE_ORDER,id));
     }
 
 

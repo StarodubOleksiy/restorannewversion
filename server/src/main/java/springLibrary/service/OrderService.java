@@ -18,4 +18,6 @@ public interface OrderService extends Service<Orders, Long, OrderRepository> {
 
     public List<OrderResponse> findOrdersByDate(String date);
 
+    public void deleteOrderById(long id);
+
  }
