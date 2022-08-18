@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookedDish } from '../model/cookeddish';
 import { CookeddishService } from '../services/cookeddish.service';
+import {OrderService } from '../services/order.service';
 import {PageEvent} from '@angular/material/paginator';
 import {Router,ActivatedRoute} from '@angular/router';
 import { AppComponent } from '../app.component';
@@ -8,6 +9,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {HttpResponse} from '@angular/common/http';
 import * as HttpStatus from 'http-status-codes';
 import {MatDialog, MatSelect, MatSnackBar} from '@angular/material';
+import { Order } from '../model/order';
 
 @Component({
   selector: 'app-cookeddishes',
@@ -19,9 +21,11 @@ export class CookeddishesComponent implements OnInit {
   cookedDishdishes: CookedDish[] = [];
   returnedCookedDishes: CookedDish[]  = [];
   public orderId:number;
+  public order : Order;
 
   constructor(
     public cookedDishService: CookeddishService,
+    public orderService: OrderService,
     public modalService: NgbModal,
     private route: ActivatedRoute,
     private router: Router,    
@@ -29,6 +33,7 @@ export class CookeddishesComponent implements OnInit {
     public snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.loadOrder();
     this.app.showAdminMenu();
     this.orderId = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getCookedDishesByOrder(this.orderId);
@@ -45,6 +50,15 @@ export class CookeddishesComponent implements OnInit {
         this.cookedDishdishes = cookedDishdishes.body;
       });            
   }
+
+
+  loadOrder(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.orderService.getOrder(id)
+        .subscribe(order => {
+              this.order = order;            
+        });
+    }
 
   changeCook(cookeddishid:number): void {
    console.log('Add cooked dish');   

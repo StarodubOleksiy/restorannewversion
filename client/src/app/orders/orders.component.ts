@@ -25,6 +25,7 @@ export class OrdersComponent implements OnInit {
   public filterByWaiter = false;
   public date: Date/*string*/;
   orders: Order[] = [];
+  show :boolean;
 
   datePickerConfigureForm = new FormGroup({
     date: new FormControl('', [
@@ -43,6 +44,7 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
     this.app.showAdminMenu();
     this.getOrders();
+    this.show = true;
   }
 
 
@@ -123,6 +125,11 @@ export class OrdersComponent implements OnInit {
     }
     
   };
+
+  isOrderOpen(order: Order):boolean
+  {
+     return order.state ==='open';
+  }
 
  
 

@@ -92,18 +92,18 @@ Filter by order waiter
     {{order.state}}
    </th>
 <th scope="row">
-  <button type="button" class="btn btn-primary" (click)="setOrderClose(order)">
+  <button  type="button" class="btn btn-primary" (click)="setOrderClose(order)" [disabled]="order.state === 'close'">
     Close
   </button> 
 </th>
 <th scope="row">
-<button type="button" class="btn btn-primary" (click)="editOrder(order.id)">
+  <button type="button" class="btn btn-primary"  (click)="editOrder(order.id)" [disabled]="order.state === 'close'">
   Edit
 </button> 
 </th>
 <th scope="row">
 
-<button type="button" class="btn btn-primary" (click)="delete(order)">
+<button type="button" class="btn btn-primary" (click)="delete(order)" [disabled]="order.state === 'open'">
   Delete
 </button> 
 </th>

@@ -1,6 +1,6 @@
 
 
-<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addCookedDish()">
+<button type="button" class="btn btn-primary btn-large navbar-btn" (click)="addCookedDish()" [disabled]="order.state === 'close'">
   Додати Нову страву до замовлення
 </button>
 <h1>Номер замовлення {{orderId}}</h1>
@@ -31,13 +31,13 @@
         {{cookedDish.cookerSurname}}
         </th>
  <th scope="row">
-<button type="button" class="btn btn-primary" (click)="changeCook(cookedDish.id)">
+<button type="button" class="btn btn-primary" (click)="changeCook(cookedDish.id)" [disabled]="order.state === 'close'">
   Змінити повара
 </button> 
 </th>
 <th scope="row">
 
-  <button class="btn btn-outline-primary mr-2" (click)="delete(cookedDish)" >
+  <button class="btn btn-outline-primary mr-2" (click)="delete(cookedDish)" [disabled]="order.state === 'close'">
     <div>Open confirm modal</div>
     <div class="text-dark" aria-hidden="true"><small>&times; button will be focused</small></div>
   </button>
