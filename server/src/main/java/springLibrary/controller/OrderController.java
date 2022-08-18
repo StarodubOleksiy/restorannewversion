@@ -60,17 +60,10 @@ public class OrderController {
 
     // ResponseEntity<List<OrderResponse>> ingradients()
     @GetMapping("/date")
-    public List<OrderResponse> getOrdersByDate(@RequestParam("date") String date) {
-        LOGGER.info("date = "+date);// 26.03.2020
-        String replaceDate = date.replace(".","/");//Because this method does not split string with replacement .
-        LOGGER.info("replaceDate = "+replaceDate);
-        String[] dateArray = replaceDate.split("/");
-        LOGGER.info("dateArray.length = "+dateArray.length);
-        for(int i = 0; i < dateArray.length; ++i )
-            LOGGER.info("dateArray["+i+"]"+dateArray[i]);
-        StringBuilder finalDate = new StringBuilder(dateArray[2]+"-"+dateArray[1]+"-"+dateArray[0]);
+   // public List<OrderResponse> getOrdersByDate(@RequestParam("date") String date) {
+    public ResponseEntity<List<OrderResponse>> getOrdersByDate(@RequestParam("date") String date) {
         //new ResponseEntity<>(orderService.findAllResponse(), HttpStatus.OK);
-        return orderService.findOrdersByDate(finalDate.toString());
+        return new ResponseEntity<>(orderService.findOrdersByDate(convertDateToCorrectFormat(date)), HttpStatus.OK);//orderService.findOrdersByDate(finalDate.toString());
     }
 
 
@@ -104,10 +97,26 @@ public class OrderController {
         orderService.findById(id).get().getDishes().forEach(
                 dish->cookedDishService.deleteCookedDish(dish.getId())
         );
-      //  orderService.delete(orderService.findById(id).get());
-     //  orderService.deleteById(id);
         orderService.deleteOrderById(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    private String convertDateToCorrectFormat(String date)
+    {
+        LOGGER.info("date = "+date);// 26.03.2020
+        String replaceDate = date.replace(".","/");//Because this method does not split string with replacement .
+        LOGGER.info("replaceDate = "+replaceDate);
+        String[] dateArray = replaceDate.split("/");
+        LOGGER.info("dateArray.length = "+dateArray.length);
+        for(int i = 0; i < dateArray.length; ++i )
+            LOGGER.info("dateArray["+i+"]"+dateArray[i]);
+        if(Integer.parseInt(dateArray[0])< 10)
+        dateArray[0] = String.format("%02d",Integer.parseInt(dateArray[0]));
+        if(Integer.parseInt(dateArray[1])< 10)
+            dateArray[1] = String.format("%02d",Integer.parseInt(dateArray[1]));
+        StringBuilder finalDate = new StringBuilder(dateArray[2]+"-"+dateArray[0]+"-"+dateArray[1]);
+        LOGGER.info("finalDate = "+finalDate);
+        return finalDate.toString();
     }
 
 

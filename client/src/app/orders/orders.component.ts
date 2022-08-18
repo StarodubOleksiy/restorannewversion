@@ -54,6 +54,23 @@ export class OrdersComponent implements OnInit {
       });     
   }
 
+  filterOrdersByDate(): void {
+    this.orderService.getOrdersByDate(this.date.toLocaleDateString())
+.subscribe(orders => 
+{ 
+  this.orders = orders.body;
+});
+}
+
+
+/*filterOrdersByDate(): void {
+    this.orderService.getOrdersByDate(this.date.toLocaleDateString())
+.subscribe(orders => 
+{ 
+ this.orders = orders;
+});
+}*/
+
   editOrder(id: number) : void {
     this.router.navigateByUrl('/addorder/edit/' + id);
   }
@@ -107,13 +124,7 @@ export class OrdersComponent implements OnInit {
     
   };
 
-  filterOrdersByDate(): void {
-           this.orderService.getOrdersByDate(this.date.toLocaleDateString())
-    .subscribe(orders => 
-      { 
-        this.orders = orders;
-      });
-  }
+ 
 
   setOrderClose(order: Order): void {
     var confirmation = confirm('Ви впевнені що хочете закрити це замовлення?');

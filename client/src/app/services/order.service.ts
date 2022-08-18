@@ -22,6 +22,12 @@ export class OrderService {
       this.orderUrl+'/orders' , {observe: 'response'});
   }
 
+  getOrdersByDate(date: string): Observable<HttpResponse<Order[] | any>> {
+    return this.http.get<HttpResponse<Order[] | any>>(   
+      this.orderUrl+'/date' ,         
+      {params: { date: date}, observe: 'response'});
+  }
+
 
   getOrder(id: number): Observable<Order> {
     console.log('is this function about orders working?');
@@ -44,15 +50,6 @@ export class OrderService {
         this.orderUrl + '/addorder/save', order, {observe: 'response'});
     }
 
-
-    getOrdersByDate(date: string): Observable<Order[]> {
-      return this.http.get<Order[]>(this.orderUrl + '/date',
-      {  
-        params: {
-          date: date
-         } 
-      });
-     }
 
 
      deleteOrder(id: number): Observable<HttpResponse<any>> {
