@@ -23,11 +23,9 @@
             </mat-select>
             
             </mat-form-field>
-            <div *ngIf="configureType.text === 'edit'">
-              <legend>Number of table is {{order.tableNumber}}</legend>
-              </div>
-            <mat-form-field class="example-full-width">
-              <mat-label>Choose a number of table</mat-label>
+             <mat-form-field class="example-full-width">
+              <mat-label *ngIf="configureType.text === 'add'">Choose a number of table</mat-label>
+              <mat-label *ngIf="configureType.text === 'edit'">{{order.tableNumber}}</mat-label>
               <mat-select [(value)]="order.tableNumber" 
               [(ngModel)]="order.tableNumber"
               formControlName="tableNumber">

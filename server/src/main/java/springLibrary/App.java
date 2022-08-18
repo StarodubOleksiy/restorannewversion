@@ -23,23 +23,9 @@ import java.util.List;
 @EnableScheduling
 public class App implements CommandLineRunner {
 
-    @Autowired
-    OrderController orderController;
-
-    @Autowired
-    DishController dishController;
-
-
-    @Autowired
-    IngradientController ingradientController;
-
-    @Autowired
-    MenuController menuController;
-
     @Override
     public void run(String[] args) throws IOException {
         System.out.println("method run=");
-        ingradientController.printIngradients();
     }
 
     public static void main(String[] args) throws IOException {
