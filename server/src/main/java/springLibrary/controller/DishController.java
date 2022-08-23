@@ -50,7 +50,7 @@ public class DishController {
    public ResponseEntity<?> save(@RequestBody DishRequest dishRequest) {
            Dish dish = dishRequest.toDish();
            dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
-           LOGGER.info("dish = "+dish);
+           LOGGER.info("dish = "+dish);//
         dishService.saveFromRequest(dish, dishRequest);
        return new ResponseEntity<>(HttpStatus.OK);
    }
