@@ -6,6 +6,8 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { catchError, map, tap } from 'rxjs/operators';
 
+
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -13,6 +15,7 @@ const httpOptions = {
 @Injectable()
 export class DishService {
 
+  
   dishes: Dish[]
 
   private dishUrl = environment.apiUrl;   // URL to web api
@@ -30,11 +33,12 @@ getDish(id: number): Observable<Dish> {
 
 }
 
+
+
 getDishes(): Observable<HttpResponse<Dish[] | any>> {
   console.log("I am in getDishes() method ");
   console.log("dishUrl = "+this.dishUrl);
-  return this.http.get<HttpResponse<Dish[] | any>>(
-   
+  return this.http.get<HttpResponse<Dish[] | any>>(   
     this.dishUrl+'dishes' , {observe: 'response'});
 }
 

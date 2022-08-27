@@ -64,14 +64,15 @@ export class OrdersComponent implements OnInit {
 });
 }
 
-
-/*filterOrdersByDate(): void {
-    this.orderService.getOrdersByDate(this.date.toLocaleDateString())
+filterOrdersByTableNumber(tableNumber:number): void { //This function does not use. Implement it later please
+  this.orderService.getOrdersByTableNumber(tableNumber)
 .subscribe(orders => 
 { 
- this.orders = orders;
+this.orders = orders;
 });
-}*/
+}
+
+
 
   editOrder(id: number) : void {
     this.router.navigateByUrl('/addorder/edit/' + id);
