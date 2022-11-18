@@ -61,21 +61,23 @@ public class CookedDishController {
     public ResponseEntity<?> save(@RequestBody CookedDishRequest cookedDishRequest) {
         LOGGER.info("Method public ResponseEntity<?> save(@RequestBody Cooked_Dish cookedDishRequest) ");
         LOGGER.info("cookedDishRequest = " + cookedDishRequest);
-        ingradientService.findIngradientsByDishIdResponse(cookedDishRequest.getDishId()).forEach(
-                ingradient -> {
-                    LOGGER.info("ingradient  = " + ingradient);
-                    LOGGER.info("STORAGE = " + ingradientService.findById(ingradient.getIngradientId()));
-                    LOGGER.info("STORAGE NUMEROSITY= " + ingradientService.findById(ingradient.getIngradientId()).get().getNumerosity());
-                    LOGGER.info("ingradient.getIngradientId()  = " + ingradient.getIngradientId());
-                    LOGGER.info("ingradient.getNumerosity()  = " + ingradient.getNumerosity());
-                    Ingradient storage = ingradientService.findById(ingradient.getIngradientId()).get();
-                    storage.setNumerosity(storage.getNumerosity() - ingradient.getNumerosity());
-                    if (storage.getNumerosity() < 0)
-                        throw new NoIngradientsOnStorageException("There are no more ingradients on the storage.");
-                    else
+        try {
+            ingradientService.findIngradientsByDishIdResponse(cookedDishRequest.getDishId()).forEach(
+                    ingradient -> {
+                        LOGGER.info("ingradient  = " + ingradient);
+                        LOGGER.info("STORAGE = " + ingradientService.findById(ingradient.getIngradientId()));
+                        LOGGER.info("STORAGE NUMEROSITY= " + ingradientService.findById(ingradient.getIngradientId()).get().getNumerosity());
+                        LOGGER.info("ingradient.getIngradientId()  = " + ingradient.getIngradientId());
+                        LOGGER.info("ingradient.getNumerosity()  = " + ingradient.getNumerosity());
+                        Ingradient storage = ingradientService.findById(ingradient.getIngradientId()).get();
+                        storage.setNumerosity(storage.getNumerosity() - ingradient.getNumerosity());
                         ingradientService.save(storage);
-                }
-        );
+                    }
+            );
+        } catch (NoIngradientsOnStorageException exception) {
+            exception.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         cookedDishService.saveCookedDish(cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }

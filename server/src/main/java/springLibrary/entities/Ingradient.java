@@ -3,6 +3,7 @@ package springLibrary.entities;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import springLibrary.exceptions.NoIngradientsOnStorageException;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -39,7 +40,10 @@ public class Ingradient extends AbstractIdentifiableEntity {
     }
 
     public void setNumerosity(float numerosity) {
-        this.numerosity = numerosity;
+        if (numerosity < 0)
+            throw new NoIngradientsOnStorageException("There are no more ingradients on the storage.");
+        else
+            this.numerosity = numerosity;
     }
 
     @Override
