@@ -69,6 +69,11 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
       this.ingradientUrl + 'addingradient/save', ingradient, {observe: 'response'});
   }
 
+  updateIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
+    return this.http.put<HttpResponse<any>>(
+        this.ingradientUrl + '/ingradient/update/'+ingradient.id, ingradient, {observe: 'response'});
+  } 
+
 
   addNewIngradientToDish(ingradient: DishIngradient): Observable<HttpResponse<any>> { 
     return this.http.post<HttpResponse<any>>( //addingradient/save

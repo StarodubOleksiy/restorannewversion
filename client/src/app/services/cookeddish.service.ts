@@ -36,7 +36,16 @@ getCookedDish(id: number): Observable<CookedDish> {
 saveCookedDish(cookedDish:CookedDish): Observable<HttpResponse<any>> {
   return this.http.post<HttpResponse<any>>(
       this.coockedDishesUrl + '/cookeddish/save', cookedDish, {observe: 'response'});
-  }                           //cookeddish/save
+    } 
+  
+  //cookeddish/save
+
+
+  updateCookedDish(cookedDish:CookedDish): Observable<HttpResponse<any>> {
+    return this.http.put<HttpResponse<any>>(
+        this.coockedDishesUrl + '/cookeddish/update/'+cookedDish.id, cookedDish, {observe: 'response'});
+  }
+
 
 
 

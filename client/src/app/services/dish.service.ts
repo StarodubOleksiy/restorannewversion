@@ -47,6 +47,11 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
       this.dishUrl + '/dish/save', dish, {observe: 'response'});
   }
 
+  updateDish(dish: Dish): Observable<HttpResponse<any>> {
+    return this.http.put<HttpResponse<any>>(
+        this.dishUrl + '/dish/update/'+dish.id, dish, {observe: 'response'});
+  }
+
 
   
   getDishesByName(name: string): Observable<Dish[]> {
