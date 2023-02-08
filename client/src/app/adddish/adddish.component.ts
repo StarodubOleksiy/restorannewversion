@@ -64,7 +64,7 @@ export class AdddishComponent implements OnInit {
     }
 
 
-  saveBook(): void {
+  saveBook(): void { //Delete this method later
     this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
     if (this.configureType.type === SaveDishConfigureType.ADD) {
       this.snackBar.open('Нова страва успішно додана.', null, {
@@ -86,7 +86,7 @@ export class AdddishComponent implements OnInit {
 
 };
 
-editDish(): void {
+editDish(): void { //Delete this method later
   this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
         this.snackBar.open('Нова страва успішно додана.', null, {
           duration: 2000
@@ -94,6 +94,37 @@ editDish(): void {
       this.router.navigate(['editdishes']);
     });
   };
+
+
+  saveDish(): void {
+    if (this.configureType.type === SaveDishConfigureType.ADD) {
+      this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
+        this.snackBar.open('Нова страва успішно додана.', null, {
+          duration: 2000
+      });
+      this.router.navigate(['editdishes']);
+    }, error => {
+      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+          , null, {
+              duration: 2000
+          });
+        }); 
+  
+  } else
+  {
+    this.dishService.updateDish(this.dish).subscribe((response: HttpResponse<any>) => {
+      this.snackBar.open('Страва успішно відредагована.', null, {
+        duration: 2000
+    });
+    this.router.navigate(['editdishes']);
+  }, error => {
+    this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+        , null, {
+            duration: 2000
+        });
+      });
+  }
+  }
 
 getMenu(): void {
   this.menuService.getAllMenu()
@@ -104,24 +135,12 @@ getMenu(): void {
 
 
 
-
-/*
- getGenres(): void {
-     this.genreService.getGenres()
-        .subscribe(genres => this.genres = genres);
-        console.log("genres.size() = "+this.genres.length);
-        
-}
-
-*/
-
 onFileChange(event) {
   let reader = new FileReader();
   if (event.target.files && event.target.files.length > 0) {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-      //  let tempString = 
           this.dish.image = reader.result.toString().split(',')[1];
       };
   }

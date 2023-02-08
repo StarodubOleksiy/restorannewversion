@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.*;
 import springLibrary.model.request.DishRequest;
+import springLibrary.model.request.MenuRequest;
 import springLibrary.model.request.OrderRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.IngradientResponse;
@@ -117,6 +118,14 @@ public class OrderController {
         StringBuilder finalDate = new StringBuilder(dateArray[2]+"-"+dateArray[0]+"-"+dateArray[1]);
         LOGGER.info("finalDate = "+finalDate);
         return finalDate.toString();
+    }
+
+
+    @PutMapping("/order/update/{id}")
+    public ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody OrderRequest orderRequest) {
+        LOGGER.info("Method public  ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody OrderRequest orderRequest)");
+        LOGGER.info("orderRequest = " + orderRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

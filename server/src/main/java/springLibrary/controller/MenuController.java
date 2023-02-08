@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Menu;
+import springLibrary.model.request.IngradientRequest;
 import springLibrary.model.request.MenuRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.MenuResponse;
@@ -62,6 +63,13 @@ public class MenuController {
         menuService.deleteMenu(id);
         //menuService.deleteMenu(id);
         return new  ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/menu/update/{id}")
+    public ResponseEntity<?> updateMenu(@PathVariable Long id,@RequestBody MenuRequest menuRequest) {
+        LOGGER.info("public ResponseEntity<?> updateMenu(@PathVariable Long id,@RequestBody MenuRequest menuRequest)");
+        LOGGER.info("menuRequest = " + menuRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

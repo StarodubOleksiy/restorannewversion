@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Dish;
 import springLibrary.model.request.DishRequest;
+import springLibrary.model.request.EmployeeRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.service.DishService;
 import springLibrary.service.MenuService;
@@ -75,6 +76,14 @@ public class DishController {
         LOGGER.info(" delete dishid = "+id);
         dishService.deleteDish(id);
         return new  ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @PutMapping("/dish/update/{id}")
+    public ResponseEntity<?> updateDish(@PathVariable Long id,@RequestBody DishRequest dishRequest) {
+        LOGGER.info("public ResponseEntity<?> updateDish(@PathVariable Long id,@RequestBody DishRequest dishRequest)");
+        LOGGER.info("dishRequest = " + dishRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

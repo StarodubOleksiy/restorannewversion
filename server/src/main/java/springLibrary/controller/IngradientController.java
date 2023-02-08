@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springLibrary.entities.Ingradient;
 import springLibrary.model.request.DishIngradientRequest;
+import springLibrary.model.request.DishRequest;
 import springLibrary.model.request.IngradientRequest;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.service.DishService;
@@ -55,14 +56,13 @@ public class IngradientController {
     }
 
     @GetMapping("dishingradientresponse")
-    public ResponseEntity<?> dishIngradientResponse(@RequestParam("dish_id") String dishId,@RequestParam("ingradient_id") String ingradientId) {
-        LOGGER.info(" dish_id = "+dishId+ " ingradientId = "+ingradientId);
-        return ingradientService.getCurrentIngradientInDish(Long.valueOf(dishId),Long.valueOf(ingradientId))
+    public ResponseEntity<?> dishIngradientResponse(@RequestParam("dish_id") String dishId, @RequestParam("ingradient_id") String ingradientId) {
+        LOGGER.info(" dish_id = " + dishId + " ingradientId = " + ingradientId);
+        return ingradientService.getCurrentIngradientInDish(Long.valueOf(dishId), Long.valueOf(ingradientId))
                 .map(ingradient -> new ResponseEntity<Object>(ingradient, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect ingradient id", HttpStatus.BAD_REQUEST));
 
     }
-
 
 
     @GetMapping("dishingradients/{id}")
@@ -109,23 +109,30 @@ public class IngradientController {
 
     @DeleteMapping("/{id}/deleteallingradientsfromcurrentdish")
     ResponseEntity<?> deleteAllIngradientsFromCurrentDish(@PathVariable Long id) {
-        LOGGER.info("dishid = "+id);
+        LOGGER.info("dishid = " + id);
         ingradientService.deleteAllIngradientsFromCurrentDish(id);
-        return new  ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/ingredientname")
     public List<IngradientResponse> getIngradientsByName(@RequestParam("name") String name) {
-        LOGGER.info("ingradientName = "+name);
+        LOGGER.info("ingradientName = " + name);
         return ingradientService.findIngradientsByName(name);
     }
 
 
     @DeleteMapping("deleteingradient/{id}")
     ResponseEntity<?> deleteIngradient(@PathVariable Long id) {
-        LOGGER.info(" delete ingradientid = "+id);
+        LOGGER.info(" delete ingradientid = " + id);
         ingradientService.deleteIngradient(id);
-        return new  ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/ingradient/update/{id}")
+    public ResponseEntity<?> updateIngradient(@PathVariable Long id, @RequestBody IngradientRequest ingradientRequest) {
+        LOGGER.info("public ResponseEntity<?> updateIngradient(@PathVariable Long id,@RequestBody IngradientRequest ingradientRequest)");
+        LOGGER.info("ingradientRequest = " + ingradientRequest.toString());
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

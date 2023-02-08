@@ -80,12 +80,12 @@ export class AddcookeddishComponent implements OnInit {
 
   getDishes(): void {
     this.dishService.getDishes()
-       .subscribe(dishes => {this.dishes =dishes.body;
+       .subscribe(dishes => {
+        this.dishes =dishes.body;
         //this.returnedAuthors = this.authors.slice(0, 10);
       });       
        console.log("authors.size() = "+this.dishes.length);
          }
-
 
 
          saveCookedDish(): void { //saveCookedDish
@@ -114,6 +114,44 @@ export class AddcookeddishComponent implements OnInit {
         });
       
       };
+
+
+      saveCookedDis(): void {
+        const cookedDishid = parseInt(this.route.snapshot.paramMap.get('cookeddishid'));
+        const orderid= parseInt(this.route.snapshot.paramMap.get('orderid'));
+        console.log('cookeddishid = '+cookedDishid);
+        console.log('orderid = '+orderid);
+        this.cookedDish.orderId = orderid;
+        if (this.configureType.type === AddCookedDishConfigureType.ADD) {
+          this.cookedDishService.saveCookedDish(this.cookedDish).subscribe((response: HttpResponse<any>) => {
+            this.snackBar.open('Нова страва успішно додана для приготування.', null, {
+              duration: 2000
+          });
+          this.router.navigate(['/cookeddish/'+orderid]);
+        }, error => {
+          this.snackBar.open('Інградіенти на складі закінчились. Поповніть їх запас!'
+              , null, {
+                  duration: 2000
+              });
+            }); 
+      
+      } else
+      {
+        this.cookedDishService.updateCookedDish(this.cookedDish).subscribe((response: HttpResponse<any>) => {
+          this.snackBar.open('Повар успішно змінений.', null, {
+            duration: 2000
+        });
+        this.router.navigate(['/cookeddish/'+orderid]);
+      }, error => {
+        this.snackBar.open('Інградіенти на складі закінчились. Поповніть їх запас!'
+            , null, {
+                duration: 2000
+            });
+          });
+      }
+      }
+
+
 
 }
 

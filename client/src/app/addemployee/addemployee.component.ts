@@ -79,6 +79,40 @@ export class AddemployeeComponent implements OnInit {
 
 };
 
+
+
+saveEmploye(): void {
+  if (this.configureType.type === SaveEmployeeConfigureType.ADD) {
+    this.employeeServise.saveEmployee(this.employee).subscribe((response: HttpResponse<any>) => {
+      this.snackBar.open('Новий співробітник успішно доданий.', null, {
+        duration: 2000
+    });
+    this.router.navigate(['employees']);
+  }, error => {
+    this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+        , null, {
+            duration: 2000
+        });
+      }); 
+
+} else
+{
+  this.employeeServise.updateEmployee(this.employee).subscribe((response: HttpResponse<any>) => {
+    this.snackBar.open('Співробітник успішно відредагований.', null, {
+      duration: 2000
+  });
+  this.router.navigate(['employees']);
+}, error => {
+  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+      , null, {
+          duration: 2000
+      });
+    });
+}
+}
+
+
+
 onFileChange(event) {
   let reader = new FileReader();
   if (event.target.files && event.target.files.length > 0) {

@@ -105,8 +105,38 @@ export class AddorderComponent implements OnInit {
               duration: 2000
           });
   });
-
 };
+
+
+saveOrde(): void {
+  if (this.configureType.type === SaveOrderConfigureType.ADD) {
+    this.orderService.saveOrder(this.order).subscribe((response: HttpResponse<any>) => {
+      this.snackBar.open('Нове замовлення успішно додане.', null, {
+        duration: 2000
+    });
+    this.router.navigate(['orders']);
+  }, error => {
+    this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+        , null, {
+            duration: 2000
+        });
+      }); 
+
+} else
+{
+  this.orderService.updateOrder(this.order).subscribe((response: HttpResponse<any>) => {
+    this.snackBar.open('Замовлення успішно відредаговане.', null, {
+      duration: 2000
+  });
+  this.router.navigate(['orders']);
+}, error => {
+  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+      , null, {
+          duration: 2000
+      });
+    });
+}
+}
 
 }
 

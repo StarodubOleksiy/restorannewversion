@@ -71,6 +71,40 @@ export class AddmenuComponent implements OnInit {
   });
 };
 
+
+saveMen(): void {
+  if (this.configureType.type === SaveMenuConfigureType.ADD) {
+    this.menuServise.saveMenu(this.menu).subscribe((response: HttpResponse<any>) => {
+      this.snackBar.open('Нове меню успішно додане.', null, {
+        duration: 2000
+    });
+    this.router.navigate(['menu']);
+  }, error => {
+    this.snackBar.open('Menu with the such name is already exists in database .'
+        , null, {
+            duration: 2000
+        });
+      }); 
+
+} else
+{
+  this.menuServise.updateMenu(this.menu).subscribe((response: HttpResponse<any>) => {
+    this.snackBar.open('Меню успішно відредаговане.', null, {
+      duration: 2000
+  });
+  this.router.navigate(['menu']);
+}, error => {
+  this.snackBar.open('Menu with the such name is already exists in database .'
+      , null, {
+          duration: 2000
+      });
+    });
+}
+}
+
+
+
+
 loadMenu(): void {
   const id = parseInt(this.route.snapshot.paramMap.get('id'));
   this.menuServise.getCurrentMenu(id)

@@ -79,4 +79,12 @@ public class EmployeeController {
     }
 
 
+    @PutMapping("/employee/update/{id}")
+    public ResponseEntity<?> updateEmployee(@PathVariable Long id,@RequestBody EmployeeRequest employeeRequest) {
+        LOGGER.info("public ResponseEntity<?> updateEmployee(@PathVariable Long id,@RequestBody EmployeeRequest employeeRequest)");
+        LOGGER.info("employeeRequest = " + employeeRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 }

@@ -13,6 +13,7 @@ import springLibrary.entities.Ingradient;
 import springLibrary.exceptions.NoIngradientsOnStorageException;
 import springLibrary.model.request.CookedDishRequest;
 import springLibrary.model.request.DishRequest;
+import springLibrary.model.request.OrderRequest;
 import springLibrary.model.response.CookedDishResponse;
 import springLibrary.model.response.DishResponse;
 import springLibrary.service.CookedDishService;
@@ -100,6 +101,13 @@ public class CookedDishController {
                 }
         );
         cookedDishService.deleteCookedDish(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("cookeddish/update/")
+    public ResponseEntity<?> updateCookedDish(@PathVariable Long id,@RequestBody CookedDishRequest cookedDishRequest) {
+        LOGGER.info("Method public ResponseEntity<?> updateCookedDish(@PathVariable Long id,@RequestBody CookedDishRequest cookedDishRequest) ");
+        LOGGER.info("cookedDishRequest = " + cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
