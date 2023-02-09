@@ -75,9 +75,8 @@ public class IngradientController {
 
     @PostMapping("addingradient/save")
     ResponseEntity<?> save(@RequestBody IngradientRequest ingradientRequest) {
-        Ingradient ingradient = ingradientRequest.toIngradient();
-        LOGGER.info("ingradient = " + ingradient);
-        ingradientService.save(ingradient);
+        LOGGER.info("ingradientRequest = " + ingradientRequest);
+        ingradientService.saveFromRequest(ingradientRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -89,7 +88,7 @@ public class IngradientController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("changenumerosity")
+    @PutMapping("changenumerosity")
     ResponseEntity<?> changeNumerosityOfIngradientsInDish(@RequestBody DishIngradientRequest dishIngradientRequest) {
         LOGGER.info("changeNumerosityOfIngradientsInDish method");
         LOGGER.info("dishIngradientRequest = " + dishIngradientRequest.toString());
@@ -124,14 +123,15 @@ public class IngradientController {
     @DeleteMapping("deleteingradient/{id}")
     ResponseEntity<?> deleteIngradient(@PathVariable Long id) {
         LOGGER.info(" delete ingradientid = " + id);
-        ingradientService.deleteIngradient(id);
+        ingradientService.delete(ingradientService.getOne(id));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/ingradient/update/{id}")
-    public ResponseEntity<?> updateIngradient(@PathVariable Long id, @RequestBody IngradientRequest ingradientRequest) {
+    @PutMapping("/ingradient/update/")
+    public ResponseEntity<?> updateIngradient(@RequestBody IngradientRequest ingradientRequest) {
         LOGGER.info("public ResponseEntity<?> updateIngradient(@PathVariable Long id,@RequestBody IngradientRequest ingradientRequest)");
         LOGGER.info("ingradientRequest = " + ingradientRequest.toString());
+        ingradientService.updateFromRequest(ingradientRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

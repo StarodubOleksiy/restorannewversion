@@ -3,6 +3,7 @@ package springLibrary.service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
 import springLibrary.model.request.DishIngradientRequest;
+import springLibrary.model.request.IngradientRequest;
 import springLibrary.model.response.DishIngradientsResponse;
 import springLibrary.model.response.IngradientResponse;
 import springLibrary.repository.IngradientRepository;
@@ -15,8 +16,6 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
     public List<IngradientResponse> findAllResponse();
 
     public Optional<IngradientResponse> findByIdResponse(Long id);
-
-    public void save(Ingradient ingradient);
 
     public List<DishIngradientsResponse> findIngradientsByDishIdResponse(Long dish_id);
 
@@ -34,6 +33,8 @@ public interface IngradientService extends Service<Ingradient, Long, IngradientR
 
     public List<IngradientResponse> findIngradientsByName(String name);
 
-    public void deleteIngradient(Long id);
+    public void saveFromRequest(IngradientRequest ingradientRequest);
+
+    public void updateFromRequest(IngradientRequest ingradientRequest);
 
 }

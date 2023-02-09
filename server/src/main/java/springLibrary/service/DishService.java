@@ -19,7 +19,9 @@ public interface DishService extends Service<Dish, Long, DishRepository> {
 
    public Optional<DishResponse> findByIdResponse(Long id);
 
-   public void saveFromRequest(Dish dish, DishRequest dishRequest);
+   public void saveFromRequest(DishRequest dishRequest);
+
+   public void updateFromRequest(DishRequest dishRequest);
 
    public List<DishResponse> findDishesByName(String name);
 

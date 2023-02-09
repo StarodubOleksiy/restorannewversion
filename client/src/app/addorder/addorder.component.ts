@@ -85,30 +85,7 @@ export class AddorderComponent implements OnInit {
 
 
 
-  
-  saveOrder(): void {
-    this.orderService.saveOrder(this.order).subscribe((response: HttpResponse<any>) => {
-    if (this.configureType.type === SaveOrderConfigureType.ADD) {
-      this.snackBar.open('Нове замовлення успішно додане.', null, {
-          duration: 2000
-      });
-     this.router.navigate(['orders']);
-  }else {
-      this.snackBar.open('Замовлення успішно відредаговане.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['orders']);
-  }   
-  }, error => {
-      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-          , null, {
-              duration: 2000
-          });
-  });
-};
-
-
-saveOrde(): void {
+saveOrder(): void {
   if (this.configureType.type === SaveOrderConfigureType.ADD) {
     this.orderService.saveOrder(this.order).subscribe((response: HttpResponse<any>) => {
       this.snackBar.open('Нове замовлення успішно додане.', null, {

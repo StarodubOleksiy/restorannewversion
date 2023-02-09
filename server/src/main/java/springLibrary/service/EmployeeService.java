@@ -23,6 +23,8 @@ public interface EmployeeService extends Service<Employee, Long, EmployeeReposit
 
     public List<EmployeeResponse> getAllCookers();
 
-    public void saveFromRequest(Employee employee, EmployeeRequest employeeRequest);
+    public void saveFromRequest(EmployeeRequest employeeRequest);
+
+    public void updateFromRequest(EmployeeRequest employeeRequest);
 
 }

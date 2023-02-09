@@ -3,6 +3,7 @@ package springLibrary.model.request;
 import lombok.Data;
 import springLibrary.entities.*;
 
+import java.util.Base64;
 import java.util.List;
 
 @Data
@@ -82,6 +83,8 @@ public class EmployeeRequest {
         employee.setSurname(surname);
         employee.setPhoneNumber(phoneNumber);
         employee.setSalary(salary);
+        if (getPhotography() != null)
+            employee.setPhotography(Base64.getDecoder().decode(getPhotography()));
         return employee;
     }
 

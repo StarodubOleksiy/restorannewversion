@@ -72,7 +72,6 @@ export class AddcookeddishComponent implements OnInit {
   getCookers(): void {
     this.employeeService.getCookers()
        .subscribe(cookers => {this.cookers =cookers.body;
-        //this.returnedAuthors = this.authors.slice(0, 10);
       });       
        console.log("cookers.size() = "+this.cookers.length);
       }
@@ -82,41 +81,11 @@ export class AddcookeddishComponent implements OnInit {
     this.dishService.getDishes()
        .subscribe(dishes => {
         this.dishes =dishes.body;
-        //this.returnedAuthors = this.authors.slice(0, 10);
       });       
        console.log("authors.size() = "+this.dishes.length);
          }
 
-
-         saveCookedDish(): void { //saveCookedDish
-          const cookedDishid = parseInt(this.route.snapshot.paramMap.get('cookeddishid'));
-          const orderid= parseInt(this.route.snapshot.paramMap.get('orderid'));
-          console.log('cookeddishid = '+cookedDishid);
-          console.log('orderid = '+orderid);
-          this.cookedDish.orderId = orderid;
-          this.cookedDishService.saveCookedDish(this.cookedDish).subscribe((response: HttpResponse<any>) => {
-          if (this.configureType.type === AddCookedDishConfigureType.ADD) {
-            this.snackBar.open('Нова страва успішно додана для приготування.', null, {
-                duration: 2000
-            });
-            this.router.navigate(['/cookeddish/'+orderid]);
-        } else {
-            this.snackBar.open('Повар успішно змінений.', null, {
-                duration: 2000
-            });
-            this.router.navigate(['/cookeddish/'+orderid]);
-        }   
-        }, error => {
-            this.snackBar.open('Інградіенти на складі закінчились. Поповніть їх запас!'
-                , null, {
-                    duration: 2000
-                });
-        });
-      
-      };
-
-
-      saveCookedDis(): void {
+      saveCookedDish(): void {
         const cookedDishid = parseInt(this.route.snapshot.paramMap.get('cookeddishid'));
         const orderid= parseInt(this.route.snapshot.paramMap.get('orderid'));
         console.log('cookeddishid = '+cookedDishid);

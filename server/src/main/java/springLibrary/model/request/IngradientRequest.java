@@ -13,16 +13,21 @@ public class IngradientRequest {
 
     public Ingradient toIngradient() {
         Ingradient ingradient = new Ingradient();
-        if (id != null)
-            ingradient.setId(id);
         ingradient.setName(name);
         ingradient.setNumerosity(numberOnStorage);
-
         return ingradient;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public float getNumberOnStorage() {
+        return numberOnStorage;
     }
 
     @Override

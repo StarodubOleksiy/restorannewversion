@@ -3,6 +3,7 @@ package springLibrary.service;
 import springLibrary.entities.Cooked_Dish;
 import springLibrary.entities.Dish;
 import springLibrary.model.request.CookedDishRequest;
+import springLibrary.model.request.OrderRequest;
 import springLibrary.model.response.CookedDishResponse;
 import springLibrary.repository.CookedDishRepository;
 import springLibrary.repository.DishRepository;
@@ -21,4 +22,8 @@ public interface CookedDishService extends Service<Cooked_Dish, Long, CookedDish
     public void saveCookedDish(CookedDishRequest cookedDishRequest);
 
     public void deleteCookedDish(Long id);
+
+    public void saveFromRequest(CookedDishRequest cookedDishRequest);
+
+    public void updateFromRequest(CookedDishRequest cookedDishRequest);
 }

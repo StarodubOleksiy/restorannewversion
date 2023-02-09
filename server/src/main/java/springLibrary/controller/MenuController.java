@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 
 
-
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 public class MenuController {
@@ -29,8 +28,7 @@ public class MenuController {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
 
 
-    public void printOrders()
-    {
+    public void printOrders() {
         menuService.findAllResponse();
     }
 
@@ -51,24 +49,22 @@ public class MenuController {
 
     @PostMapping("/addmenu/save")
     ResponseEntity<?> save(@RequestBody MenuRequest menuRequest) {
-        Menu menu = menuRequest.toMenu();
-        LOGGER.info("menu = "+menu);
-        menuService.save(menu);
+        menuService.saveFromRequest(menuRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("deletemenu/{id}")
     ResponseEntity<?> deleteMenu(@PathVariable Long id) {
-        LOGGER.info(" delete menuid = "+id);
-        menuService.deleteMenu(id);
-        //menuService.deleteMenu(id);
-        return new  ResponseEntity<>(HttpStatus.OK);
+        LOGGER.info(" delete menuid = " + id);
+        menuService.delete(menuService.getOne(id));
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/menu/update/{id}")
-    public ResponseEntity<?> updateMenu(@PathVariable Long id,@RequestBody MenuRequest menuRequest) {
+    @PutMapping("/menu/update/")
+    public ResponseEntity<?> updateMenu(@RequestBody MenuRequest menuRequest) {
         LOGGER.info("public ResponseEntity<?> updateMenu(@PathVariable Long id,@RequestBody MenuRequest menuRequest)");
         LOGGER.info("menuRequest = " + menuRequest);
+        menuService.updateFromRequest(menuRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

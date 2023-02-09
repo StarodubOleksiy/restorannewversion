@@ -10,7 +10,7 @@
           </div>
       </mat-card-header>
           <mat-card-content>
-  <form class="example-form" [formGroup]="bookConfigureForm" (ngSubmit)="saveBook()">
+  <form class="example-form" [formGroup]="bookConfigureForm" (ngSubmit)="saveDish()">
     <span *ngIf="dish.image">
       <img src="data:image/JPEG;base64,{{dish.image}}" style="height: 50px; width:50px;"
           >

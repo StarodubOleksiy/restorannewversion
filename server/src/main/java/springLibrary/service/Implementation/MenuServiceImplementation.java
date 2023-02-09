@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springLibrary.entities.Dish;
 import springLibrary.entities.Menu;
+import springLibrary.model.request.MenuRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.MenuResponse;
 import springLibrary.repository.MenuRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.MenuService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,6 +36,7 @@ public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuR
 
 
     @Override
+    @Transactional
     public List<MenuResponse> findAllResponse() {
         return getRepository().findAll().stream()
                 .map(this::menuToMenuResponse)
@@ -43,27 +46,26 @@ public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuR
 
 
     @Override
+    @Transactional
     public Optional<MenuResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::menuToMenuResponse);
     }
 
     @Override
-    public void deleteMenu(Long id) {
-        getRepository().deleteById(id);
+    @Transactional
+    public void saveFromRequest(MenuRequest menuRequest)
+    {
+        Menu menu = menuRequest.toMenu();
+        getRepository().save(menu);
     }
 
-
-
     @Override
-    public void save(Menu menu) {
-        //if(menu.getId() == 0)
-            super.save(menu);
-       /* else {
-            if (getRepository().getOne(menu.getId()).getBooks() != null) ;
-            menu.setBooks(getRepository().getOne(menu.getId()).getBooks());
-            super.save(menu);
-        }*/
-
+    @Transactional
+    public void updateFromRequest(MenuRequest menuRequest)
+    {
+        Menu menu = getOne(menuRequest.getId());
+        menu.setName(menuRequest.getName());
+        getRepository().save(menu);
     }
 
 

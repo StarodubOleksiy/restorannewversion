@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.Menu;
 import springLibrary.model.request.DishIngradientRequest;
+import springLibrary.model.request.IngradientRequest;
 import springLibrary.model.response.DishIngradientsResponse;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.IngradientResponse;
@@ -51,12 +52,14 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
 
     @Override
+    @Transactional
     public Optional<IngradientResponse> findByIdResponse(Long id) {
         return getRepository().findById(id).map(this::ingradientToIngradientResponse);
     }
 
 
     @Override
+    @Transactional
     public List<IngradientResponse> findAllResponse() {
         return getRepository().findAll().stream()
                 .map(this::ingradientToIngradientResponse)
@@ -64,6 +67,7 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     }
 
     @Override
+    @Transactional
     public List<IngradientResponse> findNewIngradientsResponse(Long id)
     {
         List<IngradientResponse> newIngradients = new ArrayList<>();
@@ -76,6 +80,7 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
 
     @Override
+    @Transactional
     public Optional<DishIngradientsResponse> getCurrentIngradientInDish(Long dish_id, Long ingradient_id)
     {
         String sql = "SELECT numerosity FROM dish_to_ingradient WHERE dish_id = ? and ingradient_id = ?";
@@ -89,6 +94,7 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
 
     @Override //mkyong.com/spring/spring-jdbctemplate-querying-examples/
+    @Transactional
     public List<DishIngradientsResponse> findIngradientsByDishIdResponse(Long dish_id) {
         List <DishIngradientsResponse> listDishIngradientsResponse = new ArrayList<>();
         String sql = "SELECT numerosity FROM dish_to_ingradient WHERE dish_id = ? and ingradient_id = ?";
@@ -138,6 +144,7 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
 
     @Override
+    @Transactional
     public List<IngradientResponse> findIngradientsByName(String name) {
         return getRepository().findByName(name).stream()
                 .map(this::ingradientToIngradientResponse)
@@ -146,13 +153,22 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
 
 
     @Override
-    public void deleteIngradient(Long id) {
-        getRepository().deleteById(id);
+    @Transactional
+    public void saveFromRequest(IngradientRequest ingradientRequest)
+    {
+        Ingradient ingradient = ingradientRequest.toIngradient();
+        getRepository().save(ingradient);
     }
 
-
-
-
+    @Override
+    @Transactional
+    public void updateFromRequest(IngradientRequest ingradientRequest)
+    {
+        Ingradient ingradient = getOne(ingradientRequest.getId());
+        ingradient.setName(ingradientRequest.getName());
+        ingradient.setNumerosity(ingradientRequest.getNumberOnStorage());
+        getRepository().save(ingradient);
+    }
 
 
 

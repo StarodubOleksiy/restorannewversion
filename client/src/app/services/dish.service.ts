@@ -49,7 +49,7 @@ saveDish(dish: Dish): Observable<HttpResponse<any>> {
 
   updateDish(dish: Dish): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
-        this.dishUrl + '/dish/update/'+dish.id, dish, {observe: 'response'});
+        this.dishUrl + '/dish/update/', dish, {observe: 'response'});
   }
 
 

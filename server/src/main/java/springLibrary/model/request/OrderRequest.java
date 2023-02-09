@@ -2,7 +2,10 @@ package springLibrary.model.request;
 
 import lombok.Data;
 import springLibrary.entities.Menu;
+import springLibrary.entities.OrderStatus;
 import springLibrary.entities.Orders;
+
+import java.time.LocalDate;
 
 @Data
 public class OrderRequest {
@@ -35,10 +38,11 @@ public class OrderRequest {
     }
 
     public Orders toOrder() {
+        LocalDate date = LocalDate.now();
         Orders order = new Orders();
-        if (id != null)
-            order.setId(id);
         order.setTableNumber(Integer.valueOf(tableNumber));
+        order.setOrderDate(date.toString());
+        order.setState(OrderStatus.open);
         return order;
     }
 

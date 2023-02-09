@@ -64,38 +64,6 @@ export class AdddishComponent implements OnInit {
     }
 
 
-  saveBook(): void { //Delete this method later
-    this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
-    if (this.configureType.type === SaveDishConfigureType.ADD) {
-      this.snackBar.open('Нова страва успішно додана.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['editdishes']);
-  } else {
-      this.snackBar.open('Страва успішно відредагована.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['editdishes']);
-  }   
-  }, error => {
-      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-          , null, {
-              duration: 2000
-          });
-  });
-
-};
-
-editDish(): void { //Delete this method later
-  this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
-        this.snackBar.open('Нова страва успішно додана.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['editdishes']);
-    });
-  };
-
-
   saveDish(): void {
     if (this.configureType.type === SaveDishConfigureType.ADD) {
       this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {

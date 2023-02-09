@@ -79,7 +79,7 @@ public class CookedDishController {
             exception.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        cookedDishService.saveCookedDish(cookedDishRequest);
+        cookedDishService.saveFromRequest(cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -105,9 +105,10 @@ public class CookedDishController {
     }
 
     @PutMapping("cookeddish/update/")
-    public ResponseEntity<?> updateCookedDish(@PathVariable Long id,@RequestBody CookedDishRequest cookedDishRequest) {
+    public ResponseEntity<?> updateCookedDish(@RequestBody CookedDishRequest cookedDishRequest) {
         LOGGER.info("Method public ResponseEntity<?> updateCookedDish(@PathVariable Long id,@RequestBody CookedDishRequest cookedDishRequest) ");
         LOGGER.info("cookedDishRequest = " + cookedDishRequest);
+        cookedDishService.updateFromRequest(cookedDishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

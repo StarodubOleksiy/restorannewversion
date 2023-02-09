@@ -38,6 +38,9 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Autowired
     IngradientService ingradientService;
 
+    @Autowired
+    private MenuService menuService;
+
 
     protected DishServiceImplementation(@Autowired DishRepository repository) {
         super(repository);
@@ -85,8 +88,22 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
 
     @Override
     @Transactional
-    public void saveFromRequest(Dish dish, DishRequest dishRequest) {
-        if (dishRequest.getImage() != null) //{
+    public void saveFromRequest(DishRequest dishRequest) {
+        Dish dish = dishRequest.toDish();
+        dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
+        getRepository().save(dish);
+    }
+
+    @Override
+    @Transactional
+    public void updateFromRequest(DishRequest dishRequest)
+    {
+        Dish dish = getOne(dishRequest.getId());
+        dish.setName(dishRequest.getName());
+        dish.setPrice(dishRequest.getPrice());
+        dish.setWeight(dishRequest.getWeight());
+        dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
+        if (dishRequest.getImage() != null)
             dish.setImage(Base64.getDecoder().decode(dishRequest.getImage()));
         getRepository().save(dish);
     }

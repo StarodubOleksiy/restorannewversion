@@ -11,10 +11,16 @@ public class MenuRequest {
 
     public Menu toMenu() {
         Menu menu = new Menu();
-        if (id != null)
-            menu.setId(id);
         menu.setName(name);
         return menu;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

@@ -8,13 +8,17 @@ import org.springframework.stereotype.Service;
 import springLibrary.entities.Ingradient;
 import springLibrary.entities.OrderStatus;
 import springLibrary.entities.Orders;
+import springLibrary.entities.Waiter;
+import springLibrary.model.request.OrderRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.model.response.OrderResponse;
 import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
+import springLibrary.service.EmployeeService;
 import springLibrary.service.OrderService;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -32,6 +36,11 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     private JdbcTemplate jdbcTemplate;
 
     private final String SQL_DELETE_ORDER = "DELETE FROM orders WHERE id=%d";
+
+    LocalDate date = LocalDate.now();
+
+    @Autowired
+    private EmployeeService employeeService;
 
     private OrderResponse orderToOrderResponse(Orders order) {
         OrderResponse response = new OrderResponse();
@@ -79,6 +88,27 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
         // getRepository().deleteById(id); //Todo this method does not work and I do not know why.
         LOGGER.info("this.getOne(id).getState().getStatus() ===!!!" + this.getOne(id).getState().getStatus());
         jdbcTemplate.execute(String.format(SQL_DELETE_ORDER,id));
+    }
+
+    @Override
+    @Transactional
+    public void saveFromRequest(OrderRequest orderRequest)
+    {
+        Orders order = orderRequest.toOrder();
+        order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
+        getRepository().save(order);
+    }
+
+    @Override
+    @Transactional
+    public void updateFromRequest(OrderRequest orderRequest)
+    {
+        Orders order = getOne(orderRequest.getId());
+        order.setTableNumber(Integer.parseInt(orderRequest.getTableNumber()));
+        order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
+        order.setOrderDate(date.toString());
+        order.setState(OrderStatus.open);
+        getRepository().save(order);
     }
 
 

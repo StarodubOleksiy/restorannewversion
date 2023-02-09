@@ -13,6 +13,7 @@ import springLibrary.repository.EmployeeRepository;
 import springLibrary.repository.OrderRepository;
 import springLibrary.service.AbstractService;
 import springLibrary.service.CookedDishService;
+import springLibrary.service.EmployeeService;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -96,6 +97,26 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
     public void deleteCookedDish(Long id) {
        // getRepository().deleteById(id); //Todo this method does not work and I do not know why.
         jdbcTemplate.execute(String.format(SQL_DELETE_COOKED_DISH,id));
+    }
+
+    @Override
+    @Transactional
+    public void saveFromRequest(CookedDishRequest cookedDishRequest)
+    {
+        Cooked_Dish cookedDish = new Cooked_Dish();
+        cookedDish.setCook(new Cook(employeeRepository.getOne(cookedDishRequest.getCookerId())));
+        cookedDish.setOrder(orderRepository.getOne(cookedDishRequest.getOrderId()));
+        cookedDish.setDish(dishRepository.getOne(cookedDishRequest.getDishId()));
+        getRepository().save(cookedDish);
+    }
+
+    @Override
+    @Transactional
+    public void updateFromRequest(CookedDishRequest cookedDishRequest)
+    {
+        Cooked_Dish cookedDish = getOne(cookedDishRequest.getId());
+        cookedDish.setCook(new Cook(employeeRepository.getOne(cookedDishRequest.getCookerId())));
+        getRepository().save(cookedDish);
     }
 
 

@@ -17,7 +17,6 @@ public class Waiter extends Employee {
 
     public Waiter(Employee employee)
     {
-       // if(em)
         this.setId(employee.getId());
         this.setName(employee.getName());
         this.setPhoneNumber(employee.getPhoneNumber());

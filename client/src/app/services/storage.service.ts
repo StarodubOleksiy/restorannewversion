@@ -71,7 +71,7 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
 
   updateIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
-        this.ingradientUrl + '/ingradient/update/'+ingradient.id, ingradient, {observe: 'response'});
+        this.ingradientUrl + '/ingradient/update/', ingradient, {observe: 'response'});
   } 
 
 
@@ -82,7 +82,7 @@ saveIngradient(ingradient: Ingradient): Observable<HttpResponse<any>> {
     }
 
     changeNumerosityOfIngradientsInDish(ingradient: DishIngradient): Observable<HttpResponse<any>> { 
-      return this.http.post<HttpResponse<any>>( //addingradient/save
+      return this.http.put<HttpResponse<any>>( //addingradient/save
         this.ingradientUrl + 'changenumerosity', ingradient, {observe: 'response'});
     
       }

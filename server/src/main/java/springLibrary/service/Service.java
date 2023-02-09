@@ -22,9 +22,4 @@ public interface Service<T, ID extends Serializable, R extends JpaRepository<T, 
 
     Optional<T> findById(ID id);
 
-    //public T getById(ID id);
-
-
-    // List<T> saveAll(Iterable<T> iterable);
-
 }

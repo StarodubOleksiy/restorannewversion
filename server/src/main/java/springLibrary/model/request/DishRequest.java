@@ -9,6 +9,8 @@ import springLibrary.controller.DishController;
 import springLibrary.entities.Dish;
 import springLibrary.service.MenuService;
 
+import java.util.Base64;
+
 
 @Data
 public class DishRequest {
@@ -35,6 +37,18 @@ public class DishRequest {
         return menuId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public Float getWeight() {
+        return weight;
+    }
+
     public void setMenuId(int menuId) {
         this.menuId = menuId;
     }
@@ -49,14 +63,13 @@ public class DishRequest {
 
     public Dish toDish() {
         Dish dish = new Dish();
-        if (id != null)
-            dish.setId(id);
         dish.setName(name);
         dish.setPrice(price);
         dish.setWeight(weight);
+        if (getImage() != null) //{
+            dish.setImage(Base64.getDecoder().decode(getImage()));
         return dish;
     }
-
 
 
 }

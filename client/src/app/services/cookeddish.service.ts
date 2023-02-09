@@ -43,7 +43,7 @@ saveCookedDish(cookedDish:CookedDish): Observable<HttpResponse<any>> {
 
   updateCookedDish(cookedDish:CookedDish): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
-        this.coockedDishesUrl + '/cookeddish/update/'+cookedDish.id, cookedDish, {observe: 'response'});
+        this.coockedDishesUrl + '/cookeddish/update/', cookedDish, {observe: 'response'});
   }
 
 

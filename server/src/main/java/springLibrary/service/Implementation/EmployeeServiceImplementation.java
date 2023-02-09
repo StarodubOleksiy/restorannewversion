@@ -97,7 +97,19 @@ public class EmployeeServiceImplementation extends AbstractService<Employee, Lon
 
     @Override
     @Transactional
-    public void saveFromRequest(Employee employee, EmployeeRequest employeeRequest) {
+    public void saveFromRequest(EmployeeRequest employeeRequest) {
+        Employee employee = employeeRequest.toEmployee();
+        getRepository().save(employee);
+    }
+
+    @Override
+    @Transactional
+    public void updateFromRequest(EmployeeRequest employeeRequest) {
+        Employee employee = getOne(employeeRequest.getId());
+        employee.setName(employeeRequest.getName());
+        employee.setSurname(employeeRequest.getSurname());
+        employee.setPhoneNumber(employeeRequest.getPhoneNumber());
+        employee.setSalary(employeeRequest.getSalary());
         if (employeeRequest.getPhotography() != null)
             employee.setPhotography(Base64.getDecoder().decode(employeeRequest.getPhotography()));
         getRepository().save(employee);

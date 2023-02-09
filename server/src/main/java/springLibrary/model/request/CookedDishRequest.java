@@ -2,6 +2,7 @@ package springLibrary.model.request;
 
 
 import lombok.Data;
+import springLibrary.entities.Cooked_Dish;
 
 @Data
 public class CookedDishRequest {
@@ -52,4 +53,6 @@ public class CookedDishRequest {
                 ", orderId=" + orderId +
                 '}';
     }
+
+
 }

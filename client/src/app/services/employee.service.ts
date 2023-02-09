@@ -29,7 +29,7 @@ export class EmployeeService {
 
     updateEmployee(employee: Employee): Observable<HttpResponse<any>> {
       return this.http.put<HttpResponse<any>>(
-          this.employeeUrl + '/employee/update/'+employee.id, employee, {observe: 'response'});
+          this.employeeUrl + '/employee/update/', employee, {observe: 'response'});
     }
   
 

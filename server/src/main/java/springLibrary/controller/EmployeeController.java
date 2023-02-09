@@ -35,7 +35,7 @@ public class EmployeeController {
 
     @GetMapping("waiters")
     public ResponseEntity<List<EmployeeResponse>> waiters() {
-           return new ResponseEntity<>(employeeService.getAllWaiters(), HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.getAllWaiters(), HttpStatus.OK);
     }
 
     @GetMapping("cookers")
@@ -54,35 +54,23 @@ public class EmployeeController {
     @PostMapping("employees/save")
     public ResponseEntity<?> save(@RequestBody EmployeeRequest employeeRequest) {
         LOGGER.info("employeeRequest = " + employeeRequest);
-        //   LOGGER.info("employee = "+employee);
-        if(employeeRequest.getId() == null) {
-            Employee employee = employeeRequest.toEmployee();
-            employeeService.saveFromRequest(employee, employeeRequest);
-        }
-        else
-        {
-            Employee employee = employeeService.getOne(employeeRequest.getId());
-            employee.setName(employeeRequest.getName());
-            employee.setSurname(employeeRequest.getSurname());
-            employee.setPhoneNumber(employeeRequest.getPhoneNumber());
-            employee.setSalary(employeeRequest.getSalary());
-            employeeService.saveFromRequest(employee, employeeRequest);
-        }
+        employeeService.saveFromRequest(employeeRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("deleteemployee/{id}")
     ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
-        LOGGER.info("employeeid = "+id);
+        LOGGER.info("employeeid = " + id);
         employeeService.delete(employeeService.getOne(id));
-        return new  ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
-    @PutMapping("/employee/update/{id}")
-    public ResponseEntity<?> updateEmployee(@PathVariable Long id,@RequestBody EmployeeRequest employeeRequest) {
+    @PutMapping("/employee/update/")
+    public ResponseEntity<?> updateEmployee(@RequestBody EmployeeRequest employeeRequest) {
         LOGGER.info("public ResponseEntity<?> updateEmployee(@PathVariable Long id,@RequestBody EmployeeRequest employeeRequest)");
         LOGGER.info("employeeRequest = " + employeeRequest);
+        employeeService.updateFromRequest(employeeRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -44,7 +44,7 @@ saveMenu(menu: Menu): Observable<HttpResponse<any>> {
 
   updateMenu(menu: Menu): Observable<HttpResponse<any>> {
     return this.http.put<HttpResponse<any>>(
-        this.menuUrl + '/menu/update/'+menu.id, menu, {observe: 'response'});
+        this.menuUrl + '/menu/update/', menu, {observe: 'response'});
   }
 
 

@@ -63,7 +63,7 @@ export class OrderService {
 
     updateOrder(order: Order): Observable<HttpResponse<any>> {
       return this.http.put<HttpResponse<any>>(
-          this.orderUrl + '/order/update/'+order.id, order, {observe: 'response'});
+          this.orderUrl + '/order/update/', order, {observe: 'response'});
     }
 
 

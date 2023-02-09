@@ -57,31 +57,7 @@ export class AddemployeeComponent implements OnInit {
   }
   
 
-  saveEmployee(): void {
-    this.employeeServise.saveEmployee(this.employee).subscribe((response: HttpResponse<any>) => {
-    if (this.configureType.type === SaveEmployeeConfigureType.ADD) {
-      this.snackBar.open('Новий співробітник успішно доданий.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['employees']);
-  } else {
-      this.snackBar.open('Співробітник успішно відредагований.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['employees']);
-  }  
- } , error => {
-      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-          , null, {
-              duration: 2000
-          });
-  });
-
-};
-
-
-
-saveEmploye(): void {
+saveEmployee(): void {
   if (this.configureType.type === SaveEmployeeConfigureType.ADD) {
     this.employeeServise.saveEmployee(this.employee).subscribe((response: HttpResponse<any>) => {
       this.snackBar.open('Новий співробітник успішно доданий.', null, {

@@ -81,13 +81,8 @@ public class OrderController {
 
     @PostMapping("/addorder/save")
     public ResponseEntity<?> save(@RequestBody OrderRequest orderRequest) {
-        LocalDate date = LocalDate.now();
-        Orders order = orderRequest.toOrder();
-        order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
-        order.setOrderDate(date.toString());
-        order.setState(OrderStatus.open);
-        LOGGER.info("order = " + order);
-        orderService.save(order);
+        LOGGER.info("orderRequest = " + orderRequest);
+        orderService.saveFromRequest(orderRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -121,10 +116,11 @@ public class OrderController {
     }
 
 
-    @PutMapping("/order/update/{id}")
-    public ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody OrderRequest orderRequest) {
+    @PutMapping("/order/update/")
+    public ResponseEntity<?> updateOrder(@RequestBody OrderRequest orderRequest) {
         LOGGER.info("Method public  ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody OrderRequest orderRequest)");
         LOGGER.info("orderRequest = " + orderRequest);
+        orderService.updateFromRequest(orderRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

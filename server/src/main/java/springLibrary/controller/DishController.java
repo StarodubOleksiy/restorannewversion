@@ -27,9 +27,6 @@ public class DishController {
     @Autowired
     private DishService dishService;
 
-    @Autowired
-    private MenuService menuService;
-
     private static final Logger LOGGER = LoggerFactory.getLogger(DishController.class);
 
 
@@ -49,10 +46,7 @@ public class DishController {
 
     @PostMapping("dish/save")
    public ResponseEntity<?> save(@RequestBody DishRequest dishRequest) {
-           Dish dish = dishRequest.toDish();
-           dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
-           LOGGER.info("dish = "+dish);//
-        dishService.saveFromRequest(dish, dishRequest);
+       dishService.saveFromRequest(dishRequest);
        return new ResponseEntity<>(HttpStatus.OK);
    }
 
@@ -79,10 +73,11 @@ public class DishController {
     }
 
 
-    @PutMapping("/dish/update/{id}")
-    public ResponseEntity<?> updateDish(@PathVariable Long id,@RequestBody DishRequest dishRequest) {
+    @PutMapping("/dish/update/")
+    public ResponseEntity<?> updateDish(@RequestBody DishRequest dishRequest) {
         LOGGER.info("public ResponseEntity<?> updateDish(@PathVariable Long id,@RequestBody DishRequest dishRequest)");
         LOGGER.info("dishRequest = " + dishRequest);
+        dishService.updateFromRequest(dishRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

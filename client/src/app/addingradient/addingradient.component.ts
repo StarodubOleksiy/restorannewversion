@@ -44,31 +44,8 @@ export class AddingradientComponent implements OnInit {
     }
   }
 
- 
-  saveIngradient(): void {
-    this.storageService.saveIngradient(this.ingradient).subscribe((response: HttpResponse<any>) => {
-      if (this.configureType.type === SaveIngradientConfigureType.ADD) {
-        this.snackBar.open('Новий інградіент успішно доданий.', null, {
-            duration: 2000
-        });
-        this.router.navigate(['ingradients']);
-    } else {
-        this.snackBar.open('Інградіент відредагований.', null, {
-            duration: 2000
-        });
-        this.router.navigate(['ingradients']);
-    } 
-  }, error => {
-      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-          , null, {
-              duration: 2000
-          });
-  });
 
-};
-
-
-saveIngradien(): void {
+saveIngradient(): void {
   if (this.configureType.type === SaveIngradientConfigureType.ADD) {
     this.storageService.saveIngradient(this.ingradient).subscribe((response: HttpResponse<any>) => {
       this.snackBar.open('Новий інградіент успішно доданий.', null, {

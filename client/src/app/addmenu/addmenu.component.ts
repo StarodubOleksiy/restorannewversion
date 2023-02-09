@@ -50,29 +50,7 @@ export class AddmenuComponent implements OnInit {
   }
 
 
-  saveMenu(): void { 
-  this.menuServise.saveMenu(this.menu).subscribe((response: HttpResponse<any>) => {
-    if (this.configureType.type === SaveMenuConfigureType.ADD) {
-      this.snackBar.open('Нове меню успішно додане.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['menu']);
-  } else {
-      this.snackBar.open('Меню успішно відредаговане.', null, {
-          duration: 2000
-      });
-      this.router.navigate(['menu']);
-  }    
-  }, error => {
-      this.snackBar.open('Menu with the such name is already exists in database .'
-          , null, {
-              duration: 2000
-          });
-  });
-};
-
-
-saveMen(): void {
+saveMenu(): void {
   if (this.configureType.type === SaveMenuConfigureType.ADD) {
     this.menuServise.saveMenu(this.menu).subscribe((response: HttpResponse<any>) => {
       this.snackBar.open('Нове меню успішно додане.', null, {
