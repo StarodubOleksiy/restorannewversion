@@ -42,7 +42,6 @@ export class AddcookeddishComponent implements OnInit {
   ngOnInit() {
     if (this.route.snapshot.paramMap.get('configureType') === 'edit') {
       this.configureType = new ConfigureType('edit', AddCookedDishConfigureType.EDIT);
-     // this.getCookers();
       this.loadDish();
       this.getCookers();
       this.getDishes();
@@ -63,8 +62,7 @@ export class AddcookeddishComponent implements OnInit {
     this.cookedDishService.getCookedDish(id)
         .subscribe(cookeddish => {
             this.loadedCookedDish = cookeddish;
-            this.cookedDish = cookeddish.clone(); 
-            console.log('this.cookedDish.cookerId = '+this.cookedDish.cookerId);           
+            this.cookedDish = cookeddish.clone();              
         });
     }
 
@@ -73,7 +71,6 @@ export class AddcookeddishComponent implements OnInit {
     this.employeeService.getCookers()
        .subscribe(cookers => {this.cookers =cookers.body;
       });       
-       console.log("cookers.size() = "+this.cookers.length);
       }
 
 
@@ -82,8 +79,7 @@ export class AddcookeddishComponent implements OnInit {
        .subscribe(dishes => {
         this.dishes =dishes.body;
       });       
-       console.log("authors.size() = "+this.dishes.length);
-         }
+           }
 
       saveCookedDish(): void {
         const cookedDishid = parseInt(this.route.snapshot.paramMap.get('cookeddishid'));

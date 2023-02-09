@@ -28,11 +28,9 @@ export class AddmenuComponent implements OnInit {
 });
 
   constructor(private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
     private router: Router,
     private menuServise : MenuService,
     private route: ActivatedRoute,
-    private location: Location,
     private app: AppComponent) { }
 
 
@@ -63,7 +61,6 @@ saveMenu(): void {
             duration: 2000
         });
       }); 
-
 } else
 {
   this.menuServise.updateMenu(this.menu).subscribe((response: HttpResponse<any>) => {
@@ -91,7 +88,6 @@ loadMenu(): void {
           this.menu = menu.clone();            
       });
   }
-
 }
 
 export enum SaveMenuConfigureType {

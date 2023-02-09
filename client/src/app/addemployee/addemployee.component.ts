@@ -87,23 +87,16 @@ saveEmployee(): void {
 }
 }
 
-
-
 onFileChange(event) {
   let reader = new FileReader();
   if (event.target.files && event.target.files.length > 0) {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-      //  let tempString = 
           this.employee.photography = reader.result.toString().split(',')[1];
       };
   }
-
 }
-
-
-
 
 loadEmployee(): void {
   const id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -113,11 +106,7 @@ loadEmployee(): void {
           this.employee = employee.clone();            
       });
   }
-
-
-
 }
-
 
 export enum SaveEmployeeConfigureType {
   EDIT, ADD

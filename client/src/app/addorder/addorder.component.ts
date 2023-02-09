@@ -5,7 +5,7 @@ import { EmployeeService } from '../services/employee.service';
 import { OrderService } from '../services/order.service';
 import {Router,ActivatedRoute} from '@angular/router';
 import {HttpResponse} from '@angular/common/http';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import { AppComponent } from '../app.component';
 
@@ -58,7 +58,6 @@ export class AddorderComponent implements OnInit {
 
 
   refresh(): void {
-    //console.log('selectedId ='+this.selectedId);
     this.getWaiters();
   }
 
@@ -67,11 +66,7 @@ export class AddorderComponent implements OnInit {
   getWaiters(): void {
     this.employeeService.getWaiters()
        .subscribe(waiters => {this.waiters =waiters.body;
-        //this.returnedAuthors = this.authors.slice(0, 10);
       });
-       
-       console.log("authors.size() = "+this.waiters.length);
-       
   }
 
   loadOrder(): void {
@@ -114,7 +109,6 @@ saveOrder(): void {
     });
 }
 }
-
 }
 
 

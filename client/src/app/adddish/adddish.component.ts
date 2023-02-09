@@ -96,9 +96,7 @@ export class AdddishComponent implements OnInit {
 
 getMenu(): void {
   this.menuService.getAllMenu()
-     .subscribe(menus => this.menus = menus);
-     console.log("menu.size() = "+this.menus.length);
-     
+     .subscribe(menus => this.menus = menus);    
 }
 
 
