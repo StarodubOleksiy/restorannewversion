@@ -59,12 +59,9 @@ public class OrderController {
                 .orElseGet(() -> new ResponseEntity<Object>("Incorrect order id", HttpStatus.BAD_REQUEST));
     }
 
-    // ResponseEntity<List<OrderResponse>> ingradients()
     @GetMapping("/date")
-   // public List<OrderResponse> getOrdersByDate(@RequestParam("date") String date) {
     public ResponseEntity<List<OrderResponse>> getOrdersByDate(@RequestParam("date") String date) {
-        //new ResponseEntity<>(orderService.findAllResponse(), HttpStatus.OK);
-        return new ResponseEntity<>(orderService.findOrdersByDate(convertDateToCorrectFormat(date)), HttpStatus.OK);//orderService.findOrdersByDate(finalDate.toString());
+        return new ResponseEntity<>(orderService.findOrdersByDate(convertDateToCorrectFormat(date)), HttpStatus.OK);
     }
 
 

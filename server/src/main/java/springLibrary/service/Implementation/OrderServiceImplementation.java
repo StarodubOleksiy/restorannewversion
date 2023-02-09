@@ -69,12 +69,6 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     }
 
     @Override
-    public void save(Orders order) {
-        super.save(order);
-
-    }
-
-    @Override
     public List<OrderResponse> findOrdersByDate(String date) {
         return getRepository().findByDate(date).stream()
                 .map(this::orderToOrderResponse)
