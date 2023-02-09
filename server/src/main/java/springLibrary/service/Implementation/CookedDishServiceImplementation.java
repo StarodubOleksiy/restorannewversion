@@ -79,19 +79,6 @@ public class CookedDishServiceImplementation extends AbstractService<Cooked_Dish
     }
 
 
-   @Override
-   @Transactional
-    public void saveCookedDish(CookedDishRequest cookedDishRequest) {
-        Cooked_Dish cookedDish = new Cooked_Dish();
-        if (cookedDishRequest.getId() != null)
-            cookedDish.setId(cookedDishRequest.getId());
-        cookedDish.setCook(new Cook(employeeRepository.getOne(cookedDishRequest.getCookerId())));
-        cookedDish.setOrder(orderRepository.getOne(cookedDishRequest.getOrderId()));
-        cookedDish.setDish(dishRepository.getOne(cookedDishRequest.getDishId()));
-        getRepository().save(cookedDish);
-    }
-
-
     @Override
     @Transactional
     public void deleteCookedDish(Long id) {

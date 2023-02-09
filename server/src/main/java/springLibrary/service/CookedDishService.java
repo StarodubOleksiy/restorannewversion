@@ -19,8 +19,6 @@ public interface CookedDishService extends Service<Cooked_Dish, Long, CookedDish
 
     public List< CookedDishResponse> findByOrderIdResponse(Long orderId);
 
-    public void saveCookedDish(CookedDishRequest cookedDishRequest);
-
     public void deleteCookedDish(Long id);
 
     public void saveFromRequest(CookedDishRequest cookedDishRequest);
