@@ -3,6 +3,7 @@ package springLibrary.entities;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -37,7 +38,7 @@ public class Menu extends AbstractIdentifiableEntity {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize(name.toLowerCase());
     }
 
    public void setDishes(Set<Dish> dishes) {

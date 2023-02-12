@@ -3,6 +3,7 @@ package springLibrary.entities;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.util.StringUtils;
 import springLibrary.exceptions.NoIngradientsOnStorageException;
 
 import javax.persistence.*;
@@ -32,7 +33,7 @@ public class Ingradient extends AbstractIdentifiableEntity {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize(name.toLowerCase());
     }
 
     public float getNumerosity() {

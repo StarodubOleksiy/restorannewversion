@@ -21,7 +21,6 @@ public class Cook extends Employee {
 
     public Cook(Employee employee)
     {
-        // if(em)
         this.setId(employee.getId());
         this.setName(employee.getName());
         this.setPhoneNumber(employee.getPhoneNumber());

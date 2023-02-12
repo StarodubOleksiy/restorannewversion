@@ -3,6 +3,7 @@ package springLibrary.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -62,11 +63,11 @@ public class Employee extends AbstractIdentifiableEntity {
     }
 
     public void setSurname(String surname) {
-        this.surname = surname;
+        this.surname = StringUtils.capitalize(surname.toLowerCase());
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize(name.toLowerCase());
     }
 
     public byte[] getPhotography() {

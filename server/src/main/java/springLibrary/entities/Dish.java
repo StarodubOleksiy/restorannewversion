@@ -2,6 +2,7 @@ package springLibrary.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.util.StringUtils;
 
 
 import javax.persistence.*;
@@ -66,7 +67,7 @@ public class Dish extends AbstractIdentifiableEntity {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = StringUtils.capitalize(name.toLowerCase());
     }
 
     public float getPrice() {
