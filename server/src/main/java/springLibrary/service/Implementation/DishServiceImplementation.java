@@ -63,6 +63,11 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
         return response;
     }
 
+    private void assignDish(Dish dish,DishRequest dishRequest)
+    {
+        dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
+    }
+
 
     @Override
     public List<DishResponse> findDishesByName(String name) {
@@ -90,7 +95,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     @Transactional
     public void saveFromRequest(DishRequest dishRequest) {
         Dish dish = dishRequest.toDish();
-        dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
+        this.assignDish(dish,dishRequest);
         getRepository().save(dish);
     }
 
@@ -99,12 +104,8 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
     public void updateFromRequest(DishRequest dishRequest)
     {
         Dish dish = getOne(dishRequest.getId());
-        dish.setName(dishRequest.getName());
-        dish.setPrice(dishRequest.getPrice());
-        dish.setWeight(dishRequest.getWeight());
-        dish.setMenu(menuService.findById(Long.valueOf(dishRequest.getMenuId())).orElse(null));
-        if (dishRequest.getImage() != null)
-            dish.setImage(Base64.getDecoder().decode(dishRequest.getImage()));
+        dishRequest.setDishFromRequest(dish);
+        this.assignDish(dish,dishRequest);
         getRepository().save(dish);
     }
 

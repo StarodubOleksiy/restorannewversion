@@ -11,7 +11,7 @@ public class MenuRequest {
 
     public Menu toMenu() {
         Menu menu = new Menu();
-        menu.setName(name);
+        this.setMenuFromRequest(menu);
         return menu;
     }
 
@@ -21,6 +21,10 @@ public class MenuRequest {
 
     public String getName() {
         return name;
+    }
+
+    public void setMenuFromRequest(Menu menu) {
+        menu.setName(name);
     }
 
     @Override

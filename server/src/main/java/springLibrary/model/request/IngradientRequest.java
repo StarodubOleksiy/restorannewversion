@@ -13,8 +13,7 @@ public class IngradientRequest {
 
     public Ingradient toIngradient() {
         Ingradient ingradient = new Ingradient();
-        ingradient.setName(name);
-        ingradient.setNumerosity(numberOnStorage);
+        this.setIngradientFromRequest(ingradient);
         return ingradient;
     }
 
@@ -28,6 +27,11 @@ public class IngradientRequest {
 
     public float getNumberOnStorage() {
         return numberOnStorage;
+    }
+
+    public void setIngradientFromRequest(Ingradient ingradient) {
+        ingradient.setName(name);
+        ingradient.setNumerosity(numberOnStorage);
     }
 
     @Override

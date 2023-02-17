@@ -63,12 +63,16 @@ public class DishRequest {
 
     public Dish toDish() {
         Dish dish = new Dish();
+        this.setDishFromRequest(dish);
+        return dish;
+    }
+
+    public void setDishFromRequest(Dish dish) {
         dish.setName(name);
         dish.setPrice(price);
         dish.setWeight(weight);
         if (getImage() != null) //{
             dish.setImage(Base64.getDecoder().decode(getImage()));
-        return dish;
     }
 
 

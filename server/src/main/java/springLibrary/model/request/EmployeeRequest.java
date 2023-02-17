@@ -79,13 +79,17 @@ public class EmployeeRequest {
             employee = new Waiter();
         else
             employee = new Cook();
+        this.setEmployeeFromRequest(employee);
+        return employee;
+    }
+
+    public void setEmployeeFromRequest(Employee employee) {
         employee.setName(name);
         employee.setSurname(surname);
         employee.setPhoneNumber(phoneNumber);
         employee.setSalary(salary);
         if (getPhotography() != null)
             employee.setPhotography(Base64.getDecoder().decode(getPhotography()));
-        return employee;
     }
 
 

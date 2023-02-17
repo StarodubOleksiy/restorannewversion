@@ -38,12 +38,18 @@ public class OrderRequest {
     }
 
     public Orders toOrder() {
-        LocalDate date = LocalDate.now();
+
         Orders order = new Orders();
+        this.setOrderFromRequest(order);
+        return order;
+    }
+
+    public void setOrderFromRequest(Orders order)
+    {
+        LocalDate date = LocalDate.now();
         order.setTableNumber(Integer.valueOf(tableNumber));
         order.setOrderDate(date.toString());
         order.setState(OrderStatus.open);
-        return order;
     }
 
     @Override

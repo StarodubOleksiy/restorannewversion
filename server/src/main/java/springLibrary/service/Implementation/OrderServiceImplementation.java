@@ -37,8 +37,6 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
 
     private final String SQL_DELETE_ORDER = "DELETE FROM orders WHERE id=%d";
 
-    LocalDate date = LocalDate.now();
-
     @Autowired
     private EmployeeService employeeService;
 
@@ -52,6 +50,11 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
         response.setOrderDate(order.getOrderDate());
         response.setState(OrderStatus.enumToString(order.getState()));// response.setState(OrderStatus.enumToString(order.getState()));
         return response;
+    }
+
+    private void assignOrder(Orders order,OrderRequest orderRequest)
+    {
+        order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
     }
 
 
@@ -89,7 +92,7 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     public void saveFromRequest(OrderRequest orderRequest)
     {
         Orders order = orderRequest.toOrder();
-        order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
+        this.assignOrder(order,orderRequest);
         getRepository().save(order);
     }
 
@@ -98,10 +101,8 @@ public class OrderServiceImplementation extends AbstractService<Orders, Long, Or
     public void updateFromRequest(OrderRequest orderRequest)
     {
         Orders order = getOne(orderRequest.getId());
-        order.setTableNumber(Integer.parseInt(orderRequest.getTableNumber()));
-        order.setWaiter(new Waiter(employeeService.getOne(orderRequest.getWaiterId())));
-        order.setOrderDate(date.toString());
-        order.setState(OrderStatus.open);
+        orderRequest.setOrderFromRequest(order);
+        this.assignOrder(order,orderRequest);
         getRepository().save(order);
     }
 

@@ -64,7 +64,7 @@ public class MenuServiceImplementation extends AbstractService<Menu, Long, MenuR
     public void updateFromRequest(MenuRequest menuRequest)
     {
         Menu menu = getOne(menuRequest.getId());
-        menu.setName(menuRequest.getName());
+        menuRequest.setMenuFromRequest(menu);
         getRepository().save(menu);
     }
 

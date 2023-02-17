@@ -165,8 +165,7 @@ public class IngradientServiceImplementation extends AbstractService<Ingradient,
     public void updateFromRequest(IngradientRequest ingradientRequest)
     {
         Ingradient ingradient = getOne(ingradientRequest.getId());
-        ingradient.setName(ingradientRequest.getName());
-        ingradient.setNumerosity(ingradientRequest.getNumberOnStorage());
+        ingradientRequest.setIngradientFromRequest(ingradient);
         getRepository().save(ingradient);
     }
 
