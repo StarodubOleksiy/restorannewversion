@@ -67,13 +67,13 @@ export class AdddishComponent implements OnInit {
   saveDish(): void {
     if (this.configureType.type === SaveDishConfigureType.ADD) {
       this.dishService.saveDish(this.dish).subscribe((response: HttpResponse<any>) => {
-        this.snackBar.open('Нова страва успішно додана.', null, {
-          duration: 2000
+       this.snackBar.open('Нова страва успішно додана.', response.status.toString(), {
+                duration: 2000
       });
       this.router.navigate(['editdishes']);
     }, error => {
-      this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-          , null, {
+       this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+          ,error.status , {
               duration: 2000
           });
         }); 

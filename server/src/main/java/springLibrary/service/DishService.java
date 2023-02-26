@@ -1,10 +1,12 @@
 package springLibrary.service;
 
+import org.postgresql.util.PSQLException;
 import springLibrary.entities.Dish;
 import springLibrary.model.request.DishRequest;
 import springLibrary.model.response.DishResponse;
 import springLibrary.repository.DishRepository;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -19,7 +21,7 @@ public interface DishService extends Service<Dish, Long, DishRepository> {
 
    public Optional<DishResponse> findByIdResponse(Long id);
 
-   public void saveFromRequest(DishRequest dishRequest);
+   public void saveFromRequest(DishRequest dishRequest) ;
 
    public void updateFromRequest(DishRequest dishRequest);
 

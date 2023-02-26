@@ -66,9 +66,9 @@ saveEmployee(): void {
     this.router.navigate(['employees']);
   }, error => {
     this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
-        , null, {
+        ,"bla bla bla", {
             duration: 2000
-        });
+        },);
       }); 
 
 } else
@@ -79,7 +79,7 @@ saveEmployee(): void {
   });
   this.router.navigate(['employees']);
 }, error => {
-  this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
+     this.snackBar.open('Ви ввлени неправильно дані. Перевірте і повторіть спробу'
       , null, {
           duration: 2000
       });

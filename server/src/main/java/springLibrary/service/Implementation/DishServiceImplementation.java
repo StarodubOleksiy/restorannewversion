@@ -1,5 +1,6 @@
 package springLibrary.service.Implementation;
 
+import org.postgresql.util.PSQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import springLibrary.repository.DishRepository;
 import springLibrary.repository.MenuRepository;
 import springLibrary.service.*;
 
+import java.sql.SQLException;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
@@ -93,7 +95,7 @@ public class DishServiceImplementation extends AbstractService<Dish, Long, DishR
 
     @Override
     @Transactional
-    public void saveFromRequest(DishRequest dishRequest) {
+    public void saveFromRequest(DishRequest dishRequest)  {
         Dish dish = dishRequest.toDish();
         this.assignDish(dish,dishRequest);
         getRepository().save(dish);
