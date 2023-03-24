@@ -15,15 +15,6 @@ public enum OrderStatus {
         return this.status;
     }
 
-    public static OrderStatus stringToEnum(String status) {
-        switch (status) {
-            case "open":
-                return open;
-            default:
-                return close;
-        }
-    }
-
     public static String enumToString(OrderStatus orderStatus) {
         return orderStatus.getStatus();
     }
